@@ -1,7 +1,26 @@
 ---
 title: "Clases"
+listing:
+  contents: "*.qmd"
+  type: table
+  fields: [title, subtitle, date]
+  sort: "filename"
+  filter-ui: false
 ---
 
 ## Presentaciones del curso
 
 Esta seccion queda lista para agregar clases y presentaciones en Quarto.
+
+
+
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".quarto-listing a").forEach(function (a) {
+    a.setAttribute("target", "_blank");
+    a.setAttribute("rel", "noopener noreferrer");
+  });
+});
+</script>
+```

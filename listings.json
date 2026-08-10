@@ -4,5 +4,11 @@
     "items": [
       "/course-materials/course-program-es.html"
     ]
+  },
+  {
+    "listing": "/lectures/index.html",
+    "items": [
+      "/lectures/01-sci-method.html"
+    ]
   }
 ]

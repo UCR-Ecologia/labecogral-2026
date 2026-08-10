@@ -105,46 +105,172 @@
     "text": "Referencias\nAndrewartha, H. G. (1970). Introduction to the study of animal populations (2nd ed.). Chapman and Hall.\nBegon, M., Harper, J., & Townsend, C. (2006). Ecology: From individuals to ecosystems (4th ed.). Blackwell.\nBetts, M. G., Hadley, A. S., Frey, D. W., Frey, S. J., Gannon, D., Harris, S. H., & Zárrate‐Charry, D. (2021). When are hypotheses useful in ecology and evolution? Ecology and Evolution, 11(11), 5762-5776. https://doi.org/10.1002/ece3.7472\nCrawley, M. J. (2007). The R book. John Wiley.\nFarji-Brener, A. G. (2003). Uso correcto, parcial e incorrecto de los términos “hipótesis” y “predicciones” en ecología. Ecología Austral, 13(2), 223-227.\nGotelli, N. J., & Ellison, A. M. (2004). A primer of ecological statistics (Vol. 1). Sinauer Associates.\nKrebs, C. J. (1999). Ecological methodology (2nd ed.). Benjamin Cummings. http://www.zoology.ubc.ca/~krebs/books.html\nMittelbach, G. G., & McGill, B. J. (2019). Community ecology. Oxford University Press.\nMoreno, C. E. (2001). Manual de métodos para medir la biodiversidad. Universidad Veracruzana. https://www.researchgate.net/publication/304346666_Metodos_para_medir_la_biodiversidad\nQuinn, G. P., & Keough, M. J. (2002). Experimental design and data analysis for biologists. Cambridge University Press.\nSchimel, J. (2012). Writing science: How to write papers that get cited and proposals that get funded. Oxford University Press.\nSutherland, W. J. (Ed.). (2006). Ecological census techniques: A handbook. Cambridge University Press. https://www.researchgate.net/publication/273070581_Ecological_Census_Techniques_A_Handbook\nZar, J. H. (1999). Biostatistical analysis (4th ed.). Prentice Hall."
   },
   {
-    "objectID": "labs/index.html",
-    "href": "labs/index.html",
-    "title": "Laboratorios",
-    "section": "",
-    "text": "Esta seccion queda lista para agregar protocolos y actividades practicas."
+    "objectID": "lectures/01-sci-method.html#plan",
+    "href": "lectures/01-sci-method.html#plan",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Plan",
+    "text": "Plan\n\nEntender como ecologos construyen explicaciones a partir de observaciones y comparacion de hipotesis.\nDistinguir entre patron observado y mecanismo explicativo.\nUsar predicciones para contrastar hipotesis alternativas.\nReforzar el metodo cientifico como proceso iterativo con incertidumbre."
   },
   {
-    "objectID": "labs/index.html#guias-de-laboratorio",
-    "href": "labs/index.html#guias-de-laboratorio",
-    "title": "Laboratorios",
-    "section": "",
-    "text": "Esta seccion queda lista para agregar protocolos y actividades practicas."
+    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion",
+    "href": "lectures/01-sci-method.html#observacion-vs-explicacion",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Observacion vs explicacion",
+    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\n¿Por que?\n\n\nPosibles explicaciones:\n\n\nMuestreo pasivo\n\n\nHeterogeneidad de habitat\n\n\nColonizacion-extincion\n\n\n\n\nEl patron por si solo no identifica el mecanismo."
   },
   {
-    "objectID": "giras/index.html",
-    "href": "giras/index.html",
-    "title": "Giras",
-    "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
+    "href": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Observacion vs explicacion",
+    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\nNecesitamos:\n\nhipotesis alternativas\npredicciones distintas\ncomparacion de evidencia"
   },
   {
-    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "title": "Giras",
-    "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+    "objectID": "lectures/01-sci-method.html#definiciones",
+    "href": "lectures/01-sci-method.html#definiciones",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Definiciones",
+    "text": "Definiciones\n\nSi P, entonces Q. P es la hipotesis y Q es la prediccion.\n\n\nUna hipotesis es una explicacion propuesta y comprobable para un fenomeno ecologico observado.\n\n\nUna prediccion es una consecuencia observable de la hipotesis que puede ser contrastada con evidencia."
   },
   {
-    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "title": "Giras",
-    "section": "Trabajo de campo para la investigacion guiada",
-    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
+    "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
+    "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis A: Muestreo pasivo",
+    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.\n\nPredicciones?"
   },
   {
-    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "title": "Giras",
-    "section": "Expectativas de trabajo en campo para el proyecto semestral",
-    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
+    "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo-1",
+    "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis A: Muestreo pasivo",
+    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
+    "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis B: Heterogeneidad de habitat",
+    "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\nPredicciones?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat-1",
+    "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis B: Heterogeneidad de habitat",
+    "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\n\nPredicciones:\n\n\nEl numero de microhabitats deberia aumentar con el area.\nLa riqueza deberia aumentar con heterogeneidad del habitat.\nSitios con area similar pero mayor heterogeneidad deberian tener mayor riqueza."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
+    "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis C: Colonizacion-extincion",
+    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\nPredicciones?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion-1",
+    "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis C: Colonizacion-extincion",
+    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar mayor recambio temporal de especies.\nSitios grandes deberian perder menos especies entre muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#que-datos-necesitamos",
+    "href": "lectures/01-sci-method.html#que-datos-necesitamos",
+    "title": "Metodo cientifico en ecologia",
+    "section": "¿Que datos necesitamos?",
+    "text": "¿Que datos necesitamos?\n\n\narea de cada parche\nriqueza de especies por parche\nabundancia total y esfuerzo de muestreo\nindice de heterogeneidad de habitat\npresencia/ausencia en multiples fechas (recambio temporal)"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-1-patron-observado",
+    "href": "lectures/01-sci-method.html#evidencia-1-patron-observado",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 1: patron observado",
+    "text": "Evidencia 1: patron observado\n\n\n¿Que hipotesis favorece esta evidencia?\n\n\nFavorece varias (A, B o C). Aun no distingue mecanismo."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo-a",
+    "href": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo-a",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 2: estandarizacion por muestreo (A)",
+    "text": "Evidencia 2: estandarizacion por muestreo (A)\n\n\nSi la pendiente cae mucho al estandarizar, aumenta soporte para hipotesis A."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat-b",
+    "href": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat-b",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 3: heterogeneidad de habitat (B)",
+    "text": "Evidencia 3: heterogeneidad de habitat (B)\n\n\nRelacion fuerte con heterogeneidad: evidencia coherente con hipotesis B."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal-c",
+    "href": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal-c",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 4: persistencia temporal (C)",
+    "text": "Evidencia 4: persistencia temporal (C)\n\n\nMenor perdida en sitios grandes: evidencia coherente con hipotesis C."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada",
+    "href": "lectures/01-sci-method.html#evidencia-combinada",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis B.\nLa riqueza estandarizada mantiene una pendiente positiva con area y, ademas, la riqueza aumenta con heterogeneidad del habitat."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-1",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis C.\nLa riqueza estandarizada se mantiene positiva con area y la persistencia temporal aumenta en parches grandes."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-2",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-2",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nSoporte simultaneo para B y C.\nLa heterogeneidad aumenta la riqueza (B) y, ademas, se asocia con menor recambio temporal, lo que sugiere mayor estabilidad (C).\n\n\nPunto clave: a veces multiples hipotesis son parcialmente compatibles y los predictores pueden interactuar."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-3",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-3",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia gráfica rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nA veces dos hipotesis reciben soporte al mismo tiempo y los predictores pueden interactuar (ej., heterogeneidad tambien mejora estabilidad).\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
+    "href": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
+    "title": "Metodo cientifico en ecologia",
+    "section": "¿Y si los datos no son claros?",
+    "text": "¿Y si los datos no son claros?\n\nMisma direccion de efecto, distinta precision.\n\n\n¿Interpretariamos estas dos figuras de la misma manera?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
+    "href": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Señal positiva con distinta precision",
+    "text": "Señal positiva con distinta precision\n\n\n¿Qué hipótesis favorece esta evidencia?\n\n\nAmbos paneles sugieren direccion positiva, pero en el caso de menor precision el IC95% de la pendiente es mas amplio.\n\n\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\n\n\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
+    "href": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Inferencia con incertidumbre",
+    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente indica un rango plausible para el efecto, no la probabilidad de que la hipotesis sea verdadera.\nPara B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara C, el parametro clave es la pendiente heterogeneidad -&gt; recambio (o area -&gt; perdida): esperamos signo negativo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto con ese diseno.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre.\n\n\n\nEjemplo B (soporte claro): pendiente = 1.05, IC95% [0.42, 1.68].\nInterpretacion: la relacion es positiva y consistente con B; ademas podemos reportar la magnitud aproximada del efecto.\n\n\nEjemplo C (compatible pero incierto): pendiente = -0.04, IC95% [-0.11, 0.01].\nInterpretacion: la direccion media es la esperada para C, pero el IC95% incluye 0; se necesita mas precision antes de concluir soporte fuerte.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor p)."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
+    "href": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Como poderiamos mejorar la precision de la evidencia?",
+    "text": "Como poderiamos mejorar la precision de la evidencia?\n\n\nAumentar el tamaño de muestra (más sitios, más individuos, más fechas).\nReducir el error de medición (estandarizar protocolos, calibrar instrumentos).\nReducir la variabilidad no explicada (controlar covariables, usar modelos estadísticos apropiados).\nMejorar el diseño de muestreo (aleatorización, replicación, bloqueos, estratificación)."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#resumen",
+    "href": "lectures/01-sci-method.html#resumen",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Resumen",
+    "text": "Resumen\n\nEl patron especie-area es una observacion inicial, no una explicacion final.\nA, B y C pueden explicar el mismo patron general, pero generan predicciones distintas.\nComparar multiples lineas de evidencia fortalece la inferencia ecologica.\nEl metodo cientifico en ecologia es iterativo: observar, plantear hipotesis, predecir, contrastar y revisar."
   },
   {
     "objectID": "index.html",
@@ -182,6 +308,258 @@
     "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
   },
   {
+    "objectID": "drafts/03-methods.html#metas",
+    "href": "drafts/03-methods.html#metas",
+    "title": "Como estudiamos la evolución",
+    "section": "Metas",
+    "text": "Metas\n\nEntender como los biólogos evolutivos estudian la evolución a través de evidencia, inferencia, comparación de hipótesis y reconocimiento de límites.\nDesarrollar razonamiento evolutivo (científico): entender suposiciones, interpretar datos, comparar hipótesis\nEntender que la ciencia evolutiva es un proceso iterativo de inferencia con incertidumbre, no una colección de hechos absolutos.\nEntender los fundamentos del metodo científico."
+  },
+  {
+    "objectID": "drafts/03-methods.html#ser-capaces-de",
+    "href": "drafts/03-methods.html#ser-capaces-de",
+    "title": "Como estudiamos la evolución",
+    "section": "Ser capaces de",
+    "text": "Ser capaces de\n\n\nformular preguntas evolutivas\nproponer hipótesis evolutivas alternativas\nderivar predicciones de hipótesis\nentender suposiciones de estudios evolutivos\ninterpretar evidencia evolutiva\ncomparar hipótesis evolutivas\nreconocer límites de evidencia evolutiva"
+  },
+  {
+    "objectID": "drafts/03-methods.html#observación-vs-explicación",
+    "href": "drafts/03-methods.html#observación-vs-explicación",
+    "title": "Como estudiamos la evolución",
+    "section": "Observación vs explicación",
+    "text": "Observación vs explicación\nObservación:\n\nLos pinzones de Galápagos tienen picos diferentes que hace unos años.\n\n\n¿Por qué?\n\n\nPosibles explicaciones:\n\nazar\nadaptación a la dieta\n\n\n\n\nLa evidencia por sí sola no proporciona automáticamente la explicación."
+  },
+  {
+    "objectID": "drafts/03-methods.html#observación-vs-explicación-1",
+    "href": "drafts/03-methods.html#observación-vs-explicación-1",
+    "title": "Como estudiamos la evolución",
+    "section": "Observación vs explicación",
+    "text": "Observación vs explicación\nObservación:\n\nLos pinzones de Galápagos tienen picos diferentes que hace unos años.\n\n\nNecesitamos:\n\nhipótesis alternativas\npredicciones\ncomparación de hipótesis"
+  },
+  {
+    "objectID": "drafts/03-methods.html#explicación-1-azar",
+    "href": "drafts/03-methods.html#explicación-1-azar",
+    "title": "Como estudiamos la evolución",
+    "section": "Explicación 1: Azar",
+    "text": "Explicación 1: Azar\nHipótesis:\n\nEl cambio se debe a procesos aleatorios que resultan en un cambio en la frecuencia de variantes en la población.\n\nPredicciónes?"
+  },
+  {
+    "objectID": "drafts/03-methods.html#explicación-1-azar-1",
+    "href": "drafts/03-methods.html#explicación-1-azar-1",
+    "title": "Como estudiamos la evolución",
+    "section": "Explicación 1: Azar",
+    "text": "Explicación 1: Azar\nHipótesis:\n\nEl cambio se debe a procesos aleatorios que resultan en un cambio en la frecuencia de variantes en la población.\n\n\nPredicción:\n\n\nNo debería existir una relación consistente entre tamaño del pico y tamaño de las semillas. (Ecología, Recursos)\nNo debería existir una relación consistente entre tamaño del pico y supervivencia. (Aptitud, Selección Natural)\nEl cambio podría ocurrir incluso sin cambios en los recursos disponibles. (Ecología, Recursos)"
+  },
+  {
+    "objectID": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta",
+    "href": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta",
+    "title": "Como estudiamos la evolución",
+    "section": "Explicación 2: Adaptación a la dieta",
+    "text": "Explicación 2: Adaptación a la dieta\nHipótesis:\n\nEl cambio se debe a que individuos con picos más grandes sobrevivieron y se reprodujeron más durante la sequía.\n\nPredicciónes?"
+  },
+  {
+    "objectID": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta-1",
+    "href": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta-1",
+    "title": "Como estudiamos la evolución",
+    "section": "Explicación 2: Adaptación a la dieta",
+    "text": "Explicación 2: Adaptación a la dieta\nHipótesis:\n\nEl cambio se debe a que individuos con picos más grandes sobrevivieron y se reprodujeron más durante la sequía.\n\n\nPredicción:\n\n\nDebería existir una relación entre tamaño del pico y tamaño de las semillas disponibles. (Ecología, Recursos)\nDebería existir una relación consistente entre el tamaño del pico y la dieta. (Ecología, Recursos)\nParte de la variación en el tamaño del pico debería ser heredable. (Genética)\nEl tamaño promedio del pico debería aumentar generación tras generación. (Aptitud, Selección Natural)\nLos individuos con picos más grandes deberían sobrevivir más frecuentemente. (Aptitud, Selección Natural)"
+  },
+  {
+    "objectID": "drafts/03-methods.html#comparación-de-hipótesis",
+    "href": "drafts/03-methods.html#comparación-de-hipótesis",
+    "title": "Como estudiamos la evolución",
+    "section": "Comparación de hipótesis",
+    "text": "Comparación de hipótesis\n¿Qué datos serían útiles para distinguir entre estas explicaciones?\n\n\nTamaño de pico\nTamaño de semillas\nDieta\nSupervivencia\nNúmero de hijos\nHerencia padres–hijos\nCambios en la población a través del tiempo"
+  },
+  {
+    "objectID": "drafts/03-methods.html#picos-y-semillas",
+    "href": "drafts/03-methods.html#picos-y-semillas",
+    "title": "Como estudiamos la evolución",
+    "section": "Picos y semillas",
+    "text": "Picos y semillas\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nCambio por azar."
+  },
+  {
+    "objectID": "drafts/03-methods.html#picos-y-semillas-1",
+    "href": "drafts/03-methods.html#picos-y-semillas-1",
+    "title": "Como estudiamos la evolución",
+    "section": "Picos y semillas",
+    "text": "Picos y semillas\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nApoya la hipótesis de adaptación, pero una sola línea de evidencia no basta."
+  },
+  {
+    "objectID": "drafts/03-methods.html#padres-e-hijos",
+    "href": "drafts/03-methods.html#padres-e-hijos",
+    "title": "Como estudiamos la evolución",
+    "section": "Padres e hijos",
+    "text": "Padres e hijos\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nApoya una condición necesaria para selección, pero no demuestra adaptación por sí sola."
+  },
+  {
+    "objectID": "drafts/03-methods.html#picos-y-número-de-hijos",
+    "href": "drafts/03-methods.html#picos-y-número-de-hijos",
+    "title": "Como estudiamos la evolución",
+    "section": "Picos y número de hijos",
+    "text": "Picos y número de hijos\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nAdaptación a la dieta."
+  },
+  {
+    "objectID": "drafts/03-methods.html#evidencia-combinada-sin-aptitud",
+    "href": "drafts/03-methods.html#evidencia-combinada-sin-aptitud",
+    "title": "Como estudiamos la evolución",
+    "section": "Evidencia combinada: sin aptitud",
+    "text": "Evidencia combinada: sin aptitud\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nNo hay suficiente evidencia para adaptación por selección natural."
+  },
+  {
+    "objectID": "drafts/03-methods.html#evidencia-combinada-sin-heredabilidad",
+    "href": "drafts/03-methods.html#evidencia-combinada-sin-heredabilidad",
+    "title": "Como estudiamos la evolución",
+    "section": "Evidencia combinada: sin heredabilidad",
+    "text": "Evidencia combinada: sin heredabilidad\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nNo hay suficiente evidencia para adaptación por selección natural."
+  },
+  {
+    "objectID": "drafts/03-methods.html#evidencia-combinada-las-tres-condiciones",
+    "href": "drafts/03-methods.html#evidencia-combinada-las-tres-condiciones",
+    "title": "Como estudiamos la evolución",
+    "section": "Evidencia combinada: las tres condiciones",
+    "text": "Evidencia combinada: las tres condiciones\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nLas tres piezas juntas — correlación con recurso, variación heredable y relación con aptitud — apoyan adaptación por selección natural."
+  },
+  {
+    "objectID": "drafts/03-methods.html#resumen",
+    "href": "drafts/03-methods.html#resumen",
+    "title": "Como estudiamos la evolución",
+    "section": "Resumen",
+    "text": "Resumen\n\nLa evidencia por sí sola no proporciona automáticamente la explicación.\nLa evidencia no demuestra que una hipótesis sea absolutamente verdadera; permite evaluar cuál explicación es más consistente con los datos disponibles.\nNecesitamos evaluar varios tipos de evidencia junto (recursos, dieta, herencia, supervivencia, cambios poblacionales) para distinguir entre explicaciones evolutivas.\nAdaptación por selección requiere varias piezas juntas: relación con ambiente/recurso, variación heredable y relación con aptitud."
+  },
+  {
+    "objectID": "drafts/03-methods.html#más-allá-de-los-pinzones",
+    "href": "drafts/03-methods.html#más-allá-de-los-pinzones",
+    "title": "Como estudiamos la evolución",
+    "section": "Más allá de los pinzones",
+    "text": "Más allá de los pinzones\nEste ejemplo usa pinzones, pero la lógica aplica a cualquier rasgo en cualquier población:\n\n\nResistencia a antibióticos en bacterias → variación en el rasgo (tolerancia), heredable (mutación), relación con sobrevivencia (antibiótico como agente selectivo)\nCamuflaje en polillas → color del ala, heredable, depredadores como agente selectivo\nTolerancia a metales en plantas → plantas en suelos contaminados, variación heredable en tolerancia, metales como filtro selectivo\nCualquier rasgo morfológico, fisiológico o de comportamiento en cualquier especie\n\n\n\n\nLa pregunta siempre es la misma: ¿hay variación heredable en el rasgo, y esa variación afecta la reproducción o sobrevivencia?"
+  },
+  {
+    "objectID": "drafts/03-methods.html#se-puede-estudiar-el-pasado",
+    "href": "drafts/03-methods.html#se-puede-estudiar-el-pasado",
+    "title": "Como estudiamos la evolución",
+    "section": "¿Se puede estudiar el pasado?",
+    "text": "¿Se puede estudiar el pasado?\n\n\nAstronomía: ¿cómo se formaron las galaxias?\nGeología: ¿cómo se formaron las montañas?\nBiología evolutiva: ¿cuándo divergieron estas especies?\n\n\n\n\nNo podemos repetir el pasado en el laboratorio.\nPero podemos inferirlo a partir de evidencia presente."
+  },
+  {
+    "objectID": "drafts/03-methods.html#la-ciencia-histórica-también-usa-hipótesis",
+    "href": "drafts/03-methods.html#la-ciencia-histórica-también-usa-hipótesis",
+    "title": "Como estudiamos la evolución",
+    "section": "La ciencia histórica también usa hipótesis",
+    "text": "La ciencia histórica también usa hipótesis\nEl método es el mismo:\n\nFormular una pregunta sobre el pasado\nProponer hipótesis alternativas\nDerivar predicciones de cada hipótesis\nReunir evidencia\nComparar qué hipótesis es más consistente\nFormular una conclusión provisional"
+  },
+  {
+    "objectID": "drafts/03-methods.html#caso-de-estudio-clado-o-lago-quién-es-más-antiguo",
+    "href": "drafts/03-methods.html#caso-de-estudio-clado-o-lago-quién-es-más-antiguo",
+    "title": "Como estudiamos la evolución",
+    "section": "Caso de estudio: ¿clado o lago, quién es más antiguo?",
+    "text": "Caso de estudio: ¿clado o lago, quién es más antiguo?\nPregunta científica:\n\n¿El clado X (grupo de especies) se originó antes o después de la formación del Lago Y?\n\n\nEsta pregunta importa porque:\n\nSi el clado es más antiguo → sus ancestros vivían antes del lago; el clado no diversificó en el lago.\nSi el clado es más joven → las poblaciones lacustres podrían haber estado aisladas; la diversificación podría haber ocurrido dentro del lago;"
+  },
+  {
+    "objectID": "drafts/03-methods.html#hipótesis-alternativas",
+    "href": "drafts/03-methods.html#hipótesis-alternativas",
+    "title": "Como estudiamos la evolución",
+    "section": "Hipótesis alternativas",
+    "text": "Hipótesis alternativas\nH₁: El clado X es más antiguo que el Lago Y\nEl origen del clado, estimado con incertidumbre, precede a la formación del lago, también estimado con incertidumbre.\nH₂: El clado X es más joven que el Lago Y\nEl origen del clado, estimado con incertidumbre, es posterior a la formación del lago, también estimado con incertidumbre."
+  },
+  {
+    "objectID": "drafts/03-methods.html#predicciones-de-cada-hipótesis",
+    "href": "drafts/03-methods.html#predicciones-de-cada-hipótesis",
+    "title": "Como estudiamos la evolución",
+    "section": "Predicciones de cada hipótesis",
+    "text": "Predicciones de cada hipótesis\n\n\n\n\n\n\n\n\n\nSi H₁ es correcta\nSi H₂ es correcta\n\n\n\n\nFósiles\nLos fósiles más antiguos del clado son anteriores a la formación del lago\nLos fósiles más antiguos del clado son posteriores a la formación del lago\n\n\nFilogenia\nEl origen estimado del clado precede al lago\nEl origen estimado del clado es posterior al lago\n\n\n\n\nCada prediccion incluye incertidumbre"
+  },
+  {
+    "objectID": "drafts/03-methods.html#evidencia-tres-fuentes-independientes",
+    "href": "drafts/03-methods.html#evidencia-tres-fuentes-independientes",
+    "title": "Como estudiamos la evolución",
+    "section": "Evidencia: tres fuentes independientes",
+    "text": "Evidencia: tres fuentes independientes\n\n\n\n\nFósil clave del clado X datado por C¹⁴:\n12 650 ± 150 años AP (rango: 12 500–12 800)\nSedimentos del Lago Y datados por C¹⁴:\n12 250 ± 150 años AP (rango: 12 100–12 400)\nFilogenia molecular de varios loci:\nEdad estimada del clado: 12 500 años AP (rango: 11 800–13 200)"
+  },
+  {
+    "objectID": "drafts/03-methods.html#suposiciones-de-cada-método",
+    "href": "drafts/03-methods.html#suposiciones-de-cada-método",
+    "title": "Como estudiamos la evolución",
+    "section": "Suposiciones de cada método",
+    "text": "Suposiciones de cada método\nCada método descansa en suposiciones que pueden no cumplirse perfectamente:\n\n\nDatación C¹⁴ asume:\n\nla tasa de desintegración del carbono-14 es constante\nel sistema estuvo cerrado después de la muerte (sin intercambio de carbono)\n\nFilogenia molecular asume:\n\nlas tasas de sustitución de ADN son relativamente constantes a lo largo del tiempo (reloj molecular)\nel modelo de evolución molecular elegido es correcto\n\nRegistro fósil asume:\n\nlos fósiles encontrados son representativos de los organismos que existieron\nla ausencia de fósiles más antiguos no implica que no existieran\n\n\n\n\n\nSi las suposiciones no se cumplen, las estimaciones pueden estar sesgadas.\nPor eso integramos múltiples métodos independientes."
+  },
+  {
+    "objectID": "drafts/03-methods.html#límites-e-incertidumbre",
+    "href": "drafts/03-methods.html#límites-e-incertidumbre",
+    "title": "Como estudiamos la evolución",
+    "section": "Límites e incertidumbre",
+    "text": "Límites e incertidumbre\n\n\nCada fuente de evidencia tiene límites:\n\n\nEl registro fósil es incompleto → el fósil más antiguo conocido no es necesariamente el primero que existió.\nLas dataciones tienen error → ±150 años en este caso; no son valores exactos.\nLas reconstrucciones filogenéticas son estimaciones → reflejan incertidumbre estadística.\n\n\n\n\n\nPor eso los científicos reportan intervalos, no valores puntuales.\nTrabajamos con incertidumbre cuantificada, no la ignoramos."
+  },
+  {
+    "objectID": "drafts/03-methods.html#comparación-de-hipótesis-1",
+    "href": "drafts/03-methods.html#comparación-de-hipótesis-1",
+    "title": "Como estudiamos la evolución",
+    "section": "Comparación de hipótesis",
+    "text": "Comparación de hipótesis\n\n\nConsistencia con H₁ (clado más antiguo)\n\n\nEl fósil (12 500–12 800) es anterior al rango del lago (12 100–12 400)\nEl origen filogenético (11 800–13 200) incluye edades anteriores al lago\n\n\n\nConsistencia con H₂ (clado más joven)\n\n\nEl fósil no es posterior al lago\nEl origen filogenético no está claramente después del lago\n\n\n\n\n\nLos datos son más consistentes con H₁.\nLa evidencia favorece una hipótesis, pero rara vez la prueba de forma absoluta."
+  },
+  {
+    "objectID": "drafts/03-methods.html#inferencia-y-conclusión-provisional",
+    "href": "drafts/03-methods.html#inferencia-y-conclusión-provisional",
+    "title": "Como estudiamos la evolución",
+    "section": "Inferencia y conclusión provisional",
+    "text": "Inferencia y conclusión provisional\n\nConclusión provisional:\n\nLa evidencia actual apoya que el clado X es más antiguo que el Lago Y, aunque existe incertidumbre en todas las fuentes de datos.\n\n\n\n¿Es definitivo?\nNo. Nuevos datos pueden cambiar la conclusión:\n\nMás fósiles → límites del registro más precisos\nMás loci genéticos → intervalos filogenéticos más estrechos\nMejores dataciones → menor error en edades\n\nLa ciencia es un proceso iterativo."
+  },
+  {
+    "objectID": "drafts/03-methods.html#resumen-inferencia-histórica-con-incertidumbre",
+    "href": "drafts/03-methods.html#resumen-inferencia-histórica-con-incertidumbre",
+    "title": "Como estudiamos la evolución",
+    "section": "Resumen: inferencia histórica con incertidumbre",
+    "text": "Resumen: inferencia histórica con incertidumbre\n\n\nLos biólogos evolutivos estudian el pasado mediante inferencia, no experimentos directos.\nUsamos el mismo marco lógico: pregunta → hipótesis → predicciones → evidencia → comparación.\nToda evidencia histórica tiene límites cuantificables: registro incompleto, error en dataciones, incertidumbre estadística.\nReportamos intervalos, no certezas.\nAun con incertidumbre, podemos hacer inferencias bien fundamentadas integrando múltiples líneas de evidencia."
+  },
+  {
+    "objectID": "drafts/03-methods.html#más-allá-del-clado-y-el-lago",
+    "href": "drafts/03-methods.html#más-allá-del-clado-y-el-lago",
+    "title": "Como estudiamos la evolución",
+    "section": "Más allá del clado y el lago",
+    "text": "Más allá del clado y el lago\nEste ejemplo usa un grupo de especies y un lago, pero la misma lógica aplica a muchos contextos:\n\n\nBiogeografía de islas → ¿el grupo colonizó la isla antes o después del aislamiento geográfico?\nVirus en un nuevo huésped → ¿el linaje viral es anterior o posterior al primer contacto con esa especie?\nDiversificación en montañas → ¿el clado se originó antes o después del levantamiento de la cordillera?\nOrigen de una enfermedad → ¿cuándo divergió el patógeno de su ancestro común con una cepa conocida?\n\n\n\n\nEn todos los casos: usamos fósiles, filogenias y dataciones para inferir el pasado, reconociendo las suposiciones y los límites de cada método."
+  },
+  {
+    "objectID": "giras/index.html",
+    "href": "giras/index.html",
+    "title": "Giras",
+    "section": "",
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+  },
+  {
+    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "title": "Giras",
+    "section": "",
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+  },
+  {
+    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "title": "Giras",
+    "section": "Trabajo de campo para la investigacion guiada",
+    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
+  },
+  {
+    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "title": "Giras",
+    "section": "Expectativas de trabajo en campo para el proyecto semestral",
+    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
+  },
+  {
+    "objectID": "labs/index.html",
+    "href": "labs/index.html",
+    "title": "Laboratorios",
+    "section": "",
+    "text": "Esta seccion queda lista para agregar protocolos y actividades practicas."
+  },
+  {
+    "objectID": "labs/index.html#guias-de-laboratorio",
+    "href": "labs/index.html#guias-de-laboratorio",
+    "title": "Laboratorios",
+    "section": "",
+    "text": "Esta seccion queda lista para agregar protocolos y actividades practicas."
+  },
+  {
     "objectID": "lectures/index.html",
     "href": "lectures/index.html",
     "title": "Clases",
@@ -194,5 +572,12 @@
     "title": "Clases",
     "section": "",
     "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
+    "href": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia adicional: recambio vs heterogeneidad (B-C)",
+    "text": "Evidencia adicional: recambio vs heterogeneidad (B-C)\n\n\nMayor heterogeneidad se asocia con menor recambio: patron compatible con mayor estabilidad temporal."
   }
 ]
