@@ -12,7 +12,7 @@ La gira principal del curso corresponde a la **Investigacion independiente** y s
 
 ### Proposito academico
 
-Durante la gira, cada grupo implementa su diseno de investigacion en condiciones reales de campo para:
+Durante la gira, cada grupo implementa su diseno de investigacion para:
 
 - organizar el muestreo segun su protocolo
 - recolectar y documentar datos biologicos y ambientales

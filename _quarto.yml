@@ -23,5 +23,5 @@ website:
         href: lectures/index.qmd
       - text: "Laboratorios"
         href: labs/index.qmd
-      - text: "Giras"
-        href: giras/index.qmd
+      # - text: "Giras"
+      #   href: giras/index.qmd
