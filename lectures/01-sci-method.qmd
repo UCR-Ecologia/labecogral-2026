@@ -82,14 +82,6 @@ Hipotesis:
 
 - Los sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.
 
-Predicciones?
-
-## Hipotesis A: Muestreo pasivo {.smaller}
-
-Hipotesis:
-
-- Los sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.
-
 ::: {.fragment}
 Predicciones:
 
@@ -106,14 +98,6 @@ Hipotesis:
 
 - Los sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.
 
-Predicciones?
-
-## Hipotesis B: Heterogeneidad de habitat {.smaller}
-
-Hipotesis:
-
-- Los sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.
-
 ::: {.fragment}
 Predicciones:
 
@@ -123,14 +107,6 @@ Predicciones:
 - Sitios con area similar pero mayor heterogeneidad deberian tener mayor riqueza.
 :::
 :::
-
-## Hipotesis C: Colonizacion-extincion {.smaller}
-
-Hipotesis:
-
-- Los sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.
-
-Predicciones?
 
 ## Hipotesis C: Colonizacion-extincion {.smaller}
 
@@ -453,13 +429,13 @@ ggplot(df_comb_multi, aes(x = x, y = y)) +
 :::
 
 ::: {.fragment}
-**Soporte simultaneo para B y C.**
+**Evidencia compatible con B y con un mecanismo de estabilidad temporal.**
 
-La heterogeneidad aumenta la riqueza (B) y, ademas, se asocia con menor recambio temporal, lo que sugiere mayor estabilidad (C).
+La heterogeneidad aumenta la riqueza, lo que apoya B. Además, se asocia con menor recambio temporal, lo que sugiere mayor estabilidad. Sin embargo, esto no apoya directamente C, porque C vinculaba la estabilidad con el área, no con la heterogeneidad.
 :::
 
 ::: {.fragment}
-**Punto clave:** a veces multiples hipotesis son parcialmente compatibles y los predictores pueden interactuar.
+¿Hipótesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactúan?
 :::
 
 ## Evidencia adicional: recambio vs heterogeneidad (B-C)
@@ -489,10 +465,10 @@ ggplot(df_turn_h, aes(x = heterogeneity, y = turnover)) +
 ```
 
 ::: {.fragment}
-Mayor heterogeneidad se asocia con menor recambio: patron compatible con mayor estabilidad temporal.
+* Mayor heterogeneidad se asocia con menor recambio.
+* Esto sugiere que la heterogeneidad tambien mejora estabilidad, que no apoya hipotesis C directamente.
+* C vinculaba la estabilidad con area, no con heterogeneidad.
 :::
-
-
 
 ## Evidencia combinada {.smaller}
 
@@ -500,7 +476,6 @@ Mayor heterogeneidad se asocia con menor recambio: patron compatible con mayor e
 - Una sola fuente de evidencia gráfica rara vez basta para distinguir mecanismos.
 - El mismo patron especie-area puede surgir por procesos distintos.
 - La inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.
-- A veces dos hipotesis reciben soporte al mismo tiempo y los predictores pueden interactuar (ej., heterogeneidad tambien mejora estabilidad).
 - El objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta.
 :::
 
@@ -606,6 +581,8 @@ Con menor precisión, la evidencia sigue siendo compatible con una relacion posi
 - Si el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.
 - El ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre.
 :::
+
+## Exemplo de interpretacion con incertidumbre {.smaller}
 
 ::: {.fragment}
 **Ejemplo B (soporte claro):** pendiente = 1.05, IC95% [0.42, 1.68].

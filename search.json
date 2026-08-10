@@ -137,7 +137,7 @@
     "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
     "title": "Metodo cientifico en ecologia",
     "section": "Hipotesis A: Muestreo pasivo",
-    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.\n\nPredicciones?"
+    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
   },
   {
     "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo-1",
@@ -249,7 +249,7 @@
     "href": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
     "title": "Metodo cientifico en ecologia",
     "section": "Señal positiva con distinta precision",
-    "text": "Señal positiva con distinta precision\n\n\n¿Qué hipótesis favorece esta evidencia?\n\n\nAmbos paneles sugieren direccion positiva, pero en el caso de menor precision el IC95% de la pendiente es mas amplio.\n\n\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\n\n\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
+    "text": "Señal positiva con distinta precision\n\n\n¿Qué hipótesis favorece esta evidencia?\n\n\nAmbos paneles sugieren direccion positiva, pero con diferente precision (incertidumbre): el IC95% de la pendiente es critico.\n\n\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\n\n\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
   },
   {
     "objectID": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
