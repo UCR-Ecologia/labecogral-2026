@@ -140,22 +140,8 @@
     "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
   },
   {
-    "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo-1",
-    "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo-1",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis A: Muestreo pasivo",
-    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
-  },
-  {
     "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
     "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis B: Heterogeneidad de habitat",
-    "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\nPredicciones?"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat-1",
-    "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat-1",
     "title": "Metodo cientifico en ecologia",
     "section": "Hipotesis B: Heterogeneidad de habitat",
     "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\n\nPredicciones:\n\n\nEl numero de microhabitats deberia aumentar con el area.\nLa riqueza deberia aumentar con heterogeneidad del habitat.\nSitios con area similar pero mayor heterogeneidad deberian tener mayor riqueza."
@@ -163,13 +149,6 @@
   {
     "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
     "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis C: Colonizacion-extincion",
-    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\nPredicciones?"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion-1",
-    "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion-1",
     "title": "Metodo cientifico en ecologia",
     "section": "Hipotesis C: Colonizacion-extincion",
     "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar mayor recambio temporal de especies.\nSitios grandes deberian perder menos especies entre muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
@@ -228,14 +207,21 @@
     "href": "lectures/01-sci-method.html#evidencia-combinada-2",
     "title": "Metodo cientifico en ecologia",
     "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nSoporte simultaneo para B y C.\nLa heterogeneidad aumenta la riqueza (B) y, ademas, se asocia con menor recambio temporal, lo que sugiere mayor estabilidad (C).\n\n\nPunto clave: a veces multiples hipotesis son parcialmente compatibles y los predictores pueden interactuar."
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nEvidencia compatible con B y con un mecanismo de estabilidad temporal.\nLa heterogeneidad aumenta la riqueza, lo que apoya B. Además, se asocia con menor recambio temporal, lo que sugiere mayor estabilidad. Sin embargo, esto no apoya directamente C, porque C vinculaba la estabilidad con el área, no con la heterogeneidad.\n\n\n¿Hipótesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactúan?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
+    "href": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia adicional: recambio vs heterogeneidad (B-C)",
+    "text": "Evidencia adicional: recambio vs heterogeneidad (B-C)\n\n\n\nMayor heterogeneidad se asocia con menor recambio.\nEsto sugiere que la heterogeneidad tambien mejora estabilidad, que no apoya hipotesis C directamente.\nC vinculaba la estabilidad con area, no con heterogeneidad."
   },
   {
     "objectID": "lectures/01-sci-method.html#evidencia-combinada-3",
     "href": "lectures/01-sci-method.html#evidencia-combinada-3",
     "title": "Metodo cientifico en ecologia",
     "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia gráfica rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nA veces dos hipotesis reciben soporte al mismo tiempo y los predictores pueden interactuar (ej., heterogeneidad tambien mejora estabilidad).\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
+    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia gráfica rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
   },
   {
     "objectID": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
@@ -256,7 +242,14 @@
     "href": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
     "title": "Metodo cientifico en ecologia",
     "section": "Inferencia con incertidumbre",
-    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente indica un rango plausible para el efecto, no la probabilidad de que la hipotesis sea verdadera.\nPara B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara C, el parametro clave es la pendiente heterogeneidad -&gt; recambio (o area -&gt; perdida): esperamos signo negativo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto con ese diseno.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre.\n\n\n\nEjemplo B (soporte claro): pendiente = 1.05, IC95% [0.42, 1.68].\nInterpretacion: la relacion es positiva y consistente con B; ademas podemos reportar la magnitud aproximada del efecto.\n\n\nEjemplo C (compatible pero incierto): pendiente = -0.04, IC95% [-0.11, 0.01].\nInterpretacion: la direccion media es la esperada para C, pero el IC95% incluye 0; se necesita mas precision antes de concluir soporte fuerte.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor p)."
+    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente indica un rango plausible para el efecto, no la probabilidad de que la hipotesis sea verdadera.\nPara B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara C, el parametro clave es la pendiente heterogeneidad -&gt; recambio (o area -&gt; perdida): esperamos signo negativo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto con ese diseno.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
+    "href": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Exemplo de interpretacion con incertidumbre",
+    "text": "Exemplo de interpretacion con incertidumbre\n\nEjemplo B (soporte claro): pendiente = 1.05, IC95% [0.42, 1.68].\nInterpretacion: la relacion es positiva y consistente con B; ademas podemos reportar la magnitud aproximada del efecto.\n\n\nEjemplo C (compatible pero incierto): pendiente = -0.04, IC95% [-0.11, 0.01].\nInterpretacion: la direccion media es la esperada para C, pero el IC95% incluye 0; se necesita mas precision antes de concluir soporte fuerte.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor p)."
   },
   {
     "objectID": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
@@ -572,12 +565,5 @@
     "title": "Clases",
     "section": "",
     "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
-    "href": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia adicional: recambio vs heterogeneidad (B-C)",
-    "text": "Evidencia adicional: recambio vs heterogeneidad (B-C)\n\n\nMayor heterogeneidad se asocia con menor recambio: patron compatible con mayor estabilidad temporal."
   }
 ]
