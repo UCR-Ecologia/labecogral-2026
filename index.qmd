@@ -18,10 +18,17 @@ Aquí se irán publicando:
 
 El laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados.
 
-## Material disponible ahora
+## Programa del curso
 
 El programa del curso ya está disponible en la sección de [Programa](programa/index.qmd).
 
-## Navegación
+## Fechas importantes
 
-Use el menu superior para navegar entre secciones. La estructura ya esta preparada para agregar contenidos sin reorganizar archivos existentes de otros cursos.
+| Fecha | Actividad |
+|---|---|
+| 9 oct 2026 | Entrega de propuesta del proyecto semestral |
+| 16-18 oct 2026 | Gira a la Estación Biológica La Selva y recolección de datos |
+| 13 nov 2026 | Entrega de informe de avance del proyecto semestral |
+| 20 nov 2026 | Simposio de investigaciones cortas (presentaciones de Investigación II) |
+| 27 nov 2026 | Presentaciones orales del proyecto semestral |
+| 4 dic 2026 | Entrega del reporte final del proyecto semestral |

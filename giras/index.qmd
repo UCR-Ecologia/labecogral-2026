@@ -2,6 +2,55 @@
 title: "Giras"
 ---
 
-## Materiales de campo
+## Gira principal: Estacion Biologica La Selva
 
-Esta seccion queda lista para agregar guias y documentos de giras.
+La gira principal del curso corresponde a la **Investigacion independiente** y se realiza en la Estacion Biologica La Selva.
+
+### Fechas
+
+- **16, 17 y 18 de octubre de 2026**
+
+### Proposito academico
+
+Durante la gira, cada grupo implementa su diseno de investigacion en condiciones reales de campo para:
+
+- organizar el muestreo segun su protocolo
+- recolectar y documentar datos biologicos y ambientales
+- registrar metadatos y observaciones relevantes
+- adaptar el protocolo cuando las condiciones de campo lo requieran
+
+### Responsabilidades durante la gira
+
+- llevar y usar correctamente el equipo de campo
+- asegurar registro claro y oportuno en bitacoras
+- documentar ajustes metodologicos y sus justificaciones
+- mantener coordinacion con docentes y asistentes
+
+## Trabajo de campo para la investigacion guiada
+
+El trabajo de campo de la **investigacion guiada** se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.
+
+### Responsabilidades durante la gira
+
+- aplicar protocolos de muestreo de forma consistente
+- registrar datos, observaciones y metadatos en la bitacora
+- reconocer dificultades de campo y fuentes de error
+
+## Expectativas de trabajo en campo para el proyecto semestral
+
+Segun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.
+
+### Expectativas de trabajo de campo
+
+- cada pareja debe realizar **al menos tres eventos independientes de trabajo de campo** o un esfuerzo equivalente de laboratorio
+- estos eventos deben ser **coordinados previamente** con docentes y asistentes
+- toda actividad de campo debe quedar documentada en la bitacora del proyecto
+
+### Evidencia y documentacion
+
+La bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:
+
+- observaciones iniciales y formulacion de preguntas
+- hipotesis, predicciones y decisiones metodologicas
+- cambios al diseno y cronograma
+- actividades de campo y organizacion de datos

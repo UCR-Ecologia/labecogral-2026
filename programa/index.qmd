@@ -27,6 +27,17 @@ format:
 | Horas de consulta a convenir: | Gerardo Avalos [gerardo.avalos@ucr.ac.cr](mailto:gerardo.avalos@ucr.ac.cr) Teo Nakov [teofil.nakov@ucr.ac.cr](mailto:teofil.nakov@ucr.ac.cr) |
 | Cuenta de email del curso:    | [ucr.eco.lab@gmail.com](mailto:ucr.eco.lab@gmail.com)                                                                                        |
 
+## Fechas importantes
+
+| Fecha | Actividad |
+|---|---|
+| 9 oct 2026 | Entrega de propuesta del proyecto semestral |
+| 16-18 oct 2026 | Gira a la Estación Biológica La Selva y recolección de datos |
+| 13 nov 2026 | Entrega de informe de avance del proyecto semestral |
+| 20 nov 2026 | Simposio de investigaciones cortas (presentaciones de Investigación II) |
+| 27 nov 2026 | Presentaciones orales del proyecto semestral |
+| 4 dic 2026 | Entrega del reporte final del proyecto semestral |
+
 ## Introducción
 
 La ecología es una ciencia integradora que estudia las interacciones entre los organismos y su ambiente, así como los procesos que determinan la distribución, abundancia y diversidad de la vida en la Tierra. Debido a que estas interacciones tienen lugar simultáneamente a múltiples escalas (desde individuos hasta ecosistemas), la ecología requiere combinar observación, experimentación, análisis cuantitativo e interpretación crítica de la evidencia científica.

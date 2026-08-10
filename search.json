@@ -14,6 +14,13 @@
     "text": "Información General\n\n\n\nCiclo en que se imparte:\nII - 2026\n\n\n\n\nCréditos:\n2\n\n\nAsistencia:\nObligatoria\n\n\nRequisitos:\nXS-301, B-0218, B-0239\n\n\nCorrequisitos:\nEcología General B-0304\n\n\nHoras lectivas:\n3 horas (viernes de 9:00 am a 11:50 am)\n\n\nAulas:\n110 y 280\n\n\nProfesores:\nDr. Gerardo Avalos y Dr. Teofil Nakov.\n\n\nAsistentes:\nJordi Jiménez, Valeria Castro, David Campos, Esteban Fuentes, Naidely Vidaurre.\n\n\nModalidad:\nBajo virtual\n\n\nHoras de consulta a convenir:\nGerardo Avalos gerardo.avalos@ucr.ac.cr Teo Nakov teofil.nakov@ucr.ac.cr\n\n\nCuenta de email del curso:\nucr.eco.lab@gmail.com"
   },
   {
+    "objectID": "programa/index.html#fechas-importantes",
+    "href": "programa/index.html#fechas-importantes",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Fechas importantes",
+    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
+  },
+  {
     "objectID": "programa/index.html#introducción",
     "href": "programa/index.html#introducción",
     "title": "B-0305 Laboratorio de Ecología General",
@@ -116,14 +123,28 @@
     "href": "giras/index.html",
     "title": "Giras",
     "section": "",
-    "text": "Esta seccion queda lista para agregar guias y documentos de giras."
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion en condiciones reales de campo para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
   },
   {
-    "objectID": "giras/index.html#materiales-de-campo",
-    "href": "giras/index.html#materiales-de-campo",
+    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
     "title": "Giras",
     "section": "",
-    "text": "Esta seccion queda lista para agregar guias y documentos de giras."
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion en condiciones reales de campo para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+  },
+  {
+    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "title": "Giras",
+    "section": "Trabajo de campo para la investigacion guiada",
+    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
+  },
+  {
+    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "title": "Giras",
+    "section": "Expectativas de trabajo en campo para el proyecto semestral",
+    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
   },
   {
     "objectID": "index.html",
@@ -147,18 +168,18 @@
     "text": "Enfoque del curso\nEl laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados."
   },
   {
-    "objectID": "index.html#material-disponible-ahora",
-    "href": "index.html#material-disponible-ahora",
+    "objectID": "index.html#programa-del-curso",
+    "href": "index.html#programa-del-curso",
     "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Material disponible ahora",
-    "text": "Material disponible ahora\nEl programa del curso ya está disponible en la sección de Programa."
+    "section": "Programa del curso",
+    "text": "Programa del curso\nEl programa del curso ya está disponible en la sección de Programa."
   },
   {
-    "objectID": "index.html#navegación",
-    "href": "index.html#navegación",
+    "objectID": "index.html#fechas-importantes",
+    "href": "index.html#fechas-importantes",
     "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Navegación",
-    "text": "Navegación\nUse el menu superior para navegar entre secciones. La estructura ya esta preparada para agregar contenidos sin reorganizar archivos existentes de otros cursos."
+    "section": "Fechas importantes",
+    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
   },
   {
     "objectID": "lectures/index.html",
