@@ -1,0 +1,25 @@
+# Quarto temporary files
+_files/
+_cache/
+_site/
+/.quarto/
+
+# R / Python
+.Rproj.user/
+.Rhistory
+.RData
+.Rda
+__pycache__/
+*.pyc
+.env
+venv/
+env/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

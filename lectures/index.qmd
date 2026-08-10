@@ -1,0 +1,7 @@
+---
+title: "Clases"
+---
+
+## Presentaciones del curso
+
+Esta seccion queda lista para agregar clases y presentaciones en Quarto.

@@ -1,0 +1,27 @@
+---
+title: "Laboratorio de Ecologia General B-0305"
+subtitle: "II Ciclo 2026"
+author: "Universidad de Costa Rica"
+date: "10 agosto 2026"
+---
+
+## Bienvenido
+
+Este sitio concentra los materiales del curso **Laboratorio de Ecología General B-0305**.
+
+Aquí se irán publicando:
+
+- **Clases** - presentaciones y guías de apoyo
+- **Laboratorios** - protocolos y actividades prácticas
+
+## Enfoque del curso
+
+El laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados.
+
+## Material disponible ahora
+
+El programa del curso ya está disponible en la sección de [Programa](programa/index.qmd).
+
+## Navegación
+
+Use el menu superior para navegar entre secciones. La estructura ya esta preparada para agregar contenidos sin reorganizar archivos existentes de otros cursos.

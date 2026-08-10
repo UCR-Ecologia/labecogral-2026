@@ -1,0 +1,7 @@
+---
+title: "Laboratorios"
+---
+
+## Guias de laboratorio
+
+Esta seccion queda lista para agregar protocolos y actividades practicas.

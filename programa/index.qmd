@@ -1,0 +1,393 @@
+---
+title: "B-0305 Laboratorio de Ecología General"
+subtitle: "Programa del curso"
+author: "Universidad de Costa Rica"
+date: "2026"
+format:
+  html:
+    toc: true
+    number-sections: false
+---
+
+[Programa en PDF](../Programa%20B-305%20Lab%20Ecologia%20General%202026%20version%201.docx-1.pdf)
+
+## Información General
+
+| Ciclo en que se imparte:      | II \- 2026                                                                                                                                   |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| Créditos:                     | 2                                                                                                                                            |
+| Asistencia:                   | Obligatoria                                                                                                                                  |
+| Requisitos:                   | XS-301, B-0218, B-0239                                                                                                                       |
+| Correquisitos:                | Ecología General B-0304                                                                                                                      |
+| Horas lectivas:               | 3 horas (viernes de 9:00 am a 11:50 am)                                                                                                      |
+| Aulas:                        | 110 y 280                                                                                                                                    |
+| Profesores:                   | Dr. Gerardo Avalos y Dr. Teofil Nakov.                                                                                                       |
+| Asistentes:                   | Jordi Jiménez, Valeria Castro, David Campos, Esteban Fuentes, Naidely Vidaurre.                                                              |
+| Modalidad:                    | Bajo virtual                                                                                                                                 |
+| Horas de consulta a convenir: | Gerardo Avalos [gerardo.avalos@ucr.ac.cr](mailto:gerardo.avalos@ucr.ac.cr) Teo Nakov [teofil.nakov@ucr.ac.cr](mailto:teofil.nakov@ucr.ac.cr) |
+| Cuenta de email del curso:    | [ucr.eco.lab@gmail.com](mailto:ucr.eco.lab@gmail.com)                                                                                        |
+
+## Introducción
+
+La ecología es una ciencia integradora que estudia las interacciones entre los organismos y su ambiente, así como los procesos que determinan la distribución, abundancia y diversidad de la vida en la Tierra. Debido a que estas interacciones tienen lugar simultáneamente a múltiples escalas (desde individuos hasta ecosistemas), la ecología requiere combinar observación, experimentación, análisis cuantitativo e interpretación crítica de la evidencia científica.
+
+El conocimiento ecológico se construye mediante el método científico. La observación de patrones naturales conduce al planteamiento de preguntas que pueden responderse mediante hipótesis, predicciones y diseños de muestreo apropiados. La recolección sistemática de datos, su análisis estadístico y la interpretación de los resultados permiten evaluar dichas hipótesis y generar nuevo conocimiento acerca del funcionamiento de los sistemas naturales. Las preguntas surgen de observaciones cuya explicación no es inicialmente evidente, ya que requiere de un proceso repetitivo e inquisitivo de aplicación del método científico.
+
+Por esta razón, el laboratorio constituye el componente práctico del curso de Ecología General. Su propósito no es únicamente ilustrar conceptos vistos en las clases teóricas, sino desarrollar las competencias necesarias para planificar, ejecutar, analizar y comunicar investigaciones ecológicas. Durante el semestre, las personas estudiantes recorrerán todas las etapas del proceso científico, desde la formulación de preguntas hasta la presentación de resultados, utilizando herramientas de campo, técnicas de muestreo, análisis estadísticos y literatura científica como apoyo para la toma de decisiones.
+
+## Filosofía del curso
+
+Este laboratorio adopta un enfoque de **aprendizaje basado en competencias** e **indagación científica**. El objetivo es que cada estudiante experimente de forma integral el trabajo de un profesional en ecología. En lugar de limitarse a una sola tarea, desarrollará competencias clave en todo el ciclo de investigación: desde la formulación de preguntas científicas y el diseño experimental, hasta el muestreo de campo, análisis de datos y comunicación de conclusiones basadas en evidencia.
+
+Las primeras semanas se dedican a la observación de patrones naturales, la formulación de preguntas e hipótesis y el diseño de protocolos de muestreo. Posteriormente, las personas estudiantes implementan dichos protocolos mediante trabajo de campo, organizan y verifican la calidad de los datos recolectados, realizan análisis estadísticos apropiados e interpretan sus resultados a la luz de la literatura científica. Finalmente, comunican sus hallazgos mediante reportes escritos breves y presentaciones orales, además de pósters.
+
+A diferencia de un laboratorio basado en prácticas independientes, este curso desarrolla investigaciones que evolucionan a lo largo de varias semanas. Este enfoque permite comprender cómo cada etapa del método científico depende de las anteriores y favorece la adquisición progresiva de competencias de investigación que son necesarias para el trabajo real de las personas dedicadas a la Ecología. Las prácticas guiadas realizadas durante la primera mitad del semestre sirven como modelo para que, posteriormente, las personas estudiantes diseñen y ejecuten con mayor autonomía las prácticas de la segunda mitad del semestre, y, por consiguiente, su propio proyecto semestral de investigación.
+
+La evaluación del curso se centra tanto en el proceso de investigación como en los productos generados. Para documentar dicho proceso, cada estudiante mantendrá una **bitácora individual** de investigación y cada grupo una **bitácora grupal** de investigación. Estas bitácoras funcionarán como un registro continuo de observaciones, decisiones metodológicas, actividades de campo, análisis de datos e interpretaciones realizadas durante el semestre, a fin de permitir evidenciar el desarrollo progresivo de las competencias científicas. Los reportes científicos continúan siendo una herramienta fundamental para desarrollar habilidades de comunicación escrita; sin embargo, también se evalúa el pensamiento crítico y la capacidad individual para tomar decisiones metodológicas, justificar procedimientos, analizar evidencia y resolver problemas durante el desarrollo de la investigación.
+
+## Objetivo general
+
+Desarrollar en las personas estudiantes las competencias necesarias para plantear, diseñar, ejecutar, analizar y comunicar investigaciones ecológicas de campo y laboratorio, aplicando el método científico para responder preguntas sobre los factores que determinan la distribución, abundancia e interacciones de los organismos en ecosistemas tropicales.
+
+## Objetivos específicos
+
+Al finalizar el curso, la persona estudiante será capaz de:
+
+1. Formular preguntas de investigación ecológica a partir de observaciones realizadas en el campo y de información proveniente de la literatura científica.
+2. Elaborar hipótesis biológicas y derivar predicciones comprobables que puedan evaluarse mediante observaciones o experimentos.
+3. Diseñar protocolos de muestreo apropiados para responder preguntas ecológicas, identificando variables independientes, dependientes y de control.
+4. Identificar y minimizar fuentes de sesgo, confusión y pseudorreplicación en investigaciones ecológicas.
+5. Utilizar correctamente el equipo básico de investigación ecológica para obtener mediciones confiables de variables bióticas y abióticas.
+6. Aplicar técnicas de muestreo en el campo siguiendo protocolos estandarizados y criterios de seguridad.
+7. Organizar, documentar y verificar la calidad de bases de datos ecológicas antes de su análisis.
+8. Seleccionar y aplicar métodos estadísticos básicos para analizar datos ecológicos e interpretar sus resultados dentro de un contexto biológico.
+9. Comunicar resultados científicos mediante reportes escritos y presentaciones orales siguiendo el formato de publicaciones científicas.
+10. Trabajar colaborativamente en proyectos de investigación demostrando responsabilidad, ética científica y respeto por el ambiente.
+
+## Competencias del curso
+
+Las actividades del laboratorio están organizadas para desarrollar progresivamente las siguientes competencias.
+
+### Competencia 1. Observación científica
+
+La persona estudiante reconoce patrones ecológicos mediante observaciones sistemáticas y distingue entre observaciones objetivas e interpretaciones.
+
+**Resultados de aprendizaje**
+
+- Describe patrones ecológicos utilizando lenguaje científico.
+- Registra observaciones de manera sistemática en una bitácora científica utilizando criterios estandarizados.
+- Identifica posibles factores que explican un patrón observado.
+- Identifica patrones que su experimento sí resolvió y que están apoyados por la evidencia, versus patrones y preguntas que deben resolverse en el futuro mediante el diseño de experimentos adicionales.
+
+### Competencia 2. Formulación de preguntas e hipótesis
+
+La persona estudiante transforma observaciones ecológicas en preguntas científicas, hipótesis y predicciones comprobables.
+
+**Resultados de aprendizaje**
+
+- Formula preguntas claras y medibles.
+- Propone hipótesis biológicamente fundamentadas.
+- Deriva predicciones consistentes con la hipótesis.
+- Distingue claramente entre una hipótesis y una predicción.
+
+### Competencia 3. Diseño experimental
+
+La persona estudiante diseña investigaciones ecológicas apropiadas para responder una pregunta científica.
+
+**Resultados de aprendizaje**
+
+- Identifica variables independientes y dependientes.
+- Reconoce posibles variables de confusión.
+- Selecciona unidades experimentales o unidades de muestreo.
+- Justifica el método de muestreo seleccionado de acuerdo con la pregunta, las hipótesis y predicciones, y la escala o tamaño del organismo.
+
+### Competencia 4. Trabajo de campo
+
+La persona estudiante implementa protocolos de investigación utilizando equipo científico y procedimientos estandarizados.
+
+**Resultados de aprendizaje**
+
+- Utiliza correctamente instrumentos de medición, o los adapta cuando estos sean escasos.
+- Registra datos, observaciones complementarias y limitaciones metodológicas de forma precisa en su bitácora y en las bases de datos del proyecto.
+- Sigue protocolos estandarizados.
+- Trabaja de manera segura y ética.
+- Entiende las limitaciones metodológicas asociadas al uso de equipo de campo y diseña su experimento de acuerdo con estas limitaciones.
+
+### Competencia 5. Gestión de datos
+
+La persona estudiante organiza bases de datos reproducibles y verifica la calidad de la información recolectada.
+
+**Resultados de aprendizaje**
+
+- Diseña matrices de datos y las codifica apropiadamente.
+- Codifica eficientemente las variables en función de los análisis estadísticos y del software utilizado.
+- Detecta errores.
+- Documenta metadatos y decisiones relacionadas con la organización de datos en la bitácora grupal de investigación.
+- Corrige inconsistencias justificadamente.
+- Comparte bases de datos en grupo y establece protocolos para editarlas.
+
+### Competencia 6. Análisis e interpretación
+
+La persona estudiante analiza datos ecológicos utilizando herramientas estadísticas apropiadas e interpreta los resultados en un contexto ecológico.
+
+**Resultados de aprendizaje**
+
+- Selecciona pruebas estadísticas adecuadas.
+- Interpreta resultados biológicamente.
+- Reconoce las limitaciones del estudio.
+- Propone explicaciones alternativas.
+- Integra información proveniente de literatura científica para interpretar resultados y contextualizar los hallazgos.
+- Reconoce las conclusiones estrictamente apoyadas en la evidencia generada por el experimento versus preguntas adicionales que requieran de más experimentación.
+
+### Competencia 7. Comunicación científica
+
+La persona estudiante comunica investigaciones utilizando formatos científicos escritos y orales.
+
+**Resultados de aprendizaje**
+
+- Documenta y comunica el proceso científico mediante bitácoras de investigación, reportes científicos y presentaciones orales.
+- Elabora figuras y tablas informativas.
+- Presenta resultados oralmente.
+- Puede generar un abstract gráfico y un póster.
+- Defiende conclusiones utilizando evidencia científica.
+
+## Metodología
+
+**Secuencia de investigaciones del curso**.
+
+Las actividades prácticas del laboratorio están organizadas como una secuencia progresiva de investigaciones que permiten desarrollar las competencias científicas de manera gradual. Se trabajará en grupos de un máximo de cinco personas, aunque gran parte del trabajo será individual. Como parte del desarrollo de las competencias científicas, cada estudiante mantendrá una **bitácora individual** de investigación y cada grupo una **bitácora grupal** de investigación. Las bitácoras serán actualizadas semanalmente durante el desarrollo de las prácticas y podrán ser revisadas periódicamente por docentes y asistentes para brindar retroalimentación y evaluar el progreso de las competencias científicas. La bitácora individual permitirá documentar observaciones, razonamientos, decisiones metodológicas, interpretaciones y reflexiones personales sobre el desarrollo de la investigación. La bitácora grupal funcionará como el registro oficial del proyecto e incluirá las decisiones consensuadas del grupo, protocolos, bases de datos, análisis, figuras y productos de comunicación científica. Ambas bitácoras se construirán progresivamente durante el semestre y constituirán una parte fundamental de la evaluación del proceso de investigación.
+
+Durante la **investigación guiada**, las personas estudiantes aprenden y practican cada una de las etapas del proceso científico mediante una investigación altamente guiada por las personas docentes. Esta primera experiencia tiene como propósito construir las bases conceptuales y metodológicas necesarias para desarrollar un estudio ecológico completo.
+
+Posteriormente, durante la **investigación independiente**, las personas estudiantes aplican las competencias desarrolladas en la primera investigación con un mayor grado de autonomía. Los estudiantes identificarán su propio sistema de estudio, por lo que deberán tomar más decisiones relacionadas con la formulación de preguntas, el diseño metodológico, la selección de variables, las limitaciones logísticas del trabajo en el campo, el análisis de datos y la interpretación de resultados. De esta manera, la segunda investigación funciona como una transición entre una experiencia de aprendizaje guiada y el trabajo independiente que se desarrolla simultáneamente para el proyecto semestral.
+
+Finalmente, en el **proyecto semestral de investigación**, las personas estudiantes desarrollan una investigación original en parejas con un nivel significativamente mayor de independencia. En esta etapa deberán integrar todas las competencias adquiridas durante el curso para plantear, diseñar, ejecutar, analizar y comunicar una investigación ecológica propia, asumiendo de manera autónoma las responsabilidades y decisiones asociadas al trabajo científico. La bitácora del proyecto será evaluada considerando la continuidad de los registros, la calidad de la documentación metodológica, la reflexión crítica sobre problemas encontrados, la organización de la información y la evidencia del progreso de la investigación.
+
+A medida que se desarrollen las competencias durante las investigaciones 1 y 2, se espera que las personas apliquen estas competencias progresivamente al desarrollo de su proyecto semestral. De esta forma, el proyecto reproduce la secuencia lógica del método científico y la progresión del curso, desde la observación y formulación de preguntas hasta el diseño experimental, el muestreo, el análisis de datos y la comunicación de resultados. Una vez adquiridas las bases conceptuales y técnicas necesarias, se formaliza el diseño de la investigación y se inicia su ejecución.
+
+Durante la fase de investigación guiada, cada pareja explora sistemas naturales, formula preguntas, desarrolla hipótesis y predicciones, y construye progresivamente los componentes metodológicos de su investigación semestral. En la segunda mitad del semestre, las parejas implementan el proyecto, recolectan y analizan datos, interpretan los resultados y comunican sus hallazgos mediante productos científicos escritos y orales. Cada pareja deberá realizar al menos **tres eventos independientes de trabajo de campo**, o un esfuerzo equivalente de laboratorio, previamente coordinados con los docentes y asistentes. Todas las actividades realizadas, condiciones de muestreo, modificaciones metodológicas y observaciones relevantes deberán documentarse en las bitácoras del proyecto.
+
+**Las dos investigaciones siguen el mismo flujo de trabajo. La diferencia está en el nivel de autonomía de las personas estudiantes.**
+
+| Investigación guiada           | Investigación independiente           |
+| ------------------------------ | ------------------------------------- |
+| Sistema propuesto por docentes | Sistema escogido por el grupo         |
+| Alta guía                      | Guía limitada                         |
+| Métodos sugeridos              | Métodos seleccionados por estudiantes |
+| Mayor retroalimentación        | Mayor autonomía                       |
+| Énfasis en practicar el flujo. | Énfasis en aplicar el flujo.          |
+
+### Desarrollo semanal de las investigaciones
+
+Las dos investigaciones siguen el mismo flujo de trabajo durante seis semanas. En la **investigación guiada** (semanas 1-6), el sistema de estudio es propuesto por las personas docentes y las actividades se realizan con mayor acompañamiento. En la **investigación independiente** (semanas 7-12), cada grupo selecciona su sistema de estudio y asume mayor responsabilidad sobre las decisiones científicas y metodológicas.
+
+**Semanas 1 y 7. Observación, pregunta, hipótesis y predicciones.**
+
+Los grupos realizan observaciones preliminares del sistema de estudio, identifican patrones ecológicos y formulan una pregunta de investigación. A partir de esta pregunta desarrollan una hipótesis biológica y predicciones comprobables. Las observaciones y razonamientos iniciales se documentan en las bitácoras individuales.
+
+**Semanas 2 y 8. Diseño de la investigación.**
+
+Los grupos diseñan una estrategia para poner a prueba sus hipótesis. Definen variables predictoras y respuesta, unidades de muestreo, métodos y equipo necesario, y consideran posibles fuentes de sesgo, pseudorreplicación y limitaciones del diseño. Las decisiones metodológicas y su justificación se documentan en la bitácora grupal.
+
+**Semanas 3 y 9. Recolección de datos.**
+
+Los grupos implementan el diseño y recolectan los datos siguiendo protocolos estandarizados. Registran datos, metadatos, condiciones ambientales, observaciones relevantes y cualquier desviación del protocolo en las bitácoras correspondientes.
+
+**Semanas 4 y 10. Gestión, control de calidad y exploración de datos.**
+
+Los grupos organizan y documentan sus bases de datos, revisan errores, inconsistencias, valores atípicos, variables y unidades, y registran las decisiones tomadas durante la depuración. Posteriormente, realizan análisis exploratorios mediante tablas y figuras para evaluar la calidad de los datos e identificar patrones preliminares.
+
+**Semanas 5 y 11. Análisis e interpretación.**
+
+Los grupos seleccionan y justifican métodos estadísticos apropiados para evaluar sus predicciones. Interpretan los resultados considerando la evidencia estadística, su significado biológico, las limitaciones del estudio y posibles explicaciones alternativas. Los resultados se contrastan con literatura científica relevante y se preparan las figuras y cuadros finales.
+
+**Semanas 6 y 12. Comunicación y defensa.**
+
+Cada grupo comunica su investigación mediante una presentación oral de 10 minutos que resume la pregunta, hipótesis, predicciones, diseño, resultados y conclusiones. Los estudiantes responden preguntas y defienden sus decisiones e interpretaciones utilizando evidencia. Al finalizar cada investigación, se entregan las bitácoras correspondientes y los productos de comunicación establecidos.
+
+### Proyecto semestral de investigación
+
+Como eje integrador del curso, las personas estudiantes desarrollarán en parejas un proyecto de investigación ecológica original a lo largo del semestre. El propósito del proyecto es integrar y aplicar las competencias desarrolladas durante las investigaciones guiadas e independientes, permitiendo que las personas estudiantes experimenten de manera auténtica todas las etapas del proceso científico. A diferencia de un proyecto tradicional diseñado desde el inicio del semestre, el proyecto semestral se desarrolla de forma progresiva y acompaña la secuencia de adquisición de competencias del curso. Durante las primeras semanas, las parejas exploran posibles sistemas de estudio, registran observaciones, formulan preguntas preliminares e identifican posibles hipótesis y predicciones. Conforme avanzan las investigaciones 1 y 2, incorporan gradualmente los conocimientos y herramientas adquiridos en diseño experimental, técnicas de muestreo, gestión de datos y análisis estadístico al desarrollo de su propio proyecto.
+
+**Propuesta de investigación**. Durante la investigación independiente, una vez desarrolladas las competencias necesarias para diseñar una investigación de manera fundamentada, cada pareja presentará una propuesta formal del proyecto. Esta propuesta incluirá título, introducción, justificación, pregunta de investigación, hipótesis, predicciones, diseño metodológico, variables de estudio, protocolo de muestreo, cronograma y referencias bibliográficas relevantes. La propuesta deberá demostrar que las decisiones metodológicas están justificadas por la pregunta de investigación y respaldadas por la literatura científica. La retroalimentación servirá para refinar el diseño antes de iniciar la ejecución completa del proyecto.
+
+**Desarrollo e informe de avance**. Posteriormente, las parejas implementarán el proyecto y realizarán la recolección de datos. Cada proyecto deberá incluir al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio, previamente coordinado con las personas docentes y asistentes. A mitad del proceso se presentará un informe de avance que documente el progreso de la investigación, los datos recolectados hasta ese momento, la calidad de la información obtenida, las modificaciones metodológicas realizadas y los ajustes realizados al cronograma o al diseño original. Este informe permitirá evaluar el desarrollo del proyecto y ofrecer retroalimentación antes de la fase final de análisis e interpretación.
+
+**Reporte final y presentación**. Durante las últimas semanas del semestre, las parejas completarán los análisis estadísticos, interpretarán los resultados y elaborarán los productos finales de comunicación científica. El proyecto culminará con un reporte científico escrito y una presentación oral. El reporte deberá seguir el formato científico establecido en el curso. La presentación oral se realizará en un simposio según las fechas establecidas en el cronograma y tendrá como objetivo comunicar los principales hallazgos de la investigación y defender las decisiones metodológicas y conclusiones derivadas del estudio.
+
+**Bitácora del proyecto**. Desde el inicio del semestre, cada pareja mantendrá una bitácora del proyecto semestral. Esta funcionará como un registro continuo del desarrollo de la investigación e incluirá observaciones iniciales, formulación de preguntas, hipótesis, decisiones metodológicas, cambios al diseño, actividades de campo, organización de datos, análisis preliminares y reflexiones sobre el proceso de investigación. La bitácora constituye la evidencia documental de la progresión del proyecto y de la aplicación gradual de las competencias desarrolladas durante las Investigaciones 1 y 2. Por esta razón, será considerada un componente fundamental de la evaluación del proyecto semestral.
+
+## Cronograma - Investigaciones Cortas
+
+|                                 | Bitácora Individual                                                                                                             | Bitácora Grupal                                                                                 |                                                                                                                                                                                 |
+| :-----------------------------: | ------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|    **Investigación guiada**     |                                                                                                                                 |                                                                                                 | **Propósito pedagógico**                                                                                                                                                        |
+|                1                | Registro de observaciones, patrón identificado, pregunta, hipótesis y predicción, explicando la relación entre estos elementos. | Pregunta de investigación, hipótesis y predicciones consensuadas.                               | Evaluar la transformación de observaciones en preguntas científicas.                                                                                                            |
+|                2                | Justificación e identificación de variables, unidad de muestreo, posible sesgo y riesgo de pseudorreplicación.                  | Protocolo de investigación completo (diseño, variables, equipo y muestreo).                     | Desarrollar razonamiento metodológico más que definiciones aisladas.                                                                                                            |
+|                3                | Registro reflexivo de campo: dificultades, fuentes de error, observaciones inesperadas y calidad de datos.                      | Base de datos preliminar consolidada en línea.                                                  | Reflexión sobre la producción de datos. Generar consenso en entrada y codificación de datos.                                                                                    |
+|                4                | Figura exploratoria hecha a mano alzada acompañada por interpretación breve y discusión de lo que puede y no puede concluirse.  | Base de datos depurada, **diccionario de variables** y figuras exploratorias.                   | Fortalecer la distinción entre observación y conclusión a partir de la evidencia. Generar la capacidad de elaborar figuras claras y pertinentes.                                |
+|                5                | Párrafo corto de síntesis científica con resultado principal, evidencia y significado biológico.                                | Análisis estadístico final, figuras finales y tabla de resultados e interpretación consensuada. | Integrar resultados e interpretación en una narrativa científica. Desarrollar la habilidad estadística.                                                                         |
+|                6                | Participación en la defensa oral respondiendo preguntas sobre la investigación.                                                 | Presentación PowerPoint de 10 minutos.                                                          | Desarrollar la capacidad de organizar la información para una audiencia y de enfrentar preguntas.                                                                               |
+| **Investigación independiente** |                                                                                                                                 |                                                                                                 |                                                                                                                                                                                 |
+|                7                | Registro de observaciones y justificación ecológica de la pregunta propuesta.                                                   | Sistema de estudio, justificación, pregunta, hipótesis y predicciones.                          | Desarrollar autonomía en la generación de preguntas.                                                                                                                            |
+|                8                | Revisión crítica del diseño de otro grupo mediante rúbrica y retroalimentación argumentada.                                     | Protocolo completo de investigación.                                                            | Estimular el proceso real de revisión por pares y la evaluación crítica y respetuosa de la investigación científica.                                                            |
+|                9                | Reflexión crítica sobre ejecución del protocolo, decisiones metodológicas y limitaciones encontradas.                           | Base de datos preliminar.                                                                       | Estimular la adaptación de la investigación en condiciones reales de campo.                                                                                                     |
+|               10                | Figura exploratoria a mano alzada con interpretación del patrón y necesidades de información adicional.                         | Base de datos final depurada y documentada.                                                     | Desarrollar competencias de visualización, inferencias, y análisis de datos exploratorio.                                                                                       |
+|               11                | Discusión corta con interpretación, limitaciones, explicación alternativa, y preguntas para desarrollar en el futuro.           | Análisis estadístico final y figuras definitivas.                                               | Estimular el desarrollo del pensamiento crítico y consideración de hipótesis alternativas. Favorecer la especulación razonable para generar futuras preguntas de investigación. |
+|               12                | Defensa oral individual durante la presentación.                                                                                | Presentación PowerPoint y reporte con literatura científica consultada.                         |                                                                                                                                                                                 |
+
+## Giras, trabajo de campo y/o laboratorio
+
+El trabajo de campo constituye una parte fundamental del curso y está integrado al desarrollo progresivo de las investigaciones. Las actividades de campo incluyen trabajo dentro y cerca del campus universitario, una gira de tres días a la Estación Biológica La Selva y el trabajo de campo asociado al proyecto semestral.
+
+**Investigación guiada.** El trabajo de campo se realizará principalmente dentro del campus universitario y en sitios cercanos. Estas actividades permitirán practicar métodos de muestreo, uso de equipo, registro de datos y metadatos, y aplicación de protocolos bajo la supervisión directa de docentes y asistentes.
+
+**Investigación independiente.** La recolección de datos se realizará durante una gira de tres días a la Estación Biológica La Selva, los días **16, 17 y 18 de octubre de 2026**. Durante la gira, los grupos implementarán los diseños de investigación desarrollados previamente y serán responsables de organizar el muestreo, recolectar y documentar los datos y adaptar sus protocolos cuando las condiciones de campo lo requieran.
+
+**Proyecto semestral.** El proyecto semestral es el eje integrador del curso y permite que las personas estudiantes experimenten de manera auténtica el proceso de investigación ecológica, con sus desafíos metodológicos, de diseño y colecta de datos. Su desarrollo sigue una secuencia progresiva que acompaña la adquisición de competencias científicas a lo largo del semestre. La progresión didáctica del proyecto está articulada con las investigaciones 1 y 2, de modo que las competencias y herramientas que se adquieren en estas actividades se incorporan gradualmente al diseño y ejecución del proyecto semestral.
+
+La participación en las giras y actividades de campo forma parte del desarrollo de las competencias del curso y se rige por las disposiciones de asistencia indicadas en este programa.
+
+## Evaluación
+
+La evaluación del curso tendrá un valor total de **100 puntos** y estará distribuida entre las actividades desarrolladas durante el laboratorio y el proyecto semestral. La **Investigación guiada** tendrá un valor de **30 puntos**, de los cuales **18 puntos corresponden a entradas individuales** y **12 puntos a entradas grupales** registrados en las bitácoras individuales y grupales. La **Investigación independiente**, desarrollada con un sistema de estudio seleccionado por cada grupo, tendrá un valor de **35 puntos**, distribuidos en **21 puntos de evaluación individual** y **14 puntos de evaluación grupal**, igualmente registrados en las bitácoras individuales y grupales. Finalmente, el **proyecto semestral de investigación en parejas** tendrá un valor de **35 puntos** y permitirá integrar y aplicar de manera autónoma las competencias desarrolladas a lo largo del curso. De esta forma, la evaluación busca equilibrar el trabajo colaborativo con el trabajo individual, asegurando que cada estudiante demuestre competencia en todas las etapas del proceso de investigación ecológica.
+
+### Asistencia
+
+La participación en **TODAS** las actividades del curso (clases, laboratorios, prácticas de campo) constituye un componente esencial, ya que permite desarrollar competencias que no podrían adquirirse plenamente mediante actividades no presenciales. Por esta razón, **la asistencia es** **obligatoria** a todas las clases, giras, y en general, a todas las actividades de muestreo realizadas en ecosistemas naturales, incluyendo aquellas que se desarrollen dentro del Campus Universitario.
+
+Estas actividades forman parte de los objetivos de aprendizaje del curso, particularmente en lo relacionado con la aplicación de métodos de muestreo, el uso de equipo de investigación ecológica, la recopilación de datos en condiciones reales y la toma de decisiones durante el trabajo de campo.
+
+Las ausencias a actividades de campo únicamente podrán justificarse de acuerdo con los criterios establecidos en el Artículo 24 del Reglamento del Régimen Académico Estudiantil. Se podrán justificar hasta dos ausencias durante el semestre; una tercera ausencia implica la pérdida del curso. Se considerará llegada tardía cuando la persona estudiante se incorpore 30 minutos o más después del inicio de una actividad programada. Dos llegadas tardías equivaldrán a una ausencia para efectos del control de asistencia. El control de asistencia debe firmarse durante los primeros 15 min de cada sesión.
+
+Las observaciones, actividades realizadas, trabajo de campo y decisiones metodológicas deberán quedar registradas oportunamente en las bitácoras correspondientes, las cuales complementan la evidencia de participación y aprendizaje en las actividades presenciales.
+
+### Investigación guiada (30 puntos)
+
+| Semana | Individual | Grupal | Total |
+| :----: | :--------: | :----: | :---: |
+|   1    |     3      |   2    |   5   |
+|   2    |     3      |   2    |   5   |
+|   3    |     3      |   2    |   5   |
+|   4    |     3      |   2    |   5   |
+|   5    |     3      |   2    |   5   |
+|   6    |     3      |   2    |   5   |
+| Total  |     18     |   12   |  30   |
+
+### Investigación independiente (35 puntos)
+
+| Semana | Individual | Grupal | Total |
+| :----: | :--------: | :----: | :---: |
+|   7    |     3      |   2    |   5   |
+|   8    |     3      |   2    |   5   |
+|   9    |     3      |   2    |   5   |
+|   10   |     3      |   2    |   5   |
+|   11   |     4      |   3    |   7   |
+|   12   |     5      |   3    |   8   |
+| Total  |     21     |   14   |  35   |
+
+### Evaluación proyecto semestral
+
+La evaluación del reporte escrito del proyecto semestral se hará de la siguiente forma:
+
+| Sección                  | Puntos |
+| ------------------------ | ------ |
+| Título                   | 2      |
+| Resumen                  | 5      |
+| Palabras claves          | 1      |
+| Introducción             | 12     |
+| Hipótesis y predicciones | 10     |
+| Materiales y métodos     | 15     |
+| Resultados               | 20     |
+| Discusión                | 25     |
+| Revisión de literatura   | 10     |
+| Total                    | 100    |
+
+El proyecto de investigación en parejas (35 puntos de la nota final) será evaluado de la siguiente forma:
+
+| Sección             | Puntos |
+| ------------------- | :----: |
+| Propuesta a         |   10   |
+| Informe de avance b |   10   |
+| Reporte             |   45   |
+| Bitácora            |   15   |
+| Presentación oral   |   20   |
+| Total               |  100   |
+
+a La propuesta se evaluará de la siguiente manera:
+
+| Sección                                                                                                            | Puntos |
+| :----------------------------------------------------------------------------------------------------------------- | :----: |
+| Título                                                                                                             |   5    |
+| Introducción (incluye marco teórico, justificación, hipótesis y predicciones)                                      |   40   |
+| Materiales y métodos (incluye descripción del sitio de estudio, diseño experimental, equipo empleado y cronograma) |   50   |
+| Referencias                                                                                                        |   5    |
+| Total                                                                                                              |  100   |
+
+b El informe de avance se evaluará de la siguiente manera:
+
+| Ítem                                                                                                                                                                                                                                                       | Puntos |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
+| Las secciones de la propuesta con las correcciones añadidas. Indicar modificaciones realizadas a la propuesta original. Resumen de datos preliminares: el número de eventos de muestreo y cantidad de muestras de los datos recolectados hasta el momento. |   35   |
+| Bitácora                                                                                                                                                                                                                                                   |   20   |
+| Explicación de la matriz de datos Las modificaciones realizadas a la propuesta original Cronograma de trabajo faltante                                                                                                                                     |   45   |
+| Total                                                                                                                                                                                                                                                      |  100   |
+
+## Cronograma del Curso 2026
+
+| Semana (fecha)                  | Actividad teórica                                                                   | Actividad práctica                                                                                                                                 | Actividad proyecto semestral                                                                                                                                                           |
+| ------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Investigación guiada**        |                                                                                     |                                                                                                                                                    |                                                                                                                                                                                        |
+| 14 ago                          | Introducción al curso. Observación científica. Preguntas, hipótesis y predicciones. |                                                                                                                                                    |                                                                                                                                                                                        |
+| 21 ago                          | Diseño experimental y muestreo ecológico. Variables y pseudorreplicación.           | Observación del sistema propuesto por los docentes. Generación de preguntas, hipótesis y predicciones. Diseño del estudio y protocolo de muestreo. | Formación de parejas de investigación. Inicio de la bitácora del proyecto semestral. Exploración de intereses, observaciones y preguntas preliminares de posibles sistemas de estudio. |
+| 28 ago                          | Trabajo de campo y recolección de datos. Calidad de datos.                          | Colecta de datos en el campus y alrededores.                                                                                                       | Exploración de posibles preguntas y sistemas de estudio anotados en la bitácora.                                                                                                       |
+| 4 set                           | Gestión de datos, metadatos y control de calidad.                                   | Construcción y depuración de bases de datos.                                                                                                       | Definición de la pregunta central, hipótesis y predicciones preliminares en la bitácora.                                                                                               |
+| 11 set                          | Análisis exploratorio y visualización de datos.                                     | Figuras exploratorias y evaluación de supuestos.                                                                                                   | Exploración de posibles diseños para responder la pregunta de investigación.                                                                                                           |
+| 18 set                          | Estadística aplicada e interpretación ecológica.                                    | Análisis de datos, resultados y preparación de presentación.                                                                                       |                                                                                                                                                                                        |
+| 25 set                          | Semana de bienestar UCR, no hay actividades.                                        |                                                                                                                                                    |                                                                                                                                                                                        |
+| **Investigación independiente** |                                                                                     |                                                                                                                                                    |                                                                                                                                                                                        |
+| 2 oct                           | Selección de sistemas ecológicos y formulación autónoma de preguntas.               | Observación del sistema seleccionado por cada grupo. En la segunda parte se hacen las presentaciones de la Investigación I, y retroalimentación.   | Exploración de posibles métodos de muestreo.                                                                                                                                           |
+| 9 oct                           | Diseño experimental avanzado.                                                       | Diseño metodológico y protocolo de trabajo.                                                                                                        | Entrega de propuesta del proyecto semestral, incluyendo pregunta, hipótesis, predicciones, variables, diseño, muestreo y cronograma.                                                   |
+| **16 oct**                      | **Gira La Selva: 16-18 de octubre**                                                 | **Recolección de datos.**                                                                                                                          | Discusión de retroalimentación con docentes y evaluación de la factibilidad metodológica. Registros en bitácora.                                                                       |
+| 23 oct                          | Organización de bases de datos y reproducibilidad.                                  | Depuración y documentación de bases de datos.                                                                                                      | Recolección de datos y ajustes menores al protocolo de trabajo.                                                                                                                        |
+| 30 oct                          | Visualización científica y análisis exploratorio.                                   | Elaboración de figuras exploratorias y evaluación de supuestos.                                                                                    | Actualización de la bitácora del proyecto y documentación del avance metodológico.                                                                                                     |
+| 6 nov                           | Selección de análisis estadísticos e interpretación de resultados.                  | Análisis, interpretación y revisión de literatura científica.                                                                                      | Elaboración de análisis preliminares, figuras y tablas.                                                                                                                                |
+| 13 nov                          | Comunicación científica. Construcción de argumentos basados en evidencia.           | Preparación de presentación oral y reporte.                                                                                                        | Elaboración de análisis preliminares, figuras y tablas. Entrega de informe de avance                                                                                                   |
+| 20 nov                          | Simposio de investigaciones cortas.                                                 | Presentaciones de la Investigación II.                                                                                                             | Aplicación de retroalimentación y correcciones finales.                                                                                                                                |
+| 27 nov                          | Presentaciones orales del proyecto semestral. Cierre del curso.                     | Presentaciones finales, discusión y reflexión sobre competencias desarrolladas.                                                                    | Reporte proyecto semestral se entrega el 4 de diciembre.                                                                                                                               |
+
+## Uso ético de herramientas de inteligencia artificial (IA)
+
+Las herramientas de inteligencia artificial pueden utilizarse como apoyo al proceso de aprendizaje, siempre que no sustituyan el trabajo intelectual de la persona estudiante. Debido a que uno de los objetivos centrales de este curso es desarrollar competencias científicas relacionadas con la observación, formulación de preguntas, desarrollo de hipótesis, diseño experimental, trabajo de campo, análisis de datos, interpretación de resultados y comunicación científica, no está permitido utilizar la IA para generar total o parcialmente tareas, reportes, discusiones, conclusiones, hipótesis, predicciones, preguntas de investigación, entradas de bitácora o cualquier otro producto evaluado del curso. Estos productos deben reflejar el razonamiento, observaciones, decisiones metodológicas e interpretaciones originales de las personas estudiantes.
+
+Sí se permite el uso de IA para mejorar la claridad, gramática, ortografía y estilo de la escritura; traducir textos; sugerir formas de organizar información; explicar conceptos ecológicos, estadísticos o metodológicos; apoyar la programación y depuración de código para análisis de datos; revisar el formato de citas y referencias; identificar literatura científica potencialmente relevante; generar palabras clave para búsquedas bibliográficas; y brindar retroalimentación sobre figuras, tablas, pósteres y presentaciones. No se permite la fabricación, modificación o manipulación de datos mediante IA ni la generación de registros de actividades que no hayan sido efectivamente realizadas.
+
+Toda información obtenida mediante herramientas de IA deberá ser verificada mediante fuentes científicas confiables y adecuadamente citadas cuando corresponda. La responsabilidad final sobre la exactitud de la información presentada y la autoría del trabajo recae exclusivamente en las personas estudiantes. Los docentes podrán solicitar bitácoras, versiones preliminares, bases de datos, análisis intermedios u otras evidencias del proceso de trabajo para verificar el desarrollo auténtico de las competencias científicas del curso las cuales deben desarrollarse durante el tiempo de laboratorio sin la intervención de IA.
+
+## Referencias
+
+Andrewartha, H. G. (1970). Introduction to the study of animal populations (2nd ed.). Chapman and Hall.
+
+Begon, M., Harper, J., & Townsend, C. (2006). Ecology: From individuals to ecosystems (4th ed.). Blackwell.
+
+Betts, M. G., Hadley, A. S., Frey, D. W., Frey, S. J., Gannon, D., Harris, S. H., & Zárrate‐Charry, D. (2021). When are hypotheses useful in ecology and evolution? Ecology and Evolution, 11(11), 5762-5776. https://doi.org/10.1002/ece3.7472
+
+Crawley, M. J. (2007). The R book. John Wiley.
+
+Farji-Brener, A. G. (2003). Uso correcto, parcial e incorrecto de los términos "hipótesis" y "predicciones" en ecología. Ecología Austral, 13(2), 223-227.
+
+Gotelli, N. J., & Ellison, A. M. (2004). A primer of ecological statistics (Vol. 1). Sinauer Associates.
+
+Krebs, C. J. (1999). Ecological methodology (2nd ed.). Benjamin Cummings. http://www.zoology.ubc.ca/~krebs/books.html
+
+Mittelbach, G. G., & McGill, B. J. (2019). Community ecology. Oxford University Press.
+
+Moreno, C. E. (2001). Manual de métodos para medir la biodiversidad. Universidad Veracruzana. https://www.researchgate.net/publication/304346666_Metodos_para_medir_la_biodiversidad
+
+Quinn, G. P., & Keough, M. J. (2002). Experimental design and data analysis for biologists. Cambridge University Press.
+
+Schimel, J. (2012). Writing science: How to write papers that get cited and proposals that get funded. Oxford University Press.
+
+Sutherland, W. J. (Ed.). (2006). Ecological census techniques: A handbook. Cambridge University Press. https://www.researchgate.net/publication/273070581_Ecological_Census_Techniques_A_Handbook
+
+Zar, J. H. (1999). Biostatistical analysis (4th ed.). Prentice Hall.
