@@ -137,7 +137,7 @@
     "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
     "title": "Metodo cientifico en ecologia",
     "section": "Hipotesis A: Muestreo pasivo",
-    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, aun sin cambios reales en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
+    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, incluso sin diferencias en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
   },
   {
     "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
@@ -151,42 +151,42 @@
     "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
     "title": "Metodo cientifico en ecologia",
     "section": "Hipotesis C: Colonizacion-extincion",
-    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar mayor recambio temporal de especies.\nSitios grandes deberian perder menos especies entre muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
+    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar menor persistencia temporal de especies.\nSitios grandes deberian mantener mas especies a traves de muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
   },
   {
     "objectID": "lectures/01-sci-method.html#que-datos-necesitamos",
     "href": "lectures/01-sci-method.html#que-datos-necesitamos",
     "title": "Metodo cientifico en ecologia",
     "section": "¿Que datos necesitamos?",
-    "text": "¿Que datos necesitamos?\n\n\narea de cada parche\nriqueza de especies por parche\nabundancia total y esfuerzo de muestreo\nindice de heterogeneidad de habitat\npresencia/ausencia en multiples fechas (recambio temporal)"
+    "text": "¿Que datos necesitamos?\n\n\narea de cada parche\nriqueza de especies por parche\nabundancia total y esfuerzo de muestreo\nindice de heterogeneidad de habitat\npresencia/ausencia en multiples fechas (persistencia temporal)"
   },
   {
     "objectID": "lectures/01-sci-method.html#evidencia-1-patron-observado",
     "href": "lectures/01-sci-method.html#evidencia-1-patron-observado",
     "title": "Metodo cientifico en ecologia",
     "section": "Evidencia 1: patron observado",
-    "text": "Evidencia 1: patron observado\n\n\n¿Que hipotesis favorece esta evidencia?\n\n\nFavorece varias (A, B o C). Aun no distingue mecanismo."
+    "text": "Evidencia 1: patron observado\n\n\n¿Que hipotesis favorece esta evidencia?\n\n\nFavorece varias A, B o C. No distingue mecanismo."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo-a",
-    "href": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo-a",
+    "objectID": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
+    "href": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
     "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 2: estandarizacion por muestreo (A)",
-    "text": "Evidencia 2: estandarizacion por muestreo (A)\n\n\nSi la pendiente cae mucho al estandarizar, aumenta soporte para hipotesis A."
+    "section": "Evidencia 2: estandarizacion por muestreo",
+    "text": "Evidencia 2: estandarizacion por muestreo\n\n\nSi la pendiente cae mucho al estandarizar, aumenta soporte para hipotesis A."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat-b",
-    "href": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat-b",
+    "objectID": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
+    "href": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
     "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 3: heterogeneidad de habitat (B)",
-    "text": "Evidencia 3: heterogeneidad de habitat (B)\n\n\nRelacion fuerte con heterogeneidad: evidencia coherente con hipotesis B."
+    "section": "Evidencia 3: heterogeneidad de habitat",
+    "text": "Evidencia 3: heterogeneidad de habitat\n\n\nRelacion fuerte con heterogeneidad: evidencia coherente con hipotesis B."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal-c",
-    "href": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal-c",
+    "objectID": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
+    "href": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
     "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 4: persistencia temporal (C)",
-    "text": "Evidencia 4: persistencia temporal (C)\n\n\nMenor perdida en sitios grandes: evidencia coherente con hipotesis C."
+    "section": "Evidencia 4: persistencia temporal",
+    "text": "Evidencia 4: persistencia temporal\n\n\nMayor persistencia en sitios grandes: evidencia coherente con hipotesis C."
   },
   {
     "objectID": "lectures/01-sci-method.html#evidencia-combinada",
@@ -207,49 +207,49 @@
     "href": "lectures/01-sci-method.html#evidencia-combinada-2",
     "title": "Metodo cientifico en ecologia",
     "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nEvidencia compatible con B y con un mecanismo de estabilidad temporal.\nLa heterogeneidad aumenta la riqueza, lo que apoya B. Además, se asocia con menor recambio temporal, lo que sugiere mayor estabilidad. Sin embargo, esto no apoya directamente C, porque C vinculaba la estabilidad con el área, no con la heterogeneidad.\n\n\n¿Hipótesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactúan?"
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nEvidencia compatible con B y C.\nLa heterogeneidad aumenta la riqueza, lo que apoya B. Ademas, la persistencia temporal aumenta en parches grandes, lo que apoya C.\n\n\n¿Hipotesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactuan?"
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
-    "href": "lectures/01-sci-method.html#evidencia-adicional-recambio-vs-heterogeneidad-b-c",
+    "objectID": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
+    "href": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
     "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia adicional: recambio vs heterogeneidad (B-C)",
-    "text": "Evidencia adicional: recambio vs heterogeneidad (B-C)\n\n\n\nMayor heterogeneidad se asocia con menor recambio.\nEsto sugiere que la heterogeneidad tambien mejora estabilidad, que no apoya hipotesis C directamente.\nC vinculaba la estabilidad con area, no con heterogeneidad."
+    "section": "Evidencia adicional: persistencia vs heterogeneidad (B-C)",
+    "text": "Evidencia adicional: persistencia vs heterogeneidad (B-C)\n\n\n\nMayor heterogeneidad se asocia con mayor persistencia.\nEsto sugiere que la heterogeneidad tambien puede mejorar la estabilidad, ademas de aumentar la riqueza.\nRecuerdense que hipotesis C vinculaba la persistencia con area, no con heterogeneidad."
   },
   {
     "objectID": "lectures/01-sci-method.html#evidencia-combinada-3",
     "href": "lectures/01-sci-method.html#evidencia-combinada-3",
     "title": "Metodo cientifico en ecologia",
     "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia gráfica rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
+    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
   },
   {
     "objectID": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
     "href": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
     "title": "Metodo cientifico en ecologia",
     "section": "¿Y si los datos no son claros?",
-    "text": "¿Y si los datos no son claros?\n\nMisma direccion de efecto, distinta precision.\n\n\n¿Interpretariamos estas dos figuras de la misma manera?"
+    "text": "¿Y si los datos no son claros?\n\n\nMisma direccion de efecto, distinta precision.\n¿Interpretariamos estas dos figuras de la misma manera?"
   },
   {
     "objectID": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
     "href": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
     "title": "Metodo cientifico en ecologia",
     "section": "Señal positiva con distinta precision",
-    "text": "Señal positiva con distinta precision\n\n\n¿Qué hipótesis favorece esta evidencia?\n\n\nAmbos paneles sugieren direccion positiva, pero con diferente precision (incertidumbre): el IC95% de la pendiente es critico.\n\n\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\n\n\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
+    "text": "Señal positiva con distinta precision\n\n\n\n¿Qué hipótesis favorece esta evidencia?\nAmbos paneles sugieren direccion positiva, pero con diferente precision (incertidumbre): el IC95% de la pendiente es critico.\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
   },
   {
     "objectID": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
     "href": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
     "title": "Metodo cientifico en ecologia",
     "section": "Inferencia con incertidumbre",
-    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente indica un rango plausible para el efecto, no la probabilidad de que la hipotesis sea verdadera.\nPara B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara C, el parametro clave es la pendiente heterogeneidad -&gt; recambio (o area -&gt; perdida): esperamos signo negativo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto con ese diseno.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre."
+    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente (cualquier coeficiente) indica un rango plausible para el efecto.\nPara hipotesis B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara hipotesis C, el parametro clave es la pendiente area -&gt; persistencia: esperamos signo positivo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre."
   },
   {
     "objectID": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
     "href": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
     "title": "Metodo cientifico en ecologia",
     "section": "Exemplo de interpretacion con incertidumbre",
-    "text": "Exemplo de interpretacion con incertidumbre\n\nEjemplo B (soporte claro): pendiente = 1.05, IC95% [0.42, 1.68].\nInterpretacion: la relacion es positiva y consistente con B; ademas podemos reportar la magnitud aproximada del efecto.\n\n\nEjemplo C (compatible pero incierto): pendiente = -0.04, IC95% [-0.11, 0.01].\nInterpretacion: la direccion media es la esperada para C, pero el IC95% incluye 0; se necesita mas precision antes de concluir soporte fuerte.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor p)."
+    "text": "Exemplo de interpretacion con incertidumbre\n\nEjemplo de soporte claro: pendiente = 1.07, IC95% [0.81, 1.32].\nInterpretacion: la relacion es positiva y consistente con la hipotesis, con magnitud aproximada del efecto de 1.07 [0.81, 1.32].\n\n\nEjemplo de evidencia compatible pero incierto: pendiente = 0.90, IC95% [-0.09, 1.89].\nInterpretacion: la relacion es positiva y consistente con la hipotesis (b = 0.90), pero el IC95% incluye 0 (IC95% [-0.09, 1.89]) y no se puede rechazar la ausencia de efecto. Se necesita mas evidencia y mejor precision para obtener conclusiones firmes.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor P)."
   },
   {
     "objectID": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
