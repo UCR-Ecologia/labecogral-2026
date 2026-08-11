@@ -1,0 +1,55 @@
+---
+title: "Lab 01: método científico, hipótesis, predicciones"
+subtitle: ""
+format:
+  html:
+    toc: true
+    number-sections: false
+  docx: default
+  pdf: default
+lang: es
+---
+
+## Observaciones
+
+Algunos lagos en Finlandia se encuentran aproximadamente a la misma latitud, tienen poca influencia antropogénica y parecen similares en su entorno físico y químico. Sin embargo, cada lago contiene muchas especies de fitoplancton, y las especies difieren entre los lagos en su abundancia relativa y dinámica estacional.
+
+Un grupo de investigadoras e investigadores estudia los factores que determinan la composición del fitoplancton en estos lagos y está perplejo por cómo se mantiene tanta diversidad en ecosistemas aparentemente similares.
+
+Usted es especialista en ecología de comunidades y le han pedido que ayude a explicar esta diversidad. Proponga **dos hipótesis basadas en mecanismos ecológicos diferentes** y derive predicciones que permitan ponerlas a prueba con datos.
+
+Las hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe involucrar un mecanismo que pueda ser medido o manipulado, y cada predicción debe describir **qué patrón esperaríamos observar si el mecanismo propuesto es importante**.
+
+---
+
+Hipótesis A:
+
+::: {.answer-space lines=4}
+:::
+
+Predicciones de la hipótesis A:
+
+::: {.answer-space lines=5}
+:::
+
+Datos necesarios para probar la hipótesis A y sus predicciones:
+
+::: {.answer-space lines=4}
+:::
+
+---
+
+Hipótesis B:
+
+::: {.answer-space lines=4}
+:::
+
+Predicciones de la hipótesis B:
+
+::: {.answer-space lines=5}
+:::
+
+Datos necesarios para probar la hipótesis B y sus predicciones:
+
+::: {.answer-space lines=4}
+:::

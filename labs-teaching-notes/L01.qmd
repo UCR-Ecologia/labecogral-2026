@@ -1,0 +1,57 @@
+---
+title: "Lab 01: método científico, hipótesis, predicciones"
+subtitle: ""
+format:
+  html:
+    toc: true
+    number-sections: false
+  docx: default
+  pdf: default
+lang: es
+---
+
+## Observaciones
+
+Algunos lagos en Finlandia se encuentran aproximadamente a la misma latitud, tienen poca influencia antropogénica y parecen similares en su entorno físico y químico. Sin embargo, cada lago contiene muchas especies de fitoplancton, y las especies difieren entre los lagos en su abundancia relativa y dinámica estacional.
+
+Un grupo de investigadoras e investigadores estudia los factores que determinan la composición del fitoplancton en estos lagos y está perplejo por cómo se mantiene tanta diversidad en ecosistemas aparentemente similares.
+
+Usted es especialista en ecología de comunidades y le han pedido que ayude a explicar esta diversidad. Proponga **dos hipótesis basadas en mecanismos ecológicos diferentes** y derive predicciones que permitan ponerlas a prueba con datos.
+
+Las hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe involucrar un mecanismo que pueda ser medido o manipulado, y cada predicción debe describir **qué patrón esperaríamos observar si el mecanismo propuesto es importante**.
+
+---
+
+Hipótesis A:
+
+La diversidad de fitoplancton se mantiene porque los lagos no son tan "iguales" como parecen: hay diferencias finas en disponibilidad de recursos (luz, fósforo, nitrógeno, sílice) y en estructura térmica. Esas diferencias generan **partición de nicho**, de modo que distintas especies se favorecen en distintos lagos o momentos.
+
+Predicciones de la hipótesis A:
+
+1. Entre lagos, la composición de especies debería cambiar de forma predecible con gradientes de recursos (por ejemplo, relación N:P, transparencia, mezcla de la columna de agua).
+2. Dentro de un mismo lago, si cambian las condiciones ambientales a lo largo del año, también debería cambiar la abundancia relativa de especies (recambio estacional).
+3. Especies con rasgos funcionales distintos (tamaño celular, capacidad de flotación, afinidad por nutrientes) deberían dominar bajo condiciones diferentes.
+
+Datos necesarios para probar la hipótesis A y sus predicciones:
+
+1. Series temporales de composición y abundancia de fitoplancton por lago.
+2. Variables ambientales por fecha y lago: temperatura, estratificación, luz, N, P, Si, pH.
+3. Información de rasgos funcionales de las especies dominantes.
+
+---
+
+Hipótesis B:
+
+La diversidad de fitoplancton se mantiene por **control top-down** del zooplancton: el pastoreo evita que una sola especie dominante excluya al resto. Si cambia la intensidad de pastoreo, debería cambiar la coexistencia.
+
+Predicciones de la hipótesis B:
+
+1. En un experimento manipulativo de mesocosmos, tratamientos con más pastoreo deberían mostrar menor dominancia y mayor equidad de especies.
+2. En tratamientos con exclusión/reducción de zooplancton, una o pocas especies oportunistas deberían aumentar rápidamente su abundancia relativa.
+3. El efecto del pastoreo debería ser más fuerte en condiciones de nutrientes altos, donde la competencia por luz/espacio se intensifica.
+
+Datos necesarios para probar la hipótesis B y sus predicciones:
+
+1. Ensayo manipulativo con réplicas: exclusión de zooplancton, control y adición de zooplancton.
+2. Series temporales cortas de abundancia y composición de fitoplancton en cada tratamiento.
+3. Medidas paralelas de biomasa de zooplancton, clorofila-a y nutrientes para verificar que el mecanismo manipulado realmente cambió.

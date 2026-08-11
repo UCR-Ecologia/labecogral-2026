@@ -1,7 +1,25 @@
 ---
 title: "Laboratorios"
+listing:
+  contents: "*.qmd"
+  type: table
+  fields: [title, subtitle, date]
+  sort: "filename"
+  filter-ui: false
 ---
 
 ## Guias de laboratorio
 
-Esta seccion queda lista para agregar protocolos y actividades practicas.
+
+
+
+```{=html}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".quarto-listing a").forEach(function (a) {
+    a.setAttribute("target", "_blank");
+    a.setAttribute("rel", "noopener noreferrer");
+  });
+});
+</script>
+```

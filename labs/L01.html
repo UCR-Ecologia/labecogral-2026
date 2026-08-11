@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.40">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Laboratorios – Laboratorio de Ecologia General B-0305</title>
+<title>Lab 01: método científico, hipótesis, predicciones – Laboratorio de Ecologia General B-0305</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,82 +53,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -141,8 +81,8 @@ window.Quarto = {
     <span class="navbar-title">Laboratorio de Ecologia General B-0305</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -160,7 +100,7 @@ window.Quarto = {
 <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../labs/index.html" aria-current="page"> 
+    <a class="nav-link" href="../labs/index.html"> 
 <span class="menu-text">Laboratorios</span></a>
   </li>  
 </ul>
@@ -174,13 +114,21 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#observaciones" id="toc-observaciones" class="nav-link active" data-scroll-target="#observaciones">Observaciones</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="L01.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="L01.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Laboratorios</h1>
+<h1 class="title">Lab 01: método científico, hipótesis, predicciones</h1>
 </div>
 
 
@@ -197,72 +145,63 @@ window.Quarto = {
 </header>
 
 
-<section id="guias-de-laboratorio" class="level2">
-<h2 class="anchored" data-anchor-id="guias-de-laboratorio">Guias de laboratorio</h2>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".quarto-listing a").forEach(function (a) {
-    a.setAttribute("target", "_blank");
-    a.setAttribute("rel", "noopener noreferrer");
-  });
-});
-</script>
-
+<section id="observaciones" class="level2">
+<h2 class="anchored" data-anchor-id="observaciones">Observaciones</h2>
+<p>Algunos lagos en Finlandia se encuentran aproximadamente a la misma latitud, tienen poca influencia antropogénica y parecen similares en su entorno físico y químico. Sin embargo, cada lago contiene muchas especies de fitoplancton, y las especies difieren entre los lagos en su abundancia relativa y dinámica estacional.</p>
+<p>Un grupo de investigadoras e investigadores estudia los factores que determinan la composición del fitoplancton en estos lagos y está perplejo por cómo se mantiene tanta diversidad en ecosistemas aparentemente similares.</p>
+<p>Usted es especialista en ecología de comunidades y le han pedido que ayude a explicar esta diversidad. Proponga <strong>dos hipótesis basadas en mecanismos ecológicos diferentes</strong> y derive predicciones que permitan ponerlas a prueba con datos.</p>
+<p>Las hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe involucrar un mecanismo que pueda ser medido o manipulado, y cada predicción debe describir <strong>qué patrón esperaríamos observar si el mecanismo propuesto es importante</strong>.</p>
+<hr>
+<p>Hipótesis A:</p>
+<div class="answer-space">
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+</div>
+<p>Predicciones de la hipótesis A:</p>
+<div class="answer-space">
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+</div>
+<p>Datos necesarios para probar la hipótesis A y sus predicciones:</p>
+<div class="answer-space">
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+</div>
+<hr>
+<p>Hipótesis B:</p>
+<div class="answer-space">
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+</div>
+<p>Predicciones de la hipótesis B:</p>
+<div class="answer-space">
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+</div>
+<p>Datos necesarios para probar la hipótesis B y sus predicciones:</p>
+<div class="answer-space">
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+<div class="answer-space-line">&nbsp;</div>
+</div>
 
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-</div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-Subtitle
-</th>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1786467963950" data-listing-reading-time-sort="1" data-listing-word-count-sort="192" data-listing-title-sort="Lab 01: método científico, hipótesis, predicciones" data-listing-filename-sort="L01.qmd">
-<td>
-<a href="../labs/L01.html" class="title listing-title">Lab 01: método científico, hipótesis, predicciones</a>
-</td>
-<td>
-<span class="listing-subtitle">&nbsp;</span>
-</td>
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -306,12 +245,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

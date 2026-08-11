@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/labs/index.html",
+    "items": [
+      "/labs/L01.html"
+    ]
+  },
+  {
     "listing": "/lectures/index.html",
     "items": [
       "/lectures/01-sci-method.html"
