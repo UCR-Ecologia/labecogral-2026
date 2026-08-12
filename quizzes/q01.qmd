@@ -1,5 +1,5 @@
 ---
-title: "Quiz 01: método científico, hipótesis, predicciones"
+title: "Quiz 01: hipótesis, prediccion"
 subtitle: ""
 format: pdf
 lang: es
