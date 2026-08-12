@@ -1,0 +1,64 @@
+---
+title: "Quiz 01: método científico, hipótesis, predicciones"
+subtitle: ""
+format: pdf
+lang: es
+---
+
+Investigadoras de la Sede del Sur han estudiado las condiciones físicas y químicas del agua a diferentes profundidades cerca de arrecifes de coral en el Golfo Dulce, Costa Rica. Se han observado diferencias en la temperatura, salinidad y alcalinidad (relacionada con carbonatos) del agua entre sitios y profundidades. Estas variables pueden afectar la salud de los corales y sus endosimbiontes, pero no está claro cuáles son más importantes ni mediante qué mecanismos. Entender cómo estas variables afectan el blanqueamiento de los corales es importante para predecir posibles eventos de blanqueamiento y, en general, para la conservación de estos ecosistemas.
+
+Se le contrató para evaluar el plan de investigación, incluidas sus hipótesis y predicciones, y proponer mejoras.
+
+**1. Evalúe si la siguiente hipótesis es clara, consistente con las observaciones y si las predicciones derivadas son comprobables con los datos propuestos para recolectar.** (1 punto)
+
+*Hipótesis:*
+
+La temperatura del agua afecta la salud de los corales y sus endosimbiontes, porque temperaturas más altas aumentan el estrés térmico, reducen la fotosíntesis y favorecen el blanqueamiento.
+
+*Predicción 1:*
+
+En sitios con temperaturas consistentemente más altas, los corales deberían mostrar mayor incidencia de blanqueamiento.
+
+*Predicción 2:*
+
+El mismo sitio, a lo largo del tiempo, debería mostrar mayor incidencia de blanqueamiento de corales durante los periodos de temperatura más alta.
+
+*Métodos y datos:*
+
+- Medir la temperatura del agua en diferentes sitios y profundidades durante el verano.
+- Evaluar la salud de los corales mediante observaciones visuales.
+- Registrar la frecuencia de colonias blanqueadas por transecto / cuadrante.
+
+*Cual aspecto de la hipótesis, predicciones o métodos considera que podría mejorarse para que la investigación sea más clara y comprobable? Justifique su respuesta.*
+
+::: {.answer-space lines=4}
+:::
+
+
+**2. Proponga dos predicciones derivadas de la siguiente hipótesis que sean consistentes con las observaciones y especifique los datos necesarios para comprobarlas.** (2 puntos)
+
+*Hipótesis:*
+
+La alcalinidad del agua afecta la calcificación de los corales porque una mayor disponibilidad de carbonatos facilita la formación de sus esqueletos.
+
+*Predicción 1:*
+
+::: {.answer-space lines=3}
+:::
+
+*Datos necesarios para comprobar la predicción 1:*
+
+::: {.answer-space lines=3}
+:::
+
+*Predicción 2:*
+
+::: {.answer-space lines=3}
+:::
+
+*Datos necesarios para comprobar la predicción 2:*
+
+::: {.answer-space lines=3}
+:::
+
+

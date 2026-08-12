@@ -6,7 +6,7 @@ local function answer_space_blocks(lines)
     local html = {}
     table.insert(html, '<div class="answer-space">')
     for _ = 1, lines do
-      table.insert(html, '<div class="answer-space-line">&nbsp;</div>')
+      table.insert(html, '<div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>')
     end
     table.insert(html, '</div>')
     return { pandoc.RawBlock("html", table.concat(html, "\n")) }
@@ -14,17 +14,12 @@ local function answer_space_blocks(lines)
 
   if output == "latex" then
     local latex = {}
-    for i = 1, lines do
-      table.insert(latex, "\\noindent\\rule{\\linewidth}{0.4pt}")
-      if i < lines then
-        table.insert(latex, "\\par\\vspace{1.5\\baselineskip}")
-      end
-    end
+    table.insert(latex, string.format("\\vspace*{%s\\baselineskip}", lines * 1.5))
     return { pandoc.RawBlock("latex", table.concat(latex, "\n")) }
   end
 
   for i = 1, lines do
-    table.insert(blocks, pandoc.Para({ pandoc.Str("______________________________") }))
+    table.insert(blocks, pandoc.Para({ pandoc.Str(" ") }))
     if i < lines then
       table.insert(blocks, pandoc.Para({ pandoc.Str(" ") }))
     end
