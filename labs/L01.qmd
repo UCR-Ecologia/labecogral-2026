@@ -18,7 +18,7 @@ Proponga **dos hipótesis basadas en mecanismos ecológicos diferentes** y deriv
 
 Las hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer **un mecanismo ecológico que explique cómo una variable podría afectar la diversidad**, y debe involucrar algo que pueda ser medido o manipulado.
 
----
+## Preguntas
 
 Hipótesis A:
 
