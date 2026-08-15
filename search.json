@@ -1,59 +1,346 @@
 [
   {
-    "objectID": "lectures/index.html",
-    "href": "lectures/index.html",
-    "title": "Clases",
+    "objectID": "refs/index.html",
+    "href": "refs/index.html",
+    "title": "Referencias",
     "section": "",
-    "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
+    "text": "Farji-Brener 2003\nFarji-Brener 2004\nGotelli 2004, cap. 4"
   },
   {
-    "objectID": "lectures/index.html#presentaciones-del-curso",
-    "href": "lectures/index.html#presentaciones-del-curso",
-    "title": "Clases",
+    "objectID": "refs/index.html#hypothesis-y-predicciones",
+    "href": "refs/index.html#hypothesis-y-predicciones",
+    "title": "Referencias",
     "section": "",
-    "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
+    "text": "Farji-Brener 2003\nFarji-Brener 2004\nGotelli 2004, cap. 4"
   },
   {
-    "objectID": "labs-teaching-notes/L01.html",
-    "href": "labs-teaching-notes/L01.html",
+    "objectID": "refs/index.html#deseño-experimental",
+    "href": "refs/index.html#deseño-experimental",
+    "title": "Referencias",
+    "section": "Deseño Experimental",
+    "text": "Deseño Experimental\n\nGotelli 2004, cap. 6\nMarshall 2024"
+  },
+  {
+    "objectID": "programa/index.html",
+    "href": "programa/index.html",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "",
+    "text": "Programa en PDF"
+  },
+  {
+    "objectID": "programa/index.html#información-general",
+    "href": "programa/index.html#información-general",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Información General",
+    "text": "Información General\n\n\n\nCiclo en que se imparte:\nII - 2026\n\n\n\n\nCréditos:\n2\n\n\nAsistencia:\nObligatoria\n\n\nRequisitos:\nXS-301, B-0218, B-0239\n\n\nCorrequisitos:\nEcología General B-0304\n\n\nHoras lectivas:\n3 horas (viernes de 9:00 am a 11:50 am)\n\n\nAulas:\n110 y 280\n\n\nProfesores:\nDr. Gerardo Avalos y Dr. Teofil Nakov.\n\n\nAsistentes:\nJordi Jiménez, Valeria Castro, David Campos, Esteban Fuentes, Naidely Vidaurre.\n\n\nModalidad:\nBajo virtual\n\n\nHoras de consulta a convenir:\nGerardo Avalos gerardo.avalos@ucr.ac.cr Teo Nakov teofil.nakov@ucr.ac.cr\n\n\nCuenta de email del curso:\nucr.eco.lab@gmail.com"
+  },
+  {
+    "objectID": "programa/index.html#fechas-importantes",
+    "href": "programa/index.html#fechas-importantes",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Fechas importantes",
+    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
+  },
+  {
+    "objectID": "programa/index.html#introducción",
+    "href": "programa/index.html#introducción",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Introducción",
+    "text": "Introducción\nLa ecología es una ciencia integradora que estudia las interacciones entre los organismos y su ambiente, así como los procesos que determinan la distribución, abundancia y diversidad de la vida en la Tierra. Debido a que estas interacciones tienen lugar simultáneamente a múltiples escalas (desde individuos hasta ecosistemas), la ecología requiere combinar observación, experimentación, análisis cuantitativo e interpretación crítica de la evidencia científica.\nEl conocimiento ecológico se construye mediante el método científico. La observación de patrones naturales conduce al planteamiento de preguntas que pueden responderse mediante hipótesis, predicciones y diseños de muestreo apropiados. La recolección sistemática de datos, su análisis estadístico y la interpretación de los resultados permiten evaluar dichas hipótesis y generar nuevo conocimiento acerca del funcionamiento de los sistemas naturales. Las preguntas surgen de observaciones cuya explicación no es inicialmente evidente, ya que requiere de un proceso repetitivo e inquisitivo de aplicación del método científico.\nPor esta razón, el laboratorio constituye el componente práctico del curso de Ecología General. Su propósito no es únicamente ilustrar conceptos vistos en las clases teóricas, sino desarrollar las competencias necesarias para planificar, ejecutar, analizar y comunicar investigaciones ecológicas. Durante el semestre, las personas estudiantes recorrerán todas las etapas del proceso científico, desde la formulación de preguntas hasta la presentación de resultados, utilizando herramientas de campo, técnicas de muestreo, análisis estadísticos y literatura científica como apoyo para la toma de decisiones."
+  },
+  {
+    "objectID": "programa/index.html#filosofía-del-curso",
+    "href": "programa/index.html#filosofía-del-curso",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Filosofía del curso",
+    "text": "Filosofía del curso\nEste laboratorio adopta un enfoque de aprendizaje basado en competencias e indagación científica. El objetivo es que cada estudiante experimente de forma integral el trabajo de un profesional en ecología. En lugar de limitarse a una sola tarea, desarrollará competencias clave en todo el ciclo de investigación: desde la formulación de preguntas científicas y el diseño experimental, hasta el muestreo de campo, análisis de datos y comunicación de conclusiones basadas en evidencia.\nLas primeras semanas se dedican a la observación de patrones naturales, la formulación de preguntas e hipótesis y el diseño de protocolos de muestreo. Posteriormente, las personas estudiantes implementan dichos protocolos mediante trabajo de campo, organizan y verifican la calidad de los datos recolectados, realizan análisis estadísticos apropiados e interpretan sus resultados a la luz de la literatura científica. Finalmente, comunican sus hallazgos mediante reportes escritos breves y presentaciones orales, además de pósters.\nA diferencia de un laboratorio basado en prácticas independientes, este curso desarrolla investigaciones que evolucionan a lo largo de varias semanas. Este enfoque permite comprender cómo cada etapa del método científico depende de las anteriores y favorece la adquisición progresiva de competencias de investigación que son necesarias para el trabajo real de las personas dedicadas a la Ecología. Las prácticas guiadas realizadas durante la primera mitad del semestre sirven como modelo para que, posteriormente, las personas estudiantes diseñen y ejecuten con mayor autonomía las prácticas de la segunda mitad del semestre, y, por consiguiente, su propio proyecto semestral de investigación.\nLa evaluación del curso se centra tanto en el proceso de investigación como en los productos generados. Para documentar dicho proceso, cada estudiante mantendrá una bitácora individual de investigación y cada grupo una bitácora grupal de investigación. Estas bitácoras funcionarán como un registro continuo de observaciones, decisiones metodológicas, actividades de campo, análisis de datos e interpretaciones realizadas durante el semestre, a fin de permitir evidenciar el desarrollo progresivo de las competencias científicas. Los reportes científicos continúan siendo una herramienta fundamental para desarrollar habilidades de comunicación escrita; sin embargo, también se evalúa el pensamiento crítico y la capacidad individual para tomar decisiones metodológicas, justificar procedimientos, analizar evidencia y resolver problemas durante el desarrollo de la investigación."
+  },
+  {
+    "objectID": "programa/index.html#objetivo-general",
+    "href": "programa/index.html#objetivo-general",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Objetivo general",
+    "text": "Objetivo general\nDesarrollar en las personas estudiantes las competencias necesarias para plantear, diseñar, ejecutar, analizar y comunicar investigaciones ecológicas de campo y laboratorio, aplicando el método científico para responder preguntas sobre los factores que determinan la distribución, abundancia e interacciones de los organismos en ecosistemas tropicales."
+  },
+  {
+    "objectID": "programa/index.html#objetivos-específicos",
+    "href": "programa/index.html#objetivos-específicos",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Objetivos específicos",
+    "text": "Objetivos específicos\nAl finalizar el curso, la persona estudiante será capaz de:\n\nFormular preguntas de investigación ecológica a partir de observaciones realizadas en el campo y de información proveniente de la literatura científica.\nElaborar hipótesis biológicas y derivar predicciones comprobables que puedan evaluarse mediante observaciones o experimentos.\nDiseñar protocolos de muestreo apropiados para responder preguntas ecológicas, identificando variables independientes, dependientes y de control.\nIdentificar y minimizar fuentes de sesgo, confusión y pseudorreplicación en investigaciones ecológicas.\nUtilizar correctamente el equipo básico de investigación ecológica para obtener mediciones confiables de variables bióticas y abióticas.\nAplicar técnicas de muestreo en el campo siguiendo protocolos estandarizados y criterios de seguridad.\nOrganizar, documentar y verificar la calidad de bases de datos ecológicas antes de su análisis.\nSeleccionar y aplicar métodos estadísticos básicos para analizar datos ecológicos e interpretar sus resultados dentro de un contexto biológico.\nComunicar resultados científicos mediante reportes escritos y presentaciones orales siguiendo el formato de publicaciones científicas.\nTrabajar colaborativamente en proyectos de investigación demostrando responsabilidad, ética científica y respeto por el ambiente."
+  },
+  {
+    "objectID": "programa/index.html#competencias-del-curso",
+    "href": "programa/index.html#competencias-del-curso",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Competencias del curso",
+    "text": "Competencias del curso\nLas actividades del laboratorio están organizadas para desarrollar progresivamente las siguientes competencias.\n\nCompetencia 1. Observación científica\nLa persona estudiante reconoce patrones ecológicos mediante observaciones sistemáticas y distingue entre observaciones objetivas e interpretaciones.\nResultados de aprendizaje\n\nDescribe patrones ecológicos utilizando lenguaje científico.\nRegistra observaciones de manera sistemática en una bitácora científica utilizando criterios estandarizados.\nIdentifica posibles factores que explican un patrón observado.\nIdentifica patrones que su experimento sí resolvió y que están apoyados por la evidencia, versus patrones y preguntas que deben resolverse en el futuro mediante el diseño de experimentos adicionales.\n\n\n\nCompetencia 2. Formulación de preguntas e hipótesis\nLa persona estudiante transforma observaciones ecológicas en preguntas científicas, hipótesis y predicciones comprobables.\nResultados de aprendizaje\n\nFormula preguntas claras y medibles.\nPropone hipótesis biológicamente fundamentadas.\nDeriva predicciones consistentes con la hipótesis.\nDistingue claramente entre una hipótesis y una predicción.\n\n\n\nCompetencia 3. Diseño experimental\nLa persona estudiante diseña investigaciones ecológicas apropiadas para responder una pregunta científica.\nResultados de aprendizaje\n\nIdentifica variables independientes y dependientes.\nReconoce posibles variables de confusión.\nSelecciona unidades experimentales o unidades de muestreo.\nJustifica el método de muestreo seleccionado de acuerdo con la pregunta, las hipótesis y predicciones, y la escala o tamaño del organismo.\n\n\n\nCompetencia 4. Trabajo de campo\nLa persona estudiante implementa protocolos de investigación utilizando equipo científico y procedimientos estandarizados.\nResultados de aprendizaje\n\nUtiliza correctamente instrumentos de medición, o los adapta cuando estos sean escasos.\nRegistra datos, observaciones complementarias y limitaciones metodológicas de forma precisa en su bitácora y en las bases de datos del proyecto.\nSigue protocolos estandarizados.\nTrabaja de manera segura y ética.\nEntiende las limitaciones metodológicas asociadas al uso de equipo de campo y diseña su experimento de acuerdo con estas limitaciones.\n\n\n\nCompetencia 5. Gestión de datos\nLa persona estudiante organiza bases de datos reproducibles y verifica la calidad de la información recolectada.\nResultados de aprendizaje\n\nDiseña matrices de datos y las codifica apropiadamente.\nCodifica eficientemente las variables en función de los análisis estadísticos y del software utilizado.\nDetecta errores.\nDocumenta metadatos y decisiones relacionadas con la organización de datos en la bitácora grupal de investigación.\nCorrige inconsistencias justificadamente.\nComparte bases de datos en grupo y establece protocolos para editarlas.\n\n\n\nCompetencia 6. Análisis e interpretación\nLa persona estudiante analiza datos ecológicos utilizando herramientas estadísticas apropiadas e interpreta los resultados en un contexto ecológico.\nResultados de aprendizaje\n\nSelecciona pruebas estadísticas adecuadas.\nInterpreta resultados biológicamente.\nReconoce las limitaciones del estudio.\nPropone explicaciones alternativas.\nIntegra información proveniente de literatura científica para interpretar resultados y contextualizar los hallazgos.\nReconoce las conclusiones estrictamente apoyadas en la evidencia generada por el experimento versus preguntas adicionales que requieran de más experimentación.\n\n\n\nCompetencia 7. Comunicación científica\nLa persona estudiante comunica investigaciones utilizando formatos científicos escritos y orales.\nResultados de aprendizaje\n\nDocumenta y comunica el proceso científico mediante bitácoras de investigación, reportes científicos y presentaciones orales.\nElabora figuras y tablas informativas.\nPresenta resultados oralmente.\nPuede generar un abstract gráfico y un póster.\nDefiende conclusiones utilizando evidencia científica."
+  },
+  {
+    "objectID": "programa/index.html#metodología",
+    "href": "programa/index.html#metodología",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Metodología",
+    "text": "Metodología\nSecuencia de investigaciones del curso.\nLas actividades prácticas del laboratorio están organizadas como una secuencia progresiva de investigaciones que permiten desarrollar las competencias científicas de manera gradual. Se trabajará en grupos de un máximo de cinco personas, aunque gran parte del trabajo será individual. Como parte del desarrollo de las competencias científicas, cada estudiante mantendrá una bitácora individual de investigación y cada grupo una bitácora grupal de investigación. Las bitácoras serán actualizadas semanalmente durante el desarrollo de las prácticas y podrán ser revisadas periódicamente por docentes y asistentes para brindar retroalimentación y evaluar el progreso de las competencias científicas. La bitácora individual permitirá documentar observaciones, razonamientos, decisiones metodológicas, interpretaciones y reflexiones personales sobre el desarrollo de la investigación. La bitácora grupal funcionará como el registro oficial del proyecto e incluirá las decisiones consensuadas del grupo, protocolos, bases de datos, análisis, figuras y productos de comunicación científica. Ambas bitácoras se construirán progresivamente durante el semestre y constituirán una parte fundamental de la evaluación del proceso de investigación.\nDurante la investigación guiada, las personas estudiantes aprenden y practican cada una de las etapas del proceso científico mediante una investigación altamente guiada por las personas docentes. Esta primera experiencia tiene como propósito construir las bases conceptuales y metodológicas necesarias para desarrollar un estudio ecológico completo.\nPosteriormente, durante la investigación independiente, las personas estudiantes aplican las competencias desarrolladas en la primera investigación con un mayor grado de autonomía. Los estudiantes identificarán su propio sistema de estudio, por lo que deberán tomar más decisiones relacionadas con la formulación de preguntas, el diseño metodológico, la selección de variables, las limitaciones logísticas del trabajo en el campo, el análisis de datos y la interpretación de resultados. De esta manera, la segunda investigación funciona como una transición entre una experiencia de aprendizaje guiada y el trabajo independiente que se desarrolla simultáneamente para el proyecto semestral.\nFinalmente, en el proyecto semestral de investigación, las personas estudiantes desarrollan una investigación original en parejas con un nivel significativamente mayor de independencia. En esta etapa deberán integrar todas las competencias adquiridas durante el curso para plantear, diseñar, ejecutar, analizar y comunicar una investigación ecológica propia, asumiendo de manera autónoma las responsabilidades y decisiones asociadas al trabajo científico. La bitácora del proyecto será evaluada considerando la continuidad de los registros, la calidad de la documentación metodológica, la reflexión crítica sobre problemas encontrados, la organización de la información y la evidencia del progreso de la investigación.\nA medida que se desarrollen las competencias durante las investigaciones 1 y 2, se espera que las personas apliquen estas competencias progresivamente al desarrollo de su proyecto semestral. De esta forma, el proyecto reproduce la secuencia lógica del método científico y la progresión del curso, desde la observación y formulación de preguntas hasta el diseño experimental, el muestreo, el análisis de datos y la comunicación de resultados. Una vez adquiridas las bases conceptuales y técnicas necesarias, se formaliza el diseño de la investigación y se inicia su ejecución.\nDurante la fase de investigación guiada, cada pareja explora sistemas naturales, formula preguntas, desarrolla hipótesis y predicciones, y construye progresivamente los componentes metodológicos de su investigación semestral. En la segunda mitad del semestre, las parejas implementan el proyecto, recolectan y analizan datos, interpretan los resultados y comunican sus hallazgos mediante productos científicos escritos y orales. Cada pareja deberá realizar al menos tres eventos independientes de trabajo de campo, o un esfuerzo equivalente de laboratorio, previamente coordinados con los docentes y asistentes. Todas las actividades realizadas, condiciones de muestreo, modificaciones metodológicas y observaciones relevantes deberán documentarse en las bitácoras del proyecto.\nLas dos investigaciones siguen el mismo flujo de trabajo. La diferencia está en el nivel de autonomía de las personas estudiantes.\n\n\n\n\n\n\n\nInvestigación guiada\nInvestigación independiente\n\n\n\n\nSistema propuesto por docentes\nSistema escogido por el grupo\n\n\nAlta guía\nGuía limitada\n\n\nMétodos sugeridos\nMétodos seleccionados por estudiantes\n\n\nMayor retroalimentación\nMayor autonomía\n\n\nÉnfasis en practicar el flujo.\nÉnfasis en aplicar el flujo.\n\n\n\n\nDesarrollo semanal de las investigaciones\nLas dos investigaciones siguen el mismo flujo de trabajo durante seis semanas. En la investigación guiada (semanas 1-6), el sistema de estudio es propuesto por las personas docentes y las actividades se realizan con mayor acompañamiento. En la investigación independiente (semanas 7-12), cada grupo selecciona su sistema de estudio y asume mayor responsabilidad sobre las decisiones científicas y metodológicas.\nSemanas 1 y 7. Observación, pregunta, hipótesis y predicciones.\nLos grupos realizan observaciones preliminares del sistema de estudio, identifican patrones ecológicos y formulan una pregunta de investigación. A partir de esta pregunta desarrollan una hipótesis biológica y predicciones comprobables. Las observaciones y razonamientos iniciales se documentan en las bitácoras individuales.\nSemanas 2 y 8. Diseño de la investigación.\nLos grupos diseñan una estrategia para poner a prueba sus hipótesis. Definen variables predictoras y respuesta, unidades de muestreo, métodos y equipo necesario, y consideran posibles fuentes de sesgo, pseudorreplicación y limitaciones del diseño. Las decisiones metodológicas y su justificación se documentan en la bitácora grupal.\nSemanas 3 y 9. Recolección de datos.\nLos grupos implementan el diseño y recolectan los datos siguiendo protocolos estandarizados. Registran datos, metadatos, condiciones ambientales, observaciones relevantes y cualquier desviación del protocolo en las bitácoras correspondientes.\nSemanas 4 y 10. Gestión, control de calidad y exploración de datos.\nLos grupos organizan y documentan sus bases de datos, revisan errores, inconsistencias, valores atípicos, variables y unidades, y registran las decisiones tomadas durante la depuración. Posteriormente, realizan análisis exploratorios mediante tablas y figuras para evaluar la calidad de los datos e identificar patrones preliminares.\nSemanas 5 y 11. Análisis e interpretación.\nLos grupos seleccionan y justifican métodos estadísticos apropiados para evaluar sus predicciones. Interpretan los resultados considerando la evidencia estadística, su significado biológico, las limitaciones del estudio y posibles explicaciones alternativas. Los resultados se contrastan con literatura científica relevante y se preparan las figuras y cuadros finales.\nSemanas 6 y 12. Comunicación y defensa.\nCada grupo comunica su investigación mediante una presentación oral de 10 minutos que resume la pregunta, hipótesis, predicciones, diseño, resultados y conclusiones. Los estudiantes responden preguntas y defienden sus decisiones e interpretaciones utilizando evidencia. Al finalizar cada investigación, se entregan las bitácoras correspondientes y los productos de comunicación establecidos.\n\n\nProyecto semestral de investigación\nComo eje integrador del curso, las personas estudiantes desarrollarán en parejas un proyecto de investigación ecológica original a lo largo del semestre. El propósito del proyecto es integrar y aplicar las competencias desarrolladas durante las investigaciones guiadas e independientes, permitiendo que las personas estudiantes experimenten de manera auténtica todas las etapas del proceso científico. A diferencia de un proyecto tradicional diseñado desde el inicio del semestre, el proyecto semestral se desarrolla de forma progresiva y acompaña la secuencia de adquisición de competencias del curso. Durante las primeras semanas, las parejas exploran posibles sistemas de estudio, registran observaciones, formulan preguntas preliminares e identifican posibles hipótesis y predicciones. Conforme avanzan las investigaciones 1 y 2, incorporan gradualmente los conocimientos y herramientas adquiridos en diseño experimental, técnicas de muestreo, gestión de datos y análisis estadístico al desarrollo de su propio proyecto.\nPropuesta de investigación. Durante la investigación independiente, una vez desarrolladas las competencias necesarias para diseñar una investigación de manera fundamentada, cada pareja presentará una propuesta formal del proyecto. Esta propuesta incluirá título, introducción, justificación, pregunta de investigación, hipótesis, predicciones, diseño metodológico, variables de estudio, protocolo de muestreo, cronograma y referencias bibliográficas relevantes. La propuesta deberá demostrar que las decisiones metodológicas están justificadas por la pregunta de investigación y respaldadas por la literatura científica. La retroalimentación servirá para refinar el diseño antes de iniciar la ejecución completa del proyecto.\nDesarrollo e informe de avance. Posteriormente, las parejas implementarán el proyecto y realizarán la recolección de datos. Cada proyecto deberá incluir al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio, previamente coordinado con las personas docentes y asistentes. A mitad del proceso se presentará un informe de avance que documente el progreso de la investigación, los datos recolectados hasta ese momento, la calidad de la información obtenida, las modificaciones metodológicas realizadas y los ajustes realizados al cronograma o al diseño original. Este informe permitirá evaluar el desarrollo del proyecto y ofrecer retroalimentación antes de la fase final de análisis e interpretación.\nReporte final y presentación. Durante las últimas semanas del semestre, las parejas completarán los análisis estadísticos, interpretarán los resultados y elaborarán los productos finales de comunicación científica. El proyecto culminará con un reporte científico escrito y una presentación oral. El reporte deberá seguir el formato científico establecido en el curso. La presentación oral se realizará en un simposio según las fechas establecidas en el cronograma y tendrá como objetivo comunicar los principales hallazgos de la investigación y defender las decisiones metodológicas y conclusiones derivadas del estudio.\nBitácora del proyecto. Desde el inicio del semestre, cada pareja mantendrá una bitácora del proyecto semestral. Esta funcionará como un registro continuo del desarrollo de la investigación e incluirá observaciones iniciales, formulación de preguntas, hipótesis, decisiones metodológicas, cambios al diseño, actividades de campo, organización de datos, análisis preliminares y reflexiones sobre el proceso de investigación. La bitácora constituye la evidencia documental de la progresión del proyecto y de la aplicación gradual de las competencias desarrolladas durante las Investigaciones 1 y 2. Por esta razón, será considerada un componente fundamental de la evaluación del proyecto semestral."
+  },
+  {
+    "objectID": "programa/index.html#cronograma---investigaciones-cortas",
+    "href": "programa/index.html#cronograma---investigaciones-cortas",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Cronograma - Investigaciones Cortas",
+    "text": "Cronograma - Investigaciones Cortas\n\n\n\n\n\n\n\n\n\n\nBitácora Individual\nBitácora Grupal\n\n\n\n\n\nInvestigación guiada\n\n\nPropósito pedagógico\n\n\n1\nRegistro de observaciones, patrón identificado, pregunta, hipótesis y predicción, explicando la relación entre estos elementos.\nPregunta de investigación, hipótesis y predicciones consensuadas.\nEvaluar la transformación de observaciones en preguntas científicas.\n\n\n2\nJustificación e identificación de variables, unidad de muestreo, posible sesgo y riesgo de pseudorreplicación.\nProtocolo de investigación completo (diseño, variables, equipo y muestreo).\nDesarrollar razonamiento metodológico más que definiciones aisladas.\n\n\n3\nRegistro reflexivo de campo: dificultades, fuentes de error, observaciones inesperadas y calidad de datos.\nBase de datos preliminar consolidada en línea.\nReflexión sobre la producción de datos. Generar consenso en entrada y codificación de datos.\n\n\n4\nFigura exploratoria hecha a mano alzada acompañada por interpretación breve y discusión de lo que puede y no puede concluirse.\nBase de datos depurada, diccionario de variables y figuras exploratorias.\nFortalecer la distinción entre observación y conclusión a partir de la evidencia. Generar la capacidad de elaborar figuras claras y pertinentes.\n\n\n5\nPárrafo corto de síntesis científica con resultado principal, evidencia y significado biológico.\nAnálisis estadístico final, figuras finales y tabla de resultados e interpretación consensuada.\nIntegrar resultados e interpretación en una narrativa científica. Desarrollar la habilidad estadística.\n\n\n6\nParticipación en la defensa oral respondiendo preguntas sobre la investigación.\nPresentación PowerPoint de 10 minutos.\nDesarrollar la capacidad de organizar la información para una audiencia y de enfrentar preguntas.\n\n\nInvestigación independiente\n\n\n\n\n\n7\nRegistro de observaciones y justificación ecológica de la pregunta propuesta.\nSistema de estudio, justificación, pregunta, hipótesis y predicciones.\nDesarrollar autonomía en la generación de preguntas.\n\n\n8\nRevisión crítica del diseño de otro grupo mediante rúbrica y retroalimentación argumentada.\nProtocolo completo de investigación.\nEstimular el proceso real de revisión por pares y la evaluación crítica y respetuosa de la investigación científica.\n\n\n9\nReflexión crítica sobre ejecución del protocolo, decisiones metodológicas y limitaciones encontradas.\nBase de datos preliminar.\nEstimular la adaptación de la investigación en condiciones reales de campo.\n\n\n10\nFigura exploratoria a mano alzada con interpretación del patrón y necesidades de información adicional.\nBase de datos final depurada y documentada.\nDesarrollar competencias de visualización, inferencias, y análisis de datos exploratorio.\n\n\n11\nDiscusión corta con interpretación, limitaciones, explicación alternativa, y preguntas para desarrollar en el futuro.\nAnálisis estadístico final y figuras definitivas.\nEstimular el desarrollo del pensamiento crítico y consideración de hipótesis alternativas. Favorecer la especulación razonable para generar futuras preguntas de investigación.\n\n\n12\nDefensa oral individual durante la presentación.\nPresentación PowerPoint y reporte con literatura científica consultada."
+  },
+  {
+    "objectID": "programa/index.html#giras-trabajo-de-campo-yo-laboratorio",
+    "href": "programa/index.html#giras-trabajo-de-campo-yo-laboratorio",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Giras, trabajo de campo y/o laboratorio",
+    "text": "Giras, trabajo de campo y/o laboratorio\nEl trabajo de campo constituye una parte fundamental del curso y está integrado al desarrollo progresivo de las investigaciones. Las actividades de campo incluyen trabajo dentro y cerca del campus universitario, una gira de tres días a la Estación Biológica La Selva y el trabajo de campo asociado al proyecto semestral.\nInvestigación guiada. El trabajo de campo se realizará principalmente dentro del campus universitario y en sitios cercanos. Estas actividades permitirán practicar métodos de muestreo, uso de equipo, registro de datos y metadatos, y aplicación de protocolos bajo la supervisión directa de docentes y asistentes.\nInvestigación independiente. La recolección de datos se realizará durante una gira de tres días a la Estación Biológica La Selva, los días 16, 17 y 18 de octubre de 2026. Durante la gira, los grupos implementarán los diseños de investigación desarrollados previamente y serán responsables de organizar el muestreo, recolectar y documentar los datos y adaptar sus protocolos cuando las condiciones de campo lo requieran.\nProyecto semestral. El proyecto semestral es el eje integrador del curso y permite que las personas estudiantes experimenten de manera auténtica el proceso de investigación ecológica, con sus desafíos metodológicos, de diseño y colecta de datos. Su desarrollo sigue una secuencia progresiva que acompaña la adquisición de competencias científicas a lo largo del semestre. La progresión didáctica del proyecto está articulada con las investigaciones 1 y 2, de modo que las competencias y herramientas que se adquieren en estas actividades se incorporan gradualmente al diseño y ejecución del proyecto semestral.\nLa participación en las giras y actividades de campo forma parte del desarrollo de las competencias del curso y se rige por las disposiciones de asistencia indicadas en este programa."
+  },
+  {
+    "objectID": "programa/index.html#evaluación",
+    "href": "programa/index.html#evaluación",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Evaluación",
+    "text": "Evaluación\nLa evaluación del curso tendrá un valor total de 100 puntos y estará distribuida entre las actividades desarrolladas durante el laboratorio y el proyecto semestral. La Investigación guiada tendrá un valor de 30 puntos, de los cuales 18 puntos corresponden a entradas individuales y 12 puntos a entradas grupales registrados en las bitácoras individuales y grupales. La Investigación independiente, desarrollada con un sistema de estudio seleccionado por cada grupo, tendrá un valor de 35 puntos, distribuidos en 21 puntos de evaluación individual y 14 puntos de evaluación grupal, igualmente registrados en las bitácoras individuales y grupales. Finalmente, el proyecto semestral de investigación en parejas tendrá un valor de 35 puntos y permitirá integrar y aplicar de manera autónoma las competencias desarrolladas a lo largo del curso. De esta forma, la evaluación busca equilibrar el trabajo colaborativo con el trabajo individual, asegurando que cada estudiante demuestre competencia en todas las etapas del proceso de investigación ecológica.\n\nAsistencia\nLa participación en TODAS las actividades del curso (clases, laboratorios, prácticas de campo) constituye un componente esencial, ya que permite desarrollar competencias que no podrían adquirirse plenamente mediante actividades no presenciales. Por esta razón, la asistencia es obligatoria a todas las clases, giras, y en general, a todas las actividades de muestreo realizadas en ecosistemas naturales, incluyendo aquellas que se desarrollen dentro del Campus Universitario.\nEstas actividades forman parte de los objetivos de aprendizaje del curso, particularmente en lo relacionado con la aplicación de métodos de muestreo, el uso de equipo de investigación ecológica, la recopilación de datos en condiciones reales y la toma de decisiones durante el trabajo de campo.\nLas ausencias a actividades de campo únicamente podrán justificarse de acuerdo con los criterios establecidos en el Artículo 24 del Reglamento del Régimen Académico Estudiantil. Se podrán justificar hasta dos ausencias durante el semestre; una tercera ausencia implica la pérdida del curso. Se considerará llegada tardía cuando la persona estudiante se incorpore 30 minutos o más después del inicio de una actividad programada. Dos llegadas tardías equivaldrán a una ausencia para efectos del control de asistencia. El control de asistencia debe firmarse durante los primeros 15 min de cada sesión.\nLas observaciones, actividades realizadas, trabajo de campo y decisiones metodológicas deberán quedar registradas oportunamente en las bitácoras correspondientes, las cuales complementan la evidencia de participación y aprendizaje en las actividades presenciales.\n\n\nInvestigación guiada (30 puntos)\n\n\n\nSemana\nIndividual\nGrupal\nTotal\n\n\n\n\n1\n3\n2\n5\n\n\n2\n3\n2\n5\n\n\n3\n3\n2\n5\n\n\n4\n3\n2\n5\n\n\n5\n3\n2\n5\n\n\n6\n3\n2\n5\n\n\nTotal\n18\n12\n30\n\n\n\n\n\nInvestigación independiente (35 puntos)\n\n\n\nSemana\nIndividual\nGrupal\nTotal\n\n\n\n\n7\n3\n2\n5\n\n\n8\n3\n2\n5\n\n\n9\n3\n2\n5\n\n\n10\n3\n2\n5\n\n\n11\n4\n3\n7\n\n\n12\n5\n3\n8\n\n\nTotal\n21\n14\n35\n\n\n\n\n\nEvaluación proyecto semestral\nLa evaluación del reporte escrito del proyecto semestral se hará de la siguiente forma:\n\n\n\nSección\nPuntos\n\n\n\n\nTítulo\n2\n\n\nResumen\n5\n\n\nPalabras claves\n1\n\n\nIntroducción\n12\n\n\nHipótesis y predicciones\n10\n\n\nMateriales y métodos\n15\n\n\nResultados\n20\n\n\nDiscusión\n25\n\n\nRevisión de literatura\n10\n\n\nTotal\n100\n\n\n\nEl proyecto de investigación en parejas (35 puntos de la nota final) será evaluado de la siguiente forma:\n\n\n\nSección\nPuntos\n\n\n\n\nPropuesta a\n10\n\n\nInforme de avance b\n10\n\n\nReporte\n45\n\n\nBitácora\n15\n\n\nPresentación oral\n20\n\n\nTotal\n100\n\n\n\na La propuesta se evaluará de la siguiente manera:\n\n\n\n\n\n\n\nSección\nPuntos\n\n\n\n\nTítulo\n5\n\n\nIntroducción (incluye marco teórico, justificación, hipótesis y predicciones)\n40\n\n\nMateriales y métodos (incluye descripción del sitio de estudio, diseño experimental, equipo empleado y cronograma)\n50\n\n\nReferencias\n5\n\n\nTotal\n100\n\n\n\nb El informe de avance se evaluará de la siguiente manera:\n\n\n\n\n\n\n\nÍtem\nPuntos\n\n\n\n\nLas secciones de la propuesta con las correcciones añadidas. Indicar modificaciones realizadas a la propuesta original. Resumen de datos preliminares: el número de eventos de muestreo y cantidad de muestras de los datos recolectados hasta el momento.\n35\n\n\nBitácora\n20\n\n\nExplicación de la matriz de datos Las modificaciones realizadas a la propuesta original Cronograma de trabajo faltante\n45\n\n\nTotal\n100"
+  },
+  {
+    "objectID": "programa/index.html#cronograma-del-curso-2026",
+    "href": "programa/index.html#cronograma-del-curso-2026",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Cronograma del Curso 2026",
+    "text": "Cronograma del Curso 2026\n\n\n\n\n\n\n\n\n\nSemana (fecha)\nActividad teórica\nActividad práctica\nActividad proyecto semestral\n\n\n\n\nInvestigación guiada\n\n\n\n\n\n14 ago\nIntroducción al curso. Observación científica. Preguntas, hipótesis y predicciones.\n\n\n\n\n21 ago\nDiseño experimental y muestreo ecológico. Variables y pseudorreplicación.\nObservación del sistema propuesto por los docentes. Generación de preguntas, hipótesis y predicciones. Diseño del estudio y protocolo de muestreo.\nFormación de parejas de investigación. Inicio de la bitácora del proyecto semestral. Exploración de intereses, observaciones y preguntas preliminares de posibles sistemas de estudio.\n\n\n28 ago\nTrabajo de campo y recolección de datos. Calidad de datos.\nColecta de datos en el campus y alrededores.\nExploración de posibles preguntas y sistemas de estudio anotados en la bitácora.\n\n\n4 set\nGestión de datos, metadatos y control de calidad.\nConstrucción y depuración de bases de datos.\nDefinición de la pregunta central, hipótesis y predicciones preliminares en la bitácora.\n\n\n11 set\nAnálisis exploratorio y visualización de datos.\nFiguras exploratorias y evaluación de supuestos.\nExploración de posibles diseños para responder la pregunta de investigación.\n\n\n18 set\nEstadística aplicada e interpretación ecológica.\nAnálisis de datos, resultados y preparación de presentación.\n\n\n\n25 set\nSemana de bienestar UCR, no hay actividades.\n\n\n\n\nInvestigación independiente\n\n\n\n\n\n2 oct\nSelección de sistemas ecológicos y formulación autónoma de preguntas.\nObservación del sistema seleccionado por cada grupo. En la segunda parte se hacen las presentaciones de la Investigación I, y retroalimentación.\nExploración de posibles métodos de muestreo.\n\n\n9 oct\nDiseño experimental avanzado.\nDiseño metodológico y protocolo de trabajo.\nEntrega de propuesta del proyecto semestral, incluyendo pregunta, hipótesis, predicciones, variables, diseño, muestreo y cronograma.\n\n\n16 oct\nGira La Selva: 16-18 de octubre\nRecolección de datos.\nDiscusión de retroalimentación con docentes y evaluación de la factibilidad metodológica. Registros en bitácora.\n\n\n23 oct\nOrganización de bases de datos y reproducibilidad.\nDepuración y documentación de bases de datos.\nRecolección de datos y ajustes menores al protocolo de trabajo.\n\n\n30 oct\nVisualización científica y análisis exploratorio.\nElaboración de figuras exploratorias y evaluación de supuestos.\nActualización de la bitácora del proyecto y documentación del avance metodológico.\n\n\n6 nov\nSelección de análisis estadísticos e interpretación de resultados.\nAnálisis, interpretación y revisión de literatura científica.\nElaboración de análisis preliminares, figuras y tablas.\n\n\n13 nov\nComunicación científica. Construcción de argumentos basados en evidencia.\nPreparación de presentación oral y reporte.\nElaboración de análisis preliminares, figuras y tablas. Entrega de informe de avance\n\n\n20 nov\nSimposio de investigaciones cortas.\nPresentaciones de la Investigación II.\nAplicación de retroalimentación y correcciones finales.\n\n\n27 nov\nPresentaciones orales del proyecto semestral. Cierre del curso.\nPresentaciones finales, discusión y reflexión sobre competencias desarrolladas.\nReporte proyecto semestral se entrega el 4 de diciembre."
+  },
+  {
+    "objectID": "programa/index.html#uso-ético-de-herramientas-de-inteligencia-artificial-ia",
+    "href": "programa/index.html#uso-ético-de-herramientas-de-inteligencia-artificial-ia",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Uso ético de herramientas de inteligencia artificial (IA)",
+    "text": "Uso ético de herramientas de inteligencia artificial (IA)\nLas herramientas de inteligencia artificial pueden utilizarse como apoyo al proceso de aprendizaje, siempre que no sustituyan el trabajo intelectual de la persona estudiante. Debido a que uno de los objetivos centrales de este curso es desarrollar competencias científicas relacionadas con la observación, formulación de preguntas, desarrollo de hipótesis, diseño experimental, trabajo de campo, análisis de datos, interpretación de resultados y comunicación científica, no está permitido utilizar la IA para generar total o parcialmente tareas, reportes, discusiones, conclusiones, hipótesis, predicciones, preguntas de investigación, entradas de bitácora o cualquier otro producto evaluado del curso. Estos productos deben reflejar el razonamiento, observaciones, decisiones metodológicas e interpretaciones originales de las personas estudiantes.\nSí se permite el uso de IA para mejorar la claridad, gramática, ortografía y estilo de la escritura; traducir textos; sugerir formas de organizar información; explicar conceptos ecológicos, estadísticos o metodológicos; apoyar la programación y depuración de código para análisis de datos; revisar el formato de citas y referencias; identificar literatura científica potencialmente relevante; generar palabras clave para búsquedas bibliográficas; y brindar retroalimentación sobre figuras, tablas, pósteres y presentaciones. No se permite la fabricación, modificación o manipulación de datos mediante IA ni la generación de registros de actividades que no hayan sido efectivamente realizadas.\nToda información obtenida mediante herramientas de IA deberá ser verificada mediante fuentes científicas confiables y adecuadamente citadas cuando corresponda. La responsabilidad final sobre la exactitud de la información presentada y la autoría del trabajo recae exclusivamente en las personas estudiantes. Los docentes podrán solicitar bitácoras, versiones preliminares, bases de datos, análisis intermedios u otras evidencias del proceso de trabajo para verificar el desarrollo auténtico de las competencias científicas del curso las cuales deben desarrollarse durante el tiempo de laboratorio sin la intervención de IA."
+  },
+  {
+    "objectID": "programa/index.html#referencias",
+    "href": "programa/index.html#referencias",
+    "title": "B-0305 Laboratorio de Ecología General",
+    "section": "Referencias",
+    "text": "Referencias\nAndrewartha, H. G. (1970). Introduction to the study of animal populations (2nd ed.). Chapman and Hall.\nBegon, M., Harper, J., & Townsend, C. (2006). Ecology: From individuals to ecosystems (4th ed.). Blackwell.\nBetts, M. G., Hadley, A. S., Frey, D. W., Frey, S. J., Gannon, D., Harris, S. H., & Zárrate‐Charry, D. (2021). When are hypotheses useful in ecology and evolution? Ecology and Evolution, 11(11), 5762-5776. https://doi.org/10.1002/ece3.7472\nCrawley, M. J. (2007). The R book. John Wiley.\nFarji-Brener, A. G. (2003). Uso correcto, parcial e incorrecto de los términos “hipótesis” y “predicciones” en ecología. Ecología Austral, 13(2), 223-227.\nGotelli, N. J., & Ellison, A. M. (2004). A primer of ecological statistics (Vol. 1). Sinauer Associates.\nKrebs, C. J. (1999). Ecological methodology (2nd ed.). Benjamin Cummings. http://www.zoology.ubc.ca/~krebs/books.html\nMittelbach, G. G., & McGill, B. J. (2019). Community ecology. Oxford University Press.\nMoreno, C. E. (2001). Manual de métodos para medir la biodiversidad. Universidad Veracruzana. https://www.researchgate.net/publication/304346666_Metodos_para_medir_la_biodiversidad\nQuinn, G. P., & Keough, M. J. (2002). Experimental design and data analysis for biologists. Cambridge University Press.\nSchimel, J. (2012). Writing science: How to write papers that get cited and proposals that get funded. Oxford University Press.\nSutherland, W. J. (Ed.). (2006). Ecological census techniques: A handbook. Cambridge University Press. https://www.researchgate.net/publication/273070581_Ecological_Census_Techniques_A_Handbook\nZar, J. H. (1999). Biostatistical analysis (4th ed.). Prentice Hall."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#plan",
+    "href": "lectures/01-sci-method.html#plan",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Plan",
+    "text": "Plan\n\nEntender como ecologos construyen explicaciones a partir de observaciones y comparacion de hipotesis.\nDistinguir entre patron observado y mecanismo explicativo.\nUsar predicciones para contrastar hipotesis alternativas.\nReforzar el metodo cientifico como proceso iterativo con incertidumbre."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion",
+    "href": "lectures/01-sci-method.html#observacion-vs-explicacion",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Observacion vs explicacion",
+    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\n¿Por que?\n\n\nPosibles explicaciones:\n\n\nMuestreo pasivo\n\n\nHeterogeneidad de habitat\n\n\nColonizacion-extincion\n\n\n\n\nEl patron por si solo no identifica el mecanismo."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
+    "href": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Observacion vs explicacion",
+    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\nNecesitamos:\n\nhipotesis alternativas\npredicciones distintas\ncomparacion de evidencia"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#definiciones",
+    "href": "lectures/01-sci-method.html#definiciones",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Definiciones",
+    "text": "Definiciones\n\nSi P, entonces Q. P es la hipotesis y Q es la prediccion.\n\n\nUna hipotesis es una explicacion propuesta y comprobable para un fenomeno ecologico observado.\n\n\nUna prediccion es una consecuencia observable de la hipotesis que puede ser contrastada con evidencia."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
+    "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis A: Muestreo pasivo",
+    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, incluso sin diferencias en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
+    "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis B: Heterogeneidad de habitat",
+    "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\n\nPredicciones:\n\n\nEl numero de microhabitats deberia aumentar con el area.\nLa riqueza deberia aumentar con heterogeneidad del habitat.\nSitios con area similar pero mayor heterogeneidad deberian tener mayor riqueza."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
+    "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis C: Colonizacion-extincion",
+    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar menor persistencia temporal de especies.\nSitios grandes deberian mantener mas especies a traves de muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#que-datos-necesitamos",
+    "href": "lectures/01-sci-method.html#que-datos-necesitamos",
+    "title": "Metodo cientifico en ecologia",
+    "section": "¿Que datos necesitamos?",
+    "text": "¿Que datos necesitamos?\n\n\narea de cada parche\nriqueza de especies por parche\nabundancia total y esfuerzo de muestreo\nindice de heterogeneidad de habitat\npresencia/ausencia en multiples fechas (persistencia temporal)"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-1-patron-observado",
+    "href": "lectures/01-sci-method.html#evidencia-1-patron-observado",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 1: patron observado",
+    "text": "Evidencia 1: patron observado\n\n\n¿Que hipotesis favorece esta evidencia?\n\n\nFavorece varias A, B o C. No distingue mecanismo."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
+    "href": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 2: estandarizacion por muestreo",
+    "text": "Evidencia 2: estandarizacion por muestreo\n\n\nSi la pendiente cae mucho al estandarizar, aumenta soporte para hipotesis A."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
+    "href": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 3: heterogeneidad de habitat",
+    "text": "Evidencia 3: heterogeneidad de habitat\n\n\nRelacion fuerte con heterogeneidad: evidencia coherente con hipotesis B."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
+    "href": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 4: persistencia temporal",
+    "text": "Evidencia 4: persistencia temporal\n\n\nMayor persistencia en sitios grandes: evidencia coherente con hipotesis C."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada",
+    "href": "lectures/01-sci-method.html#evidencia-combinada",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis B.\nLa riqueza estandarizada mantiene una pendiente positiva con area y, ademas, la riqueza aumenta con heterogeneidad del habitat."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-1",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis C.\nLa riqueza estandarizada se mantiene positiva con area y la persistencia temporal aumenta en parches grandes."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-2",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-2",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nEvidencia compatible con B y C.\nLa heterogeneidad aumenta la riqueza, lo que apoya B. Ademas, la persistencia temporal aumenta en parches grandes, lo que apoya C.\n\n\n¿Hipotesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactuan?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
+    "href": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia adicional: persistencia vs heterogeneidad (B-C)",
+    "text": "Evidencia adicional: persistencia vs heterogeneidad (B-C)\n\n\n\nMayor heterogeneidad se asocia con mayor persistencia.\nEsto sugiere que la heterogeneidad tambien puede mejorar la estabilidad, ademas de aumentar la riqueza.\nRecuerdense que hipotesis C vinculaba la persistencia con area, no con heterogeneidad."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-3",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-3",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
+    "href": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
+    "title": "Metodo cientifico en ecologia",
+    "section": "¿Y si los datos no son claros?",
+    "text": "¿Y si los datos no son claros?\n\n\nMisma direccion de efecto, distinta precision.\n¿Interpretariamos estas dos figuras de la misma manera?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
+    "href": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Señal positiva con distinta precision",
+    "text": "Señal positiva con distinta precision\n\n\n\n¿Qué hipótesis favorece esta evidencia?\nAmbos paneles sugieren direccion positiva, pero con diferente precision (incertidumbre): el IC95% de la pendiente es critico.\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
+    "href": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Inferencia con incertidumbre",
+    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente (cualquier coeficiente) indica un rango plausible para el efecto.\nPara hipotesis B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara hipotesis C, el parametro clave es la pendiente area -&gt; persistencia: esperamos signo positivo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
+    "href": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Exemplo de interpretacion con incertidumbre",
+    "text": "Exemplo de interpretacion con incertidumbre\n\nEjemplo de soporte claro: pendiente = 1.07, IC95% [0.81, 1.32].\nInterpretacion: la relacion es positiva y consistente con la hipotesis, con magnitud aproximada del efecto de 1.07 [0.81, 1.32].\n\n\nEjemplo de evidencia compatible pero incierto: pendiente = 0.90, IC95% [-0.09, 1.89].\nInterpretacion: la relacion es positiva y consistente con la hipotesis (b = 0.90), pero el IC95% incluye 0 (IC95% [-0.09, 1.89]) y no se puede rechazar la ausencia de efecto. Se necesita mas evidencia y mejor precision para obtener conclusiones firmes.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor P)."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
+    "href": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Como poderiamos mejorar la precision de la evidencia?",
+    "text": "Como poderiamos mejorar la precision de la evidencia?\n\n\nAumentar el tamaño de muestra (más sitios, más individuos, más fechas).\nReducir el error de medición (estandarizar protocolos, calibrar instrumentos).\nReducir la variabilidad no explicada (controlar covariables, usar modelos estadísticos apropiados).\nMejorar el diseño de muestreo (aleatorización, replicación, bloqueos, estratificación)."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#resumen",
+    "href": "lectures/01-sci-method.html#resumen",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Resumen",
+    "text": "Resumen\n\nEl patron especie-area es una observacion inicial, no una explicacion final.\nA, B y C pueden explicar el mismo patron general, pero generan predicciones distintas.\nComparar multiples lineas de evidencia fortalece la inferencia ecologica.\nEl metodo cientifico en ecologia es iterativo: observar, plantear hipotesis, predecir, contrastar y revisar."
+  },
+  {
+    "objectID": "labs/L01.html",
+    "href": "labs/L01.html",
     "title": "Lab 01: método científico, hipótesis, predicciones",
     "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
   },
   {
-    "objectID": "labs-teaching-notes/L01.html#observacion",
-    "href": "labs-teaching-notes/L01.html#observacion",
+    "objectID": "labs/L01.html#observacion",
+    "href": "labs/L01.html#observacion",
     "title": "Lab 01: método científico, hipótesis, predicciones",
     "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
   },
   {
-    "objectID": "giras/index.html",
-    "href": "giras/index.html",
-    "title": "Giras",
+    "objectID": "labs/L01.html#preguntas",
+    "href": "labs/L01.html#preguntas",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "Preguntas",
+    "text": "Preguntas\nHipótesis A:\n\n \n \n \n \n\nPredicciones de la hipótesis A:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\n \n \n \n \n\n\nHipótesis B:\n\n \n \n \n \n\nPredicciones de la hipótesis B:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis B y sus predicciones:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Laboratorio de Ecologia General B-0305",
     "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
   },
   {
-    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "title": "Giras",
+    "objectID": "index.html#bienvenido",
+    "href": "index.html#bienvenido",
+    "title": "Laboratorio de Ecologia General B-0305",
     "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
   },
   {
-    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "title": "Giras",
-    "section": "Trabajo de campo para la investigacion guiada",
-    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
+    "objectID": "index.html#enfoque-del-curso",
+    "href": "index.html#enfoque-del-curso",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Enfoque del curso",
+    "text": "Enfoque del curso\nEl laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados."
   },
   {
-    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "title": "Giras",
-    "section": "Expectativas de trabajo en campo para el proyecto semestral",
-    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
+    "objectID": "index.html#programa-del-curso",
+    "href": "index.html#programa-del-curso",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Programa del curso",
+    "text": "Programa del curso\nEl programa del curso ya está disponible en la sección de Programa."
+  },
+  {
+    "objectID": "index.html#fechas-importantes",
+    "href": "index.html#fechas-importantes",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Fechas importantes",
+    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
   },
   {
     "objectID": "drafts/03-methods.html#metas",
@@ -266,325 +553,59 @@
     "text": "Más allá del clado y el lago\nEste ejemplo usa un grupo de especies y un lago, pero la misma lógica aplica a muchos contextos:\n\n\nBiogeografía de islas → ¿el grupo colonizó la isla antes o después del aislamiento geográfico?\nVirus en un nuevo huésped → ¿el linaje viral es anterior o posterior al primer contacto con esa especie?\nDiversificación en montañas → ¿el clado se originó antes o después del levantamiento de la cordillera?\nOrigen de una enfermedad → ¿cuándo divergió el patógeno de su ancestro común con una cepa conocida?\n\n\n\n\nEn todos los casos: usamos fósiles, filogenias y dataciones para inferir el pasado, reconociendo las suposiciones y los límites de cada método."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Laboratorio de Ecologia General B-0305",
+    "objectID": "giras/index.html",
+    "href": "giras/index.html",
+    "title": "Giras",
     "section": "",
-    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
   },
   {
-    "objectID": "index.html#bienvenido",
-    "href": "index.html#bienvenido",
-    "title": "Laboratorio de Ecologia General B-0305",
+    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "title": "Giras",
     "section": "",
-    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
   },
   {
-    "objectID": "index.html#enfoque-del-curso",
-    "href": "index.html#enfoque-del-curso",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Enfoque del curso",
-    "text": "Enfoque del curso\nEl laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados."
+    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "title": "Giras",
+    "section": "Trabajo de campo para la investigacion guiada",
+    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
   },
   {
-    "objectID": "index.html#programa-del-curso",
-    "href": "index.html#programa-del-curso",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Programa del curso",
-    "text": "Programa del curso\nEl programa del curso ya está disponible en la sección de Programa."
+    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "title": "Giras",
+    "section": "Expectativas de trabajo en campo para el proyecto semestral",
+    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
   },
   {
-    "objectID": "index.html#fechas-importantes",
-    "href": "index.html#fechas-importantes",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Fechas importantes",
-    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
-  },
-  {
-    "objectID": "labs/L01.html",
-    "href": "labs/L01.html",
+    "objectID": "labs-teaching-notes/L01.html",
+    "href": "labs-teaching-notes/L01.html",
     "title": "Lab 01: método científico, hipótesis, predicciones",
     "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
   },
   {
-    "objectID": "labs/L01.html#observacion",
-    "href": "labs/L01.html#observacion",
+    "objectID": "labs-teaching-notes/L01.html#observacion",
+    "href": "labs-teaching-notes/L01.html#observacion",
     "title": "Lab 01: método científico, hipótesis, predicciones",
     "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
   },
   {
-    "objectID": "labs/L01.html#preguntas",
-    "href": "labs/L01.html#preguntas",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "Preguntas",
-    "text": "Preguntas\nHipótesis A:\n\n \n \n \n \n\nPredicciones de la hipótesis A:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\n \n \n \n \n\n\nHipótesis B:\n\n \n \n \n \n\nPredicciones de la hipótesis B:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis B y sus predicciones:"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#plan",
-    "href": "lectures/01-sci-method.html#plan",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Plan",
-    "text": "Plan\n\nEntender como ecologos construyen explicaciones a partir de observaciones y comparacion de hipotesis.\nDistinguir entre patron observado y mecanismo explicativo.\nUsar predicciones para contrastar hipotesis alternativas.\nReforzar el metodo cientifico como proceso iterativo con incertidumbre."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion",
-    "href": "lectures/01-sci-method.html#observacion-vs-explicacion",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Observacion vs explicacion",
-    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\n¿Por que?\n\n\nPosibles explicaciones:\n\n\nMuestreo pasivo\n\n\nHeterogeneidad de habitat\n\n\nColonizacion-extincion\n\n\n\n\nEl patron por si solo no identifica el mecanismo."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
-    "href": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Observacion vs explicacion",
-    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\nNecesitamos:\n\nhipotesis alternativas\npredicciones distintas\ncomparacion de evidencia"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#definiciones",
-    "href": "lectures/01-sci-method.html#definiciones",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Definiciones",
-    "text": "Definiciones\n\nSi P, entonces Q. P es la hipotesis y Q es la prediccion.\n\n\nUna hipotesis es una explicacion propuesta y comprobable para un fenomeno ecologico observado.\n\n\nUna prediccion es una consecuencia observable de la hipotesis que puede ser contrastada con evidencia."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
-    "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis A: Muestreo pasivo",
-    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, incluso sin diferencias en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
-    "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis B: Heterogeneidad de habitat",
-    "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\n\nPredicciones:\n\n\nEl numero de microhabitats deberia aumentar con el area.\nLa riqueza deberia aumentar con heterogeneidad del habitat.\nSitios con area similar pero mayor heterogeneidad deberian tener mayor riqueza."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
-    "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis C: Colonizacion-extincion",
-    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar menor persistencia temporal de especies.\nSitios grandes deberian mantener mas especies a traves de muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#que-datos-necesitamos",
-    "href": "lectures/01-sci-method.html#que-datos-necesitamos",
-    "title": "Metodo cientifico en ecologia",
-    "section": "¿Que datos necesitamos?",
-    "text": "¿Que datos necesitamos?\n\n\narea de cada parche\nriqueza de especies por parche\nabundancia total y esfuerzo de muestreo\nindice de heterogeneidad de habitat\npresencia/ausencia en multiples fechas (persistencia temporal)"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-1-patron-observado",
-    "href": "lectures/01-sci-method.html#evidencia-1-patron-observado",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 1: patron observado",
-    "text": "Evidencia 1: patron observado\n\n\n¿Que hipotesis favorece esta evidencia?\n\n\nFavorece varias A, B o C. No distingue mecanismo."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
-    "href": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 2: estandarizacion por muestreo",
-    "text": "Evidencia 2: estandarizacion por muestreo\n\n\nSi la pendiente cae mucho al estandarizar, aumenta soporte para hipotesis A."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
-    "href": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 3: heterogeneidad de habitat",
-    "text": "Evidencia 3: heterogeneidad de habitat\n\n\nRelacion fuerte con heterogeneidad: evidencia coherente con hipotesis B."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
-    "href": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 4: persistencia temporal",
-    "text": "Evidencia 4: persistencia temporal\n\n\nMayor persistencia en sitios grandes: evidencia coherente con hipotesis C."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada",
-    "href": "lectures/01-sci-method.html#evidencia-combinada",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis B.\nLa riqueza estandarizada mantiene una pendiente positiva con area y, ademas, la riqueza aumenta con heterogeneidad del habitat."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada-1",
-    "href": "lectures/01-sci-method.html#evidencia-combinada-1",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis C.\nLa riqueza estandarizada se mantiene positiva con area y la persistencia temporal aumenta en parches grandes."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada-2",
-    "href": "lectures/01-sci-method.html#evidencia-combinada-2",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nEvidencia compatible con B y C.\nLa heterogeneidad aumenta la riqueza, lo que apoya B. Ademas, la persistencia temporal aumenta en parches grandes, lo que apoya C.\n\n\n¿Hipotesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactuan?"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
-    "href": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia adicional: persistencia vs heterogeneidad (B-C)",
-    "text": "Evidencia adicional: persistencia vs heterogeneidad (B-C)\n\n\n\nMayor heterogeneidad se asocia con mayor persistencia.\nEsto sugiere que la heterogeneidad tambien puede mejorar la estabilidad, ademas de aumentar la riqueza.\nRecuerdense que hipotesis C vinculaba la persistencia con area, no con heterogeneidad."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada-3",
-    "href": "lectures/01-sci-method.html#evidencia-combinada-3",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
-    "href": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
-    "title": "Metodo cientifico en ecologia",
-    "section": "¿Y si los datos no son claros?",
-    "text": "¿Y si los datos no son claros?\n\n\nMisma direccion de efecto, distinta precision.\n¿Interpretariamos estas dos figuras de la misma manera?"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
-    "href": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Señal positiva con distinta precision",
-    "text": "Señal positiva con distinta precision\n\n\n\n¿Qué hipótesis favorece esta evidencia?\nAmbos paneles sugieren direccion positiva, pero con diferente precision (incertidumbre): el IC95% de la pendiente es critico.\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
-    "href": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Inferencia con incertidumbre",
-    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente (cualquier coeficiente) indica un rango plausible para el efecto.\nPara hipotesis B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara hipotesis C, el parametro clave es la pendiente area -&gt; persistencia: esperamos signo positivo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
-    "href": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Exemplo de interpretacion con incertidumbre",
-    "text": "Exemplo de interpretacion con incertidumbre\n\nEjemplo de soporte claro: pendiente = 1.07, IC95% [0.81, 1.32].\nInterpretacion: la relacion es positiva y consistente con la hipotesis, con magnitud aproximada del efecto de 1.07 [0.81, 1.32].\n\n\nEjemplo de evidencia compatible pero incierto: pendiente = 0.90, IC95% [-0.09, 1.89].\nInterpretacion: la relacion es positiva y consistente con la hipotesis (b = 0.90), pero el IC95% incluye 0 (IC95% [-0.09, 1.89]) y no se puede rechazar la ausencia de efecto. Se necesita mas evidencia y mejor precision para obtener conclusiones firmes.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor P)."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
-    "href": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Como poderiamos mejorar la precision de la evidencia?",
-    "text": "Como poderiamos mejorar la precision de la evidencia?\n\n\nAumentar el tamaño de muestra (más sitios, más individuos, más fechas).\nReducir el error de medición (estandarizar protocolos, calibrar instrumentos).\nReducir la variabilidad no explicada (controlar covariables, usar modelos estadísticos apropiados).\nMejorar el diseño de muestreo (aleatorización, replicación, bloqueos, estratificación)."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#resumen",
-    "href": "lectures/01-sci-method.html#resumen",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Resumen",
-    "text": "Resumen\n\nEl patron especie-area es una observacion inicial, no una explicacion final.\nA, B y C pueden explicar el mismo patron general, pero generan predicciones distintas.\nComparar multiples lineas de evidencia fortalece la inferencia ecologica.\nEl metodo cientifico en ecologia es iterativo: observar, plantear hipotesis, predecir, contrastar y revisar."
-  },
-  {
-    "objectID": "programa/index.html",
-    "href": "programa/index.html",
-    "title": "B-0305 Laboratorio de Ecología General",
+    "objectID": "lectures/index.html",
+    "href": "lectures/index.html",
+    "title": "Clases",
     "section": "",
-    "text": "Programa en PDF"
+    "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
   },
   {
-    "objectID": "programa/index.html#información-general",
-    "href": "programa/index.html#información-general",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Información General",
-    "text": "Información General\n\n\n\nCiclo en que se imparte:\nII - 2026\n\n\n\n\nCréditos:\n2\n\n\nAsistencia:\nObligatoria\n\n\nRequisitos:\nXS-301, B-0218, B-0239\n\n\nCorrequisitos:\nEcología General B-0304\n\n\nHoras lectivas:\n3 horas (viernes de 9:00 am a 11:50 am)\n\n\nAulas:\n110 y 280\n\n\nProfesores:\nDr. Gerardo Avalos y Dr. Teofil Nakov.\n\n\nAsistentes:\nJordi Jiménez, Valeria Castro, David Campos, Esteban Fuentes, Naidely Vidaurre.\n\n\nModalidad:\nBajo virtual\n\n\nHoras de consulta a convenir:\nGerardo Avalos gerardo.avalos@ucr.ac.cr Teo Nakov teofil.nakov@ucr.ac.cr\n\n\nCuenta de email del curso:\nucr.eco.lab@gmail.com"
-  },
-  {
-    "objectID": "programa/index.html#fechas-importantes",
-    "href": "programa/index.html#fechas-importantes",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Fechas importantes",
-    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
-  },
-  {
-    "objectID": "programa/index.html#introducción",
-    "href": "programa/index.html#introducción",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Introducción",
-    "text": "Introducción\nLa ecología es una ciencia integradora que estudia las interacciones entre los organismos y su ambiente, así como los procesos que determinan la distribución, abundancia y diversidad de la vida en la Tierra. Debido a que estas interacciones tienen lugar simultáneamente a múltiples escalas (desde individuos hasta ecosistemas), la ecología requiere combinar observación, experimentación, análisis cuantitativo e interpretación crítica de la evidencia científica.\nEl conocimiento ecológico se construye mediante el método científico. La observación de patrones naturales conduce al planteamiento de preguntas que pueden responderse mediante hipótesis, predicciones y diseños de muestreo apropiados. La recolección sistemática de datos, su análisis estadístico y la interpretación de los resultados permiten evaluar dichas hipótesis y generar nuevo conocimiento acerca del funcionamiento de los sistemas naturales. Las preguntas surgen de observaciones cuya explicación no es inicialmente evidente, ya que requiere de un proceso repetitivo e inquisitivo de aplicación del método científico.\nPor esta razón, el laboratorio constituye el componente práctico del curso de Ecología General. Su propósito no es únicamente ilustrar conceptos vistos en las clases teóricas, sino desarrollar las competencias necesarias para planificar, ejecutar, analizar y comunicar investigaciones ecológicas. Durante el semestre, las personas estudiantes recorrerán todas las etapas del proceso científico, desde la formulación de preguntas hasta la presentación de resultados, utilizando herramientas de campo, técnicas de muestreo, análisis estadísticos y literatura científica como apoyo para la toma de decisiones."
-  },
-  {
-    "objectID": "programa/index.html#filosofía-del-curso",
-    "href": "programa/index.html#filosofía-del-curso",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Filosofía del curso",
-    "text": "Filosofía del curso\nEste laboratorio adopta un enfoque de aprendizaje basado en competencias e indagación científica. El objetivo es que cada estudiante experimente de forma integral el trabajo de un profesional en ecología. En lugar de limitarse a una sola tarea, desarrollará competencias clave en todo el ciclo de investigación: desde la formulación de preguntas científicas y el diseño experimental, hasta el muestreo de campo, análisis de datos y comunicación de conclusiones basadas en evidencia.\nLas primeras semanas se dedican a la observación de patrones naturales, la formulación de preguntas e hipótesis y el diseño de protocolos de muestreo. Posteriormente, las personas estudiantes implementan dichos protocolos mediante trabajo de campo, organizan y verifican la calidad de los datos recolectados, realizan análisis estadísticos apropiados e interpretan sus resultados a la luz de la literatura científica. Finalmente, comunican sus hallazgos mediante reportes escritos breves y presentaciones orales, además de pósters.\nA diferencia de un laboratorio basado en prácticas independientes, este curso desarrolla investigaciones que evolucionan a lo largo de varias semanas. Este enfoque permite comprender cómo cada etapa del método científico depende de las anteriores y favorece la adquisición progresiva de competencias de investigación que son necesarias para el trabajo real de las personas dedicadas a la Ecología. Las prácticas guiadas realizadas durante la primera mitad del semestre sirven como modelo para que, posteriormente, las personas estudiantes diseñen y ejecuten con mayor autonomía las prácticas de la segunda mitad del semestre, y, por consiguiente, su propio proyecto semestral de investigación.\nLa evaluación del curso se centra tanto en el proceso de investigación como en los productos generados. Para documentar dicho proceso, cada estudiante mantendrá una bitácora individual de investigación y cada grupo una bitácora grupal de investigación. Estas bitácoras funcionarán como un registro continuo de observaciones, decisiones metodológicas, actividades de campo, análisis de datos e interpretaciones realizadas durante el semestre, a fin de permitir evidenciar el desarrollo progresivo de las competencias científicas. Los reportes científicos continúan siendo una herramienta fundamental para desarrollar habilidades de comunicación escrita; sin embargo, también se evalúa el pensamiento crítico y la capacidad individual para tomar decisiones metodológicas, justificar procedimientos, analizar evidencia y resolver problemas durante el desarrollo de la investigación."
-  },
-  {
-    "objectID": "programa/index.html#objetivo-general",
-    "href": "programa/index.html#objetivo-general",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Objetivo general",
-    "text": "Objetivo general\nDesarrollar en las personas estudiantes las competencias necesarias para plantear, diseñar, ejecutar, analizar y comunicar investigaciones ecológicas de campo y laboratorio, aplicando el método científico para responder preguntas sobre los factores que determinan la distribución, abundancia e interacciones de los organismos en ecosistemas tropicales."
-  },
-  {
-    "objectID": "programa/index.html#objetivos-específicos",
-    "href": "programa/index.html#objetivos-específicos",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Objetivos específicos",
-    "text": "Objetivos específicos\nAl finalizar el curso, la persona estudiante será capaz de:\n\nFormular preguntas de investigación ecológica a partir de observaciones realizadas en el campo y de información proveniente de la literatura científica.\nElaborar hipótesis biológicas y derivar predicciones comprobables que puedan evaluarse mediante observaciones o experimentos.\nDiseñar protocolos de muestreo apropiados para responder preguntas ecológicas, identificando variables independientes, dependientes y de control.\nIdentificar y minimizar fuentes de sesgo, confusión y pseudorreplicación en investigaciones ecológicas.\nUtilizar correctamente el equipo básico de investigación ecológica para obtener mediciones confiables de variables bióticas y abióticas.\nAplicar técnicas de muestreo en el campo siguiendo protocolos estandarizados y criterios de seguridad.\nOrganizar, documentar y verificar la calidad de bases de datos ecológicas antes de su análisis.\nSeleccionar y aplicar métodos estadísticos básicos para analizar datos ecológicos e interpretar sus resultados dentro de un contexto biológico.\nComunicar resultados científicos mediante reportes escritos y presentaciones orales siguiendo el formato de publicaciones científicas.\nTrabajar colaborativamente en proyectos de investigación demostrando responsabilidad, ética científica y respeto por el ambiente."
-  },
-  {
-    "objectID": "programa/index.html#competencias-del-curso",
-    "href": "programa/index.html#competencias-del-curso",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Competencias del curso",
-    "text": "Competencias del curso\nLas actividades del laboratorio están organizadas para desarrollar progresivamente las siguientes competencias.\n\nCompetencia 1. Observación científica\nLa persona estudiante reconoce patrones ecológicos mediante observaciones sistemáticas y distingue entre observaciones objetivas e interpretaciones.\nResultados de aprendizaje\n\nDescribe patrones ecológicos utilizando lenguaje científico.\nRegistra observaciones de manera sistemática en una bitácora científica utilizando criterios estandarizados.\nIdentifica posibles factores que explican un patrón observado.\nIdentifica patrones que su experimento sí resolvió y que están apoyados por la evidencia, versus patrones y preguntas que deben resolverse en el futuro mediante el diseño de experimentos adicionales.\n\n\n\nCompetencia 2. Formulación de preguntas e hipótesis\nLa persona estudiante transforma observaciones ecológicas en preguntas científicas, hipótesis y predicciones comprobables.\nResultados de aprendizaje\n\nFormula preguntas claras y medibles.\nPropone hipótesis biológicamente fundamentadas.\nDeriva predicciones consistentes con la hipótesis.\nDistingue claramente entre una hipótesis y una predicción.\n\n\n\nCompetencia 3. Diseño experimental\nLa persona estudiante diseña investigaciones ecológicas apropiadas para responder una pregunta científica.\nResultados de aprendizaje\n\nIdentifica variables independientes y dependientes.\nReconoce posibles variables de confusión.\nSelecciona unidades experimentales o unidades de muestreo.\nJustifica el método de muestreo seleccionado de acuerdo con la pregunta, las hipótesis y predicciones, y la escala o tamaño del organismo.\n\n\n\nCompetencia 4. Trabajo de campo\nLa persona estudiante implementa protocolos de investigación utilizando equipo científico y procedimientos estandarizados.\nResultados de aprendizaje\n\nUtiliza correctamente instrumentos de medición, o los adapta cuando estos sean escasos.\nRegistra datos, observaciones complementarias y limitaciones metodológicas de forma precisa en su bitácora y en las bases de datos del proyecto.\nSigue protocolos estandarizados.\nTrabaja de manera segura y ética.\nEntiende las limitaciones metodológicas asociadas al uso de equipo de campo y diseña su experimento de acuerdo con estas limitaciones.\n\n\n\nCompetencia 5. Gestión de datos\nLa persona estudiante organiza bases de datos reproducibles y verifica la calidad de la información recolectada.\nResultados de aprendizaje\n\nDiseña matrices de datos y las codifica apropiadamente.\nCodifica eficientemente las variables en función de los análisis estadísticos y del software utilizado.\nDetecta errores.\nDocumenta metadatos y decisiones relacionadas con la organización de datos en la bitácora grupal de investigación.\nCorrige inconsistencias justificadamente.\nComparte bases de datos en grupo y establece protocolos para editarlas.\n\n\n\nCompetencia 6. Análisis e interpretación\nLa persona estudiante analiza datos ecológicos utilizando herramientas estadísticas apropiadas e interpreta los resultados en un contexto ecológico.\nResultados de aprendizaje\n\nSelecciona pruebas estadísticas adecuadas.\nInterpreta resultados biológicamente.\nReconoce las limitaciones del estudio.\nPropone explicaciones alternativas.\nIntegra información proveniente de literatura científica para interpretar resultados y contextualizar los hallazgos.\nReconoce las conclusiones estrictamente apoyadas en la evidencia generada por el experimento versus preguntas adicionales que requieran de más experimentación.\n\n\n\nCompetencia 7. Comunicación científica\nLa persona estudiante comunica investigaciones utilizando formatos científicos escritos y orales.\nResultados de aprendizaje\n\nDocumenta y comunica el proceso científico mediante bitácoras de investigación, reportes científicos y presentaciones orales.\nElabora figuras y tablas informativas.\nPresenta resultados oralmente.\nPuede generar un abstract gráfico y un póster.\nDefiende conclusiones utilizando evidencia científica."
-  },
-  {
-    "objectID": "programa/index.html#metodología",
-    "href": "programa/index.html#metodología",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Metodología",
-    "text": "Metodología\nSecuencia de investigaciones del curso.\nLas actividades prácticas del laboratorio están organizadas como una secuencia progresiva de investigaciones que permiten desarrollar las competencias científicas de manera gradual. Se trabajará en grupos de un máximo de cinco personas, aunque gran parte del trabajo será individual. Como parte del desarrollo de las competencias científicas, cada estudiante mantendrá una bitácora individual de investigación y cada grupo una bitácora grupal de investigación. Las bitácoras serán actualizadas semanalmente durante el desarrollo de las prácticas y podrán ser revisadas periódicamente por docentes y asistentes para brindar retroalimentación y evaluar el progreso de las competencias científicas. La bitácora individual permitirá documentar observaciones, razonamientos, decisiones metodológicas, interpretaciones y reflexiones personales sobre el desarrollo de la investigación. La bitácora grupal funcionará como el registro oficial del proyecto e incluirá las decisiones consensuadas del grupo, protocolos, bases de datos, análisis, figuras y productos de comunicación científica. Ambas bitácoras se construirán progresivamente durante el semestre y constituirán una parte fundamental de la evaluación del proceso de investigación.\nDurante la investigación guiada, las personas estudiantes aprenden y practican cada una de las etapas del proceso científico mediante una investigación altamente guiada por las personas docentes. Esta primera experiencia tiene como propósito construir las bases conceptuales y metodológicas necesarias para desarrollar un estudio ecológico completo.\nPosteriormente, durante la investigación independiente, las personas estudiantes aplican las competencias desarrolladas en la primera investigación con un mayor grado de autonomía. Los estudiantes identificarán su propio sistema de estudio, por lo que deberán tomar más decisiones relacionadas con la formulación de preguntas, el diseño metodológico, la selección de variables, las limitaciones logísticas del trabajo en el campo, el análisis de datos y la interpretación de resultados. De esta manera, la segunda investigación funciona como una transición entre una experiencia de aprendizaje guiada y el trabajo independiente que se desarrolla simultáneamente para el proyecto semestral.\nFinalmente, en el proyecto semestral de investigación, las personas estudiantes desarrollan una investigación original en parejas con un nivel significativamente mayor de independencia. En esta etapa deberán integrar todas las competencias adquiridas durante el curso para plantear, diseñar, ejecutar, analizar y comunicar una investigación ecológica propia, asumiendo de manera autónoma las responsabilidades y decisiones asociadas al trabajo científico. La bitácora del proyecto será evaluada considerando la continuidad de los registros, la calidad de la documentación metodológica, la reflexión crítica sobre problemas encontrados, la organización de la información y la evidencia del progreso de la investigación.\nA medida que se desarrollen las competencias durante las investigaciones 1 y 2, se espera que las personas apliquen estas competencias progresivamente al desarrollo de su proyecto semestral. De esta forma, el proyecto reproduce la secuencia lógica del método científico y la progresión del curso, desde la observación y formulación de preguntas hasta el diseño experimental, el muestreo, el análisis de datos y la comunicación de resultados. Una vez adquiridas las bases conceptuales y técnicas necesarias, se formaliza el diseño de la investigación y se inicia su ejecución.\nDurante la fase de investigación guiada, cada pareja explora sistemas naturales, formula preguntas, desarrolla hipótesis y predicciones, y construye progresivamente los componentes metodológicos de su investigación semestral. En la segunda mitad del semestre, las parejas implementan el proyecto, recolectan y analizan datos, interpretan los resultados y comunican sus hallazgos mediante productos científicos escritos y orales. Cada pareja deberá realizar al menos tres eventos independientes de trabajo de campo, o un esfuerzo equivalente de laboratorio, previamente coordinados con los docentes y asistentes. Todas las actividades realizadas, condiciones de muestreo, modificaciones metodológicas y observaciones relevantes deberán documentarse en las bitácoras del proyecto.\nLas dos investigaciones siguen el mismo flujo de trabajo. La diferencia está en el nivel de autonomía de las personas estudiantes.\n\n\n\n\n\n\n\nInvestigación guiada\nInvestigación independiente\n\n\n\n\nSistema propuesto por docentes\nSistema escogido por el grupo\n\n\nAlta guía\nGuía limitada\n\n\nMétodos sugeridos\nMétodos seleccionados por estudiantes\n\n\nMayor retroalimentación\nMayor autonomía\n\n\nÉnfasis en practicar el flujo.\nÉnfasis en aplicar el flujo.\n\n\n\n\nDesarrollo semanal de las investigaciones\nLas dos investigaciones siguen el mismo flujo de trabajo durante seis semanas. En la investigación guiada (semanas 1-6), el sistema de estudio es propuesto por las personas docentes y las actividades se realizan con mayor acompañamiento. En la investigación independiente (semanas 7-12), cada grupo selecciona su sistema de estudio y asume mayor responsabilidad sobre las decisiones científicas y metodológicas.\nSemanas 1 y 7. Observación, pregunta, hipótesis y predicciones.\nLos grupos realizan observaciones preliminares del sistema de estudio, identifican patrones ecológicos y formulan una pregunta de investigación. A partir de esta pregunta desarrollan una hipótesis biológica y predicciones comprobables. Las observaciones y razonamientos iniciales se documentan en las bitácoras individuales.\nSemanas 2 y 8. Diseño de la investigación.\nLos grupos diseñan una estrategia para poner a prueba sus hipótesis. Definen variables predictoras y respuesta, unidades de muestreo, métodos y equipo necesario, y consideran posibles fuentes de sesgo, pseudorreplicación y limitaciones del diseño. Las decisiones metodológicas y su justificación se documentan en la bitácora grupal.\nSemanas 3 y 9. Recolección de datos.\nLos grupos implementan el diseño y recolectan los datos siguiendo protocolos estandarizados. Registran datos, metadatos, condiciones ambientales, observaciones relevantes y cualquier desviación del protocolo en las bitácoras correspondientes.\nSemanas 4 y 10. Gestión, control de calidad y exploración de datos.\nLos grupos organizan y documentan sus bases de datos, revisan errores, inconsistencias, valores atípicos, variables y unidades, y registran las decisiones tomadas durante la depuración. Posteriormente, realizan análisis exploratorios mediante tablas y figuras para evaluar la calidad de los datos e identificar patrones preliminares.\nSemanas 5 y 11. Análisis e interpretación.\nLos grupos seleccionan y justifican métodos estadísticos apropiados para evaluar sus predicciones. Interpretan los resultados considerando la evidencia estadística, su significado biológico, las limitaciones del estudio y posibles explicaciones alternativas. Los resultados se contrastan con literatura científica relevante y se preparan las figuras y cuadros finales.\nSemanas 6 y 12. Comunicación y defensa.\nCada grupo comunica su investigación mediante una presentación oral de 10 minutos que resume la pregunta, hipótesis, predicciones, diseño, resultados y conclusiones. Los estudiantes responden preguntas y defienden sus decisiones e interpretaciones utilizando evidencia. Al finalizar cada investigación, se entregan las bitácoras correspondientes y los productos de comunicación establecidos.\n\n\nProyecto semestral de investigación\nComo eje integrador del curso, las personas estudiantes desarrollarán en parejas un proyecto de investigación ecológica original a lo largo del semestre. El propósito del proyecto es integrar y aplicar las competencias desarrolladas durante las investigaciones guiadas e independientes, permitiendo que las personas estudiantes experimenten de manera auténtica todas las etapas del proceso científico. A diferencia de un proyecto tradicional diseñado desde el inicio del semestre, el proyecto semestral se desarrolla de forma progresiva y acompaña la secuencia de adquisición de competencias del curso. Durante las primeras semanas, las parejas exploran posibles sistemas de estudio, registran observaciones, formulan preguntas preliminares e identifican posibles hipótesis y predicciones. Conforme avanzan las investigaciones 1 y 2, incorporan gradualmente los conocimientos y herramientas adquiridos en diseño experimental, técnicas de muestreo, gestión de datos y análisis estadístico al desarrollo de su propio proyecto.\nPropuesta de investigación. Durante la investigación independiente, una vez desarrolladas las competencias necesarias para diseñar una investigación de manera fundamentada, cada pareja presentará una propuesta formal del proyecto. Esta propuesta incluirá título, introducción, justificación, pregunta de investigación, hipótesis, predicciones, diseño metodológico, variables de estudio, protocolo de muestreo, cronograma y referencias bibliográficas relevantes. La propuesta deberá demostrar que las decisiones metodológicas están justificadas por la pregunta de investigación y respaldadas por la literatura científica. La retroalimentación servirá para refinar el diseño antes de iniciar la ejecución completa del proyecto.\nDesarrollo e informe de avance. Posteriormente, las parejas implementarán el proyecto y realizarán la recolección de datos. Cada proyecto deberá incluir al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio, previamente coordinado con las personas docentes y asistentes. A mitad del proceso se presentará un informe de avance que documente el progreso de la investigación, los datos recolectados hasta ese momento, la calidad de la información obtenida, las modificaciones metodológicas realizadas y los ajustes realizados al cronograma o al diseño original. Este informe permitirá evaluar el desarrollo del proyecto y ofrecer retroalimentación antes de la fase final de análisis e interpretación.\nReporte final y presentación. Durante las últimas semanas del semestre, las parejas completarán los análisis estadísticos, interpretarán los resultados y elaborarán los productos finales de comunicación científica. El proyecto culminará con un reporte científico escrito y una presentación oral. El reporte deberá seguir el formato científico establecido en el curso. La presentación oral se realizará en un simposio según las fechas establecidas en el cronograma y tendrá como objetivo comunicar los principales hallazgos de la investigación y defender las decisiones metodológicas y conclusiones derivadas del estudio.\nBitácora del proyecto. Desde el inicio del semestre, cada pareja mantendrá una bitácora del proyecto semestral. Esta funcionará como un registro continuo del desarrollo de la investigación e incluirá observaciones iniciales, formulación de preguntas, hipótesis, decisiones metodológicas, cambios al diseño, actividades de campo, organización de datos, análisis preliminares y reflexiones sobre el proceso de investigación. La bitácora constituye la evidencia documental de la progresión del proyecto y de la aplicación gradual de las competencias desarrolladas durante las Investigaciones 1 y 2. Por esta razón, será considerada un componente fundamental de la evaluación del proyecto semestral."
-  },
-  {
-    "objectID": "programa/index.html#cronograma---investigaciones-cortas",
-    "href": "programa/index.html#cronograma---investigaciones-cortas",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Cronograma - Investigaciones Cortas",
-    "text": "Cronograma - Investigaciones Cortas\n\n\n\n\n\n\n\n\n\n\nBitácora Individual\nBitácora Grupal\n\n\n\n\n\nInvestigación guiada\n\n\nPropósito pedagógico\n\n\n1\nRegistro de observaciones, patrón identificado, pregunta, hipótesis y predicción, explicando la relación entre estos elementos.\nPregunta de investigación, hipótesis y predicciones consensuadas.\nEvaluar la transformación de observaciones en preguntas científicas.\n\n\n2\nJustificación e identificación de variables, unidad de muestreo, posible sesgo y riesgo de pseudorreplicación.\nProtocolo de investigación completo (diseño, variables, equipo y muestreo).\nDesarrollar razonamiento metodológico más que definiciones aisladas.\n\n\n3\nRegistro reflexivo de campo: dificultades, fuentes de error, observaciones inesperadas y calidad de datos.\nBase de datos preliminar consolidada en línea.\nReflexión sobre la producción de datos. Generar consenso en entrada y codificación de datos.\n\n\n4\nFigura exploratoria hecha a mano alzada acompañada por interpretación breve y discusión de lo que puede y no puede concluirse.\nBase de datos depurada, diccionario de variables y figuras exploratorias.\nFortalecer la distinción entre observación y conclusión a partir de la evidencia. Generar la capacidad de elaborar figuras claras y pertinentes.\n\n\n5\nPárrafo corto de síntesis científica con resultado principal, evidencia y significado biológico.\nAnálisis estadístico final, figuras finales y tabla de resultados e interpretación consensuada.\nIntegrar resultados e interpretación en una narrativa científica. Desarrollar la habilidad estadística.\n\n\n6\nParticipación en la defensa oral respondiendo preguntas sobre la investigación.\nPresentación PowerPoint de 10 minutos.\nDesarrollar la capacidad de organizar la información para una audiencia y de enfrentar preguntas.\n\n\nInvestigación independiente\n\n\n\n\n\n7\nRegistro de observaciones y justificación ecológica de la pregunta propuesta.\nSistema de estudio, justificación, pregunta, hipótesis y predicciones.\nDesarrollar autonomía en la generación de preguntas.\n\n\n8\nRevisión crítica del diseño de otro grupo mediante rúbrica y retroalimentación argumentada.\nProtocolo completo de investigación.\nEstimular el proceso real de revisión por pares y la evaluación crítica y respetuosa de la investigación científica.\n\n\n9\nReflexión crítica sobre ejecución del protocolo, decisiones metodológicas y limitaciones encontradas.\nBase de datos preliminar.\nEstimular la adaptación de la investigación en condiciones reales de campo.\n\n\n10\nFigura exploratoria a mano alzada con interpretación del patrón y necesidades de información adicional.\nBase de datos final depurada y documentada.\nDesarrollar competencias de visualización, inferencias, y análisis de datos exploratorio.\n\n\n11\nDiscusión corta con interpretación, limitaciones, explicación alternativa, y preguntas para desarrollar en el futuro.\nAnálisis estadístico final y figuras definitivas.\nEstimular el desarrollo del pensamiento crítico y consideración de hipótesis alternativas. Favorecer la especulación razonable para generar futuras preguntas de investigación.\n\n\n12\nDefensa oral individual durante la presentación.\nPresentación PowerPoint y reporte con literatura científica consultada."
-  },
-  {
-    "objectID": "programa/index.html#giras-trabajo-de-campo-yo-laboratorio",
-    "href": "programa/index.html#giras-trabajo-de-campo-yo-laboratorio",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Giras, trabajo de campo y/o laboratorio",
-    "text": "Giras, trabajo de campo y/o laboratorio\nEl trabajo de campo constituye una parte fundamental del curso y está integrado al desarrollo progresivo de las investigaciones. Las actividades de campo incluyen trabajo dentro y cerca del campus universitario, una gira de tres días a la Estación Biológica La Selva y el trabajo de campo asociado al proyecto semestral.\nInvestigación guiada. El trabajo de campo se realizará principalmente dentro del campus universitario y en sitios cercanos. Estas actividades permitirán practicar métodos de muestreo, uso de equipo, registro de datos y metadatos, y aplicación de protocolos bajo la supervisión directa de docentes y asistentes.\nInvestigación independiente. La recolección de datos se realizará durante una gira de tres días a la Estación Biológica La Selva, los días 16, 17 y 18 de octubre de 2026. Durante la gira, los grupos implementarán los diseños de investigación desarrollados previamente y serán responsables de organizar el muestreo, recolectar y documentar los datos y adaptar sus protocolos cuando las condiciones de campo lo requieran.\nProyecto semestral. El proyecto semestral es el eje integrador del curso y permite que las personas estudiantes experimenten de manera auténtica el proceso de investigación ecológica, con sus desafíos metodológicos, de diseño y colecta de datos. Su desarrollo sigue una secuencia progresiva que acompaña la adquisición de competencias científicas a lo largo del semestre. La progresión didáctica del proyecto está articulada con las investigaciones 1 y 2, de modo que las competencias y herramientas que se adquieren en estas actividades se incorporan gradualmente al diseño y ejecución del proyecto semestral.\nLa participación en las giras y actividades de campo forma parte del desarrollo de las competencias del curso y se rige por las disposiciones de asistencia indicadas en este programa."
-  },
-  {
-    "objectID": "programa/index.html#evaluación",
-    "href": "programa/index.html#evaluación",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Evaluación",
-    "text": "Evaluación\nLa evaluación del curso tendrá un valor total de 100 puntos y estará distribuida entre las actividades desarrolladas durante el laboratorio y el proyecto semestral. La Investigación guiada tendrá un valor de 30 puntos, de los cuales 18 puntos corresponden a entradas individuales y 12 puntos a entradas grupales registrados en las bitácoras individuales y grupales. La Investigación independiente, desarrollada con un sistema de estudio seleccionado por cada grupo, tendrá un valor de 35 puntos, distribuidos en 21 puntos de evaluación individual y 14 puntos de evaluación grupal, igualmente registrados en las bitácoras individuales y grupales. Finalmente, el proyecto semestral de investigación en parejas tendrá un valor de 35 puntos y permitirá integrar y aplicar de manera autónoma las competencias desarrolladas a lo largo del curso. De esta forma, la evaluación busca equilibrar el trabajo colaborativo con el trabajo individual, asegurando que cada estudiante demuestre competencia en todas las etapas del proceso de investigación ecológica.\n\nAsistencia\nLa participación en TODAS las actividades del curso (clases, laboratorios, prácticas de campo) constituye un componente esencial, ya que permite desarrollar competencias que no podrían adquirirse plenamente mediante actividades no presenciales. Por esta razón, la asistencia es obligatoria a todas las clases, giras, y en general, a todas las actividades de muestreo realizadas en ecosistemas naturales, incluyendo aquellas que se desarrollen dentro del Campus Universitario.\nEstas actividades forman parte de los objetivos de aprendizaje del curso, particularmente en lo relacionado con la aplicación de métodos de muestreo, el uso de equipo de investigación ecológica, la recopilación de datos en condiciones reales y la toma de decisiones durante el trabajo de campo.\nLas ausencias a actividades de campo únicamente podrán justificarse de acuerdo con los criterios establecidos en el Artículo 24 del Reglamento del Régimen Académico Estudiantil. Se podrán justificar hasta dos ausencias durante el semestre; una tercera ausencia implica la pérdida del curso. Se considerará llegada tardía cuando la persona estudiante se incorpore 30 minutos o más después del inicio de una actividad programada. Dos llegadas tardías equivaldrán a una ausencia para efectos del control de asistencia. El control de asistencia debe firmarse durante los primeros 15 min de cada sesión.\nLas observaciones, actividades realizadas, trabajo de campo y decisiones metodológicas deberán quedar registradas oportunamente en las bitácoras correspondientes, las cuales complementan la evidencia de participación y aprendizaje en las actividades presenciales.\n\n\nInvestigación guiada (30 puntos)\n\n\n\nSemana\nIndividual\nGrupal\nTotal\n\n\n\n\n1\n3\n2\n5\n\n\n2\n3\n2\n5\n\n\n3\n3\n2\n5\n\n\n4\n3\n2\n5\n\n\n5\n3\n2\n5\n\n\n6\n3\n2\n5\n\n\nTotal\n18\n12\n30\n\n\n\n\n\nInvestigación independiente (35 puntos)\n\n\n\nSemana\nIndividual\nGrupal\nTotal\n\n\n\n\n7\n3\n2\n5\n\n\n8\n3\n2\n5\n\n\n9\n3\n2\n5\n\n\n10\n3\n2\n5\n\n\n11\n4\n3\n7\n\n\n12\n5\n3\n8\n\n\nTotal\n21\n14\n35\n\n\n\n\n\nEvaluación proyecto semestral\nLa evaluación del reporte escrito del proyecto semestral se hará de la siguiente forma:\n\n\n\nSección\nPuntos\n\n\n\n\nTítulo\n2\n\n\nResumen\n5\n\n\nPalabras claves\n1\n\n\nIntroducción\n12\n\n\nHipótesis y predicciones\n10\n\n\nMateriales y métodos\n15\n\n\nResultados\n20\n\n\nDiscusión\n25\n\n\nRevisión de literatura\n10\n\n\nTotal\n100\n\n\n\nEl proyecto de investigación en parejas (35 puntos de la nota final) será evaluado de la siguiente forma:\n\n\n\nSección\nPuntos\n\n\n\n\nPropuesta a\n10\n\n\nInforme de avance b\n10\n\n\nReporte\n45\n\n\nBitácora\n15\n\n\nPresentación oral\n20\n\n\nTotal\n100\n\n\n\na La propuesta se evaluará de la siguiente manera:\n\n\n\n\n\n\n\nSección\nPuntos\n\n\n\n\nTítulo\n5\n\n\nIntroducción (incluye marco teórico, justificación, hipótesis y predicciones)\n40\n\n\nMateriales y métodos (incluye descripción del sitio de estudio, diseño experimental, equipo empleado y cronograma)\n50\n\n\nReferencias\n5\n\n\nTotal\n100\n\n\n\nb El informe de avance se evaluará de la siguiente manera:\n\n\n\n\n\n\n\nÍtem\nPuntos\n\n\n\n\nLas secciones de la propuesta con las correcciones añadidas. Indicar modificaciones realizadas a la propuesta original. Resumen de datos preliminares: el número de eventos de muestreo y cantidad de muestras de los datos recolectados hasta el momento.\n35\n\n\nBitácora\n20\n\n\nExplicación de la matriz de datos Las modificaciones realizadas a la propuesta original Cronograma de trabajo faltante\n45\n\n\nTotal\n100"
-  },
-  {
-    "objectID": "programa/index.html#cronograma-del-curso-2026",
-    "href": "programa/index.html#cronograma-del-curso-2026",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Cronograma del Curso 2026",
-    "text": "Cronograma del Curso 2026\n\n\n\n\n\n\n\n\n\nSemana (fecha)\nActividad teórica\nActividad práctica\nActividad proyecto semestral\n\n\n\n\nInvestigación guiada\n\n\n\n\n\n14 ago\nIntroducción al curso. Observación científica. Preguntas, hipótesis y predicciones.\n\n\n\n\n21 ago\nDiseño experimental y muestreo ecológico. Variables y pseudorreplicación.\nObservación del sistema propuesto por los docentes. Generación de preguntas, hipótesis y predicciones. Diseño del estudio y protocolo de muestreo.\nFormación de parejas de investigación. Inicio de la bitácora del proyecto semestral. Exploración de intereses, observaciones y preguntas preliminares de posibles sistemas de estudio.\n\n\n28 ago\nTrabajo de campo y recolección de datos. Calidad de datos.\nColecta de datos en el campus y alrededores.\nExploración de posibles preguntas y sistemas de estudio anotados en la bitácora.\n\n\n4 set\nGestión de datos, metadatos y control de calidad.\nConstrucción y depuración de bases de datos.\nDefinición de la pregunta central, hipótesis y predicciones preliminares en la bitácora.\n\n\n11 set\nAnálisis exploratorio y visualización de datos.\nFiguras exploratorias y evaluación de supuestos.\nExploración de posibles diseños para responder la pregunta de investigación.\n\n\n18 set\nEstadística aplicada e interpretación ecológica.\nAnálisis de datos, resultados y preparación de presentación.\n\n\n\n25 set\nSemana de bienestar UCR, no hay actividades.\n\n\n\n\nInvestigación independiente\n\n\n\n\n\n2 oct\nSelección de sistemas ecológicos y formulación autónoma de preguntas.\nObservación del sistema seleccionado por cada grupo. En la segunda parte se hacen las presentaciones de la Investigación I, y retroalimentación.\nExploración de posibles métodos de muestreo.\n\n\n9 oct\nDiseño experimental avanzado.\nDiseño metodológico y protocolo de trabajo.\nEntrega de propuesta del proyecto semestral, incluyendo pregunta, hipótesis, predicciones, variables, diseño, muestreo y cronograma.\n\n\n16 oct\nGira La Selva: 16-18 de octubre\nRecolección de datos.\nDiscusión de retroalimentación con docentes y evaluación de la factibilidad metodológica. Registros en bitácora.\n\n\n23 oct\nOrganización de bases de datos y reproducibilidad.\nDepuración y documentación de bases de datos.\nRecolección de datos y ajustes menores al protocolo de trabajo.\n\n\n30 oct\nVisualización científica y análisis exploratorio.\nElaboración de figuras exploratorias y evaluación de supuestos.\nActualización de la bitácora del proyecto y documentación del avance metodológico.\n\n\n6 nov\nSelección de análisis estadísticos e interpretación de resultados.\nAnálisis, interpretación y revisión de literatura científica.\nElaboración de análisis preliminares, figuras y tablas.\n\n\n13 nov\nComunicación científica. Construcción de argumentos basados en evidencia.\nPreparación de presentación oral y reporte.\nElaboración de análisis preliminares, figuras y tablas. Entrega de informe de avance\n\n\n20 nov\nSimposio de investigaciones cortas.\nPresentaciones de la Investigación II.\nAplicación de retroalimentación y correcciones finales.\n\n\n27 nov\nPresentaciones orales del proyecto semestral. Cierre del curso.\nPresentaciones finales, discusión y reflexión sobre competencias desarrolladas.\nReporte proyecto semestral se entrega el 4 de diciembre."
-  },
-  {
-    "objectID": "programa/index.html#uso-ético-de-herramientas-de-inteligencia-artificial-ia",
-    "href": "programa/index.html#uso-ético-de-herramientas-de-inteligencia-artificial-ia",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Uso ético de herramientas de inteligencia artificial (IA)",
-    "text": "Uso ético de herramientas de inteligencia artificial (IA)\nLas herramientas de inteligencia artificial pueden utilizarse como apoyo al proceso de aprendizaje, siempre que no sustituyan el trabajo intelectual de la persona estudiante. Debido a que uno de los objetivos centrales de este curso es desarrollar competencias científicas relacionadas con la observación, formulación de preguntas, desarrollo de hipótesis, diseño experimental, trabajo de campo, análisis de datos, interpretación de resultados y comunicación científica, no está permitido utilizar la IA para generar total o parcialmente tareas, reportes, discusiones, conclusiones, hipótesis, predicciones, preguntas de investigación, entradas de bitácora o cualquier otro producto evaluado del curso. Estos productos deben reflejar el razonamiento, observaciones, decisiones metodológicas e interpretaciones originales de las personas estudiantes.\nSí se permite el uso de IA para mejorar la claridad, gramática, ortografía y estilo de la escritura; traducir textos; sugerir formas de organizar información; explicar conceptos ecológicos, estadísticos o metodológicos; apoyar la programación y depuración de código para análisis de datos; revisar el formato de citas y referencias; identificar literatura científica potencialmente relevante; generar palabras clave para búsquedas bibliográficas; y brindar retroalimentación sobre figuras, tablas, pósteres y presentaciones. No se permite la fabricación, modificación o manipulación de datos mediante IA ni la generación de registros de actividades que no hayan sido efectivamente realizadas.\nToda información obtenida mediante herramientas de IA deberá ser verificada mediante fuentes científicas confiables y adecuadamente citadas cuando corresponda. La responsabilidad final sobre la exactitud de la información presentada y la autoría del trabajo recae exclusivamente en las personas estudiantes. Los docentes podrán solicitar bitácoras, versiones preliminares, bases de datos, análisis intermedios u otras evidencias del proceso de trabajo para verificar el desarrollo auténtico de las competencias científicas del curso las cuales deben desarrollarse durante el tiempo de laboratorio sin la intervención de IA."
-  },
-  {
-    "objectID": "programa/index.html#referencias",
-    "href": "programa/index.html#referencias",
-    "title": "B-0305 Laboratorio de Ecología General",
-    "section": "Referencias",
-    "text": "Referencias\nAndrewartha, H. G. (1970). Introduction to the study of animal populations (2nd ed.). Chapman and Hall.\nBegon, M., Harper, J., & Townsend, C. (2006). Ecology: From individuals to ecosystems (4th ed.). Blackwell.\nBetts, M. G., Hadley, A. S., Frey, D. W., Frey, S. J., Gannon, D., Harris, S. H., & Zárrate‐Charry, D. (2021). When are hypotheses useful in ecology and evolution? Ecology and Evolution, 11(11), 5762-5776. https://doi.org/10.1002/ece3.7472\nCrawley, M. J. (2007). The R book. John Wiley.\nFarji-Brener, A. G. (2003). Uso correcto, parcial e incorrecto de los términos “hipótesis” y “predicciones” en ecología. Ecología Austral, 13(2), 223-227.\nGotelli, N. J., & Ellison, A. M. (2004). A primer of ecological statistics (Vol. 1). Sinauer Associates.\nKrebs, C. J. (1999). Ecological methodology (2nd ed.). Benjamin Cummings. http://www.zoology.ubc.ca/~krebs/books.html\nMittelbach, G. G., & McGill, B. J. (2019). Community ecology. Oxford University Press.\nMoreno, C. E. (2001). Manual de métodos para medir la biodiversidad. Universidad Veracruzana. https://www.researchgate.net/publication/304346666_Metodos_para_medir_la_biodiversidad\nQuinn, G. P., & Keough, M. J. (2002). Experimental design and data analysis for biologists. Cambridge University Press.\nSchimel, J. (2012). Writing science: How to write papers that get cited and proposals that get funded. Oxford University Press.\nSutherland, W. J. (Ed.). (2006). Ecological census techniques: A handbook. Cambridge University Press. https://www.researchgate.net/publication/273070581_Ecological_Census_Techniques_A_Handbook\nZar, J. H. (1999). Biostatistical analysis (4th ed.). Prentice Hall."
+    "objectID": "lectures/index.html#presentaciones-del-curso",
+    "href": "lectures/index.html#presentaciones-del-curso",
+    "title": "Clases",
+    "section": "",
+    "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
   }
 ]

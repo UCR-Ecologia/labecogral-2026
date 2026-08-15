@@ -1,0 +1,14 @@
+---
+title: "Referencias"
+---
+
+## Hypothesis y Predicciones
+
+- [Farji-Brener 2003](Farji-Brener-2003.pdf)
+- [Farji-Brener 2004](Farji-Brener-2004.pdf)
+- [Gotelli 2004, cap. 4](Gotelli-2004-cap-4.pdf)
+
+## Deseño Experimental
+
+- [Gotelli 2004, cap. 6](Gotelli-2004-cap-6.pdf)
+- [Marshall 2024](Marshall-2024.pdf)

@@ -7,6 +7,7 @@ project:
     - "giras/*.qmd"
     - "labs/*.qmd"
     - "lectures/*.qmd"
+    - "refs/*.qmd"
     - "!exams/**"
 
 quarto-required: ">=1.4.0"
@@ -26,5 +27,7 @@ website:
         href: lectures/index.qmd
       - text: "Laboratorios"
         href: labs/index.qmd
+      - text: "Referencias"
+        href: refs/index.qmd
       # - text: "Giras"
       #   href: giras/index.qmd
