@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <title>Laboratorio de Ecologia General B-0305 – Como estudiamos la evolución</title>
+  <title>Laboratorio de Ecologia General B-0305 – Diseño experimental</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -126,519 +126,501 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Como estudiamos la evolución</h1>
-  <p class="subtitle">Evidencia, inferencia y comparacion de hipotesis</p>
+  <h1 class="title">Diseño experimental</h1>
+  <p class="subtitle">Replicación, bloques y aleatorización. Pseudoreplicación.</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="metas" class="slide level2">
-<h2>Metas</h2>
-<ol type="1">
-<li>Entender como los biólogos evolutivos estudian la evolución a través de evidencia, inferencia, comparación de hipótesis y reconocimiento de límites.</li>
-<li>Desarrollar razonamiento evolutivo (científico): entender suposiciones, interpretar datos, comparar hipótesis</li>
-<li>Entender que la ciencia evolutiva es un proceso iterativo de inferencia con incertidumbre, no una colección de hechos absolutos.</li>
-<li>Entender los fundamentos del metodo científico.</li>
-</ol>
-</section>
-<section id="ser-capaces-de" class="slide level2">
-<h2>Ser capaces de</h2>
-<div>
+<section id="plan" class="slide level2">
+<h2>Plan</h2>
 <ul>
-<li class="fragment">formular preguntas evolutivas</li>
-<li class="fragment">proponer hipótesis evolutivas alternativas</li>
-<li class="fragment">derivar predicciones de hipótesis</li>
-<li class="fragment">entender suposiciones de estudios evolutivos</li>
-<li class="fragment">interpretar evidencia evolutiva</li>
-<li class="fragment">comparar hipótesis evolutivas</li>
-<li class="fragment">reconocer límites de evidencia evolutiva</li>
+<li>Discutir la integracion entre hipótesis y diseño experimental</li>
+<li>Definir diferentes niveles de replicación, su uso y importancia</li>
+<li>Introducir el concepto de pseudorreplicación y cómo evitarlo</li>
+<li>Explicar el diseño factorial, bloques y aleatorización</li>
 </ul>
-</div>
 </section>
-<section>
-<section id="cómo-sabemos-cuál-explicación-evolutiva-es-correcta" class="title-slide slide level1 center" data-background-color="#E8F5E9">
-<h1>¿Cómo sabemos cuál explicación evolutiva es correcta?</h1>
-
-</section>
-<section id="observación-vs-explicación" class="slide level2">
-<h2>Observación vs explicación</h2>
-<p>Observación:</p>
+<section id="por-qué-importa-el-diseño-experimental" class="slide level2">
+<h2>Por qué importa el diseño experimental</h2>
 <ul>
-<li>Los pinzones de Galápagos tienen picos diferentes que hace unos años.</li>
+<li>Ecología = sistemas complejos y variables<br>
+</li>
+<li>Mal diseño → conclusiones inválidas, esfuerzo desperdiciado<br>
+</li>
+<li>Buen diseño → inferencia más sólida, capacidad de generalizar</li>
 </ul>
+</section>
+<section id="ejemplo" class="slide level2">
+<h2>Ejemplo</h2>
 <div class="fragment">
-<p>¿Por qué?</p>
-</div>
-<div class="fragment">
-<p>Posibles explicaciones:</p>
-<ul>
-<li>azar</li>
-<li>adaptación a la dieta</li>
-</ul>
+<p><strong>Hipótesis</strong>: La contaminación del aire reduce la diversidad de líquenes porque algunos contaminantes, como el SO₂, afectan su supervivencia y crecimiento.</p>
 </div>
 <div class="fragment">
-<blockquote>
-<p>La evidencia por sí sola no proporciona automáticamente la explicación.</p>
-</blockquote>
+<p>Predicción: Los árboles en la ciudad tendrán menor diversidad de líquenes que los árboles en un parque nacional con menor contaminación atmosférica.</p>
 </div>
 </section>
-<section id="observación-vs-explicación-1" class="slide level2">
-<h2>Observación vs explicación</h2>
-<p>Observación:</p>
-<ul>
-<li>Los pinzones de Galápagos tienen picos diferentes que hace unos años.</li>
-</ul>
-<div class="fragment">
-<p>Necesitamos:</p>
-<ul>
-<li>hipótesis alternativas</li>
-<li>predicciones</li>
-<li>comparación de hipótesis</li>
-</ul>
-</div>
-</section>
-<section id="explicación-1-azar" class="slide level2 smaller">
-<h2>Explicación 1: Azar</h2>
-<p>Hipótesis:</p>
-<ul>
-<li>El cambio se debe a procesos aleatorios que resultan en un cambio en la frecuencia de variantes en la población.</li>
-</ul>
-<p>Predicciónes?</p>
-</section>
-<section id="explicación-1-azar-1" class="slide level2 smaller">
-<h2>Explicación 1: Azar</h2>
-<p>Hipótesis:</p>
-<ul>
-<li>El cambio se debe a procesos aleatorios que resultan en un cambio en la frecuencia de variantes en la población.</li>
-</ul>
-<div class="fragment">
-<p>Predicción:</p>
-<div>
-<ul>
-<li class="fragment">No debería existir una relación consistente entre tamaño del pico y tamaño de las semillas. (Ecología, Recursos)</li>
-<li class="fragment">No debería existir una relación consistente entre tamaño del pico y supervivencia. (Aptitud, Selección Natural)</li>
-<li class="fragment">El cambio podría ocurrir incluso sin cambios en los recursos disponibles. (Ecología, Recursos)</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="explicación-2-adaptación-a-la-dieta" class="slide level2 smaller">
-<h2>Explicación 2: Adaptación a la dieta</h2>
-<p>Hipótesis:</p>
-<ul>
-<li>El cambio se debe a que individuos con picos más grandes sobrevivieron y se reprodujeron más durante la sequía.</li>
-</ul>
-<p>Predicciónes?</p>
-</section>
-<section id="explicación-2-adaptación-a-la-dieta-1" class="slide level2 smaller">
-<h2>Explicación 2: Adaptación a la dieta</h2>
-<p>Hipótesis:</p>
-<ul>
-<li>El cambio se debe a que individuos con picos más grandes sobrevivieron y se reprodujeron más durante la sequía.</li>
-</ul>
-<div class="fragment">
-<p>Predicción:</p>
-<div>
-<ul>
-<li class="fragment">Debería existir una relación entre tamaño del pico y tamaño de las semillas disponibles. (Ecología, Recursos)</li>
-<li class="fragment">Debería existir una relación consistente entre el tamaño del pico y la dieta. (Ecología, Recursos)</li>
-<li class="fragment">Parte de la variación en el tamaño del pico debería ser heredable. (Genética)</li>
-<li class="fragment">El tamaño promedio del pico debería aumentar generación tras generación. (Aptitud, Selección Natural)</li>
-<li class="fragment">Los individuos con picos más grandes deberían sobrevivir más frecuentemente. (Aptitud, Selección Natural)</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="comparación-de-hipótesis" class="slide level2">
-<h2>Comparación de hipótesis</h2>
-<p>¿Qué datos serían útiles para distinguir entre estas explicaciones?</p>
-<div>
-<ul>
-<li class="fragment">Tamaño de pico</li>
-<li class="fragment">Tamaño de semillas</li>
-<li class="fragment">Dieta</li>
-<li class="fragment">Supervivencia</li>
-<li class="fragment">Número de hijos</li>
-<li class="fragment">Herencia padres–hijos</li>
-<li class="fragment">Cambios en la población a través del tiempo</li>
-</ul>
-</div>
-</section>
-<section id="picos-y-semillas" class="slide level2">
-<h2>Picos y semillas</h2>
-
-<img data-src="03-methods_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><div class="fragment">
-<blockquote>
-<p>Que hipótesis apoya esta evidencia? Y por qué?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>Cambio por azar.</strong></p>
-</blockquote>
-</div>
-</section>
-<section id="picos-y-semillas-1" class="slide level2">
-<h2>Picos y semillas</h2>
-
-<img data-src="03-methods_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="fragment">
-<blockquote>
-<p>Que hipótesis apoya esta evidencia? Y por qué?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>Apoya la hipótesis de adaptación, pero una sola línea de evidencia no basta.</strong></p>
-</blockquote>
-</div>
-</section>
-<section id="padres-e-hijos" class="slide level2">
-<h2>Padres e hijos</h2>
-
-<img data-src="03-methods_files/figure-revealjs/unnamed-chunk-3-1.png" width="576" class="r-stretch"><div class="fragment">
-<blockquote>
-<p>Que hipótesis apoya esta evidencia? Y por qué?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>Apoya una condición necesaria para selección, pero no demuestra adaptación por sí sola.</strong></p>
-</blockquote>
-</div>
-</section>
-<section id="picos-y-número-de-hijos" class="slide level2">
-<h2>Picos y número de hijos</h2>
-
-<img data-src="03-methods_files/figure-revealjs/unnamed-chunk-4-1.png" width="576" class="r-stretch"><div class="fragment">
-<blockquote>
-<p>Que hipótesis apoya esta evidencia? Y por qué?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>Adaptación a la dieta.</strong></p>
-</blockquote>
-</div>
-</section>
-<section id="evidencia-combinada-sin-aptitud" class="slide level2 smaller">
-<h2>Evidencia combinada: sin aptitud</h2>
-
-<img data-src="03-methods_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"><div class="fragment">
-<blockquote>
-<p>Que hipótesis apoya esta evidencia? Y por qué?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>No hay suficiente evidencia para adaptación por selección natural.</strong></p>
-</blockquote>
-</div>
-</section>
-<section id="evidencia-combinada-sin-heredabilidad" class="slide level2 smaller">
-<h2>Evidencia combinada: sin heredabilidad</h2>
-
-<img data-src="03-methods_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><div class="fragment">
-<blockquote>
-<p>Que hipótesis apoya esta evidencia? Y por qué?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>No hay suficiente evidencia para adaptación por selección natural.</strong></p>
-</blockquote>
-</div>
-</section>
-<section id="evidencia-combinada-las-tres-condiciones" class="slide level2 smaller">
-<h2>Evidencia combinada: las tres condiciones</h2>
-
-<img data-src="03-methods_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><div class="fragment">
-<blockquote>
-<p>Que hipótesis apoya esta evidencia? Y por qué?</p>
-</blockquote>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>Las tres piezas juntas — correlación con recurso, variación heredable y relación con aptitud — apoyan adaptación por selección natural.</strong></p>
-</blockquote>
-</div>
-</section>
-<section id="resumen" class="slide level2 smaller">
-<h2>Resumen</h2>
-<ol type="1">
-<li>La evidencia por sí sola no proporciona automáticamente la explicación.</li>
-<li>La evidencia no demuestra que una hipótesis sea absolutamente verdadera; permite evaluar cuál explicación es más consistente con los datos disponibles.</li>
-<li>Necesitamos evaluar varios tipos de evidencia junto (recursos, dieta, herencia, supervivencia, cambios poblacionales) para distinguir entre explicaciones evolutivas.</li>
-<li>Adaptación por selección requiere varias piezas juntas: relación con ambiente/recurso, variación heredable y relación con aptitud.</li>
-</ol>
-</section>
-<section id="más-allá-de-los-pinzones" class="slide level2 smaller">
-<h2>Más allá de los pinzones</h2>
-<p>Este ejemplo usa pinzones, pero la lógica aplica a cualquier rasgo en cualquier población:</p>
-<div>
-<ul>
-<li class="fragment"><strong>Resistencia a antibióticos en bacterias</strong> → variación en el rasgo (tolerancia), heredable (mutación), relación con sobrevivencia (antibiótico como agente selectivo)</li>
-<li class="fragment"><strong>Camuflaje en polillas</strong> → color del ala, heredable, depredadores como agente selectivo</li>
-<li class="fragment"><strong>Tolerancia a metales en plantas</strong> → plantas en suelos contaminados, variación heredable en tolerancia, metales como filtro selectivo</li>
-<li class="fragment"><strong>Cualquier rasgo morfológico, fisiológico o de comportamiento</strong> en cualquier especie</li>
-</ul>
-</div>
-<div class="fragment">
-<blockquote>
-<p>La pregunta siempre es la misma: ¿hay variación heredable en el rasgo, y esa variación afecta la reproducción o sobrevivencia?</p>
-</blockquote>
-</div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="03-assets/sci-method.png" class="r-stretch"></section></section>
-<section>
-<section id="ciencia-histórica-e-inferencia-con-incertidumbre" class="title-slide slide level1 center" data-background-color="#E3F2FD">
-<h1>Ciencia histórica e inferencia con incertidumbre</h1>
-
-</section>
-<section id="se-puede-estudiar-el-pasado" class="slide level2">
-<h2>¿Se puede estudiar el pasado?</h2>
-<div>
-<ul>
-<li class="fragment"><strong>Astronomía</strong>: ¿cómo se formaron las galaxias?</li>
-<li class="fragment"><strong>Geología</strong>: ¿cómo se formaron las montañas?</li>
-<li class="fragment"><strong>Biología evolutiva</strong>: ¿cuándo divergieron estas especies?</li>
-</ul>
-</div>
-<div class="fragment">
-<blockquote>
-<p>No podemos repetir el pasado en el laboratorio.<br>
-Pero podemos <strong>inferirlo</strong> a partir de evidencia presente.</p>
-</blockquote>
-</div>
-</section>
-<section id="la-ciencia-histórica-también-usa-hipótesis" class="slide level2 smaller">
-<h2>La ciencia histórica también usa hipótesis</h2>
-<p>El método es el mismo:</p>
-<ol type="1">
-<li>Formular una <strong>pregunta sobre el pasado</strong></li>
-<li>Proponer <strong>hipótesis alternativas</strong></li>
-<li>Derivar <strong>predicciones</strong> de cada hipótesis</li>
-<li>Reunir <strong>evidencia</strong></li>
-<li><strong>Comparar</strong> qué hipótesis es más consistente</li>
-<li>Formular una <strong>conclusión provisional</strong></li>
-</ol>
-</section>
-<section id="caso-de-estudio-clado-o-lago-quién-es-más-antiguo" class="slide level2 smaller">
-<h2>Caso de estudio: ¿clado o lago, quién es más antiguo?</h2>
-<p><strong>Pregunta científica:</strong></p>
-<blockquote>
-<p>¿El clado X (grupo de especies) se originó antes o después de la formación del Lago Y?</p>
-</blockquote>
-<div class="fragment">
-<p>Esta pregunta importa porque:</p>
-<ul>
-<li>Si el clado es más antiguo → sus ancestros vivían antes del lago; el clado <strong>no</strong> diversificó en el lago.</li>
-<li>Si el clado es más joven → las poblaciones lacustres podrían haber estado aisladas; la diversificación podría haber ocurrido dentro del lago;</li>
-</ul>
-</div>
-</section>
-<section id="hipótesis-alternativas" class="slide level2 smaller">
-<h2>Hipótesis alternativas</h2>
-<p><strong>H₁: El clado X es más antiguo que el Lago Y</strong></p>
-<p>El origen del clado, estimado con incertidumbre, <em>precede</em> a la formación del lago, también estimado con incertidumbre.</p>
-<p><strong>H₂: El clado X es más joven que el Lago Y</strong></p>
-<p>El origen del clado, estimado con incertidumbre, <em>es posterior</em> a la formación del lago, también estimado con incertidumbre.</p>
-</section>
-<section id="predicciones-de-cada-hipótesis" class="slide level2 smaller">
-<h2>Predicciones de cada hipótesis</h2>
+<section id="datos-colectados" class="slide level2 smaller">
+<h2>Datos colectados</h2>
 <table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th><strong>Si H₁ es correcta</strong></th>
-<th><strong>Si H₂ es correcta</strong></th>
+<th>Sitio</th>
+<th>Nivel de contaminación</th>
+<th>Especies de Arbol</th>
+<th>Diversidad</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Fósiles</strong></td>
-<td>Los fósiles más antiguos del clado son <em>anteriores</em> a la formación del lago</td>
-<td>Los fósiles más antiguos del clado son <em>posteriores</em> a la formación del lago</td>
+<td>Alajuela</td>
+<td>Alta</td>
+<td>Guayacán</td>
+<td>3</td>
 </tr>
 <tr class="even">
-<td><strong>Filogenia</strong></td>
-<td>El origen estimado del clado <em>precede</em> al lago</td>
-<td>El origen estimado del clado <em>es posterior</em> al lago</td>
+<td>Alajuela</td>
+<td>Alta</td>
+<td>Higeron</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Limon</td>
+<td>Alta</td>
+<td>Higeron</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>San José</td>
+<td>Alta</td>
+<td>Guayacán</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>San José</td>
+<td>Alta</td>
+<td>Higeron</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Cartago</td>
+<td>Alta</td>
+<td>Higeron</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>Los Quetzales</td>
+<td>Baja</td>
+<td>Almendro</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>Tapanti</td>
+<td>Baja</td>
+<td>Guarumo</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>Manuel Antonio</td>
+<td>Baja</td>
+<td>Ceiba</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>Manuel Antonio</td>
+<td>Baja</td>
+<td>Almendro</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>Corcovado</td>
+<td>Baja</td>
+<td>Guarumo</td>
+<td>8</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Cada prediccion incluye incertidumbre</p>
-</blockquote>
+<div class="fragment">
+<p><strong>Resultado</strong>: La diversidad de líquenes es mayor en los parques nacionales (promedio: 7.6) que en las ciudades (promedio: 3.3).</p>
+</div>
+<div class="fragment">
+<p><em>Todo bien con este estudio? ¿Podemos concluir que la contaminación está asociada con menor diversidad de líquenes?</em></p>
+</div>
 </section>
-<section id="evidencia-tres-fuentes-independientes" class="slide level2 smaller">
-<h2>Evidencia: tres fuentes independientes</h2>
+<section id="variables-confusoras" class="slide level2">
+<h2>Variables confusoras</h2>
+<p>Nuestro diseño experimental no controló otras variables que podrían explicar la diferencia en diversidad de líquenes:</p>
+<ul>
+<li>la especie de árbol,</li>
+<li>la edad del árbol,</li>
+<li>la exposición a la luz,</li>
+<li>la humedad, etc.</li>
+</ul>
+</section>
+<section id="como-modificar-el-diseño-para-controlar-variables-confusoras" class="slide level2">
+<h2>Como modificar el diseño para controlar variables confusoras?</h2>
+<p>Debemos comparar árboles que sean similares en otras características que también podrían afectar la diversidad de líquenes.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>comparar árboles de la misma especie;</li>
+<li>seleccionar árboles de edades o tamaños similares;</li>
+<li>medir o controlar luz y humedad;</li>
+<li>muestrear varios árboles independientes en cada condición.</li>
+</ul>
+</section>
+<section id="unidad-de-observacion-y-unidad-experimental" class="slide level2">
+<h2>Unidad de observacion y unidad experimental</h2>
+<div class="fragment">
+<p>Unidad observacional:</p>
+<blockquote>
+<p>un árbol de una especie y edad (tamaño) determinada.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p>Unidad experimental:</p>
+<blockquote>
+<p>Un sitio donde se mide la diversidad de líquenes en varios árboles independientes.</p>
+</blockquote>
+</div>
+</section>
+<section id="que-es-la-replica" class="slide level2">
+<h2>Que es la replica?</h2>
+<ol type="A">
+<li><p>Arbol</p></li>
+<li><p>Sitio</p></li>
+</ol>
+</section>
+<section id="replicación-y-pseudoeplicación" class="slide level2">
+<h2>Replicación y pseudoeplicación</h2>
+</section>
+<section class="slide level2">
+
+
+<img data-src="02-assets/replication.png" class="r-stretch quarto-figure-center"><p class="caption">Replicación verdadera vs pseudo replicación</p></section>
+<section class="slide level2">
+
+
+<img data-src="02-assets/replication2.jpeg" class="r-stretch quarto-figure-center"><p class="caption">Replicación verdadera vs pseudo replicación</p></section>
+<section id="definiciones" class="slide level2">
+<h2>Definiciones</h2>
+<div class="fragment">
+<ul>
+<li><strong>Tratamiento</strong>: Lo que se manipula<br>
+</li>
+<li><strong>Unidad Experimental</strong>: La unidad más pequeña que puede recibir independientemente un tratamiento<br>
+</li>
+<li><strong>Replicación</strong>: Múltiples unidades experimentales independientes por tratamiento<br>
+</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="¡Ojo!">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>¡Ojo!</strong></p>
+</div>
+<div class="callout-content">
+<p>Replicación = unidades experimentales, <em>no</em> muestras.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="qué-cuenta-como-una-réplica" class="slide level2">
+<h2>¿Qué cuenta como una réplica?</h2>
+<div class="fragment">
+<p>Una réplica verdadera es una unidad que recibe el tratamiento de manera independiente de las otras unidades.</p>
+</div>
+<div class="fragment">
+<p>Por lo tanto, <em>no podemos identificar las réplicas solamente preguntando “¿qué medimos?”</em>.</p>
+<p>Debemos preguntar:</p>
+<blockquote>
+<p><strong>¿Cuál es la unidad más pequeña a la que se asignó el tratamiento independientemente?</strong></p>
+</blockquote>
+</div>
+</section>
+<section id="qué-cuenta-como-una-réplica-1" class="slide level2">
+<h2>¿Qué cuenta como una réplica?</h2>
+<p>Ejemplo: 20 hojas de una planta</p>
+<div>
+<ul>
+<li class="fragment">Si toda la planta recibe el tratamiento -&gt; las 20 hojas son submuestras de 1 unidad experimental.</li>
+<li class="fragment">Si cada hoja recibe independientemente un tratamiento -&gt; las 20 hojas pueden ser 20 unidades experimentales.</li>
+</ul>
+</div>
+</section>
+<section id="replicación-y-submuestreo" class="slide level2 smaller">
+<h2>Replicación y submuestreo</h2>
 <div class="columns">
 <div class="column">
-<div>
-<ol type="1">
-<li class="fragment"><p><strong>Fósil clave del clado X</strong> datado por C¹⁴:<br>
-<strong>12 650 ± 150 años AP</strong> (rango: 12 500–12 800)</p></li>
-<li class="fragment"><p><strong>Sedimentos del Lago Y</strong> datados por C¹⁴:<br>
-<strong>12 250 ± 150 años AP</strong> (rango: 12 100–12 400)</p></li>
-<li class="fragment"><p><strong>Filogenia molecular</strong> de varios loci:<br>
-Edad estimada del clado: <strong>12 500 años AP</strong> (rango: 11 800–13 200)</p></li>
-</ol>
+<div class="fragment">
+<p>Supongamos:</p>
+<ul>
+<li>3 aquarios control, 3 aquarios con nutrientes</li>
+<li>medimos 10 peces por aquario</li>
+</ul>
+</div>
+<div class="fragment">
+<p>La jerarchia es:</p>
+<blockquote>
+<p>Tratamiento -&gt; Aquario -&gt; Peces -&gt; Mediciones</p>
+</blockquote>
 </div>
 </div><div class="column">
 <div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="03-methods_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="suposiciones-de-cada-método" class="slide level2 smaller">
-<h2>Suposiciones de cada método</h2>
-<p>Cada método descansa en suposiciones que pueden no cumplirse perfectamente:</p>
-<div>
+<p>Si el tratamiento estaba aplicado a los aquarios:</p>
 <ul>
-<li class="fragment"><strong>Datación C¹⁴</strong> asume:
-<ul>
-<li class="fragment">la tasa de desintegración del carbono-14 es constante</li>
-<li class="fragment">el sistema estuvo cerrado después de la muerte (sin intercambio de carbono)</li>
-</ul></li>
-<li class="fragment"><strong>Filogenia molecular</strong> asume:
-<ul>
-<li class="fragment">las tasas de sustitución de ADN son relativamente constantes a lo largo del tiempo (<em>reloj molecular</em>)</li>
-<li class="fragment">el modelo de evolución molecular elegido es correcto</li>
-</ul></li>
-<li class="fragment"><strong>Registro fósil</strong> asume:
-<ul>
-<li class="fragment">los fósiles encontrados son representativos de los organismos que existieron</li>
-<li class="fragment">la ausencia de fósiles más antiguos no implica que no existieran</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<blockquote>
-<p>Si las suposiciones no se cumplen, las estimaciones pueden estar sesgadas.<br>
-Por eso integramos <strong>múltiples métodos independientes</strong>.</p>
-</blockquote>
-</div>
-</section>
-<section id="límites-e-incertidumbre" class="slide level2 smaller">
-<h2>Límites e incertidumbre</h2>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Cada fuente de evidencia tiene límites:</p>
-<div>
-<ul>
-<li class="fragment"><strong>El registro fósil es incompleto</strong> → el fósil más antiguo conocido no es necesariamente el primero que existió.</li>
-<li class="fragment"><strong>Las dataciones tienen error</strong> → ±150 años en este caso; no son valores exactos.</li>
-<li class="fragment"><strong>Las reconstrucciones filogenéticas son estimaciones</strong> → reflejan incertidumbre estadística.</li>
-</ul>
-</div>
-</div><div class="column" style="width:45%;">
-<div class="fragment">
-<blockquote>
-<p>Por eso los científicos reportan <strong>intervalos</strong>, no valores puntuales.</p>
-<p>Trabajamos con incertidumbre cuantificada, no la ignoramos.</p>
-</blockquote>
-</div>
-</div></div>
-</section>
-<section id="comparación-de-hipótesis-1" class="slide level2 smaller">
-<h2>Comparación de hipótesis</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Consistencia con H₁ (clado más antiguo)</strong></p>
-<div>
-<ul>
-<li class="fragment">El fósil (12 500–12 800) es <strong>anterior</strong> al rango del lago (12 100–12 400)</li>
-<li class="fragment">El origen filogenético (11 800–13 200) <strong>incluye edades anteriores</strong> al lago</li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<p><strong>Consistencia con H₂ (clado más joven)</strong></p>
-<div>
-<ul>
-<li class="fragment">El fósil <strong>no</strong> es posterior al lago</li>
-<li class="fragment">El origen filogenético <strong>no está claramente</strong> después del lago</li>
+<li>Unidad experimental: <strong>Aquario</strong></li>
+<li>Replica verdadera: <strong>3 por tratamiento</strong></li>
+<li>Peces: <strong>submuestras biologicas (unidades de observacion, NO undidades experimental!)</strong></li>
+<li>Mediciones repetidas por pez: <strong>replica technica</strong></li>
 </ul>
 </div>
 </div></div>
+</section>
+<section id="replicación-y-submuestreo-1" class="slide level2 smaller">
+<h2>Replicación y submuestreo</h2>
+<p>Si el tratamiento estaba aplicado a los aquarios:</p>
 <div class="fragment">
+<ul>
+<li>Unidad experimental: <strong>Aquario</strong></li>
+<li>Replica verdadera: <strong>3 por tratamiento</strong></li>
+</ul>
 <blockquote>
-<p><strong>Los datos son más consistentes con H₁.</strong><br>
-La evidencia <em>favorece</em> una hipótesis, pero rara vez la <em>prueba</em> de forma absoluta.</p>
+<p>Proporcionan replicacion para estimar el efecto del tratamiento</p>
+</blockquote>
+</div>
+<div class="fragment">
+<ul>
+<li>Peces por aquario: <strong>submuestras biologicas (unidades de observacion, NO undidades experimental!)</strong></li>
+</ul>
+<blockquote>
+<p>Permiten estimar la variacion dentro de una undidad experimental</p>
+</blockquote>
+</div>
+<div class="fragment">
+<ul>
+<li>Mediciones repetidas por pez: <strong>replica technica</strong></li>
+</ul>
+<blockquote>
+<p>Permiten estimar variacion (o error) asociada con medicion o de analisis</p>
 </blockquote>
 </div>
 </section>
-<section id="inferencia-y-conclusión-provisional" class="slide level2 smaller">
-<h2>Inferencia y conclusión provisional</h2>
-<div class="fragment">
-<p><strong>Conclusión provisional:</strong></p>
+<section id="pseudoréplicacion" class="slide level2">
+<h2>Pseudoréplicacion</h2>
 <blockquote>
-<p>La evidencia actual apoya que el clado X es más antiguo que el Lago Y, aunque existe incertidumbre en todas las fuentes de datos.</p>
+<p>Submuestras, replicas technicas, o otros tipos de observaciones no-independientes cuales las analizamos como si fueran replicas experimentales independientes.</p>
+</blockquote>
+<ul>
+<li>Tiene el efecto de aumentar el sample size falsamente.</li>
+<li>Tienden a mejorar el poder de analisis estadisticos, pero falsamente.</li>
+<li>Introducen sesgo hacia menor variacion natural</li>
+</ul>
+</section>
+<section id="como-guardarse-de-la-pseudorreplicacion" class="slide level2 smaller">
+<h2>Como guardarse de la pseudorreplicacion?</h2>
+<div class="fragment">
+<p>Un escenario comun. La gente muchas veces hace la siguente asociacion:</p>
+<blockquote>
+<p>organismos (individuos) diferentes = replicas biologicas</p>
 </blockquote>
 </div>
 <div class="fragment">
-<p><strong>¿Es definitivo?</strong></p>
-<p>No.&nbsp;Nuevos datos pueden cambiar la conclusión:</p>
-<ul>
-<li>Más fósiles → límites del registro más precisos</li>
-<li>Más loci genéticos → intervalos filogenéticos más estrechos</li>
-<li>Mejores dataciones → menor error en edades</li>
-</ul>
-<p><strong>La ciencia es un proceso iterativo.</strong></p>
-</div>
-</section>
-<section id="resumen-inferencia-histórica-con-incertidumbre" class="slide level2 smaller">
-<h2>Resumen: inferencia histórica con incertidumbre</h2>
-<div>
-<ol type="1">
-<li class="fragment">Los biólogos evolutivos estudian el pasado mediante <strong>inferencia</strong>, no experimentos directos.</li>
-<li class="fragment">Usamos el mismo marco lógico: pregunta → hipótesis → predicciones → evidencia → comparación.</li>
-<li class="fragment">Toda evidencia histórica tiene <strong>límites cuantificables</strong>: registro incompleto, error en dataciones, incertidumbre estadística.</li>
-<li class="fragment">Reportamos <strong>intervalos</strong>, no certezas.</li>
-<li class="fragment">Aun con incertidumbre, podemos hacer <strong>inferencias bien fundamentadas</strong> integrando múltiples líneas de evidencia.</li>
-</ol>
-</div>
-</section>
-<section id="más-allá-del-clado-y-el-lago" class="slide level2 smaller">
-<h2>Más allá del clado y el lago</h2>
-<p>Este ejemplo usa un grupo de especies y un lago, pero la misma lógica aplica a muchos contextos:</p>
-<div>
-<ul>
-<li class="fragment"><strong>Biogeografía de islas</strong> → ¿el grupo colonizó la isla antes o después del aislamiento geográfico?</li>
-<li class="fragment"><strong>Virus en un nuevo huésped</strong> → ¿el linaje viral es anterior o posterior al primer contacto con esa especie?</li>
-<li class="fragment"><strong>Diversificación en montañas</strong> → ¿el clado se originó antes o después del levantamiento de la cordillera?</li>
-<li class="fragment"><strong>Origen de una enfermedad</strong> → ¿cuándo divergió el patógeno de su ancestro común con una cepa conocida?</li>
-</ul>
+<p>Pero,</p>
+<blockquote>
+<p>aunque claramente, sinco Daphnia en el mismo mesocosmo son sinco individuos</p>
+</blockquote>
+<blockquote>
+<p><strong>las sinco Daphnia no son replicas independientes del tratamiento del microcosmo</strong></p>
+</blockquote>
 </div>
 <div class="fragment">
+<p>Siempre hay que preguntar:</p>
 <blockquote>
-<p>En todos los casos: usamos fósiles, filogenias y dataciones para inferir el pasado, reconociendo las suposiciones y los límites de cada método.</p>
+<p>¿Dónde ocurrió la asignación independiente del tratamiento?</p>
 </blockquote>
 </div>
 </section>
 <section class="slide level2">
 
 
-<img data-src="03-assets/sci-method.png" class="r-stretch"></section></section>
-<section id="hoja-de-trabajo-la-evolución-de-la-respiración-subacuática-en-lagartijas-anolis" class="title-slide slide level1 center">
-<h1>Hoja de trabajo: La evolución de la respiración subacuática en lagartijas <em>Anolis</em></h1>
-<p>https://www.sciencedirect.com/science/article/pii/S0960982221005753</p>
+<img data-src="02-assets/replication-summary-diagram.png" class="r-stretch"></section>
+<section id="vinclulo-entre-hypotesis-y-deseño" class="slide level2">
+<h2>Vinclulo entre Hypotesis y Deseño</h2>
+</section>
+<section id="diatomeas-y-salinidad" class="slide level2">
+<h2>Diatomeas y Salinidad</h2>
+<pre><code>Aislamiento de una cepa --&gt;
+
+   cultivo stock en su salinidad habitual --&gt; 
+
+   inoculación de diferentes salinidades --&gt; 
+
+   varios cultivos independientes por salinidad --&gt;
+
+   transferencias sucesivas --&gt; 
+
+   medición del crecimiento.</code></pre>
+</section>
+<section id="diatomeas-y-salinidad-1" class="slide level2">
+<h2>Diatomeas y Salinidad</h2>
+<pre><code>                          Cepa A
+                      cultivo stock
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+        8 ppt            16 ppt            24 ppt
+      ┌──┼──┐           ┌──┼──┐            ┌──┼──┐
+      ●  ●  ●           ●  ●  ●            ●  ●  ●
+     C1 C2 C3           C1 C2 C3           C1 C2 C3</code></pre>
+</section>
+<section id="cual-es-n-sample-size-numbero-de-replicas" class="slide level2 smaller">
+<h2>Cual es N (sample size, numbero de replicas)?</h2>
+<div class="columns">
+<div class="column">
+<p>Supongamos:</p>
+<ul>
+<li>5 especies</li>
+<li>3 cepas por especie</li>
+<li>5 salinidades</li>
+<li>3 cultivos por salinidad</li>
+<li>10 transferencias</li>
+<li>5 mediciones por cultivo por salinidad por transferencia</li>
+</ul>
+</div><div class="column">
+<div class="fragment">
+<p>Cuantas replicas tenemos?</p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>La pregunta no tiene respuesta sin conocer la hipotesis!</p>
+</blockquote>
+</div>
+</div></div>
+</section>
+<section id="tipos-de-diseño-experimental" class="slide level2">
+<h2>Tipos de diseño experimental</h2>
+<div class="columns">
+<div class="column">
+<div class="fragment">
+<ul>
+<li><strong>Diseño experimental</strong>
+<ul>
+<li>El investigador manipula tratamientos (ej. sombreado vs no sombreado).</li>
+<li>Inferencia más fuerte sobre causa-efecto. Requiere control de factores confusores.<br>
+</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment">
+<ul>
+<li><strong>Diseño natural</strong>
+<ul>
+<li>El investigador aprovecha la variación natural (ej. arroyos soleados vs sombreados).<br>
+</li>
+<li>No hay asignación verdadera de tratamientos<br>
+</li>
+</ul></li>
+</ul>
+</div>
+</div></div>
+<div class="fragment">
+<div title="¡Ojo!">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>¡Ojo!</strong></p>
+</div>
+<div class="callout-content">
+<p>Incluso sin manipulación, es necesaria una definición clara de <em>unidades experimentales</em> y <em>replicación</em>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="diseño-factorial" class="slide level2">
+<h2>Diseño Factorial</h2>
+<ul>
+<li><strong>Definición:</strong> Se prueban todas las combinaciones de factores.<br>
+</li>
+<li>Ejemplo: Dos factores → luz (alta/baja) × nutrientes (altos/bajos)
+<ul>
+<li>Tratamientos = 2 × 2 = 4 combinaciones<br>
+</li>
+</ul></li>
+<li>Ventaja: puede detectar <strong>efectos de interacción</strong> (cómo se combinan los factores).</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="02-design_files/figure-revealjs/fig-factorial-1.png" width="1152" class="r-stretch quarto-figure-center" id="fig-factorial"><p class="caption">
+Figure&nbsp;1: 2×2 diseño factorial: Luz x Nutrientes.
+</p></section>
+<section id="bloques" class="slide level2">
+<h2>Bloques</h2>
+<ul>
+<li><strong>Definición:</strong> Agrupar unidades experimentales en bloques que comparten condiciones similares.<br>
+</li>
+<li>Ejemplo: La fertilidad del suelo varía a través de un campo → cada bloque contiene todos los tratamientos.<br>
+</li>
+<li>Propósito: controlar fuentes conocidas de variación.<br>
+</li>
+<li>Análisis: el bloque se incluye como factor en el modelo (aleatorio o fijo).</li>
+</ul>
+<blockquote>
+<p>Los bloques reducen el <em>ruido</em> de la heterogeneidad.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+
+<img data-src="02-design_files/figure-revealjs/fig-blocking-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-blocking"><p class="caption">
+Figure&nbsp;2: Diseño de bloques completos aleatorizado: cada bloque contiene todos los tratamientos.
+</p></section>
+<section id="aleatorización" class="slide level2">
+<h2>Aleatorización</h2>
+<ul>
+<li><strong>Definición:</strong> Asignación aleatoria de tratamientos a unidades experimentales.<br>
+</li>
+<li>Propósito: evita sesgo sistemático.<br>
+</li>
+<li>Puede ser completa o restringida (dentro de bloques).</li>
+</ul>
+<p><strong>Ejemplo:</strong> Asignar aleatoriamente sombreado vs control a estanques, no solo “primera mitad sombreada, segunda mitad control.”</p>
+</section>
+<section class="slide level2">
+
+
+<img data-src="02-design_files/figure-revealjs/fig-randomization-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-randomization"><p class="caption">
+Figure&nbsp;3: Asignación aleatoria de tratamientos en una cuadrícula de campo (dentro de bloques).
+</p></section>
+<section id="resumen" class="slide level2">
+<h2>Resumen</h2>
+<ul>
+<li><strong>Diseño factorial</strong>: probar múltiples factores y sus interacciones.<br>
+</li>
+<li><strong>Bloques</strong>: controlar variación agrupando unidades similares.<br>
+</li>
+<li><strong>Aleatorización</strong>: protegerse contra sesgo.</li>
+</ul>
+</section>
+<section id="bibliografia" class="slide level2">
+<h2>Bibliografia</h2>
+<p>Statistics done wrong: https://www.statisticsdonewrong.com/pseudoreplication.html</p>
+<p>Marshall, D.J., 2024. Principles of experimental design for ecology and evolution. Ecology Letters, 27(4), p.e14400.</p>
 
 
 </section>

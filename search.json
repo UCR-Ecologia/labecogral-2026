@@ -126,6 +126,188 @@
     "text": "Referencias\nAndrewartha, H. G. (1970). Introduction to the study of animal populations (2nd ed.). Chapman and Hall.\nBegon, M., Harper, J., & Townsend, C. (2006). Ecology: From individuals to ecosystems (4th ed.). Blackwell.\nBetts, M. G., Hadley, A. S., Frey, D. W., Frey, S. J., Gannon, D., Harris, S. H., & Zárrate‐Charry, D. (2021). When are hypotheses useful in ecology and evolution? Ecology and Evolution, 11(11), 5762-5776. https://doi.org/10.1002/ece3.7472\nCrawley, M. J. (2007). The R book. John Wiley.\nFarji-Brener, A. G. (2003). Uso correcto, parcial e incorrecto de los términos “hipótesis” y “predicciones” en ecología. Ecología Austral, 13(2), 223-227.\nGotelli, N. J., & Ellison, A. M. (2004). A primer of ecological statistics (Vol. 1). Sinauer Associates.\nKrebs, C. J. (1999). Ecological methodology (2nd ed.). Benjamin Cummings. http://www.zoology.ubc.ca/~krebs/books.html\nMittelbach, G. G., & McGill, B. J. (2019). Community ecology. Oxford University Press.\nMoreno, C. E. (2001). Manual de métodos para medir la biodiversidad. Universidad Veracruzana. https://www.researchgate.net/publication/304346666_Metodos_para_medir_la_biodiversidad\nQuinn, G. P., & Keough, M. J. (2002). Experimental design and data analysis for biologists. Cambridge University Press.\nSchimel, J. (2012). Writing science: How to write papers that get cited and proposals that get funded. Oxford University Press.\nSutherland, W. J. (Ed.). (2006). Ecological census techniques: A handbook. Cambridge University Press. https://www.researchgate.net/publication/273070581_Ecological_Census_Techniques_A_Handbook\nZar, J. H. (1999). Biostatistical analysis (4th ed.). Prentice Hall."
   },
   {
+    "objectID": "lectures/02-design.html#diseño-experimental",
+    "href": "lectures/02-design.html#diseño-experimental",
+    "title": "Diseño experimental",
+    "section": "Diseño experimental",
+    "text": "Diseño experimental"
+  },
+  {
+    "objectID": "lectures/02-design.html#por-qué-importa-el-diseño-experimental",
+    "href": "lectures/02-design.html#por-qué-importa-el-diseño-experimental",
+    "title": "Diseño experimental",
+    "section": "Por qué importa el diseño experimental",
+    "text": "Por qué importa el diseño experimental\n\nEcología = sistemas complejos y variables\n\nMal diseño → conclusiones inválidas, esfuerzo desperdiciado\n\nBuen diseño → inferencia más sólida, capacidad de generalizar"
+  },
+  {
+    "objectID": "lectures/02-design.html#diseño-factorial",
+    "href": "lectures/02-design.html#diseño-factorial",
+    "title": "Diseño experimental",
+    "section": "Diseño Factorial",
+    "text": "Diseño Factorial\n\nDefinición: Se prueban todas las combinaciones de factores.\n\nEjemplo: Dos factores → luz (alta/baja) × nutrientes (altos/bajos)\n\nTratamientos = 2 × 2 = 4 combinaciones\n\n\nVentaja: puede detectar efectos de interacción (cómo se combinan los factores)."
+  },
+  {
+    "objectID": "lectures/02-design.html#bloques",
+    "href": "lectures/02-design.html#bloques",
+    "title": "Diseño experimental",
+    "section": "Bloques",
+    "text": "Bloques\n\nDefinición: Agrupar unidades experimentales en bloques que comparten condiciones similares.\n\nEjemplo: La fertilidad del suelo varía a través de un campo → cada bloque contiene todos los tratamientos.\n\nPropósito: controlar fuentes conocidas de variación.\n\nAnálisis: el bloque se incluye como factor en el modelo (aleatorio o fijo).\n\n\nLos bloques reducen el ruido de la heterogeneidad."
+  },
+  {
+    "objectID": "lectures/02-design.html#aleatorización",
+    "href": "lectures/02-design.html#aleatorización",
+    "title": "Diseño experimental",
+    "section": "Aleatorización",
+    "text": "Aleatorización\n\nDefinición: Asignación aleatoria de tratamientos a unidades experimentales.\n\nPropósito: evita sesgo sistemático.\n\nPuede ser completa o restringida (dentro de bloques).\n\nEjemplo: Asignar aleatoriamente sombreado vs control a estanques, no solo “primera mitad sombreada, segunda mitad control.”"
+  },
+  {
+    "objectID": "lectures/02-design.html#mensajes-claves",
+    "href": "lectures/02-design.html#mensajes-claves",
+    "title": "Diseño experimental",
+    "section": "Mensajes claves",
+    "text": "Mensajes claves\n\nDiseño factorial: probar múltiples factores y sus interacciones.\n\nBloques: controlar variación agrupando unidades similares.\n\nAleatorización: protegerse contra sesgo."
+  },
+  {
+    "objectID": "lectures/02-design.html#replicación-y-pseudoeplicación",
+    "href": "lectures/02-design.html#replicación-y-pseudoeplicación",
+    "title": "Diseño experimental",
+    "section": "Replicación y pseudoeplicación",
+    "text": "Replicación y pseudoeplicación"
+  },
+  {
+    "objectID": "lectures/02-design.html#conceptos-fundamentales",
+    "href": "lectures/02-design.html#conceptos-fundamentales",
+    "title": "Diseño experimental",
+    "section": "Conceptos fundamentales",
+    "text": "Conceptos fundamentales\n\n\nTratamiento: Lo que se manipula\n\nUnidad Experimental: La unidad más pequeña que puede recibir independientemente un tratamiento\n\nReplicación: Múltiples unidades experimentales independientes por tratamiento\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nReplicación = unidades experimentales, no muestras."
+  },
+  {
+    "objectID": "lectures/02-design.html#replicación",
+    "href": "lectures/02-design.html#replicación",
+    "title": "Diseño experimental",
+    "section": "Replicación",
+    "text": "Replicación\n\nPropósito: estimar variabilidad, probar hipótesis confiablemente\n\nTipos:\n\nReplicación verdadera: unidades independientes (20 plantas)\n\nReplicación técnica: medidas repetidas de la misma unidad (20 hojas de 1 planta)\n\n\nRegla práctica: Replicación = número de unidades independientes"
+  },
+  {
+    "objectID": "lectures/02-design.html#evitando-la-pseudoreplicación",
+    "href": "lectures/02-design.html#evitando-la-pseudoreplicación",
+    "title": "Diseño experimental",
+    "section": "Evitando la pseudoreplicación",
+    "text": "Evitando la pseudoreplicación\n\nMúltiples unidades independientes por tratamiento\n\nAsignación aleatoria de tratamientos\n\nBloques para controlar la variación\n\nModelos jerárquicos / mixtos para datos anidados"
+  },
+  {
+    "objectID": "lectures/02-design.html#mensajes-clave",
+    "href": "lectures/02-design.html#mensajes-clave",
+    "title": "Diseño experimental",
+    "section": "Mensajes clave",
+    "text": "Mensajes clave\n\nReplicación = unidades independientes, no medidas repetidas\n\nLa pseudoreplicación es común pero evitable\n\nReconocer cuando la replicación completa es imposible"
+  },
+  {
+    "objectID": "lectures/02-design.html#bibliografia",
+    "href": "lectures/02-design.html#bibliografia",
+    "title": "Diseño experimental",
+    "section": "Bibliografia",
+    "text": "Bibliografia\nStatistics done wrong: https://www.statisticsdonewrong.com/pseudoreplication.html\nMarshall, D.J., 2024. Principles of experimental design for ecology and evolution. Ecology Letters, 27(4), p.e14400."
+  },
+  {
+    "objectID": "labs-teaching-notes/L01.html",
+    "href": "labs-teaching-notes/L01.html",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
+  },
+  {
+    "objectID": "labs-teaching-notes/L01.html#observacion",
+    "href": "labs-teaching-notes/L01.html#observacion",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
+  },
+  {
+    "objectID": "giras/index.html",
+    "href": "giras/index.html",
+    "title": "Giras",
+    "section": "",
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+  },
+  {
+    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "title": "Giras",
+    "section": "",
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+  },
+  {
+    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "title": "Giras",
+    "section": "Trabajo de campo para la investigacion guiada",
+    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
+  },
+  {
+    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "title": "Giras",
+    "section": "Expectativas de trabajo en campo para el proyecto semestral",
+    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "",
+    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
+  },
+  {
+    "objectID": "index.html#bienvenido",
+    "href": "index.html#bienvenido",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "",
+    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
+  },
+  {
+    "objectID": "index.html#enfoque-del-curso",
+    "href": "index.html#enfoque-del-curso",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Enfoque del curso",
+    "text": "Enfoque del curso\nEl laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados."
+  },
+  {
+    "objectID": "index.html#programa-del-curso",
+    "href": "index.html#programa-del-curso",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Programa del curso",
+    "text": "Programa del curso\nEl programa del curso ya está disponible en la sección de Programa."
+  },
+  {
+    "objectID": "index.html#fechas-importantes",
+    "href": "index.html#fechas-importantes",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Fechas importantes",
+    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
+  },
+  {
+    "objectID": "labs/L01.html",
+    "href": "labs/L01.html",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
+  },
+  {
+    "objectID": "labs/L01.html#observacion",
+    "href": "labs/L01.html#observacion",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
+  },
+  {
+    "objectID": "labs/L01.html#preguntas",
+    "href": "labs/L01.html#preguntas",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "Preguntas",
+    "text": "Preguntas\nHipótesis A:\n\n \n \n \n \n\nPredicciones de la hipótesis A:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\n \n \n \n \n\n\nHipótesis B:\n\n \n \n \n \n\nPredicciones de la hipótesis B:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis B y sus predicciones:"
+  },
+  {
     "objectID": "lectures/01-sci-method.html#plan",
     "href": "lectures/01-sci-method.html#plan",
     "title": "Metodo cientifico en ecologia",
@@ -287,314 +469,6 @@
     "text": "Resumen\n\nEl patron especie-area es una observacion inicial, no una explicacion final.\nA, B y C pueden explicar el mismo patron general, pero generan predicciones distintas.\nComparar multiples lineas de evidencia fortalece la inferencia ecologica.\nEl metodo cientifico en ecologia es iterativo: observar, plantear hipotesis, predecir, contrastar y revisar."
   },
   {
-    "objectID": "labs/L01.html",
-    "href": "labs/L01.html",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
-  },
-  {
-    "objectID": "labs/L01.html#observacion",
-    "href": "labs/L01.html#observacion",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
-  },
-  {
-    "objectID": "labs/L01.html#preguntas",
-    "href": "labs/L01.html#preguntas",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "Preguntas",
-    "text": "Preguntas\nHipótesis A:\n\n \n \n \n \n\nPredicciones de la hipótesis A:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\n \n \n \n \n\n\nHipótesis B:\n\n \n \n \n \n\nPredicciones de la hipótesis B:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis B y sus predicciones:"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "",
-    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
-  },
-  {
-    "objectID": "index.html#bienvenido",
-    "href": "index.html#bienvenido",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "",
-    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
-  },
-  {
-    "objectID": "index.html#enfoque-del-curso",
-    "href": "index.html#enfoque-del-curso",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Enfoque del curso",
-    "text": "Enfoque del curso\nEl laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados."
-  },
-  {
-    "objectID": "index.html#programa-del-curso",
-    "href": "index.html#programa-del-curso",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Programa del curso",
-    "text": "Programa del curso\nEl programa del curso ya está disponible en la sección de Programa."
-  },
-  {
-    "objectID": "index.html#fechas-importantes",
-    "href": "index.html#fechas-importantes",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Fechas importantes",
-    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
-  },
-  {
-    "objectID": "drafts/03-methods.html#metas",
-    "href": "drafts/03-methods.html#metas",
-    "title": "Como estudiamos la evolución",
-    "section": "Metas",
-    "text": "Metas\n\nEntender como los biólogos evolutivos estudian la evolución a través de evidencia, inferencia, comparación de hipótesis y reconocimiento de límites.\nDesarrollar razonamiento evolutivo (científico): entender suposiciones, interpretar datos, comparar hipótesis\nEntender que la ciencia evolutiva es un proceso iterativo de inferencia con incertidumbre, no una colección de hechos absolutos.\nEntender los fundamentos del metodo científico."
-  },
-  {
-    "objectID": "drafts/03-methods.html#ser-capaces-de",
-    "href": "drafts/03-methods.html#ser-capaces-de",
-    "title": "Como estudiamos la evolución",
-    "section": "Ser capaces de",
-    "text": "Ser capaces de\n\n\nformular preguntas evolutivas\nproponer hipótesis evolutivas alternativas\nderivar predicciones de hipótesis\nentender suposiciones de estudios evolutivos\ninterpretar evidencia evolutiva\ncomparar hipótesis evolutivas\nreconocer límites de evidencia evolutiva"
-  },
-  {
-    "objectID": "drafts/03-methods.html#observación-vs-explicación",
-    "href": "drafts/03-methods.html#observación-vs-explicación",
-    "title": "Como estudiamos la evolución",
-    "section": "Observación vs explicación",
-    "text": "Observación vs explicación\nObservación:\n\nLos pinzones de Galápagos tienen picos diferentes que hace unos años.\n\n\n¿Por qué?\n\n\nPosibles explicaciones:\n\nazar\nadaptación a la dieta\n\n\n\n\nLa evidencia por sí sola no proporciona automáticamente la explicación."
-  },
-  {
-    "objectID": "drafts/03-methods.html#observación-vs-explicación-1",
-    "href": "drafts/03-methods.html#observación-vs-explicación-1",
-    "title": "Como estudiamos la evolución",
-    "section": "Observación vs explicación",
-    "text": "Observación vs explicación\nObservación:\n\nLos pinzones de Galápagos tienen picos diferentes que hace unos años.\n\n\nNecesitamos:\n\nhipótesis alternativas\npredicciones\ncomparación de hipótesis"
-  },
-  {
-    "objectID": "drafts/03-methods.html#explicación-1-azar",
-    "href": "drafts/03-methods.html#explicación-1-azar",
-    "title": "Como estudiamos la evolución",
-    "section": "Explicación 1: Azar",
-    "text": "Explicación 1: Azar\nHipótesis:\n\nEl cambio se debe a procesos aleatorios que resultan en un cambio en la frecuencia de variantes en la población.\n\nPredicciónes?"
-  },
-  {
-    "objectID": "drafts/03-methods.html#explicación-1-azar-1",
-    "href": "drafts/03-methods.html#explicación-1-azar-1",
-    "title": "Como estudiamos la evolución",
-    "section": "Explicación 1: Azar",
-    "text": "Explicación 1: Azar\nHipótesis:\n\nEl cambio se debe a procesos aleatorios que resultan en un cambio en la frecuencia de variantes en la población.\n\n\nPredicción:\n\n\nNo debería existir una relación consistente entre tamaño del pico y tamaño de las semillas. (Ecología, Recursos)\nNo debería existir una relación consistente entre tamaño del pico y supervivencia. (Aptitud, Selección Natural)\nEl cambio podría ocurrir incluso sin cambios en los recursos disponibles. (Ecología, Recursos)"
-  },
-  {
-    "objectID": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta",
-    "href": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta",
-    "title": "Como estudiamos la evolución",
-    "section": "Explicación 2: Adaptación a la dieta",
-    "text": "Explicación 2: Adaptación a la dieta\nHipótesis:\n\nEl cambio se debe a que individuos con picos más grandes sobrevivieron y se reprodujeron más durante la sequía.\n\nPredicciónes?"
-  },
-  {
-    "objectID": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta-1",
-    "href": "drafts/03-methods.html#explicación-2-adaptación-a-la-dieta-1",
-    "title": "Como estudiamos la evolución",
-    "section": "Explicación 2: Adaptación a la dieta",
-    "text": "Explicación 2: Adaptación a la dieta\nHipótesis:\n\nEl cambio se debe a que individuos con picos más grandes sobrevivieron y se reprodujeron más durante la sequía.\n\n\nPredicción:\n\n\nDebería existir una relación entre tamaño del pico y tamaño de las semillas disponibles. (Ecología, Recursos)\nDebería existir una relación consistente entre el tamaño del pico y la dieta. (Ecología, Recursos)\nParte de la variación en el tamaño del pico debería ser heredable. (Genética)\nEl tamaño promedio del pico debería aumentar generación tras generación. (Aptitud, Selección Natural)\nLos individuos con picos más grandes deberían sobrevivir más frecuentemente. (Aptitud, Selección Natural)"
-  },
-  {
-    "objectID": "drafts/03-methods.html#comparación-de-hipótesis",
-    "href": "drafts/03-methods.html#comparación-de-hipótesis",
-    "title": "Como estudiamos la evolución",
-    "section": "Comparación de hipótesis",
-    "text": "Comparación de hipótesis\n¿Qué datos serían útiles para distinguir entre estas explicaciones?\n\n\nTamaño de pico\nTamaño de semillas\nDieta\nSupervivencia\nNúmero de hijos\nHerencia padres–hijos\nCambios en la población a través del tiempo"
-  },
-  {
-    "objectID": "drafts/03-methods.html#picos-y-semillas",
-    "href": "drafts/03-methods.html#picos-y-semillas",
-    "title": "Como estudiamos la evolución",
-    "section": "Picos y semillas",
-    "text": "Picos y semillas\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nCambio por azar."
-  },
-  {
-    "objectID": "drafts/03-methods.html#picos-y-semillas-1",
-    "href": "drafts/03-methods.html#picos-y-semillas-1",
-    "title": "Como estudiamos la evolución",
-    "section": "Picos y semillas",
-    "text": "Picos y semillas\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nApoya la hipótesis de adaptación, pero una sola línea de evidencia no basta."
-  },
-  {
-    "objectID": "drafts/03-methods.html#padres-e-hijos",
-    "href": "drafts/03-methods.html#padres-e-hijos",
-    "title": "Como estudiamos la evolución",
-    "section": "Padres e hijos",
-    "text": "Padres e hijos\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nApoya una condición necesaria para selección, pero no demuestra adaptación por sí sola."
-  },
-  {
-    "objectID": "drafts/03-methods.html#picos-y-número-de-hijos",
-    "href": "drafts/03-methods.html#picos-y-número-de-hijos",
-    "title": "Como estudiamos la evolución",
-    "section": "Picos y número de hijos",
-    "text": "Picos y número de hijos\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nAdaptación a la dieta."
-  },
-  {
-    "objectID": "drafts/03-methods.html#evidencia-combinada-sin-aptitud",
-    "href": "drafts/03-methods.html#evidencia-combinada-sin-aptitud",
-    "title": "Como estudiamos la evolución",
-    "section": "Evidencia combinada: sin aptitud",
-    "text": "Evidencia combinada: sin aptitud\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nNo hay suficiente evidencia para adaptación por selección natural."
-  },
-  {
-    "objectID": "drafts/03-methods.html#evidencia-combinada-sin-heredabilidad",
-    "href": "drafts/03-methods.html#evidencia-combinada-sin-heredabilidad",
-    "title": "Como estudiamos la evolución",
-    "section": "Evidencia combinada: sin heredabilidad",
-    "text": "Evidencia combinada: sin heredabilidad\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nNo hay suficiente evidencia para adaptación por selección natural."
-  },
-  {
-    "objectID": "drafts/03-methods.html#evidencia-combinada-las-tres-condiciones",
-    "href": "drafts/03-methods.html#evidencia-combinada-las-tres-condiciones",
-    "title": "Como estudiamos la evolución",
-    "section": "Evidencia combinada: las tres condiciones",
-    "text": "Evidencia combinada: las tres condiciones\n\n\n\nQue hipótesis apoya esta evidencia? Y por qué?\n\n\n\n\nLas tres piezas juntas — correlación con recurso, variación heredable y relación con aptitud — apoyan adaptación por selección natural."
-  },
-  {
-    "objectID": "drafts/03-methods.html#resumen",
-    "href": "drafts/03-methods.html#resumen",
-    "title": "Como estudiamos la evolución",
-    "section": "Resumen",
-    "text": "Resumen\n\nLa evidencia por sí sola no proporciona automáticamente la explicación.\nLa evidencia no demuestra que una hipótesis sea absolutamente verdadera; permite evaluar cuál explicación es más consistente con los datos disponibles.\nNecesitamos evaluar varios tipos de evidencia junto (recursos, dieta, herencia, supervivencia, cambios poblacionales) para distinguir entre explicaciones evolutivas.\nAdaptación por selección requiere varias piezas juntas: relación con ambiente/recurso, variación heredable y relación con aptitud."
-  },
-  {
-    "objectID": "drafts/03-methods.html#más-allá-de-los-pinzones",
-    "href": "drafts/03-methods.html#más-allá-de-los-pinzones",
-    "title": "Como estudiamos la evolución",
-    "section": "Más allá de los pinzones",
-    "text": "Más allá de los pinzones\nEste ejemplo usa pinzones, pero la lógica aplica a cualquier rasgo en cualquier población:\n\n\nResistencia a antibióticos en bacterias → variación en el rasgo (tolerancia), heredable (mutación), relación con sobrevivencia (antibiótico como agente selectivo)\nCamuflaje en polillas → color del ala, heredable, depredadores como agente selectivo\nTolerancia a metales en plantas → plantas en suelos contaminados, variación heredable en tolerancia, metales como filtro selectivo\nCualquier rasgo morfológico, fisiológico o de comportamiento en cualquier especie\n\n\n\n\nLa pregunta siempre es la misma: ¿hay variación heredable en el rasgo, y esa variación afecta la reproducción o sobrevivencia?"
-  },
-  {
-    "objectID": "drafts/03-methods.html#se-puede-estudiar-el-pasado",
-    "href": "drafts/03-methods.html#se-puede-estudiar-el-pasado",
-    "title": "Como estudiamos la evolución",
-    "section": "¿Se puede estudiar el pasado?",
-    "text": "¿Se puede estudiar el pasado?\n\n\nAstronomía: ¿cómo se formaron las galaxias?\nGeología: ¿cómo se formaron las montañas?\nBiología evolutiva: ¿cuándo divergieron estas especies?\n\n\n\n\nNo podemos repetir el pasado en el laboratorio.\nPero podemos inferirlo a partir de evidencia presente."
-  },
-  {
-    "objectID": "drafts/03-methods.html#la-ciencia-histórica-también-usa-hipótesis",
-    "href": "drafts/03-methods.html#la-ciencia-histórica-también-usa-hipótesis",
-    "title": "Como estudiamos la evolución",
-    "section": "La ciencia histórica también usa hipótesis",
-    "text": "La ciencia histórica también usa hipótesis\nEl método es el mismo:\n\nFormular una pregunta sobre el pasado\nProponer hipótesis alternativas\nDerivar predicciones de cada hipótesis\nReunir evidencia\nComparar qué hipótesis es más consistente\nFormular una conclusión provisional"
-  },
-  {
-    "objectID": "drafts/03-methods.html#caso-de-estudio-clado-o-lago-quién-es-más-antiguo",
-    "href": "drafts/03-methods.html#caso-de-estudio-clado-o-lago-quién-es-más-antiguo",
-    "title": "Como estudiamos la evolución",
-    "section": "Caso de estudio: ¿clado o lago, quién es más antiguo?",
-    "text": "Caso de estudio: ¿clado o lago, quién es más antiguo?\nPregunta científica:\n\n¿El clado X (grupo de especies) se originó antes o después de la formación del Lago Y?\n\n\nEsta pregunta importa porque:\n\nSi el clado es más antiguo → sus ancestros vivían antes del lago; el clado no diversificó en el lago.\nSi el clado es más joven → las poblaciones lacustres podrían haber estado aisladas; la diversificación podría haber ocurrido dentro del lago;"
-  },
-  {
-    "objectID": "drafts/03-methods.html#hipótesis-alternativas",
-    "href": "drafts/03-methods.html#hipótesis-alternativas",
-    "title": "Como estudiamos la evolución",
-    "section": "Hipótesis alternativas",
-    "text": "Hipótesis alternativas\nH₁: El clado X es más antiguo que el Lago Y\nEl origen del clado, estimado con incertidumbre, precede a la formación del lago, también estimado con incertidumbre.\nH₂: El clado X es más joven que el Lago Y\nEl origen del clado, estimado con incertidumbre, es posterior a la formación del lago, también estimado con incertidumbre."
-  },
-  {
-    "objectID": "drafts/03-methods.html#predicciones-de-cada-hipótesis",
-    "href": "drafts/03-methods.html#predicciones-de-cada-hipótesis",
-    "title": "Como estudiamos la evolución",
-    "section": "Predicciones de cada hipótesis",
-    "text": "Predicciones de cada hipótesis\n\n\n\n\n\n\n\n\n\nSi H₁ es correcta\nSi H₂ es correcta\n\n\n\n\nFósiles\nLos fósiles más antiguos del clado son anteriores a la formación del lago\nLos fósiles más antiguos del clado son posteriores a la formación del lago\n\n\nFilogenia\nEl origen estimado del clado precede al lago\nEl origen estimado del clado es posterior al lago\n\n\n\n\nCada prediccion incluye incertidumbre"
-  },
-  {
-    "objectID": "drafts/03-methods.html#evidencia-tres-fuentes-independientes",
-    "href": "drafts/03-methods.html#evidencia-tres-fuentes-independientes",
-    "title": "Como estudiamos la evolución",
-    "section": "Evidencia: tres fuentes independientes",
-    "text": "Evidencia: tres fuentes independientes\n\n\n\n\nFósil clave del clado X datado por C¹⁴:\n12 650 ± 150 años AP (rango: 12 500–12 800)\nSedimentos del Lago Y datados por C¹⁴:\n12 250 ± 150 años AP (rango: 12 100–12 400)\nFilogenia molecular de varios loci:\nEdad estimada del clado: 12 500 años AP (rango: 11 800–13 200)"
-  },
-  {
-    "objectID": "drafts/03-methods.html#suposiciones-de-cada-método",
-    "href": "drafts/03-methods.html#suposiciones-de-cada-método",
-    "title": "Como estudiamos la evolución",
-    "section": "Suposiciones de cada método",
-    "text": "Suposiciones de cada método\nCada método descansa en suposiciones que pueden no cumplirse perfectamente:\n\n\nDatación C¹⁴ asume:\n\nla tasa de desintegración del carbono-14 es constante\nel sistema estuvo cerrado después de la muerte (sin intercambio de carbono)\n\nFilogenia molecular asume:\n\nlas tasas de sustitución de ADN son relativamente constantes a lo largo del tiempo (reloj molecular)\nel modelo de evolución molecular elegido es correcto\n\nRegistro fósil asume:\n\nlos fósiles encontrados son representativos de los organismos que existieron\nla ausencia de fósiles más antiguos no implica que no existieran\n\n\n\n\n\nSi las suposiciones no se cumplen, las estimaciones pueden estar sesgadas.\nPor eso integramos múltiples métodos independientes."
-  },
-  {
-    "objectID": "drafts/03-methods.html#límites-e-incertidumbre",
-    "href": "drafts/03-methods.html#límites-e-incertidumbre",
-    "title": "Como estudiamos la evolución",
-    "section": "Límites e incertidumbre",
-    "text": "Límites e incertidumbre\n\n\nCada fuente de evidencia tiene límites:\n\n\nEl registro fósil es incompleto → el fósil más antiguo conocido no es necesariamente el primero que existió.\nLas dataciones tienen error → ±150 años en este caso; no son valores exactos.\nLas reconstrucciones filogenéticas son estimaciones → reflejan incertidumbre estadística.\n\n\n\n\n\nPor eso los científicos reportan intervalos, no valores puntuales.\nTrabajamos con incertidumbre cuantificada, no la ignoramos."
-  },
-  {
-    "objectID": "drafts/03-methods.html#comparación-de-hipótesis-1",
-    "href": "drafts/03-methods.html#comparación-de-hipótesis-1",
-    "title": "Como estudiamos la evolución",
-    "section": "Comparación de hipótesis",
-    "text": "Comparación de hipótesis\n\n\nConsistencia con H₁ (clado más antiguo)\n\n\nEl fósil (12 500–12 800) es anterior al rango del lago (12 100–12 400)\nEl origen filogenético (11 800–13 200) incluye edades anteriores al lago\n\n\n\nConsistencia con H₂ (clado más joven)\n\n\nEl fósil no es posterior al lago\nEl origen filogenético no está claramente después del lago\n\n\n\n\n\nLos datos son más consistentes con H₁.\nLa evidencia favorece una hipótesis, pero rara vez la prueba de forma absoluta."
-  },
-  {
-    "objectID": "drafts/03-methods.html#inferencia-y-conclusión-provisional",
-    "href": "drafts/03-methods.html#inferencia-y-conclusión-provisional",
-    "title": "Como estudiamos la evolución",
-    "section": "Inferencia y conclusión provisional",
-    "text": "Inferencia y conclusión provisional\n\nConclusión provisional:\n\nLa evidencia actual apoya que el clado X es más antiguo que el Lago Y, aunque existe incertidumbre en todas las fuentes de datos.\n\n\n\n¿Es definitivo?\nNo. Nuevos datos pueden cambiar la conclusión:\n\nMás fósiles → límites del registro más precisos\nMás loci genéticos → intervalos filogenéticos más estrechos\nMejores dataciones → menor error en edades\n\nLa ciencia es un proceso iterativo."
-  },
-  {
-    "objectID": "drafts/03-methods.html#resumen-inferencia-histórica-con-incertidumbre",
-    "href": "drafts/03-methods.html#resumen-inferencia-histórica-con-incertidumbre",
-    "title": "Como estudiamos la evolución",
-    "section": "Resumen: inferencia histórica con incertidumbre",
-    "text": "Resumen: inferencia histórica con incertidumbre\n\n\nLos biólogos evolutivos estudian el pasado mediante inferencia, no experimentos directos.\nUsamos el mismo marco lógico: pregunta → hipótesis → predicciones → evidencia → comparación.\nToda evidencia histórica tiene límites cuantificables: registro incompleto, error en dataciones, incertidumbre estadística.\nReportamos intervalos, no certezas.\nAun con incertidumbre, podemos hacer inferencias bien fundamentadas integrando múltiples líneas de evidencia."
-  },
-  {
-    "objectID": "drafts/03-methods.html#más-allá-del-clado-y-el-lago",
-    "href": "drafts/03-methods.html#más-allá-del-clado-y-el-lago",
-    "title": "Como estudiamos la evolución",
-    "section": "Más allá del clado y el lago",
-    "text": "Más allá del clado y el lago\nEste ejemplo usa un grupo de especies y un lago, pero la misma lógica aplica a muchos contextos:\n\n\nBiogeografía de islas → ¿el grupo colonizó la isla antes o después del aislamiento geográfico?\nVirus en un nuevo huésped → ¿el linaje viral es anterior o posterior al primer contacto con esa especie?\nDiversificación en montañas → ¿el clado se originó antes o después del levantamiento de la cordillera?\nOrigen de una enfermedad → ¿cuándo divergió el patógeno de su ancestro común con una cepa conocida?\n\n\n\n\nEn todos los casos: usamos fósiles, filogenias y dataciones para inferir el pasado, reconociendo las suposiciones y los límites de cada método."
-  },
-  {
-    "objectID": "giras/index.html",
-    "href": "giras/index.html",
-    "title": "Giras",
-    "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
-  },
-  {
-    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "title": "Giras",
-    "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
-  },
-  {
-    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "title": "Giras",
-    "section": "Trabajo de campo para la investigacion guiada",
-    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
-  },
-  {
-    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "title": "Giras",
-    "section": "Expectativas de trabajo en campo para el proyecto semestral",
-    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
-  },
-  {
-    "objectID": "labs-teaching-notes/L01.html",
-    "href": "labs-teaching-notes/L01.html",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
-  },
-  {
-    "objectID": "labs-teaching-notes/L01.html#observacion",
-    "href": "labs-teaching-notes/L01.html#observacion",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
-  },
-  {
     "objectID": "lectures/index.html",
     "href": "lectures/index.html",
     "title": "Clases",
@@ -607,5 +481,166 @@
     "title": "Clases",
     "section": "",
     "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
+  },
+  {
+    "objectID": "lectures/02-design.html#definiciones",
+    "href": "lectures/02-design.html#definiciones",
+    "title": "Diseño experimental",
+    "section": "Definiciones",
+    "text": "Definiciones\n\n\nTratamiento: Lo que se manipula\n\nUnidad Experimental: La unidad más pequeña que puede recibir independientemente un tratamiento\n\nReplicación: Múltiples unidades experimentales independientes por tratamiento\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nReplicación = unidades experimentales, no muestras."
+  },
+  {
+    "objectID": "lectures/02-design.html#qué-cuenta-como-una-réplica",
+    "href": "lectures/02-design.html#qué-cuenta-como-una-réplica",
+    "title": "Diseño experimental",
+    "section": "¿Qué cuenta como una réplica?",
+    "text": "¿Qué cuenta como una réplica?\n\nUna réplica verdadera es una unidad que recibe el tratamiento de manera independiente de las otras unidades.\n\n\nPor lo tanto, no podemos identificar las réplicas solamente preguntando “¿qué medimos?”.\nDebemos preguntar:\n\n¿Cuál es la unidad más pequeña a la que se asignó el tratamiento independientemente?"
+  },
+  {
+    "objectID": "lectures/02-design.html#replicación-y-submuestreo",
+    "href": "lectures/02-design.html#replicación-y-submuestreo",
+    "title": "Diseño experimental",
+    "section": "Replicación y submuestreo",
+    "text": "Replicación y submuestreo\n\n\n\nSupongamos:\n\n3 aquarios control, 3 aquarios con nutrientes\nmedimos 10 peces por aquario\n\n\n\nLa jerarchia es:\n\nTratamiento -&gt; Aquario -&gt; Peces -&gt; Mediciones\n\n\n\n\nSi el tratamiento estaba aplicado a los aquarios:\n\nUnidad experimental: Aquario\nReplica verdadera: 3 por tratamiento\nPeces: submuestras biologicas (unidades de observacion, NO undidades experimental!)\nMediciones repetidas por pez: replica technica"
+  },
+  {
+    "objectID": "lectures/02-design.html#pseudoréplicacion",
+    "href": "lectures/02-design.html#pseudoréplicacion",
+    "title": "Diseño experimental",
+    "section": "Pseudoréplicacion",
+    "text": "Pseudoréplicacion\n\nSubmuestras, replicas technicas, o otros tipos de observaciones no-independientes cuales las analizamos como si fueran replicas experimentales independientes.\n\n\nTiene el efecto de aumentar el sample size falsamente.\nTienden a mejorar el poder de analisis estadisticos, pero falsamente.\nIntroducen sesgo hacia menor variacion natural"
+  },
+  {
+    "objectID": "lectures/02-design.html#como-guardarse-de-la-pseudorreplicacion",
+    "href": "lectures/02-design.html#como-guardarse-de-la-pseudorreplicacion",
+    "title": "Diseño experimental",
+    "section": "Como guardarse de la pseudorreplicacion?",
+    "text": "Como guardarse de la pseudorreplicacion?\n\nUn escenario comun. La gente muchas veces hace la siguente asociacion:\n\norganismos (individuos) diferentes = replicas biologicas\n\n\n\nPero,\n\naunque claramente, sinco Daphnia en el mismo mesocosmo son sinco individuos\n\n\nlas sinco Daphnia no son replicas independientes del tratamiento del microcosmo\n\n\n\nSiempre hay que preguntar:\n\n¿Dónde ocurrió la asignación independiente del tratamiento?"
+  },
+  {
+    "objectID": "lectures/02-design.html#qué-cuenta-como-una-réplica-1",
+    "href": "lectures/02-design.html#qué-cuenta-como-una-réplica-1",
+    "title": "Diseño experimental",
+    "section": "¿Qué cuenta como una réplica?",
+    "text": "¿Qué cuenta como una réplica?\nEjemplo: 20 hojas de una planta\n\n\nSi toda la planta recibe el tratamiento -&gt; las 20 hojas son submuestras de 1 unidad experimental.\nSi cada hoja recibe independientemente un tratamiento -&gt; las 20 hojas pueden ser 20 unidades experimentales."
+  },
+  {
+    "objectID": "lectures/02-design.html#replicación-y-submuestreo-1",
+    "href": "lectures/02-design.html#replicación-y-submuestreo-1",
+    "title": "Diseño experimental",
+    "section": "Replicación y submuestreo",
+    "text": "Replicación y submuestreo\nSi el tratamiento estaba aplicado a los aquarios:\n\n\nUnidad experimental: Aquario\nReplica verdadera: 3 por tratamiento\n\n\nProporcionan replicacion para estimar el efecto del tratamiento\n\n\n\n\nPeces por aquario: submuestras biologicas (unidades de observacion, NO undidades experimental!)\n\n\nPermiten estimar la variacion dentro de una undidad experimental\n\n\n\n\nMediciones repetidas por pez: replica technica\n\n\nPermiten estimar variacion (o error) asociada con medicion o de analisis"
+  },
+  {
+    "objectID": "lectures/02-design.html#vinclulo-entre-hypotesis-y-deseño",
+    "href": "lectures/02-design.html#vinclulo-entre-hypotesis-y-deseño",
+    "title": "Diseño experimental",
+    "section": "Vinclulo entre Hypotesis y Deseño",
+    "text": "Vinclulo entre Hypotesis y Deseño"
+  },
+  {
+    "objectID": "lectures/02-design.html#diatomeas-y-salinidad",
+    "href": "lectures/02-design.html#diatomeas-y-salinidad",
+    "title": "Diseño experimental",
+    "section": "Diatomeas y Salinidad",
+    "text": "Diatomeas y Salinidad\nAislamiento de una cepa --&gt;\n\n   cultivo stock en su salinidad habitual --&gt; \n\n   inoculación de diferentes salinidades --&gt; \n\n   varios cultivos independientes por salinidad --&gt;\n\n   transferencias sucesivas --&gt; \n\n   medición del crecimiento."
+  },
+  {
+    "objectID": "lectures/02-design.html#diatomeas-y-salinidad-1",
+    "href": "lectures/02-design.html#diatomeas-y-salinidad-1",
+    "title": "Diseño experimental",
+    "section": "Diatomeas y Salinidad",
+    "text": "Diatomeas y Salinidad\n                          Cepa A\n                      cultivo stock\n                           │\n          ┌────────────────┼────────────────┐\n          ↓                ↓                ↓\n        8 ppt            16 ppt            24 ppt\n      ┌──┼──┐           ┌──┼──┐            ┌──┼──┐\n      ●  ●  ●           ●  ●  ●            ●  ●  ●\n     C1 C2 C3           C1 C2 C3           C1 C2 C3"
+  },
+  {
+    "objectID": "lectures/02-design.html#cual-es-n-sample-size-numbero-de-replicas",
+    "href": "lectures/02-design.html#cual-es-n-sample-size-numbero-de-replicas",
+    "title": "Diseño experimental",
+    "section": "Cual es N (sample size, numbero de replicas)?",
+    "text": "Cual es N (sample size, numbero de replicas)?\n\n\nSupongamos:\n\n5 especies\n3 cepas por especie\n5 salinidades\n3 cultivos por salinidad\n10 transferencias\n5 mediciones por cultivo por salinidad por transferencia\n\n\n\nCuantas replicas tenemos?\n\n\n\nLa pregunta no tiene respuesta sin conocer la hipotesis!"
+  },
+  {
+    "objectID": "lectures/02-design.html#plan",
+    "href": "lectures/02-design.html#plan",
+    "title": "Diseño experimental",
+    "section": "Plan",
+    "text": "Plan\n\nDiscutir la integracion entre hipótesis y diseño experimental\nDefinir diferentes niveles de replicación, su uso y importancia\nIntroducir el concepto de pseudorreplicación y cómo evitarlo\nExplicar el diseño factorial, bloques y aleatorización"
+  },
+  {
+    "objectID": "lectures/02-design.html#ejemplo",
+    "href": "lectures/02-design.html#ejemplo",
+    "title": "Diseño experimental",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\nHipótesis: La contaminación del aire reduce la diversidad de líquenes porque algunos contaminantes, como el SO₂, afectan su supervivencia y crecimiento.\n\n\nPredicción: Los árboles en la ciudad tendrán menor diversidad de líquenes que los árboles en un parque nacional con menor contaminación atmosférica."
+  },
+  {
+    "objectID": "lectures/02-design.html#ejemplo-1",
+    "href": "lectures/02-design.html#ejemplo-1",
+    "title": "Diseño experimental",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\n\n\nSitio\nEspecies de Arbol\nDiversidad\n\n\n\n\nAlajuela\nGuayacán\n3\n\n\nAlajuela\nHigeron\n4\n\n\nLimon\nHigeron\n2\n\n\nSan José\nGuayacán\n3\n\n\nSan José\nHigeron\n4\n\n\nCartago\nHigeron\n2\n\n\nLos Quetzales\nAlmendro\n8\n\n\nTapanti\nGuarumo\n7\n\n\nManuel Antonio\nCeiba\n9\n\n\nManuel Antonio\nAlmendro\n6\n\n\nCorcovado\nGuarumo\n8\n\n\n\n\nResultado: La diversidad de lichenes es mayor en el parque nacional (promedio: 7.6) que en la ciudad (promedio: 3.3).\n\n\nTodo bien con este estudio? ¿Podemos concluir que la contaminación reduce la diversidad de lichenes?"
+  },
+  {
+    "objectID": "lectures/02-design.html#variables-confusoras",
+    "href": "lectures/02-design.html#variables-confusoras",
+    "title": "Diseño experimental",
+    "section": "Variables confusoras",
+    "text": "Variables confusoras\nNuestro diseño experimental no controló otras variables que podrían explicar la diferencia en diversidad de líquenes:\n\nla especie de árbol,\nla edad del árbol,\nla exposición a la luz,\nla humedad, etc."
+  },
+  {
+    "objectID": "lectures/02-design.html#como-modificar-el-diseño-para-controlar-variables-confusoras",
+    "href": "lectures/02-design.html#como-modificar-el-diseño-para-controlar-variables-confusoras",
+    "title": "Diseño experimental",
+    "section": "Como modificar el diseño para controlar variables confusoras?",
+    "text": "Como modificar el diseño para controlar variables confusoras?\nDebemos comparar árboles que sean similares en otras características que también podrían afectar la diversidad de líquenes.\nPor ejemplo:\n\ncomparar árboles de la misma especie;\nseleccionar árboles de edades o tamaños similares;\nmedir o controlar luz y humedad;\nmuestrear varios árboles independientes en cada condición."
+  },
+  {
+    "objectID": "lectures/02-design.html#tipos-de-diseño-experimental",
+    "href": "lectures/02-design.html#tipos-de-diseño-experimental",
+    "title": "Diseño experimental",
+    "section": "Tipos de diseño experimental",
+    "text": "Tipos de diseño experimental\n\n\n\n\nDiseño experimental\n\nEl investigador manipula tratamientos (ej. sombreado vs no sombreado).\nInferencia más fuerte sobre causa-efecto. Requiere control de factores confusores.\n\n\n\n\n\n\n\nDiseño natural\n\nEl investigador aprovecha la variación natural (ej. arroyos soleados vs sombreados).\n\nNo hay asignación verdadera de tratamientos\n\n\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nIncluso sin manipulación, es necesaria una definición clara de unidades experimentales y replicación."
+  },
+  {
+    "objectID": "lectures/02-design.html#resumen",
+    "href": "lectures/02-design.html#resumen",
+    "title": "Diseño experimental",
+    "section": "Resumen",
+    "text": "Resumen\n\nDiseño factorial: probar múltiples factores y sus interacciones.\n\nBloques: controlar variación agrupando unidades similares.\n\nAleatorización: protegerse contra sesgo."
+  },
+  {
+    "objectID": "lectures/02-design.html#datos-colectados",
+    "href": "lectures/02-design.html#datos-colectados",
+    "title": "Diseño experimental",
+    "section": "Datos colectados",
+    "text": "Datos colectados\n\n\n\nSitio\nNivel de contaminación\nEspecies de Arbol\nDiversidad\n\n\n\n\nAlajuela\nAlta\nGuayacán\n3\n\n\nAlajuela\nAlta\nHigeron\n4\n\n\nLimon\nAlta\nHigeron\n2\n\n\nSan José\nAlta\nGuayacán\n3\n\n\nSan José\nAlta\nHigeron\n4\n\n\nCartago\nAlta\nHigeron\n2\n\n\nLos Quetzales\nBaja\nAlmendro\n8\n\n\nTapanti\nBaja\nGuarumo\n7\n\n\nManuel Antonio\nBaja\nCeiba\n9\n\n\nManuel Antonio\nBaja\nAlmendro\n6\n\n\nCorcovado\nBaja\nGuarumo\n8\n\n\n\n\nResultado: La diversidad de líquenes es mayor en los parques nacionales (promedio: 7.6) que en las ciudades (promedio: 3.3).\n\n\nTodo bien con este estudio? ¿Podemos concluir que la contaminación está asociada con menor diversidad de líquenes?"
+  },
+  {
+    "objectID": "lectures/02-design.html#control-de-variables-confusoras",
+    "href": "lectures/02-design.html#control-de-variables-confusoras",
+    "title": "Diseño experimental",
+    "section": "Control de variables confusoras",
+    "text": "Control de variables confusoras\n\nAhora tenemos mas claro que necesitamos medir o controlar para poder probar la hipotesis:\n\nespecie, edad, luz, humedad, etc.\n\n\n\nPodemos definir la unidad observacional:\n\nun árbol de una especie y edad determinada.\n\n\n\nY la unidad experimental:\n\nUn sitio donde se mide la diversidad de líquenes en varios árboles independientes."
+  },
+  {
+    "objectID": "lectures/02-design.html#por",
+    "href": "lectures/02-design.html#por",
+    "title": "Diseño experimental",
+    "section": "Por",
+    "text": "Por"
+  },
+  {
+    "objectID": "lectures/02-design.html#unidad-de-observacion-y-unidad-experimental",
+    "href": "lectures/02-design.html#unidad-de-observacion-y-unidad-experimental",
+    "title": "Diseño experimental",
+    "section": "Unidad de observacion y unidad experimental",
+    "text": "Unidad de observacion y unidad experimental\n\nUnidad observacional:\n\nun árbol de una especie y edad (tamaño) determinada.\n\n\n\nUnidad experimental:\n\nUn sitio donde se mide la diversidad de líquenes en varios árboles independientes."
+  },
+  {
+    "objectID": "lectures/02-design.html#que-es-la-replica",
+    "href": "lectures/02-design.html#que-es-la-replica",
+    "title": "Diseño experimental",
+    "section": "Que es la replica?",
+    "text": "Que es la replica?\n\nArbol\nSitio"
   }
 ]
