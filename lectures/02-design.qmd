@@ -330,8 +330,8 @@ H1: La tolerancia a la salinidad es diferente entre especies
 
 ::: {.fragment}
 
-Unidad experimental: **especie**
-Sample size: **5 especies** 
+* Unidad experimental: **especie**
+* Sample size: **5 especies** 
 :::
 
 ::: {.fragment}
@@ -341,8 +341,8 @@ H2: La tolerancia a la salinidad es diferente entre cepas de la misma especie
 :::
 
 ::: {.fragment}
-Unidad experimental: **cepa**
-Sample size: **3 cepas por especie**
+* Unidad experimental: **cepa**
+* Sample size: **3 cepas por especie**
 :::
 
 
@@ -353,8 +353,8 @@ H3: La tolerancia a la salinidad es diferente entre cultivos de la misma cepa
 :::
 
 ::: {.fragment}
-Unidad experimental: **cultivo**
-Sample size: **3 cultivos por cepa**
+* Unidad experimental: **cultivo**
+* Sample size: **3 cultivos por cepa**
 :::
 
 

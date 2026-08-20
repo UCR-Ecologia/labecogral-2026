@@ -9,17 +9,13 @@ Investigadoras de la Sede del Sur han estudiado las condiciones físicas y quím
 
 Se le contrató para evaluar el plan de investigación, incluidas sus hipótesis y predicciones, y proponer mejoras.
 
-**1. Evalúe si la siguiente hipótesis es clara, consistente con las observaciones y si las predicciones derivadas son comprobables con los datos propuestos para recolectar.** (1 punto)
+**1. Evalúe si la siguiente hipótesis es clara, consistente con las observaciones y si las predicciones derivadas son comprobables con los datos propuestos para recolectar.** (10 puntos, 1% de la nota final)
 
 *Hipótesis:*
 
 La temperatura del agua afecta la salud de los corales y sus endosimbiontes, porque temperaturas más altas aumentan el estrés térmico, reducen la fotosíntesis y favorecen el blanqueamiento.
 
-*Predicción 1:*
-
-En sitios con temperaturas consistentemente más altas, los corales deberían mostrar mayor incidencia de blanqueamiento.
-
-*Predicción 2:*
+*Predicción:*
 
 El mismo sitio, a lo largo del tiempo, debería mostrar mayor incidencia de blanqueamiento de corales durante los periodos de temperatura más alta.
 
@@ -29,34 +25,34 @@ El mismo sitio, a lo largo del tiempo, debería mostrar mayor incidencia de blan
 - Evaluar la salud de los corales mediante observaciones visuales.
 - Registrar la frecuencia de colonias blanqueadas por transecto / cuadrante.
 
-*Cual aspecto de la hipótesis, predicciones o métodos considera que podría mejorarse para que la investigación sea más clara y comprobable? Justifique su respuesta.*
+*Identifique un aspecto de la hipótesis, predicciones o métodos que es necesario mejorar para que la investigación sea clara y comprobable (4 puntos). Justifique su respuesta. (6 puntos)*
 
 ::: {.answer-space lines=4}
 :::
 
 
-**2. Proponga dos predicciones derivadas de la siguiente hipótesis que sean consistentes con las observaciones y especifique los datos necesarios para comprobarlas.** (2 puntos)
+**2. Proponga dos predicciones derivadas de la siguiente hipótesis que sean consistentes con las observaciones y especifique los datos necesarios para comprobarlas. Las dos predicciones deben ser distintas y no simplemente reformulaciones de la misma relación.** (20 puntos, 2% de la nota final)
 
 *Hipótesis:*
 
 La alcalinidad del agua afecta la calcificación de los corales porque una mayor disponibilidad de carbonatos facilita la formación de sus esqueletos.
 
-*Predicción 1:*
+*Predicción 1 (5 puntos):*
 
 ::: {.answer-space lines=3}
 :::
 
-*Datos necesarios para comprobar la predicción 1:*
+*Datos necesarios para comprobar la predicción 1 (5 puntos):*
 
 ::: {.answer-space lines=3}
 :::
 
-*Predicción 2:*
+*Predicción 2 (5 puntos):*
 
 ::: {.answer-space lines=3}
 :::
 
-*Datos necesarios para comprobar la predicción 2:*
+*Datos necesarios para comprobar la predicción 2 (5 puntos):*
 
 ::: {.answer-space lines=3}
 :::
