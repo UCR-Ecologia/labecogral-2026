@@ -241,11 +241,16 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="analisis" class="slide level2">
+<h2>Analisis</h2>
 <div class="fragment">
-<p><strong>Resultado</strong>: La diversidad de líquenes es mayor en los parques nacionales (promedio: 7.6) que en las ciudades (promedio: 3.3).</p>
+<p><strong>Promedio de diversidad en ciudades</strong>: 3.3<br>
+<strong>Promedio de diversidad en parques nacionales</strong>: 7.6<br>
+<strong>Resultado</strong>: La diversidad de líquenes es mayor en los parques nacionales que en las ciudades.</p>
 </div>
 <div class="fragment">
-<p><em>Todo bien con este estudio? ¿Podemos concluir que la contaminación está asociada con menor diversidad de líquenes?</em></p>
+<p><em>Todo bien con este estudio? ¿Podemos concluir que la menor diversidad de líquenes está asociada con la contaminación?</em></p>
 </div>
 </section>
 <section id="variables-confusoras" class="slide level2">
@@ -491,24 +496,89 @@
 </section>
 <section id="hipótesis---nivel-de-replicación-unidad-de-inferencia" class="slide level2 smaller">
 <h2>Hipótesis -&gt; Nivel de replicación / Unidad de inferencia</h2>
-<p>H1: La tolerancia a la salinidad es diferente entre especies</p>
+<p>H1: La tolerancia a la salinidad experimental corresponde al rango natural de salinidad en el que se encuentra la especie, porque especies distribuidas en ambientes con diferentes salinidades mantienen tolerancia a un rango más amplio de salinidad que especies que experimentan salinidad constante.</p>
+<div class="columns">
+<div class="column">
+<pre><code>                         Experimento
+                             │
+          ┌──────────────────┼──────────────────┐
+          ↓                  ↓                  ↓
+       Especie A          Especie B          Especie C
+          │                  │                  │
+      ┌───┼───┐          ┌───┼───┐          ┌───┼───┐
+      ↓   ↓   ↓          ↓   ↓   ↓          ↓   ↓   ↓
+     C1  C2  C3         C1  C2  C3         C1  C2  C3
+   cepa cepa cepa     cepa cepa cepa     cepa cepa cepa</code></pre>
+</div><div class="column">
 <div class="fragment">
-<p>Unidad experimental: <strong>especie</strong> Sample size: <strong>5 especies</strong></p>
+<blockquote>
+
+<ul>
+<li>Unidad de inferencia: <strong>especie</strong><br>
+</li>
+<li>Sample size: <strong>5 especies</strong></li>
+<li>Las cepas permiten medir la variación dentro de cada especie.</li>
+</ul>
+
+</blockquote>
 </div>
-<div class="fragment">
-<p>H2: La tolerancia a la salinidad es diferente entre cepas de la misma especie</p>
-</div>
-<div class="fragment">
-<p>Unidad experimental: <strong>cepa</strong> Sample size: <strong>3 cepas por especie</strong></p>
-</div>
-<div class="fragment">
-<p>H3: La tolerancia a la salinidad es diferente entre cultivos de la misma cepa</p>
-</div>
-<div class="fragment">
-<p>Unidad experimental: <strong>cultivo</strong> Sample size: <strong>3 cultivos por cepa</strong></p>
-</div>
+</div></div>
 </section>
-<section id="tipos-de-diseño-experimental" class="slide level2">
+<section id="hipótesis---nivel-de-replicación-unidad-de-inferencia-1" class="slide level2 smaller">
+<h2>Hipótesis -&gt; Nivel de replicación / Unidad de inferencia</h2>
+<p>H2: Dentro de una especie, las cepas que originan de ambientes con salinidad variable tienen tolerancia a la salinidad mas amplia.</p>
+<div class="columns">
+<div class="column">
+<pre><code>                         TRATAMIENTO
+                  8 ppt    16 ppt    24 ppt
+                    │         │         │
+Cepa A (variable)   ●         ●         ●
+Cepa B (variable)   ●         ●         ●
+Cepa C (constante)  ●         ●         ●</code></pre>
+</div><div class="column">
+<div class="fragment">
+<blockquote>
+
+<ul>
+<li>Unidad de inferencia: <strong>cepa</strong><br>
+</li>
+<li>Sample size: <strong>3 cepas por especie</strong><br>
+</li>
+<li>Los 3 cultivos por cepa permiten medir la variación (incertidumbre) dentro de cada cepa.</li>
+</ul>
+
+</blockquote>
+</div>
+</div></div>
+</section>
+<section id="hipótesis---nivel-de-replicación-unidad-de-inferencia-2" class="slide level2 smaller">
+<h2>Hipótesis -&gt; Nivel de replicación / Unidad de inferencia</h2>
+<p>H3: La tolerancia a la salinidad es generalmente determinada por el genotipo de la cepa, y por lo tanto, los cultivos independientes de la misma cepa tendrán tolerancia similar. Diferencias entre cultivos de la misma cepa reflejan variación experimental.</p>
+<div class="columns">
+<div class="column">
+<pre><code>                          Cepa A
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+        8 ppt            16 ppt            24 ppt
+      ┌──┼──┐           ┌──┼──┐            ┌──┼──┐
+      ●  ●  ●           ●  ●  ●            ●  ●  ●
+     C1 C2 C3          C1 C2 C3           C1 C2 C3</code></pre>
+</div><div class="column">
+<div class="fragment">
+<blockquote>
+
+<ul>
+<li>Unidad de inferencia: <strong>cultivo</strong><br>
+</li>
+<li>Sample size: <strong>3 cultivos por cepa</strong></li>
+</ul>
+
+</blockquote>
+</div>
+</div></div>
+</section>
+<section id="tipos-de-diseño-experimental" class="slide level2 smaller">
 <h2>Tipos de diseño experimental</h2>
 <div class="columns">
 <div class="column">

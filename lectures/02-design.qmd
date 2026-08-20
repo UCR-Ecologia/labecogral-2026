@@ -53,15 +53,20 @@ Predicción: Los árboles en la ciudad tendrán menor diversidad de líquenes qu
 | Manuel Antonio | Baja | Almendro | 6 |
 | Corcovado | Baja | Guarumo | 8 |
 
+
+## Analisis
+
 ::: {.fragment}
 
-**Resultado**: La diversidad de líquenes es mayor en los parques nacionales (promedio: 7.6) que en las ciudades (promedio: 3.3).
+**Promedio de diversidad en ciudades**: 3.3  
+**Promedio de diversidad en parques nacionales**: 7.6  
+**Resultado**: La diversidad de líquenes es mayor en los parques nacionales que en las ciudades.
 
 :::
 
 ::: {.fragment}
 
-*Todo bien con este estudio? ¿Podemos concluir que la contaminación está asociada con menor diversidad de líquenes?*
+*Todo bien con este estudio? ¿Podemos concluir que la menor diversidad de líquenes está asociada con la contaminación?*
 
 :::
 
@@ -326,39 +331,107 @@ Cuantas replicas tenemos?
 
 ## Hipótesis -> Nivel de replicación / Unidad de inferencia {.smaller}
 
-H1: La tolerancia a la salinidad es diferente entre especies
-
-::: {.fragment}
-
-* Unidad experimental: **especie**
-* Sample size: **5 especies** 
-:::
-
-::: {.fragment}
-
-H2: La tolerancia a la salinidad es diferente entre cepas de la misma especie
-
-:::
-
-::: {.fragment}
-* Unidad experimental: **cepa**
-* Sample size: **3 cepas por especie**
-:::
+H1: La tolerancia a la salinidad experimental corresponde al rango natural de salinidad en el que se encuentra la especie, porque especies distribuidas en ambientes con diferentes salinidades mantienen tolerancia a un rango más amplio de salinidad que especies que experimentan salinidad constante.
 
 
-::: {.fragment}
+::: {.columns}
 
-H3: La tolerancia a la salinidad es diferente entre cultivos de la misma cepa
+::: {.column}
+
+```
+                         Experimento
+                             │
+          ┌──────────────────┼──────────────────┐
+          ↓                  ↓                  ↓
+       Especie A          Especie B          Especie C
+          │                  │                  │
+      ┌───┼───┐          ┌───┼───┐          ┌───┼───┐
+      ↓   ↓   ↓          ↓   ↓   ↓          ↓   ↓   ↓
+     C1  C2  C3         C1  C2  C3         C1  C2  C3
+   cepa cepa cepa     cepa cepa cepa     cepa cepa cepa
+```
 
 :::
 
+::: {.column}
+
 ::: {.fragment}
-* Unidad experimental: **cultivo**
-* Sample size: **3 cultivos por cepa**
+
+> * Unidad de inferencia: **especie**  
+> * Sample size: **5 especies** 
+> * Las cepas permiten medir la variación dentro de cada especie.
+:::
+
+:::
+
+:::
+
+## Hipótesis -> Nivel de replicación / Unidad de inferencia {.smaller}
+
+H2: Dentro de una especie, las cepas que originan de ambientes con salinidad variable tienen tolerancia a la salinidad mas amplia.
+
+::: {.columns}
+
+::: {.column}
+
+```
+                         TRATAMIENTO
+                  8 ppt    16 ppt    24 ppt
+                    │         │         │
+Cepa A (variable)   ●         ●         ●
+Cepa B (variable)   ●         ●         ●
+Cepa C (constante)  ●         ●         ●
+```
+
+:::
+
+::: {.column}
+
+::: {.fragment}
+> * Unidad de inferencia: **cepa**  
+> * Sample size: **3 cepas por especie**  
+> * Los 3 cultivos por cepa permiten medir la variación (incertidumbre) dentro de cada cepa.
+:::
+
+:::
+
+:::
+
+## Hipótesis -> Nivel de replicación / Unidad de inferencia {.smaller}
+
+H3: La tolerancia a la salinidad es generalmente determinada por el genotipo de la cepa, y por lo tanto, los cultivos independientes de la misma cepa tendrán tolerancia similar. Diferencias entre cultivos de la misma cepa reflejan variación experimental.
+
+
+::: {.columns}
+
+::: {.column}
+
+```
+                          Cepa A
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+        8 ppt            16 ppt            24 ppt
+      ┌──┼──┐           ┌──┼──┐            ┌──┼──┐
+      ●  ●  ●           ●  ●  ●            ●  ●  ●
+     C1 C2 C3          C1 C2 C3           C1 C2 C3
+```
+
+:::
+
+::: {.column}
+
+::: {.fragment}
+> * Unidad de inferencia: **cultivo**  
+> * Sample size: **3 cultivos por cepa**  
 :::
 
 
-## Tipos de diseño experimental
+:::
+
+:::
+
+## Tipos de diseño experimental {.smaller}
 
 ::: {.columns}
 ::: {.column}

@@ -151,7 +151,14 @@
     "href": "lectures/02-design.html#datos-colectados",
     "title": "Diseño experimental",
     "section": "Datos colectados",
-    "text": "Datos colectados\n\n\n\nSitio\nNivel de contaminación\nEspecies de Arbol\nDiversidad\n\n\n\n\nAlajuela\nAlta\nGuayacán\n3\n\n\nAlajuela\nAlta\nHigeron\n4\n\n\nLimon\nAlta\nHigeron\n2\n\n\nSan José\nAlta\nGuayacán\n3\n\n\nSan José\nAlta\nHigeron\n4\n\n\nCartago\nAlta\nHigeron\n2\n\n\nLos Quetzales\nBaja\nAlmendro\n8\n\n\nTapanti\nBaja\nGuarumo\n7\n\n\nManuel Antonio\nBaja\nCeiba\n9\n\n\nManuel Antonio\nBaja\nAlmendro\n6\n\n\nCorcovado\nBaja\nGuarumo\n8\n\n\n\n\nResultado: La diversidad de líquenes es mayor en los parques nacionales (promedio: 7.6) que en las ciudades (promedio: 3.3).\n\n\nTodo bien con este estudio? ¿Podemos concluir que la contaminación está asociada con menor diversidad de líquenes?"
+    "text": "Datos colectados\n\n\n\nSitio\nNivel de contaminación\nEspecies de Arbol\nDiversidad\n\n\n\n\nAlajuela\nAlta\nGuayacán\n3\n\n\nAlajuela\nAlta\nHigeron\n4\n\n\nLimon\nAlta\nHigeron\n2\n\n\nSan José\nAlta\nGuayacán\n3\n\n\nSan José\nAlta\nHigeron\n4\n\n\nCartago\nAlta\nHigeron\n2\n\n\nLos Quetzales\nBaja\nAlmendro\n8\n\n\nTapanti\nBaja\nGuarumo\n7\n\n\nManuel Antonio\nBaja\nCeiba\n9\n\n\nManuel Antonio\nBaja\nAlmendro\n6\n\n\nCorcovado\nBaja\nGuarumo\n8"
+  },
+  {
+    "objectID": "lectures/02-design.html#analisis",
+    "href": "lectures/02-design.html#analisis",
+    "title": "Diseño experimental",
+    "section": "Analisis",
+    "text": "Analisis\n\nPromedio de diversidad en ciudades: 3.3\nPromedio de diversidad en parques nacionales: 7.6\nResultado: La diversidad de líquenes es mayor en los parques nacionales que en las ciudades.\n\n\nTodo bien con este estudio? ¿Podemos concluir que la menor diversidad de líquenes está asociada con la contaminación?"
   },
   {
     "objectID": "lectures/02-design.html#variables-confusoras",
@@ -263,7 +270,7 @@
     "href": "lectures/02-design.html#hipótesis---nivel-de-replicación-unidad-de-inferencia",
     "title": "Diseño experimental",
     "section": "Hipótesis -> Nivel de replicación / Unidad de inferencia",
-    "text": "Hipótesis -&gt; Nivel de replicación / Unidad de inferencia\nH1: La tolerancia a la salinidad es diferente entre especies\n\nUnidad experimental: especie Sample size: 5 especies\n\n\nH2: La tolerancia a la salinidad es diferente entre cepas de la misma especie\n\n\nUnidad experimental: cepa Sample size: 3 cepas por especie\n\n\nH3: La tolerancia a la salinidad es diferente entre cultivos de la misma cepa\n\n\nUnidad experimental: cultivo Sample size: 3 cultivos por cepa"
+    "text": "Hipótesis -&gt; Nivel de replicación / Unidad de inferencia\nH1: La tolerancia a la salinidad experimental corresponde al rango natural de salinidad en el que se encuentra la especie, porque especies distribuidas en ambientes con diferentes salinidades mantienen tolerancia a un rango más amplio de salinidad que especies que experimentan salinidad constante.\n\n\n                         Experimento\n                             │\n          ┌──────────────────┼──────────────────┐\n          ↓                  ↓                  ↓\n       Especie A          Especie B          Especie C\n          │                  │                  │\n      ┌───┼───┐          ┌───┼───┐          ┌───┼───┐\n      ↓   ↓   ↓          ↓   ↓   ↓          ↓   ↓   ↓\n     C1  C2  C3         C1  C2  C3         C1  C2  C3\n   cepa cepa cepa     cepa cepa cepa     cepa cepa cepa\n\n\n\n\n\nUnidad de inferencia: especie\n\nSample size: 5 especies\nLas cepas permiten medir la variación dentro de cada especie."
   },
   {
     "objectID": "lectures/02-design.html#tipos-de-diseño-experimental",
@@ -586,5 +593,19 @@
     "title": "Clases",
     "section": "",
     "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
+  },
+  {
+    "objectID": "lectures/02-design.html#hipótesis---nivel-de-replicación-unidad-de-inferencia-1",
+    "href": "lectures/02-design.html#hipótesis---nivel-de-replicación-unidad-de-inferencia-1",
+    "title": "Diseño experimental",
+    "section": "Hipótesis -> Nivel de replicación / Unidad de inferencia",
+    "text": "Hipótesis -&gt; Nivel de replicación / Unidad de inferencia\nH2: Dentro de una especie, las cepas que originan de ambientes con salinidad variable tienen tolerancia a la salinidad mas amplia.\n\n\n                         TRATAMIENTO\n                  8 ppt    16 ppt    24 ppt\n                    │         │         │\nCepa A (variable)   ●         ●         ●\nCepa B (variable)   ●         ●         ●\nCepa C (constante)  ●         ●         ●\n\n\n\n\n\nUnidad de inferencia: cepa\n\nSample size: 3 cepas por especie\n\nLos 3 cultivos por cepa permiten medir la variación (incertidumbre) dentro de cada cepa."
+  },
+  {
+    "objectID": "lectures/02-design.html#hipótesis---nivel-de-replicación-unidad-de-inferencia-2",
+    "href": "lectures/02-design.html#hipótesis---nivel-de-replicación-unidad-de-inferencia-2",
+    "title": "Diseño experimental",
+    "section": "Hipótesis -> Nivel de replicación / Unidad de inferencia",
+    "text": "Hipótesis -&gt; Nivel de replicación / Unidad de inferencia\nH3: La tolerancia a la salinidad es generalmente determinada por el genotipo de la cepa, y por lo tanto, los cultivos independientes de la misma cepa tendrán tolerancia similar. Diferencias entre cultivos de la misma cepa reflejan variación experimental.\n\n\n                          Cepa A\n                           │\n          ┌────────────────┼────────────────┐\n          ↓                ↓                ↓\n        8 ppt            16 ppt            24 ppt\n      ┌──┼──┐           ┌──┼──┐            ┌──┼──┐\n      ●  ●  ●           ●  ●  ●            ●  ●  ●\n     C1 C2 C3          C1 C2 C3           C1 C2 C3\n\n\n\n\n\nUnidad de inferencia: cultivo\n\nSample size: 3 cultivos por cepa"
   }
 ]
