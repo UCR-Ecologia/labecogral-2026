@@ -126,11 +126,11 @@
     "text": "Referencias\nAndrewartha, H. G. (1970). Introduction to the study of animal populations (2nd ed.). Chapman and Hall.\nBegon, M., Harper, J., & Townsend, C. (2006). Ecology: From individuals to ecosystems (4th ed.). Blackwell.\nBetts, M. G., Hadley, A. S., Frey, D. W., Frey, S. J., Gannon, D., Harris, S. H., & Zárrate‐Charry, D. (2021). When are hypotheses useful in ecology and evolution? Ecology and Evolution, 11(11), 5762-5776. https://doi.org/10.1002/ece3.7472\nCrawley, M. J. (2007). The R book. John Wiley.\nFarji-Brener, A. G. (2003). Uso correcto, parcial e incorrecto de los términos “hipótesis” y “predicciones” en ecología. Ecología Austral, 13(2), 223-227.\nGotelli, N. J., & Ellison, A. M. (2004). A primer of ecological statistics (Vol. 1). Sinauer Associates.\nKrebs, C. J. (1999). Ecological methodology (2nd ed.). Benjamin Cummings. http://www.zoology.ubc.ca/~krebs/books.html\nMittelbach, G. G., & McGill, B. J. (2019). Community ecology. Oxford University Press.\nMoreno, C. E. (2001). Manual de métodos para medir la biodiversidad. Universidad Veracruzana. https://www.researchgate.net/publication/304346666_Metodos_para_medir_la_biodiversidad\nQuinn, G. P., & Keough, M. J. (2002). Experimental design and data analysis for biologists. Cambridge University Press.\nSchimel, J. (2012). Writing science: How to write papers that get cited and proposals that get funded. Oxford University Press.\nSutherland, W. J. (Ed.). (2006). Ecological census techniques: A handbook. Cambridge University Press. https://www.researchgate.net/publication/273070581_Ecological_Census_Techniques_A_Handbook\nZar, J. H. (1999). Biostatistical analysis (4th ed.). Prentice Hall."
   },
   {
-    "objectID": "lectures/02-design.html#diseño-experimental",
-    "href": "lectures/02-design.html#diseño-experimental",
+    "objectID": "lectures/02-design.html#plan",
+    "href": "lectures/02-design.html#plan",
     "title": "Diseño experimental",
-    "section": "Diseño experimental",
-    "text": "Diseño experimental"
+    "section": "Plan",
+    "text": "Plan\n\nDiscutir la integracion entre hipótesis y diseño experimental\nDefinir diferentes niveles de replicación, su uso y importancia\nIntroducir el concepto de pseudorreplicación y cómo evitarlo\nExplicar el diseño factorial, bloques y aleatorización"
   },
   {
     "objectID": "lectures/02-design.html#por-qué-importa-el-diseño-experimental",
@@ -138,6 +138,139 @@
     "title": "Diseño experimental",
     "section": "Por qué importa el diseño experimental",
     "text": "Por qué importa el diseño experimental\n\nEcología = sistemas complejos y variables\n\nMal diseño → conclusiones inválidas, esfuerzo desperdiciado\n\nBuen diseño → inferencia más sólida, capacidad de generalizar"
+  },
+  {
+    "objectID": "lectures/02-design.html#ejemplo",
+    "href": "lectures/02-design.html#ejemplo",
+    "title": "Diseño experimental",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\nHipótesis: La contaminación del aire reduce la diversidad de líquenes porque algunos contaminantes, como el SO₂, afectan su supervivencia y crecimiento.\n\n\nPredicción: Los árboles en la ciudad tendrán menor diversidad de líquenes que los árboles en un parque nacional con menor contaminación atmosférica."
+  },
+  {
+    "objectID": "lectures/02-design.html#datos-colectados",
+    "href": "lectures/02-design.html#datos-colectados",
+    "title": "Diseño experimental",
+    "section": "Datos colectados",
+    "text": "Datos colectados\n\n\n\nSitio\nNivel de contaminación\nEspecies de Arbol\nDiversidad\n\n\n\n\nAlajuela\nAlta\nGuayacán\n3\n\n\nAlajuela\nAlta\nHigeron\n4\n\n\nLimon\nAlta\nHigeron\n2\n\n\nSan José\nAlta\nGuayacán\n3\n\n\nSan José\nAlta\nHigeron\n4\n\n\nCartago\nAlta\nHigeron\n2\n\n\nLos Quetzales\nBaja\nAlmendro\n8\n\n\nTapanti\nBaja\nGuarumo\n7\n\n\nManuel Antonio\nBaja\nCeiba\n9\n\n\nManuel Antonio\nBaja\nAlmendro\n6\n\n\nCorcovado\nBaja\nGuarumo\n8\n\n\n\n\nResultado: La diversidad de líquenes es mayor en los parques nacionales (promedio: 7.6) que en las ciudades (promedio: 3.3).\n\n\nTodo bien con este estudio? ¿Podemos concluir que la contaminación está asociada con menor diversidad de líquenes?"
+  },
+  {
+    "objectID": "lectures/02-design.html#variables-confusoras",
+    "href": "lectures/02-design.html#variables-confusoras",
+    "title": "Diseño experimental",
+    "section": "Variables confusoras",
+    "text": "Variables confusoras\nNuestro diseño experimental no controló otras variables que podrían explicar la diferencia en diversidad de líquenes:\n\nla especie de árbol,\nla edad del árbol,\nla exposición a la luz,\nla humedad, etc."
+  },
+  {
+    "objectID": "lectures/02-design.html#como-modificar-el-diseño-para-controlar-variables-confusoras",
+    "href": "lectures/02-design.html#como-modificar-el-diseño-para-controlar-variables-confusoras",
+    "title": "Diseño experimental",
+    "section": "Como modificar el diseño para controlar variables confusoras?",
+    "text": "Como modificar el diseño para controlar variables confusoras?\nDebemos comparar árboles que sean similares en otras características que también podrían afectar la diversidad de líquenes.\nPor ejemplo:\n\ncomparar árboles de la misma especie;\nseleccionar árboles de edades o tamaños similares;\nmedir o controlar luz y humedad;\nmuestrear varios árboles independientes en cada condición."
+  },
+  {
+    "objectID": "lectures/02-design.html#unidad-de-observacion-y-unidad-experimental",
+    "href": "lectures/02-design.html#unidad-de-observacion-y-unidad-experimental",
+    "title": "Diseño experimental",
+    "section": "Unidad de observacion y unidad experimental",
+    "text": "Unidad de observacion y unidad experimental\n\nUnidad observacional:\n\nun árbol de una especie y edad (tamaño) determinada.\n\n\n\nUnidad experimental:\n\nUn sitio donde se mide la diversidad de líquenes en varios árboles independientes."
+  },
+  {
+    "objectID": "lectures/02-design.html#que-es-la-replica",
+    "href": "lectures/02-design.html#que-es-la-replica",
+    "title": "Diseño experimental",
+    "section": "Que es la replica?",
+    "text": "Que es la replica?\n\nArbol\nSitio\n\n\n\nComo sabemos?\n\n\nA que nivel es el tratamiento? Al nivel de los sitios, o al nivel de los arboles?"
+  },
+  {
+    "objectID": "lectures/02-design.html#replicación-y-pseudoeplicación",
+    "href": "lectures/02-design.html#replicación-y-pseudoeplicación",
+    "title": "Diseño experimental",
+    "section": "Replicación y pseudoeplicación",
+    "text": "Replicación y pseudoeplicación"
+  },
+  {
+    "objectID": "lectures/02-design.html#definiciones",
+    "href": "lectures/02-design.html#definiciones",
+    "title": "Diseño experimental",
+    "section": "Definiciones",
+    "text": "Definiciones\n\n\nTratamiento: Lo que se manipula\n\nUnidad Experimental: La unidad más pequeña que puede recibir independientemente un tratamiento\n\nReplicación: Múltiples unidades experimentales independientes por tratamiento\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nReplicación = unidades experimentales, no muestras."
+  },
+  {
+    "objectID": "lectures/02-design.html#qué-cuenta-como-una-réplica",
+    "href": "lectures/02-design.html#qué-cuenta-como-una-réplica",
+    "title": "Diseño experimental",
+    "section": "¿Qué cuenta como una réplica?",
+    "text": "¿Qué cuenta como una réplica?\n\nUna réplica verdadera es una unidad que recibe el tratamiento de manera independiente de las otras unidades.\n\n\nPor lo tanto, no podemos identificar las réplicas solamente preguntando “¿qué medimos?”.\nDebemos preguntar:\n\n¿Cuál es la unidad más pequeña a la que se asignó el tratamiento independientemente?"
+  },
+  {
+    "objectID": "lectures/02-design.html#qué-cuenta-como-una-réplica-1",
+    "href": "lectures/02-design.html#qué-cuenta-como-una-réplica-1",
+    "title": "Diseño experimental",
+    "section": "¿Qué cuenta como una réplica?",
+    "text": "¿Qué cuenta como una réplica?\nEjemplo: 20 hojas de una planta\n\n\nSi toda la planta recibe el tratamiento -&gt; las 20 hojas son submuestras de 1 unidad experimental.\nSi cada hoja recibe independientemente un tratamiento -&gt; las 20 hojas pueden ser 20 unidades experimentales."
+  },
+  {
+    "objectID": "lectures/02-design.html#replicación-y-submuestreo",
+    "href": "lectures/02-design.html#replicación-y-submuestreo",
+    "title": "Diseño experimental",
+    "section": "Replicación y submuestreo",
+    "text": "Replicación y submuestreo\n\n\n\nSupongamos:\n\n3 aquarios control, 3 aquarios con nutrientes\nmedimos 10 peces por aquario\n\n\n\nLa jerarchia es:\n\nTratamiento -&gt; Aquario -&gt; Peces -&gt; Mediciones\n\n\n\n\nSi el tratamiento estaba aplicado a los aquarios:\n\nUnidad experimental: Aquario\nReplica verdadera: 3 por tratamiento\nPeces: submuestras biologicas (unidades de observacion, NO undidades experimental!)\nMediciones repetidas por pez: replica technica"
+  },
+  {
+    "objectID": "lectures/02-design.html#replicación-y-submuestreo-1",
+    "href": "lectures/02-design.html#replicación-y-submuestreo-1",
+    "title": "Diseño experimental",
+    "section": "Replicación y submuestreo",
+    "text": "Replicación y submuestreo\nSi el tratamiento estaba aplicado a los aquarios:\n\n\nUnidad experimental: Aquario\nReplica verdadera: 3 por tratamiento\n\n\nProporcionan replicacion para estimar el efecto del tratamiento\n\n\n\n\nPeces por aquario: submuestras biologicas (unidades de observacion, NO undidades experimental!)\n\n\nPermiten estimar la variacion dentro de una undidad experimental\n\n\n\n\nMediciones repetidas por pez: replica technica\n\n\nPermiten estimar variacion (o error) asociada con medicion o de analisis"
+  },
+  {
+    "objectID": "lectures/02-design.html#pseudoréplicacion",
+    "href": "lectures/02-design.html#pseudoréplicacion",
+    "title": "Diseño experimental",
+    "section": "Pseudoréplicacion",
+    "text": "Pseudoréplicacion\n\nSubmuestras, replicas technicas, o otros tipos de observaciones no-independientes cuales las analizamos como si fueran replicas experimentales independientes.\n\n\nTiene el efecto de aumentar el sample size falsamente.\nTienden a mejorar el poder de analisis estadisticos, pero falsamente.\nIntroducen sesgo hacia menor variacion natural"
+  },
+  {
+    "objectID": "lectures/02-design.html#vinculo-entre-hypotesis-y-deseño",
+    "href": "lectures/02-design.html#vinculo-entre-hypotesis-y-deseño",
+    "title": "Diseño experimental",
+    "section": "Vinculo entre Hypotesis y Deseño",
+    "text": "Vinculo entre Hypotesis y Deseño"
+  },
+  {
+    "objectID": "lectures/02-design.html#diatomeas-y-salinidad",
+    "href": "lectures/02-design.html#diatomeas-y-salinidad",
+    "title": "Diseño experimental",
+    "section": "Diatomeas y Salinidad",
+    "text": "Diatomeas y Salinidad\nAislamiento de una cepa --&gt;\n\n   cultivo stock en su salinidad habitual --&gt; \n\n   inoculación de diferentes salinidades --&gt; \n\n   varios cultivos independientes por salinidad --&gt;\n\n   transferencias sucesivas --&gt; \n\n   medición del crecimiento."
+  },
+  {
+    "objectID": "lectures/02-design.html#diatomeas-y-salinidad-1",
+    "href": "lectures/02-design.html#diatomeas-y-salinidad-1",
+    "title": "Diseño experimental",
+    "section": "Diatomeas y Salinidad",
+    "text": "Diatomeas y Salinidad\n                          Cepa A\n                      cultivo stock\n                           │\n          ┌────────────────┼────────────────┐\n          ↓                ↓                ↓\n        8 ppt            16 ppt            24 ppt\n      ┌──┼──┐           ┌──┼──┐            ┌──┼──┐\n      ●  ●  ●           ●  ●  ●            ●  ●  ●\n     C1 C2 C3           C1 C2 C3           C1 C2 C3"
+  },
+  {
+    "objectID": "lectures/02-design.html#cual-es-n-sample-size-numbero-de-replicas",
+    "href": "lectures/02-design.html#cual-es-n-sample-size-numbero-de-replicas",
+    "title": "Diseño experimental",
+    "section": "Cual es N (sample size, numbero de replicas)?",
+    "text": "Cual es N (sample size, numbero de replicas)?\n\n\nSupongamos:\n\n5 especies\n3 cepas por especie\n5 salinidades\n3 cultivos por salinidad\n10 transferencias\n5 mediciones por cultivo por salinidad por transferencia\n\n\n\nCuantas replicas tenemos?\n\n\n\nLa pregunta no tiene respuesta sin conocer la hipotesis!"
+  },
+  {
+    "objectID": "lectures/02-design.html#hipótesis---nivel-de-replicación-unidad-de-inferencia",
+    "href": "lectures/02-design.html#hipótesis---nivel-de-replicación-unidad-de-inferencia",
+    "title": "Diseño experimental",
+    "section": "Hipótesis -> Nivel de replicación / Unidad de inferencia",
+    "text": "Hipótesis -&gt; Nivel de replicación / Unidad de inferencia\nH1: La tolerancia a la salinidad es diferente entre especies\n\nUnidad experimental: especie Sample size: 5 especies\n\n\nH2: La tolerancia a la salinidad es diferente entre cepas de la misma especie\n\n\nUnidad experimental: cepa Sample size: 3 cepas por especie\n\n\nH3: La tolerancia a la salinidad es diferente entre cultivos de la misma cepa\n\n\nUnidad experimental: cultivo Sample size: 3 cultivos por cepa"
+  },
+  {
+    "objectID": "lectures/02-design.html#tipos-de-diseño-experimental",
+    "href": "lectures/02-design.html#tipos-de-diseño-experimental",
+    "title": "Diseño experimental",
+    "section": "Tipos de diseño experimental",
+    "text": "Tipos de diseño experimental\n\n\n\n\nDiseño experimental\n\nEl investigador manipula tratamientos (ej. sombreado vs no sombreado).\nInferencia más fuerte sobre causa-efecto. Requiere control de factores confusores.\n\n\n\n\n\n\n\nDiseño natural\n\nEl investigador aprovecha la variación natural (ej. arroyos soleados vs sombreados).\n\nNo hay asignación verdadera de tratamientos\n\n\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nIncluso sin manipulación, es necesaria una definición clara de unidades experimentales y replicación."
   },
   {
     "objectID": "lectures/02-design.html#diseño-factorial",
@@ -161,46 +294,18 @@
     "text": "Aleatorización\n\nDefinición: Asignación aleatoria de tratamientos a unidades experimentales.\n\nPropósito: evita sesgo sistemático.\n\nPuede ser completa o restringida (dentro de bloques).\n\nEjemplo: Asignar aleatoriamente sombreado vs control a estanques, no solo “primera mitad sombreada, segunda mitad control.”"
   },
   {
-    "objectID": "lectures/02-design.html#mensajes-claves",
-    "href": "lectures/02-design.html#mensajes-claves",
+    "objectID": "lectures/02-design.html#controles",
+    "href": "lectures/02-design.html#controles",
     "title": "Diseño experimental",
-    "section": "Mensajes claves",
-    "text": "Mensajes claves\n\nDiseño factorial: probar múltiples factores y sus interacciones.\n\nBloques: controlar variación agrupando unidades similares.\n\nAleatorización: protegerse contra sesgo."
+    "section": "Controles",
+    "text": "Controles\n\nCondición de referencia: una condición comparativa que sirve como punto de comparación para los demás tratamientos.\nDebe incluirse en los bloques: cada bloque debería contener la condición de referencia para permitir comparaciones dentro del bloque y controlar la variación entre bloques.\nPropósito: estimar efectos relativos de los tratamientos y evitar confundir efectos de bloque con efectos de tratamiento."
   },
   {
-    "objectID": "lectures/02-design.html#replicación-y-pseudoeplicación",
-    "href": "lectures/02-design.html#replicación-y-pseudoeplicación",
+    "objectID": "lectures/02-design.html#resumen",
+    "href": "lectures/02-design.html#resumen",
     "title": "Diseño experimental",
-    "section": "Replicación y pseudoeplicación",
-    "text": "Replicación y pseudoeplicación"
-  },
-  {
-    "objectID": "lectures/02-design.html#conceptos-fundamentales",
-    "href": "lectures/02-design.html#conceptos-fundamentales",
-    "title": "Diseño experimental",
-    "section": "Conceptos fundamentales",
-    "text": "Conceptos fundamentales\n\n\nTratamiento: Lo que se manipula\n\nUnidad Experimental: La unidad más pequeña que puede recibir independientemente un tratamiento\n\nReplicación: Múltiples unidades experimentales independientes por tratamiento\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nReplicación = unidades experimentales, no muestras."
-  },
-  {
-    "objectID": "lectures/02-design.html#replicación",
-    "href": "lectures/02-design.html#replicación",
-    "title": "Diseño experimental",
-    "section": "Replicación",
-    "text": "Replicación\n\nPropósito: estimar variabilidad, probar hipótesis confiablemente\n\nTipos:\n\nReplicación verdadera: unidades independientes (20 plantas)\n\nReplicación técnica: medidas repetidas de la misma unidad (20 hojas de 1 planta)\n\n\nRegla práctica: Replicación = número de unidades independientes"
-  },
-  {
-    "objectID": "lectures/02-design.html#evitando-la-pseudoreplicación",
-    "href": "lectures/02-design.html#evitando-la-pseudoreplicación",
-    "title": "Diseño experimental",
-    "section": "Evitando la pseudoreplicación",
-    "text": "Evitando la pseudoreplicación\n\nMúltiples unidades independientes por tratamiento\n\nAsignación aleatoria de tratamientos\n\nBloques para controlar la variación\n\nModelos jerárquicos / mixtos para datos anidados"
-  },
-  {
-    "objectID": "lectures/02-design.html#mensajes-clave",
-    "href": "lectures/02-design.html#mensajes-clave",
-    "title": "Diseño experimental",
-    "section": "Mensajes clave",
-    "text": "Mensajes clave\n\nReplicación = unidades independientes, no medidas repetidas\n\nLa pseudoreplicación es común pero evitable\n\nReconocer cuando la replicación completa es imposible"
+    "section": "Resumen",
+    "text": "Resumen\n\nDiseño factorial: probar múltiples factores y sus interacciones.\n\nBloques: controlar variación agrupando unidades similares.\n\nAleatorización: protegerse contra sesgo.\n\nControles: condición de referencia para comparaciones."
   },
   {
     "objectID": "lectures/02-design.html#bibliografia",
@@ -481,166 +586,5 @@
     "title": "Clases",
     "section": "",
     "text": "Esta seccion queda lista para agregar clases y presentaciones en Quarto."
-  },
-  {
-    "objectID": "lectures/02-design.html#definiciones",
-    "href": "lectures/02-design.html#definiciones",
-    "title": "Diseño experimental",
-    "section": "Definiciones",
-    "text": "Definiciones\n\n\nTratamiento: Lo que se manipula\n\nUnidad Experimental: La unidad más pequeña que puede recibir independientemente un tratamiento\n\nReplicación: Múltiples unidades experimentales independientes por tratamiento\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nReplicación = unidades experimentales, no muestras."
-  },
-  {
-    "objectID": "lectures/02-design.html#qué-cuenta-como-una-réplica",
-    "href": "lectures/02-design.html#qué-cuenta-como-una-réplica",
-    "title": "Diseño experimental",
-    "section": "¿Qué cuenta como una réplica?",
-    "text": "¿Qué cuenta como una réplica?\n\nUna réplica verdadera es una unidad que recibe el tratamiento de manera independiente de las otras unidades.\n\n\nPor lo tanto, no podemos identificar las réplicas solamente preguntando “¿qué medimos?”.\nDebemos preguntar:\n\n¿Cuál es la unidad más pequeña a la que se asignó el tratamiento independientemente?"
-  },
-  {
-    "objectID": "lectures/02-design.html#replicación-y-submuestreo",
-    "href": "lectures/02-design.html#replicación-y-submuestreo",
-    "title": "Diseño experimental",
-    "section": "Replicación y submuestreo",
-    "text": "Replicación y submuestreo\n\n\n\nSupongamos:\n\n3 aquarios control, 3 aquarios con nutrientes\nmedimos 10 peces por aquario\n\n\n\nLa jerarchia es:\n\nTratamiento -&gt; Aquario -&gt; Peces -&gt; Mediciones\n\n\n\n\nSi el tratamiento estaba aplicado a los aquarios:\n\nUnidad experimental: Aquario\nReplica verdadera: 3 por tratamiento\nPeces: submuestras biologicas (unidades de observacion, NO undidades experimental!)\nMediciones repetidas por pez: replica technica"
-  },
-  {
-    "objectID": "lectures/02-design.html#pseudoréplicacion",
-    "href": "lectures/02-design.html#pseudoréplicacion",
-    "title": "Diseño experimental",
-    "section": "Pseudoréplicacion",
-    "text": "Pseudoréplicacion\n\nSubmuestras, replicas technicas, o otros tipos de observaciones no-independientes cuales las analizamos como si fueran replicas experimentales independientes.\n\n\nTiene el efecto de aumentar el sample size falsamente.\nTienden a mejorar el poder de analisis estadisticos, pero falsamente.\nIntroducen sesgo hacia menor variacion natural"
-  },
-  {
-    "objectID": "lectures/02-design.html#como-guardarse-de-la-pseudorreplicacion",
-    "href": "lectures/02-design.html#como-guardarse-de-la-pseudorreplicacion",
-    "title": "Diseño experimental",
-    "section": "Como guardarse de la pseudorreplicacion?",
-    "text": "Como guardarse de la pseudorreplicacion?\n\nUn escenario comun. La gente muchas veces hace la siguente asociacion:\n\norganismos (individuos) diferentes = replicas biologicas\n\n\n\nPero,\n\naunque claramente, sinco Daphnia en el mismo mesocosmo son sinco individuos\n\n\nlas sinco Daphnia no son replicas independientes del tratamiento del microcosmo\n\n\n\nSiempre hay que preguntar:\n\n¿Dónde ocurrió la asignación independiente del tratamiento?"
-  },
-  {
-    "objectID": "lectures/02-design.html#qué-cuenta-como-una-réplica-1",
-    "href": "lectures/02-design.html#qué-cuenta-como-una-réplica-1",
-    "title": "Diseño experimental",
-    "section": "¿Qué cuenta como una réplica?",
-    "text": "¿Qué cuenta como una réplica?\nEjemplo: 20 hojas de una planta\n\n\nSi toda la planta recibe el tratamiento -&gt; las 20 hojas son submuestras de 1 unidad experimental.\nSi cada hoja recibe independientemente un tratamiento -&gt; las 20 hojas pueden ser 20 unidades experimentales."
-  },
-  {
-    "objectID": "lectures/02-design.html#replicación-y-submuestreo-1",
-    "href": "lectures/02-design.html#replicación-y-submuestreo-1",
-    "title": "Diseño experimental",
-    "section": "Replicación y submuestreo",
-    "text": "Replicación y submuestreo\nSi el tratamiento estaba aplicado a los aquarios:\n\n\nUnidad experimental: Aquario\nReplica verdadera: 3 por tratamiento\n\n\nProporcionan replicacion para estimar el efecto del tratamiento\n\n\n\n\nPeces por aquario: submuestras biologicas (unidades de observacion, NO undidades experimental!)\n\n\nPermiten estimar la variacion dentro de una undidad experimental\n\n\n\n\nMediciones repetidas por pez: replica technica\n\n\nPermiten estimar variacion (o error) asociada con medicion o de analisis"
-  },
-  {
-    "objectID": "lectures/02-design.html#vinclulo-entre-hypotesis-y-deseño",
-    "href": "lectures/02-design.html#vinclulo-entre-hypotesis-y-deseño",
-    "title": "Diseño experimental",
-    "section": "Vinclulo entre Hypotesis y Deseño",
-    "text": "Vinclulo entre Hypotesis y Deseño"
-  },
-  {
-    "objectID": "lectures/02-design.html#diatomeas-y-salinidad",
-    "href": "lectures/02-design.html#diatomeas-y-salinidad",
-    "title": "Diseño experimental",
-    "section": "Diatomeas y Salinidad",
-    "text": "Diatomeas y Salinidad\nAislamiento de una cepa --&gt;\n\n   cultivo stock en su salinidad habitual --&gt; \n\n   inoculación de diferentes salinidades --&gt; \n\n   varios cultivos independientes por salinidad --&gt;\n\n   transferencias sucesivas --&gt; \n\n   medición del crecimiento."
-  },
-  {
-    "objectID": "lectures/02-design.html#diatomeas-y-salinidad-1",
-    "href": "lectures/02-design.html#diatomeas-y-salinidad-1",
-    "title": "Diseño experimental",
-    "section": "Diatomeas y Salinidad",
-    "text": "Diatomeas y Salinidad\n                          Cepa A\n                      cultivo stock\n                           │\n          ┌────────────────┼────────────────┐\n          ↓                ↓                ↓\n        8 ppt            16 ppt            24 ppt\n      ┌──┼──┐           ┌──┼──┐            ┌──┼──┐\n      ●  ●  ●           ●  ●  ●            ●  ●  ●\n     C1 C2 C3           C1 C2 C3           C1 C2 C3"
-  },
-  {
-    "objectID": "lectures/02-design.html#cual-es-n-sample-size-numbero-de-replicas",
-    "href": "lectures/02-design.html#cual-es-n-sample-size-numbero-de-replicas",
-    "title": "Diseño experimental",
-    "section": "Cual es N (sample size, numbero de replicas)?",
-    "text": "Cual es N (sample size, numbero de replicas)?\n\n\nSupongamos:\n\n5 especies\n3 cepas por especie\n5 salinidades\n3 cultivos por salinidad\n10 transferencias\n5 mediciones por cultivo por salinidad por transferencia\n\n\n\nCuantas replicas tenemos?\n\n\n\nLa pregunta no tiene respuesta sin conocer la hipotesis!"
-  },
-  {
-    "objectID": "lectures/02-design.html#plan",
-    "href": "lectures/02-design.html#plan",
-    "title": "Diseño experimental",
-    "section": "Plan",
-    "text": "Plan\n\nDiscutir la integracion entre hipótesis y diseño experimental\nDefinir diferentes niveles de replicación, su uso y importancia\nIntroducir el concepto de pseudorreplicación y cómo evitarlo\nExplicar el diseño factorial, bloques y aleatorización"
-  },
-  {
-    "objectID": "lectures/02-design.html#ejemplo",
-    "href": "lectures/02-design.html#ejemplo",
-    "title": "Diseño experimental",
-    "section": "Ejemplo",
-    "text": "Ejemplo\n\nHipótesis: La contaminación del aire reduce la diversidad de líquenes porque algunos contaminantes, como el SO₂, afectan su supervivencia y crecimiento.\n\n\nPredicción: Los árboles en la ciudad tendrán menor diversidad de líquenes que los árboles en un parque nacional con menor contaminación atmosférica."
-  },
-  {
-    "objectID": "lectures/02-design.html#ejemplo-1",
-    "href": "lectures/02-design.html#ejemplo-1",
-    "title": "Diseño experimental",
-    "section": "Ejemplo",
-    "text": "Ejemplo\n\n\n\nSitio\nEspecies de Arbol\nDiversidad\n\n\n\n\nAlajuela\nGuayacán\n3\n\n\nAlajuela\nHigeron\n4\n\n\nLimon\nHigeron\n2\n\n\nSan José\nGuayacán\n3\n\n\nSan José\nHigeron\n4\n\n\nCartago\nHigeron\n2\n\n\nLos Quetzales\nAlmendro\n8\n\n\nTapanti\nGuarumo\n7\n\n\nManuel Antonio\nCeiba\n9\n\n\nManuel Antonio\nAlmendro\n6\n\n\nCorcovado\nGuarumo\n8\n\n\n\n\nResultado: La diversidad de lichenes es mayor en el parque nacional (promedio: 7.6) que en la ciudad (promedio: 3.3).\n\n\nTodo bien con este estudio? ¿Podemos concluir que la contaminación reduce la diversidad de lichenes?"
-  },
-  {
-    "objectID": "lectures/02-design.html#variables-confusoras",
-    "href": "lectures/02-design.html#variables-confusoras",
-    "title": "Diseño experimental",
-    "section": "Variables confusoras",
-    "text": "Variables confusoras\nNuestro diseño experimental no controló otras variables que podrían explicar la diferencia en diversidad de líquenes:\n\nla especie de árbol,\nla edad del árbol,\nla exposición a la luz,\nla humedad, etc."
-  },
-  {
-    "objectID": "lectures/02-design.html#como-modificar-el-diseño-para-controlar-variables-confusoras",
-    "href": "lectures/02-design.html#como-modificar-el-diseño-para-controlar-variables-confusoras",
-    "title": "Diseño experimental",
-    "section": "Como modificar el diseño para controlar variables confusoras?",
-    "text": "Como modificar el diseño para controlar variables confusoras?\nDebemos comparar árboles que sean similares en otras características que también podrían afectar la diversidad de líquenes.\nPor ejemplo:\n\ncomparar árboles de la misma especie;\nseleccionar árboles de edades o tamaños similares;\nmedir o controlar luz y humedad;\nmuestrear varios árboles independientes en cada condición."
-  },
-  {
-    "objectID": "lectures/02-design.html#tipos-de-diseño-experimental",
-    "href": "lectures/02-design.html#tipos-de-diseño-experimental",
-    "title": "Diseño experimental",
-    "section": "Tipos de diseño experimental",
-    "text": "Tipos de diseño experimental\n\n\n\n\nDiseño experimental\n\nEl investigador manipula tratamientos (ej. sombreado vs no sombreado).\nInferencia más fuerte sobre causa-efecto. Requiere control de factores confusores.\n\n\n\n\n\n\n\nDiseño natural\n\nEl investigador aprovecha la variación natural (ej. arroyos soleados vs sombreados).\n\nNo hay asignación verdadera de tratamientos\n\n\n\n\n\n\n\n\n\n\n\n\n\n¡Ojo!\n\n\nIncluso sin manipulación, es necesaria una definición clara de unidades experimentales y replicación."
-  },
-  {
-    "objectID": "lectures/02-design.html#resumen",
-    "href": "lectures/02-design.html#resumen",
-    "title": "Diseño experimental",
-    "section": "Resumen",
-    "text": "Resumen\n\nDiseño factorial: probar múltiples factores y sus interacciones.\n\nBloques: controlar variación agrupando unidades similares.\n\nAleatorización: protegerse contra sesgo."
-  },
-  {
-    "objectID": "lectures/02-design.html#datos-colectados",
-    "href": "lectures/02-design.html#datos-colectados",
-    "title": "Diseño experimental",
-    "section": "Datos colectados",
-    "text": "Datos colectados\n\n\n\nSitio\nNivel de contaminación\nEspecies de Arbol\nDiversidad\n\n\n\n\nAlajuela\nAlta\nGuayacán\n3\n\n\nAlajuela\nAlta\nHigeron\n4\n\n\nLimon\nAlta\nHigeron\n2\n\n\nSan José\nAlta\nGuayacán\n3\n\n\nSan José\nAlta\nHigeron\n4\n\n\nCartago\nAlta\nHigeron\n2\n\n\nLos Quetzales\nBaja\nAlmendro\n8\n\n\nTapanti\nBaja\nGuarumo\n7\n\n\nManuel Antonio\nBaja\nCeiba\n9\n\n\nManuel Antonio\nBaja\nAlmendro\n6\n\n\nCorcovado\nBaja\nGuarumo\n8\n\n\n\n\nResultado: La diversidad de líquenes es mayor en los parques nacionales (promedio: 7.6) que en las ciudades (promedio: 3.3).\n\n\nTodo bien con este estudio? ¿Podemos concluir que la contaminación está asociada con menor diversidad de líquenes?"
-  },
-  {
-    "objectID": "lectures/02-design.html#control-de-variables-confusoras",
-    "href": "lectures/02-design.html#control-de-variables-confusoras",
-    "title": "Diseño experimental",
-    "section": "Control de variables confusoras",
-    "text": "Control de variables confusoras\n\nAhora tenemos mas claro que necesitamos medir o controlar para poder probar la hipotesis:\n\nespecie, edad, luz, humedad, etc.\n\n\n\nPodemos definir la unidad observacional:\n\nun árbol de una especie y edad determinada.\n\n\n\nY la unidad experimental:\n\nUn sitio donde se mide la diversidad de líquenes en varios árboles independientes."
-  },
-  {
-    "objectID": "lectures/02-design.html#por",
-    "href": "lectures/02-design.html#por",
-    "title": "Diseño experimental",
-    "section": "Por",
-    "text": "Por"
-  },
-  {
-    "objectID": "lectures/02-design.html#unidad-de-observacion-y-unidad-experimental",
-    "href": "lectures/02-design.html#unidad-de-observacion-y-unidad-experimental",
-    "title": "Diseño experimental",
-    "section": "Unidad de observacion y unidad experimental",
-    "text": "Unidad de observacion y unidad experimental\n\nUnidad observacional:\n\nun árbol de una especie y edad (tamaño) determinada.\n\n\n\nUnidad experimental:\n\nUn sitio donde se mide la diversidad de líquenes en varios árboles independientes."
-  },
-  {
-    "objectID": "lectures/02-design.html#que-es-la-replica",
-    "href": "lectures/02-design.html#que-es-la-replica",
-    "title": "Diseño experimental",
-    "section": "Que es la replica?",
-    "text": "Que es la replica?\n\nArbol\nSitio"
   }
 ]

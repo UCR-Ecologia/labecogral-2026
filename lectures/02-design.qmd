@@ -109,6 +109,15 @@ A) Arbol
 B) Sitio
 
 
+::: {.fragment}
+
+> Como sabemos?
+
+> A que nivel es el tratamiento? Al nivel de los sitios, o al nivel de los arboles?
+
+:::
+
+
 ## Replicación y pseudoeplicación
 
 ---
@@ -240,46 +249,13 @@ Si el tratamiento estaba aplicado a los aquarios:
   * Tienden a mejorar el poder de analisis estadisticos, pero falsamente.
   * Introducen sesgo hacia menor variacion natural
 
-## Como guardarse de la pseudorreplicacion? {.smaller}
-
-
-::: {.fragment}
-
-Un escenario comun. La gente muchas veces hace la siguente asociacion:
-
-> organismos (individuos) diferentes = replicas biologicas
-
-:::
-
-
-
-::: {.fragment}
-
-Pero, 
-
-> aunque claramente, sinco Daphnia en el mismo mesocosmo son sinco individuos
-
-> **las sinco Daphnia no son replicas independientes del tratamiento del microcosmo**
-
-:::
-
-
-
-::: {.fragment}
-
-Siempre hay que preguntar:
-
-> ¿Dónde ocurrió la asignación independiente del tratamiento?
-
-:::
-
 ---
 
 ![](02-assets/replication-summary-diagram.png)
 
 ---
 
-## Vinclulo entre Hypotesis y Deseño
+## Vinculo entre Hypotesis y Deseño
 
 ## Diatomeas y Salinidad
 
@@ -348,7 +324,38 @@ Cuantas replicas tenemos?
 
 :::
 
+## Hipótesis -> Nivel de replicación / Unidad de inferencia {.smaller}
 
+H1: La tolerancia a la salinidad es diferente entre especies
+
+::: {.fragment}
+
+Unidad experimental: **especie**
+Sample size: **5 especies** 
+:::
+
+::: {.fragment}
+
+H2: La tolerancia a la salinidad es diferente entre cepas de la misma especie
+
+:::
+
+::: {.fragment}
+Unidad experimental: **cepa**
+Sample size: **3 cepas por especie**
+:::
+
+
+::: {.fragment}
+
+H3: La tolerancia a la salinidad es diferente entre cultivos de la misma cepa
+
+:::
+
+::: {.fragment}
+Unidad experimental: **cultivo**
+Sample size: **3 cultivos por cepa**
+:::
 
 
 ## Tipos de diseño experimental
@@ -532,6 +539,12 @@ ggplot(
   facet_wrap(~Block, ncol = 1, scales = "free_y")
 ```
 
+## Controles
+
+- **Condición de referencia:** una condición comparativa  que sirve como punto de comparación para los demás tratamientos.
+- **Debe incluirse en los bloques:** cada bloque debería contener la condición de referencia para permitir comparaciones dentro del bloque y controlar la variación entre bloques.
+- **Propósito**: estimar efectos relativos de los tratamientos y evitar confundir efectos de bloque con efectos de tratamiento.
+
 ---
 
 ## Resumen
@@ -539,9 +552,9 @@ ggplot(
 - **Diseño factorial**: probar múltiples factores y sus interacciones.  
 - **Bloques**: controlar variación agrupando unidades similares.  
 - **Aleatorización**: protegerse contra sesgo.  
+- **Controles**: condición de referencia para comparaciones.
 
 ---
-
 
 ## Bibliografia
 
