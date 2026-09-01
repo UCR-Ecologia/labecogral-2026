@@ -2,14 +2,16 @@
   {
     "listing": "/labs/index.html",
     "items": [
-      "/labs/L01.html"
+      "/labs/L01.html",
+      "/labs/L02.html"
     ]
   },
   {
     "listing": "/lectures/index.html",
     "items": [
       "/lectures/01-sci-method.html",
-      "/lectures/02-design.html"
+      "/lectures/02-design.html",
+      "/lectures/03-eda.html"
     ]
   }
 ]

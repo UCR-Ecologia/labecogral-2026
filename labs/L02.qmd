@@ -1,0 +1,88 @@
+---
+title: "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos"
+subtitle: ""
+format:
+  html:
+    toc: true
+    number-sections: false
+  docx: default
+  pdf: default
+lang: es
+execute:
+  eval: false
+---
+
+Para las próximas prácticas utilizaremos **R** para organizar, visualizar y analizar datos ecológicos. Por ahora trabajaremos con manejo básico de datos, gráficos y modelos estadísticos relativamente sencillos, incluyendo modelos lineales y modelos lineales generalizados (GLM).
+
+## 1. Instalar R
+
+Instale una versión reciente de **R** desde:
+
+https://cran.r-project.org/
+
+No es necesario que todas las personas tengan exactamente la misma versión. Instale la versión que sea más sencilla y estable para su sistema operativo.
+
+También recomendamos instalar **RStudio Desktop**, que proporciona una interfaz más cómoda para trabajar con R:
+
+https://posit.co/download/rstudio-desktop/
+
+## 2. Instalar los paquetes necesarios
+
+Abra RStudio y ejecute el siguiente código **una sola vez**:
+
+```r
+install.packages(c(
+  "dplyr",
+  "tidyr",
+  "ggplot2",
+  "janitor",
+  "readxl",
+  "readr",
+  "modelsummary"
+))
+```
+
+El paquete `MASS`, que utilizaremos para algunos modelos lineales generalizados, normalmente viene incluido con R y no necesita instalarse por separado.
+
+## 3. ¿Para qué utilizaremos estos paquetes?
+
+- `dplyr`: organizar, filtrar, resumir y transformar datos.
+- `tidyr`: reorganizar datos y trabajar con formatos tidy.
+- `ggplot2`: producir gráficos.
+- `janitor`: limpiar nombres de variables y revisar tablas.
+- `readxl`: importar archivos de Excel (`.xls` y `.xlsx`).
+- `readr`: importar archivos de texto y CSV.
+- `modelsummary`: resumir y comparar resultados de modelos.
+- `MASS`: entre otras funciones, ajustar modelos GLM con distribución binomial negativa.
+
+## 4. Cargar los paquetes
+
+Cada vez que abra una nueva sesión de R, deberá cargar los paquetes que va a utilizar:
+
+```r
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(janitor)
+library(readxl)
+library(readr)
+library(modelsummary)
+library(MASS)
+```
+
+## 5. Modelos que utilizaremos
+
+Por ahora trabajaremos principalmente con:
+
+```r
+# Modelo lineal
+lm()
+
+# Modelo lineal generalizado
+glm()
+
+# GLM con distribución binomial negativa
+MASS::glm.nb()
+```
+
+No es necesario aprender estas funciones antes de la clase. El objetivo de esta preparación es simplemente tener R, RStudio y los paquetes necesarios instalados y funcionando.
