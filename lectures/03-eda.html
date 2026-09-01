@@ -390,6 +390,13 @@
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># library(ggplot2)</span></span>
+<span id="cb17-2"><a></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
+<span id="cb17-3"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> bill_len) <span class="sc">+</span></span>
+<span id="cb17-4"><a></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb17-5"><a></a>    <span class="at">fill =</span> <span class="st">"steelblue"</span>,</span>
+<span id="cb17-6"><a></a>    <span class="at">color =</span> <span class="st">"white"</span></span>
+<span id="cb17-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -400,6 +407,12 @@
 </div>
 </div><div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># library(ggplot2)</span></span>
+<span id="cb18-2"><a></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">aes</span>(<span class="at">y =</span> bill_len) <span class="sc">+</span></span>
+<span id="cb18-4"><a></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb18-5"><a></a>    <span class="at">fill =</span> <span class="st">"steelblue"</span></span>
+<span id="cb18-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -418,6 +431,11 @@
 <h2>Variables numéricas (continuas) - Datos de histograma</h2>
 <div class="fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>min_bill <span class="ot">&lt;-</span> <span class="fu">min</span>(penguins<span class="sc">$</span>bill_len, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb19-2"><a></a>max_bill <span class="ot">&lt;-</span> <span class="fu">max</span>(penguins<span class="sc">$</span>bill_len, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb19-3"><a></a>bin_breaks <span class="ot">&lt;-</span> <span class="fu">seq</span>(min_bill, max_bill, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb19-4"><a></a>bill_len_bin <span class="ot">&lt;-</span> <span class="fu">cut</span>(penguins<span class="sc">$</span>bill_len, <span class="at">breaks =</span> bin_breaks)</span>
+<span id="cb19-5"><a></a><span class="fu">table</span>(bill_len_bin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>bill_len_bin
 (32.1,34.1] (34.1,36.1] (36.1,38.1] (38.1,40.1] (40.1,42.1] (42.1,44.1] 
@@ -434,6 +452,7 @@
 <h2>Variables numéricas (continuas) - Datos de boxplot</h2>
 <div class="fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">summary</span>(penguins<span class="sc">$</span>bill_len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs 
   32.10   39.23   44.45   43.92   48.50   59.60       2 </code></pre>
@@ -451,6 +470,9 @@
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island)) <span class="sc">+</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -461,6 +483,12 @@
 </div>
 </div><div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> island)) <span class="sc">+</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">geom_bar</span>(</span>
+<span id="cb24-4"><a></a>    <span class="fu">aes</span>(<span class="at">fill =</span> species),</span>
+<span id="cb24-5"><a></a>    <span class="at">position =</span> <span class="st">"dodge"</span></span>
+<span id="cb24-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -476,6 +504,9 @@
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">group_by</span>(species, island) <span class="sc">|&gt;</span></span>
+<span id="cb25-3"><a></a>  <span class="fu">tally</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
 # Groups:   species [3]
@@ -490,6 +521,9 @@
 </div>
 </div><div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">group_by</span>(species, island, sex) <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a></a>  <span class="fu">tally</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13 × 4
 # Groups:   species, island [5]
@@ -517,6 +551,12 @@
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len)) <span class="sc">+</span></span>
+<span id="cb29-3"><a></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb29-4"><a></a>    <span class="fu">aes</span>(<span class="at">fill =</span> sex),</span>
+<span id="cb29-5"><a></a>    <span class="at">color =</span> <span class="st">"white"</span></span>
+<span id="cb29-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -527,6 +567,13 @@
 </div>
 </div><div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len)) <span class="sc">+</span></span>
+<span id="cb30-3"><a></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb30-4"><a></a>    <span class="fu">aes</span>(<span class="at">fill =</span> sex),</span>
+<span id="cb30-5"><a></a>    <span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb30-6"><a></a>    <span class="at">position =</span> <span class="st">"dodge"</span></span>
+<span id="cb30-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -542,6 +589,9 @@
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_len)) <span class="sc">+</span></span>
+<span id="cb31-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -552,6 +602,10 @@
 </div>
 </div><div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_len)) <span class="sc">+</span></span>
+<span id="cb32-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> island)) <span class="sc">+</span></span>
+<span id="cb32-4"><a></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -566,6 +620,13 @@
 <h2>Categórica + Numérica - heatmaps</h2>
 <div class="fragment">
 <div class="cell" data-fix.width="4">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a></a>  <span class="fu">group_by</span>(island, species) <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a></a>  <span class="fu">summarise</span>(<span class="at">mean_bill_len =</span> <span class="fu">mean</span>(bill_len, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb33-4"><a></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb33-5"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> species, <span class="at">fill =</span> mean_bill_len) <span class="sc">+</span></span>
+<span id="cb33-6"><a></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb33-7"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(mean_bill_len, <span class="dv">2</span>)), <span class="at">color =</span> <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -581,6 +642,12 @@
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb34-4"><a></a>    <span class="at">mean_bill_len =</span> <span class="fu">mean</span>(bill_len, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb34-5"><a></a>    <span class="at">mean_body_mass =</span> <span class="fu">mean</span>(body_mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb34-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
    year mean_bill_len mean_body_mass
@@ -592,6 +659,14 @@
 </div>
 </div><div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a></a>  <span class="fu">filter</span>(</span>
+<span id="cb36-3"><a></a>    island <span class="sc">==</span> <span class="st">"Dream"</span>,</span>
+<span id="cb36-4"><a></a>    species <span class="sc">==</span> <span class="st">"Adelie"</span>,</span>
+<span id="cb36-5"><a></a>    sex <span class="sc">==</span> <span class="st">"male"</span>,</span>
+<span id="cb36-6"><a></a>    body_mass <span class="sc">&gt;=</span> <span class="dv">4500</span></span>
+<span id="cb36-7"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb36-8"><a></a>  <span class="fu">select</span>(island, species, sex, body_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  island species  sex body_mass
 1  Dream  Adelie male      4650
@@ -605,6 +680,15 @@
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
+<span id="cb38-2"><a></a>  <span class="fu">aes</span>(</span>
+<span id="cb38-3"><a></a>    <span class="at">x =</span> body_mass,</span>
+<span id="cb38-4"><a></a>    <span class="at">y =</span> flipper_len</span>
+<span id="cb38-5"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb38-6"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb38-7"><a></a>    <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb38-8"><a></a>    <span class="fu">aes</span>(<span class="at">size =</span> body_mass)</span>
+<span id="cb38-9"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -615,6 +699,19 @@
 </div>
 </div><div class="column fragment">
 <div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
+<span id="cb39-2"><a></a>  <span class="fu">aes</span>(</span>
+<span id="cb39-3"><a></a>    <span class="at">x =</span> body_mass,</span>
+<span id="cb39-4"><a></a>    <span class="at">y =</span> flipper_len</span>
+<span id="cb39-5"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb39-6"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb39-7"><a></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb39-8"><a></a>    <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb39-9"><a></a>    <span class="fu">aes</span>(</span>
+<span id="cb39-10"><a></a>      <span class="at">color =</span> species,</span>
+<span id="cb39-11"><a></a>      <span class="at">shape =</span> sex</span>
+<span id="cb39-12"><a></a>    )</span>
+<span id="cb39-13"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -629,6 +726,14 @@
 <h2>Numérica + Numérica - scatterplots con regression</h2>
 <div class="fragment">
 <div class="cell" data-fix.width="6">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
+<span id="cb40-2"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">y =</span> flipper_len) <span class="sc">+</span></span>
+<span id="cb40-3"><a></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb40-4"><a></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb40-5"><a></a>    <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb40-6"><a></a>    <span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> sex)</span>
+<span id="cb40-7"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb40-8"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
@@ -643,6 +748,11 @@
 <h2>Numérica + Numérica - scatterplots con regression</h2>
 <div class="fragment">
 <div class="cell" data-fix.width="6">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">ggplot</span>(penguins) <span class="sc">+</span></span>
+<span id="cb41-2"><a></a>  <span class="fu">aes</span>(<span class="at">x =</span> body_mass, <span class="at">y =</span> flipper_len) <span class="sc">+</span></span>
+<span id="cb41-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="fu">aes</span>(<span class="at">color =</span> island, <span class="at">shape =</span> sex)) <span class="sc">+</span></span>
+<span id="cb41-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb41-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species), <span class="at">ncol =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
