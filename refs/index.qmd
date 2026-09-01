@@ -15,10 +15,20 @@ title: "Referencias"
 
 ## Analisis de Datos Exploratorio
 
-Wickham et al. R for Data Science, 2ed. https://r4ds.hadley.nz/
+Con `R`:
 
-Especificamente:
+- [Wickham et al. R for Data Science, 2ed.](https://r4ds.hadley.nz/)
 
-Capitulo 1: https://r4ds.hadley.nz/data-visualize.html
+  Especificamente:
 
-Capitulo 10: https://r4ds.hadley.nz/EDA.html
+  - [Capitulo 1](https://r4ds.hadley.nz/data-visualize.html)
+  - [Capitulo 10](https://r4ds.hadley.nz/EDA.html)
+
+Con `Python`:
+
+- [Think Stats](https://allendowney.github.io/ThinkStats/)
+
+  Especificamente:
+
+  - [Capitulo 1](https://allendowney.github.io/ThinkStats/chap01.html)
+  - [Capitulo 2](https://allendowney.github.io/ThinkStats/chap02.html)

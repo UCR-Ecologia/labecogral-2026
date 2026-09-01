@@ -25,7 +25,7 @@
     "href": "refs/index.html#analisis-de-datos-exploratorio",
     "title": "Referencias",
     "section": "Analisis de Datos Exploratorio",
-    "text": "Analisis de Datos Exploratorio\nWickham et al. R for Data Science, 2ed. https://r4ds.hadley.nz/\nEspecificamente:\nCapitulo 1: https://r4ds.hadley.nz/data-visualize.html\nCapitulo 10: https://r4ds.hadley.nz/EDA.html"
+    "text": "Analisis de Datos Exploratorio\nCon R:\n\nWickham et al. R for Data Science, 2ed.\nEspecificamente:\n\nCapitulo 1\nCapitulo 10\n\n\nCon Python:\n\nThink Stats\nEspecificamente:\n\nCapitulo 1\nCapitulo 2"
   },
   {
     "objectID": "programa/index.html",
