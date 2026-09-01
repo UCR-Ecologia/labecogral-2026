@@ -12,3 +12,13 @@ title: "Referencias"
 
 - [Gotelli 2004, cap. 6](Gotelli-2004-cap-6.pdf)
 - [Marshall 2024](Marshall-2024.pdf)
+
+## Analisis de Datos Exploratorio
+
+Wickham et al. R for Data Science, 2ed. https://r4ds.hadley.nz/
+
+Especificamente:
+
+Capitulo 1: https://r4ds.hadley.nz/data-visualize.html
+
+Capitulo 10: https://r4ds.hadley.nz/EDA.html

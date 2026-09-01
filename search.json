@@ -21,6 +21,13 @@
     "text": "Deseño Experimental\n\nGotelli 2004, cap. 6\nMarshall 2024"
   },
   {
+    "objectID": "refs/index.html#analisis-de-datos-exploratorio",
+    "href": "refs/index.html#analisis-de-datos-exploratorio",
+    "title": "Referencias",
+    "section": "Analisis de Datos Exploratorio",
+    "text": "Analisis de Datos Exploratorio\nWickham et al. R for Data Science, 2ed. https://r4ds.hadley.nz/\nEspecificamente:\nCapitulo 1: https://r4ds.hadley.nz/data-visualize.html\nCapitulo 10: https://r4ds.hadley.nz/EDA.html"
+  },
+  {
     "objectID": "programa/index.html",
     "href": "programa/index.html",
     "title": "B-0305 Laboratorio de Ecología General",
