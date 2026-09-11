@@ -1,0 +1,311 @@
+---
+title: "Lab 04: Modelos lineales"
+subtitle: ""
+format:
+  html:
+    toc: true
+    number-sections: false
+  pdf:
+    documentclass: scrartcl      # KOMA-Script class
+    classoption: [DIV=12]
+    geometry: margin=1in
+    fontfamily: libertinus        # LaTeX font package
+    colorlinks: true
+    linkcolor: blue
+    toc: false
+    highlight-style: github        # code block theme
+    title-block-banner: true       # colored title banner
+lang: es
+---
+
+```{r}
+#| include: false
+modelo_continuo <- lm(Petal.Length ~ Sepal.Length, data = iris)
+modelo_categorico <- lm(Petal.Length ~ Species, data = iris)
+modelo_interaccion <- lm(Petal.Length ~ Sepal.Length * Species, data = iris)
+```
+
+## Actividad
+
+```{=latex}
+\footnotesize
+```
+
+::: {.callout-note title="Fase 1: Aprendizaje independiente en su grupo original (5 minutos)"}
+
+  * Nos dividimos en grupos de 5 personas.
+  * Todo el grupo repasa junto los conceptos básicos de regresión lineal (sección común del material).
+  * Cada grupo tiene además un experto para la salida de un modelo lineal:
+    1. con predictor continuo
+    2. con predictor categórico
+    3. con interacción (continuo × categórico)
+    4. diagnósticos I: linealidad y normalidad
+    5. diagnósticos II: varianza y observaciones influyentes
+  * El experto estudia el material sobre su tema específico.
+
+:::
+
+
+::: {.callout-note title="Fase 2: Aprendizaje colaborativo en grupos de expertos (5 + 2 minutos)"}
+
+  * Los expertos de cada tema se reúnen en grupos para compartir sus conocimientos.
+  * Aclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.
+  * El experto prepara un reporte breve de 3 puntos:
+     1. ¿Cuál es la pregunta que este análisis permite contestar?
+     2. ¿Qué parte de la salida hay que mirar para contestarla?
+     3. ¿Cómo explicaría el resultado en lenguaje biológico, sin usar lenguaje estadístico?
+
+:::
+
+::: {.callout-note title="Fase 3: Enseñanza en el grupo original (2 x 5 minutos)"}
+
+  * Cada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su tema.
+  * Se discuten y resuelven dudas sobre los temas presentados por los expertos.
+
+:::
+
+
+::: {.callout-note title="Fase 4: Reflexión y cierre (5 minutos)"}
+
+  * Se comparten conclusiones y se resuelven dudas finales con toda la clase.
+  * Cada grupo original (no grupo de expertos) tiene que resolver la tarea de la ultima página (caja roja).
+
+:::
+
+**El reporte de Fase 2, escrito en su bitacora, representa su entrada de bitacora calificada**
+
+
+```{=latex}
+\normalsize
+```
+
+
+{{< pagebreak >}}
+
+## Material
+
+En lo que sigue se presentan los conceptos básicos de los modelos lineales (`lm()`) y cómo interpretar 
+su salida. Todos los ejemplos usan el dataset `iris`, incluido con `R`.
+
+## Conceptos básicos de regresión lineal (todos)
+
+Un modelo lineal describe una variable respuesta continua (`y`) en función de uno o más predictores (`x`):
+
+  - Los predictores pueden ser **continuos** (una pendiente) o **categóricos** (diferencias entre grupos).
+  - `lm()` ajusta el modelo; `summary()` muestra los coeficientes estimados, su incertidumbre y pruebas asociadas.
+  - Supuestos del modelo: 
+    * relación lineal -- la relación entre los predictores y la respuesta debe ser aproximadamente lineal.  
+    * residuos normales -- los residuos del modelo deben seguir aproximadamente una distribución normal.  
+    * varianza constante (homocedasticidad) -- la dispersión de los residuos debe ser similar a lo largo de todos los valores predichos.  
+    * independencia -- los residuos deben ser independientes entre sí, sin correlación.  
+
+```r
+modelo <- lm(y ~ x, data = datos)
+summary(modelo)
+```
+
+  * `y`: variable respuesta del modelo.
+  * `x`: predictor del modelo; puede haber cualquier número de predictores, continuos o categóricos.
+  * Los predictores se combinan con `+` para incluirlos de manera aditiva en el modelo.
+  * Con `+`, el modelo incluye los efectos de los predictores de manera aditiva, sin términos de interacción.
+  * Para incluir interacciones entre predictores, se usa `*` (por ejemplo, `x1 * x2`). En este caso el modelo considera tanto los efectos principales como la interacción entre `x1` y `x2`.
+  * La interacción permite que el efecto de un predictor dependa del valor de otro predictor.
+
+
+{{< pagebreak >}}
+
+## Resumen de un modelo lineal con un predictor continuo (experto 1)
+
+```r
+modelo_continuo <- lm(Petal.Length ~ Sepal.Length, data = iris)
+```
+
+  - **Estimate** (`(Intercept)` y pendiente): valor esperado de `y` cuando `x = 0`, y cambio en `y` por cada unidad de `x`.
+  - **Std. Error / t value / Pr(>|t|)**: incertidumbre del coeficiente y prueba de si es diferente de cero.
+  - **R² / R² ajustado**: proporción de la varianza de `y` explicada por el modelo.
+  - **F-statistic y su p-value**: prueba si el modelo en conjunto explica más que el modelo nulo (solo el intercepto).
+
+```{r}
+#| echo: false
+summary(modelo_continuo)
+```
+
+::: {.callout-tip title="Como calcular la ecuación del modelo y intervalos de confianza" }
+$$
+\quad y = \text{intercept} + \text{coef(Sepal.Length)} \cdot x = -7.1014 + 1.8584x
+$$
+
+Los intervalos de confianza proporcionan un rango de valores plausibles para cada coeficiente del modelo. Si un intervalo incluye el valor cero, sugiere que el coeficiente podría no ser significativamente diferente de cero. Se pueden calcular con:
+
+```r
+confint(modelo_continuo)
+```
+
+:::
+
+{{< pagebreak >}}
+
+## Resumen de un modelo lineal con un predictor categórico (experto 2)
+
+```r
+modelo_categorico <- lm(Petal.Length ~ Species, data = iris)
+```
+
+  - R utiliza el **primer nivel del factor** como nivel de referencia (en `iris`, `setosa`), que queda absorbido en el `(Intercept)`.
+  - **`(Intercept)`**: valor promedio de `y` para el nivel de referencia.
+  - **Coeficientes de los otros niveles**: diferencia promedio respecto al nivel de referencia, no el valor absoluto del grupo.
+  - **R² / F-statistic**: mismos conceptos que con predictor continuo, aplicados a la comparación entre grupos.
+
+```{r}
+#| echo: false
+summary(modelo_categorico)
+```
+
+::: {.callout-tip title="Como calcular el promedio de cada nivel" }
+
+*setosa*:
+$$ \quad \bar{y} = \text{intercept} = 1.462 $$
+
+*versicolor*:
+$$ \quad \bar{y} = \text{intercept} + \text{coef(versicolor)} = 1.462 + 2.798 = 4.260 $$
+
+*virginica*:
+$$ \quad \bar{y} = \text{intercept} + \text{coef(virginica)} = 1.462 + 4.090 = 5.552 $$
+
+:::
+
+{{< pagebreak >}}
+
+## Resumen (`summary()`) de un modelo lineal con dos predictores y su interacción (experto 3)
+
+```r
+modelo_interaccion <- lm(Petal.Length ~ Sepal.Length * Species, data = iris)
+```
+
+* `(Intercept)`: intercepto del nivel de referencia (setosa).
+* `Sepal.Length`: pendiente para el nivel de referencia.
+* `Speciesversicolor`, `Speciesvirginica`: diferencias en el intercepto respecto al nivel de referencia.
+* `Términos de interacción`: diferencias en la pendiente respecto al nivel de referencia.
+
+```{r}
+#| echo: false
+summary(modelo_interaccion)
+```
+
+::: {.callout-tip title="Como calcular los efectos de cada nivel de la interacción" }
+
+*setosa*:
+$$ \quad y_{\text{setosa}}=\text{intercept}+\text{coef(Sepal.Length)}\cdot x $$
+<!-- $$ \quad y=0.8031+0.1316x $$ -->
+
+*versicolor*:
+$$
+\begin{aligned}
+\quad y &= \text{intercept}+\text{coef(versicolor)}+ \\
+&\quad \big(\text{coef(Sepal.Length)}+\text{coef(Sepal.Length:Speciesversicolor)}\big)\cdot x
+\end{aligned}
+$$
+<!-- $$ \quad y = (0.8031-0.6179) + (0.1316+0.5548)x $$ -->
+
+*virginica*:
+$$\begin{aligned}
+\quad y &= \text{intercept}+\text{coef(virginica)}+ \\
+&\quad \big(\text{coef(Sepal.Length)}+\text{coef(Sepal.Length:Speciesvirginica)}\big)\cdot x
+\end{aligned}$$
+<!-- $$\quad y = (0.8031-0.1926) + (0.1316+0.6184)x $$ -->
+
+:::
+
+{{< pagebreak >}}
+
+## Diagnósticos gráficos I: linealidad y normalidad (experto 4)
+
+```r
+plot(modelo_interaccion, which = c(1, 2))
+```
+
+  - **Residuals vs Fitted**: busca patrones o curvatura; una nube sin forma clara indica que la relación es razonablemente lineal.
+  - **Normal Q-Q**: los puntos deben seguir aproximadamente la línea diagonal; desviaciones fuertes en los extremos sugieren residuos no normales.
+  - Juntos, estos dos gráficos dicen si un modelo lineal es una descripción razonable de los datos.
+
+```{r}
+#| echo: false
+#| fig-height: 4
+#| fig-width: 9
+par(mfrow = c(1, 2))
+plot(modelo_interaccion, which = c(1, 2))
+```
+
+::: {.callout-tip title="Mas info" }
+
+**Residuals vs Fitted**  
+
+Los residuos deberían distribuirse de manera aleatoria alrededor de cero. Algun patron sistemático indica que 
+el modelo puede no estar capturando toda la estructura de los datos. Por ejemplo, un patrón en forma de 
+"banano" sugiere que falta una transformación (por ejemplo, logarítmica) o un término no lineal.
+
+**Normal Q-Q**  
+
+Con muestras grandes, el modelo lineal es bastante robusto a desviaciones leves de normalidad, 
+así que un Q-Q plot "casi" recto, aunque no perfecto, muchas veces suele bastar. i.e., muchas 
+veces no es necesario 'hacer algo' para para que todos los residuos quedan perfectamente en la línea.
+
+:::
+
+{{< pagebreak >}}
+
+## Diagnósticos gráficos II: varianza y observaciones influyentes (experto 5)
+
+```r
+plot(modelo_interaccion, which = c(3, 5))
+```
+
+  - **Scale-Location**: la línea debería ser aproximadamente horizontal, con dispersión pareja; una forma de embudo indica que la varianza no es constante (heterocedasticidad).
+  - **Residuals vs Leverage**: identifica observaciones con mucha influencia sobre el modelo; puntos con una distancia de Cook alta pueden tener una influencia importante sobre los coeficientes del modelo.
+  - Estos dos gráficos ayudan a decidir si algunas observaciones particulares merecen atención (errores de datos, casos atípicos reales).
+
+```{r}
+#| echo: false
+#| fig-height: 4
+#| fig-width: 9
+par(mfrow = c(1, 2))
+plot(modelo_interaccion, which = c(3, 5))
+```
+
+::: {.callout-tip title="Mas info" }
+**Distancia cook**  
+ 
+La distancia de Cook depende de los valores de leverage y de los residuos de cada observación. Una distancia de Cook alta indica que la observación puede tener una influencia importante sobre los coeficientes del modelo.  
+
+Las líneas punteadas de distancia de Cook solo se dibujan si caen dentro del rango visible del gráfico. 
+Si las líneas de referencia de Cook quedan fuera del rango del gráfico, pueden no aparecer; esto no indica un error del gráfico.  
+:::
+
+
+{{< pagebreak >}}
+
+::: {.callout-important title="Tarea (Fase 4)"}
+
+**Cada grupo original (no grupo de expertos) analiza los mismos datos `iris` en su computadora.**  
+
+> Pregunta biológica: ¿cómo cambia el ancho del pétalo con el ancho del sépalo y ese cambio es distinto entre especies?
+
+> Ajusten 
+>  * un modelo con interceptos diferentes entre especies y una pendiente común para todas las especies, y 
+>  * otro que permita intercepto y pendiente distinta por especie. 
+  
+> Extraigan los coeficientes y sus intervalos de confianza. Comparen los modelos con AIC e interpreten los resultados.
+
+> Tareas:
+>
+>   * Ajusten los dos modelos y comparen sus valores de AIC.
+>   * Usen `coef()` y `confint()` para identificar el tamaño y la incertidumbre de los efectos de `Sepal.Width`, de las especies y de los términos de interacción.
+>   * En el modelo con interacción, los coeficientes de especie representan diferencias en el intercepto cuando `Sepal.Width = 0`.
+>   * Escriban un párrafo que responda la pregunta biológica. Describan la dirección y magnitud de los efectos, e indiquen los intervalos de confianza.
+>   * Usen los *p-values* solo como información complementaria. La interpretación principal debe basarse en los tamaños de efecto, sus intervalos de confianza y el apoyo relativo de los modelos según AIC.
+
+> Para el análisis, usen `lm()`, `summary()`, `coef()`, `confint()` y `AIC()`.
+
+> Nota: un AIC menor indica un mejor balance entre ajuste y complejidad. Modelos con valores de AIC muy similares (por ejemplo, $\Delta\mathrm{AIC} < 2$) suelen tener apoyo comparable; diferencias mayores favorecen al modelo con el menor AIC.
+
+:::

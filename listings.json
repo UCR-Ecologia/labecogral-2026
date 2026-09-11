@@ -3,7 +3,12 @@
     "listing": "/labs/index.html",
     "items": [
       "/labs/L01.html",
-      "/labs/L02.html"
+      "/labs/L02.html",
+      "/labs/L03-actividad-dplyr.html",
+      "/labs/L03-actividad-ggplot.html",
+      "/labs/L03-ejercicios.html",
+      "/labs/L04-actividad-1-lm.html",
+      "/labs/L04-actividad-2-glm.html"
     ]
   },
   {
@@ -11,7 +16,8 @@
     "items": [
       "/lectures/01-sci-method.html",
       "/lectures/02-design.html",
-      "/lectures/03-eda.html"
+      "/lectures/03-eda.html",
+      "/lectures/04-glm-binom.html"
     ]
   }
 ]

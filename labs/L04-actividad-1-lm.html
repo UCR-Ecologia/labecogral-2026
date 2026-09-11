@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 04: Modelos lineales – Laboratorio de Ecologia General B-0305</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-38566f2d191bdb59836365460af85d63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Laboratorio de Ecologia General B-0305</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../programa/index.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lectures/index.html"> 
+<span class="menu-text">Clases</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/index.html"> 
+<span class="menu-text">Laboratorios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../refs/index.html"> 
+<span class="menu-text">Referencias</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#actividad" id="toc-actividad" class="nav-link active" data-scroll-target="#actividad">Actividad</a></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
+  <li><a href="#conceptos-básicos-de-regresión-lineal-todos" id="toc-conceptos-básicos-de-regresión-lineal-todos" class="nav-link" data-scroll-target="#conceptos-básicos-de-regresión-lineal-todos">Conceptos básicos de regresión lineal (todos)</a></li>
+  <li><a href="#resumen-de-un-modelo-lineal-con-un-predictor-continuo-experto-1" id="toc-resumen-de-un-modelo-lineal-con-un-predictor-continuo-experto-1" class="nav-link" data-scroll-target="#resumen-de-un-modelo-lineal-con-un-predictor-continuo-experto-1">Resumen de un modelo lineal con un predictor continuo (experto 1)</a></li>
+  <li><a href="#resumen-de-un-modelo-lineal-con-un-predictor-categórico-experto-2" id="toc-resumen-de-un-modelo-lineal-con-un-predictor-categórico-experto-2" class="nav-link" data-scroll-target="#resumen-de-un-modelo-lineal-con-un-predictor-categórico-experto-2">Resumen de un modelo lineal con un predictor categórico (experto 2)</a></li>
+  <li><a href="#resumen-summary-de-un-modelo-lineal-con-dos-predictores-y-su-interacción-experto-3" id="toc-resumen-summary-de-un-modelo-lineal-con-dos-predictores-y-su-interacción-experto-3" class="nav-link" data-scroll-target="#resumen-summary-de-un-modelo-lineal-con-dos-predictores-y-su-interacción-experto-3">Resumen (<code>summary()</code>) de un modelo lineal con dos predictores y su interacción (experto 3)</a></li>
+  <li><a href="#diagnósticos-gráficos-i-linealidad-y-normalidad-experto-4" id="toc-diagnósticos-gráficos-i-linealidad-y-normalidad-experto-4" class="nav-link" data-scroll-target="#diagnósticos-gráficos-i-linealidad-y-normalidad-experto-4">Diagnósticos gráficos I: linealidad y normalidad (experto 4)</a></li>
+  <li><a href="#diagnósticos-gráficos-ii-varianza-y-observaciones-influyentes-experto-5" id="toc-diagnósticos-gráficos-ii-varianza-y-observaciones-influyentes-experto-5" class="nav-link" data-scroll-target="#diagnósticos-gráficos-ii-varianza-y-observaciones-influyentes-experto-5">Diagnósticos gráficos II: varianza y observaciones influyentes (experto 5)</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="L04-actividad-1-lm.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 04: Modelos lineales</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="actividad" class="level2">
+<h2 class="anchored" data-anchor-id="actividad">Actividad</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 1: Aprendizaje independiente en su grupo original (5 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 1: Aprendizaje independiente en su grupo original (5 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Nos dividimos en grupos de 5 personas.</li>
+<li>Todo el grupo repasa junto los conceptos básicos de regresión lineal (sección común del material).</li>
+<li>Cada grupo tiene además un experto para la salida de un modelo lineal:
+<ol type="1">
+<li>con predictor continuo</li>
+<li>con predictor categórico</li>
+<li>con interacción (continuo × categórico)</li>
+<li>diagnósticos I: linealidad y normalidad</li>
+<li>diagnósticos II: varianza y observaciones influyentes</li>
+</ol></li>
+<li>El experto estudia el material sobre su tema específico.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 2: Aprendizaje colaborativo en grupos de expertos (5 + 2 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 2: Aprendizaje colaborativo en grupos de expertos (5 + 2 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Los expertos de cada tema se reúnen en grupos para compartir sus conocimientos.</li>
+<li>Aclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.</li>
+<li>El experto prepara un reporte breve de 3 puntos:
+<ol type="1">
+<li>¿Cuál es la pregunta que este análisis permite contestar?</li>
+<li>¿Qué parte de la salida hay que mirar para contestarla?</li>
+<li>¿Cómo explicaría el resultado en lenguaje biológico, sin usar lenguaje estadístico?</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 3: Enseñanza en el grupo original (2 x 5 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 3: Enseñanza en el grupo original (2 x 5 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Cada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su tema.</li>
+<li>Se discuten y resuelven dudas sobre los temas presentados por los expertos.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 4: Reflexión y cierre (5 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 4: Reflexión y cierre (5 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Se comparten conclusiones y se resuelven dudas finales con toda la clase.</li>
+<li>Cada grupo original (no grupo de expertos) tiene que resolver la tarea de la ultima página (caja roja).</li>
+</ul>
+</div>
+</div>
+<p><strong>El reporte de Fase 2, escrito en su bitacora, representa su entrada de bitacora calificada</strong></p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="material" class="level2">
+<h2 class="anchored" data-anchor-id="material">Material</h2>
+<p>En lo que sigue se presentan los conceptos básicos de los modelos lineales (<code>lm()</code>) y cómo interpretar su salida. Todos los ejemplos usan el dataset <code>iris</code>, incluido con <code>R</code>.</p>
+</section>
+<section id="conceptos-básicos-de-regresión-lineal-todos" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-básicos-de-regresión-lineal-todos">Conceptos básicos de regresión lineal (todos)</h2>
+<p>Un modelo lineal describe una variable respuesta continua (<code>y</code>) en función de uno o más predictores (<code>x</code>):</p>
+<ul>
+<li>Los predictores pueden ser <strong>continuos</strong> (una pendiente) o <strong>categóricos</strong> (diferencias entre grupos).</li>
+<li><code>lm()</code> ajusta el modelo; <code>summary()</code> muestra los coeficientes estimados, su incertidumbre y pruebas asociadas.</li>
+<li>Supuestos del modelo:
+<ul>
+<li>relación lineal – la relación entre los predictores y la respuesta debe ser aproximadamente lineal.<br>
+</li>
+<li>residuos normales – los residuos del modelo deben seguir aproximadamente una distribución normal.<br>
+</li>
+<li>varianza constante (homocedasticidad) – la dispersión de los residuos debe ser similar a lo largo de todos los valores predichos.<br>
+</li>
+<li>independencia – los residuos deben ser independientes entre sí, sin correlación.</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> datos)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>y</code>: variable respuesta del modelo.</li>
+<li><code>x</code>: predictor del modelo; puede haber cualquier número de predictores, continuos o categóricos.</li>
+<li>Los predictores se combinan con <code>+</code> para incluirlos de manera aditiva en el modelo.</li>
+<li>Con <code>+</code>, el modelo incluye los efectos de los predictores de manera aditiva, sin términos de interacción.</li>
+<li>Para incluir interacciones entre predictores, se usa <code>*</code> (por ejemplo, <code>x1 * x2</code>). En este caso el modelo considera tanto los efectos principales como la interacción entre <code>x1</code> y <code>x2</code>.</li>
+<li>La interacción permite que el efecto de un predictor dependa del valor de otro predictor.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="resumen-de-un-modelo-lineal-con-un-predictor-continuo-experto-1" class="level2">
+<h2 class="anchored" data-anchor-id="resumen-de-un-modelo-lineal-con-un-predictor-continuo-experto-1">Resumen de un modelo lineal con un predictor continuo (experto 1)</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>modelo_continuo <span class="ot">&lt;-</span> <span class="fu">lm</span>(Petal.Length <span class="sc">~</span> Sepal.Length, <span class="at">data =</span> iris)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Estimate</strong> (<code>(Intercept)</code> y pendiente): valor esperado de <code>y</code> cuando <code>x = 0</code>, y cambio en <code>y</code> por cada unidad de <code>x</code>.</li>
+<li><strong>Std. Error / t value / Pr(&gt;|t|)</strong>: incertidumbre del coeficiente y prueba de si es diferente de cero.</li>
+<li><strong>R² / R² ajustado</strong>: proporción de la varianza de <code>y</code> explicada por el modelo.</li>
+<li><strong>F-statistic y su p-value</strong>: prueba si el modelo en conjunto explica más que el modelo nulo (solo el intercepto).</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Petal.Length ~ Sepal.Length, data = iris)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.47747 -0.59072 -0.00668  0.60484  2.49512 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  -7.10144    0.50666  -14.02   &lt;2e-16 ***
+Sepal.Length  1.85843    0.08586   21.65   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.8678 on 148 degrees of freedom
+Multiple R-squared:   0.76, Adjusted R-squared:  0.7583 
+F-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Como calcular la ecuación del modelo y intervalos de confianza">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Como calcular la ecuación del modelo y intervalos de confianza
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\quad y = \text{intercept} + \text{coef(Sepal.Length)} \cdot x = -7.1014 + 1.8584x
+\]</span></p>
+<p>Los intervalos de confianza proporcionan un rango de valores plausibles para cada coeficiente del modelo. Si un intervalo incluye el valor cero, sugiere que el coeficiente podría no ser significativamente diferente de cero. Se pueden calcular con:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(modelo_continuo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="resumen-de-un-modelo-lineal-con-un-predictor-categórico-experto-2" class="level2">
+<h2 class="anchored" data-anchor-id="resumen-de-un-modelo-lineal-con-un-predictor-categórico-experto-2">Resumen de un modelo lineal con un predictor categórico (experto 2)</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>modelo_categorico <span class="ot">&lt;-</span> <span class="fu">lm</span>(Petal.Length <span class="sc">~</span> Species, <span class="at">data =</span> iris)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>R utiliza el <strong>primer nivel del factor</strong> como nivel de referencia (en <code>iris</code>, <code>setosa</code>), que queda absorbido en el <code>(Intercept)</code>.</li>
+<li><strong><code>(Intercept)</code></strong>: valor promedio de <code>y</code> para el nivel de referencia.</li>
+<li><strong>Coeficientes de los otros niveles</strong>: diferencia promedio respecto al nivel de referencia, no el valor absoluto del grupo.</li>
+<li><strong>R² / F-statistic</strong>: mismos conceptos que con predictor continuo, aplicados a la comparación entre grupos.</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Petal.Length ~ Species, data = iris)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-1.260 -0.258  0.038  0.240  1.348 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)        1.46200    0.06086   24.02   &lt;2e-16 ***
+Speciesversicolor  2.79800    0.08607   32.51   &lt;2e-16 ***
+Speciesvirginica   4.09000    0.08607   47.52   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.4303 on 147 degrees of freedom
+Multiple R-squared:  0.9414,    Adjusted R-squared:  0.9406 
+F-statistic:  1180 on 2 and 147 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Como calcular el promedio de cada nivel">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Como calcular el promedio de cada nivel
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>setosa</em>: <span class="math display">\[ \quad \bar{y} = \text{intercept} = 1.462 \]</span></p>
+<p><em>versicolor</em>: <span class="math display">\[ \quad \bar{y} = \text{intercept} + \text{coef(versicolor)} = 1.462 + 2.798 = 4.260 \]</span></p>
+<p><em>virginica</em>: <span class="math display">\[ \quad \bar{y} = \text{intercept} + \text{coef(virginica)} = 1.462 + 4.090 = 5.552 \]</span></p>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="resumen-summary-de-un-modelo-lineal-con-dos-predictores-y-su-interacción-experto-3" class="level2">
+<h2 class="anchored" data-anchor-id="resumen-summary-de-un-modelo-lineal-con-dos-predictores-y-su-interacción-experto-3">Resumen (<code>summary()</code>) de un modelo lineal con dos predictores y su interacción (experto 3)</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>modelo_interaccion <span class="ot">&lt;-</span> <span class="fu">lm</span>(Petal.Length <span class="sc">~</span> Sepal.Length <span class="sc">*</span> Species, <span class="at">data =</span> iris)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>(Intercept)</code>: intercepto del nivel de referencia (setosa).</li>
+<li><code>Sepal.Length</code>: pendiente para el nivel de referencia.</li>
+<li><code>Speciesversicolor</code>, <code>Speciesvirginica</code>: diferencias en el intercepto respecto al nivel de referencia.</li>
+<li><code>Términos de interacción</code>: diferencias en la pendiente respecto al nivel de referencia.</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Petal.Length ~ Sepal.Length * Species, data = iris)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.68611 -0.13442 -0.00856  0.15966  0.79607 
+
+Coefficients:
+                               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                      0.8031     0.5310   1.512    0.133    
+Sepal.Length                     0.1316     0.1058   1.244    0.216    
+Speciesversicolor               -0.6179     0.6837  -0.904    0.368    
+Speciesvirginica                -0.1926     0.6578  -0.293    0.770    
+Sepal.Length:Speciesversicolor   0.5548     0.1281   4.330 2.78e-05 ***
+Sepal.Length:Speciesvirginica    0.6184     0.1210   5.111 1.00e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2611 on 144 degrees of freedom
+Multiple R-squared:  0.9789,    Adjusted R-squared:  0.9781 
+F-statistic:  1333 on 5 and 144 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Como calcular los efectos de cada nivel de la interacción">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Como calcular los efectos de cada nivel de la interacción
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>setosa</em>: <span class="math display">\[ \quad y_{\text{setosa}}=\text{intercept}+\text{coef(Sepal.Length)}\cdot x \]</span> <!-- $$ \quad y=0.8031+0.1316x $$ --></p>
+<p><em>versicolor</em>: <span class="math display">\[
+\begin{aligned}
+\quad y &amp;= \text{intercept}+\text{coef(versicolor)}+ \\
+&amp;\quad \big(\text{coef(Sepal.Length)}+\text{coef(Sepal.Length:Speciesversicolor)}\big)\cdot x
+\end{aligned}
+\]</span> <!-- $$ \quad y = (0.8031-0.6179) + (0.1316+0.5548)x $$ --></p>
+<p><em>virginica</em>: <span class="math display">\[\begin{aligned}
+\quad y &amp;= \text{intercept}+\text{coef(virginica)}+ \\
+&amp;\quad \big(\text{coef(Sepal.Length)}+\text{coef(Sepal.Length:Speciesvirginica)}\big)\cdot x
+\end{aligned}\]</span> <!-- $$\quad y = (0.8031-0.1926) + (0.1316+0.6184)x $$ --></p>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="diagnósticos-gráficos-i-linealidad-y-normalidad-experto-4" class="level2">
+<h2 class="anchored" data-anchor-id="diagnósticos-gráficos-i-linealidad-y-normalidad-experto-4">Diagnósticos gráficos I: linealidad y normalidad (experto 4)</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo_interaccion, <span class="at">which =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Residuals vs Fitted</strong>: busca patrones o curvatura; una nube sin forma clara indica que la relación es razonablemente lineal.</li>
+<li><strong>Normal Q-Q</strong>: los puntos deben seguir aproximadamente la línea diagonal; desviaciones fuertes en los extremos sugieren residuos no normales.</li>
+<li>Juntos, estos dos gráficos dicen si un modelo lineal es una descripción razonable de los datos.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="L04-actividad-1-lm_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Mas info">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mas info
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Residuals vs Fitted</strong></p>
+<p>Los residuos deberían distribuirse de manera aleatoria alrededor de cero. Algun patron sistemático indica que el modelo puede no estar capturando toda la estructura de los datos. Por ejemplo, un patrón en forma de “banano” sugiere que falta una transformación (por ejemplo, logarítmica) o un término no lineal.</p>
+<p><strong>Normal Q-Q</strong></p>
+<p>Con muestras grandes, el modelo lineal es bastante robusto a desviaciones leves de normalidad, así que un Q-Q plot “casi” recto, aunque no perfecto, muchas veces suele bastar. i.e., muchas veces no es necesario ‘hacer algo’ para para que todos los residuos quedan perfectamente en la línea.</p>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="diagnósticos-gráficos-ii-varianza-y-observaciones-influyentes-experto-5" class="level2">
+<h2 class="anchored" data-anchor-id="diagnósticos-gráficos-ii-varianza-y-observaciones-influyentes-experto-5">Diagnósticos gráficos II: varianza y observaciones influyentes (experto 5)</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modelo_interaccion, <span class="at">which =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Scale-Location</strong>: la línea debería ser aproximadamente horizontal, con dispersión pareja; una forma de embudo indica que la varianza no es constante (heterocedasticidad).</li>
+<li><strong>Residuals vs Leverage</strong>: identifica observaciones con mucha influencia sobre el modelo; puntos con una distancia de Cook alta pueden tener una influencia importante sobre los coeficientes del modelo.</li>
+<li>Estos dos gráficos ayudan a decidir si algunas observaciones particulares merecen atención (errores de datos, casos atípicos reales).</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="L04-actividad-1-lm_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Mas info">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mas info
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Distancia cook</strong></p>
+<p>La distancia de Cook depende de los valores de leverage y de los residuos de cada observación. Una distancia de Cook alta indica que la observación puede tener una influencia importante sobre los coeficientes del modelo.</p>
+<p>Las líneas punteadas de distancia de Cook solo se dibujan si caen dentro del rango visible del gráfico. Si las líneas de referencia de Cook quedan fuera del rango del gráfico, pueden no aparecer; esto no indica un error del gráfico.</p>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="callout callout-style-default callout-important callout-titled" title="Tarea (Fase 4)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tarea (Fase 4)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Cada grupo original (no grupo de expertos) analiza los mismos datos <code>iris</code> en su computadora.</strong></p>
+<blockquote class="blockquote">
+<p>Pregunta biológica: ¿cómo cambia el ancho del pétalo con el ancho del sépalo y ese cambio es distinto entre especies?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Ajusten * un modelo con interceptos diferentes entre especies y una pendiente común para todas las especies, y * otro que permita intercepto y pendiente distinta por especie.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Extraigan los coeficientes y sus intervalos de confianza. Comparen los modelos con AIC e interpreten los resultados.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Tareas:</p>
+<ul>
+<li>Ajusten los dos modelos y comparen sus valores de AIC.</li>
+<li>Usen <code>coef()</code> y <code>confint()</code> para identificar el tamaño y la incertidumbre de los efectos de <code>Sepal.Width</code>, de las especies y de los términos de interacción.</li>
+<li>En el modelo con interacción, los coeficientes de especie representan diferencias en el intercepto cuando <code>Sepal.Width = 0</code>.</li>
+<li>Escriban un párrafo que responda la pregunta biológica. Describan la dirección y magnitud de los efectos, e indiquen los intervalos de confianza.</li>
+<li>Usen los <em>p-values</em> solo como información complementaria. La interpretación principal debe basarse en los tamaños de efecto, sus intervalos de confianza y el apoyo relativo de los modelos según AIC.</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Para el análisis, usen <code>lm()</code>, <code>summary()</code>, <code>coef()</code>, <code>confint()</code> y <code>AIC()</code>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Nota: un AIC menor indica un mejor balance entre ajuste y complejidad. Modelos con valores de AIC muy similares (por ejemplo, <span class="math inline">\(\Delta\mathrm{AIC} &lt; 2\)</span>) suelen tener apoyo comparable; diferencias mayores favorecen al modelo con el menor AIC.</p>
+</blockquote>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

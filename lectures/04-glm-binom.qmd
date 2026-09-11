@@ -1,0 +1,362 @@
+---
+title: "GLM binomial"
+subtitle: "Respuestas binarias"
+format:
+  revealjs:
+    slide-number: true
+execute:
+  echo: false
+---
+
+```{r}
+library(ggplot2)
+
+theme_set(theme_minimal(base_size = 18))
+
+set.seed(2026)
+n_corales <- 360
+corales <- data.frame(
+  temperatura = runif(n_corales, min = 25, max = 33)
+)
+corales$prob_blanqueado <- plogis(-22 + 0.8 * corales$temperatura)
+corales$blanqueado <- rbinom(
+  n_corales,
+  size = 1,
+  prob = corales$prob_blanqueado
+)
+
+modelo_binomial <- glm(
+  blanqueado ~ temperatura,
+  family = binomial(link = "logit"),
+  data = corales
+)
+
+datos_distribuciones <- rbind(
+  data.frame(valor = rnorm(500, mean = 0, sd = 1), distribucion = "Normal"),
+  data.frame(
+    valor = rbinom(500, size = 1, prob = 0.5),
+    distribucion = "Bernoulli"
+  ),
+  data.frame(valor = rpois(500, lambda = 2), distribucion = "Poisson")
+)
+```
+
+## Plan
+
+* Reconocer una respuesta binaria
+* Entender por qué un modelo lineal simple no es adecuado
+* Ajustar un GLM binomial con enlace logit
+* Comunicar resultados como probabilidades predichas
+
+## Datos de las colonias de coral
+
+Después de algunas semanas cálidas por el Niño, se evalúan colonias de corales en varios sitios:
+
+* `blanqueado = 0`: sana o recuperada
+* `blanqueado = 1`: blanqueada o muerta
+* Predictor: temperatura promedio durante las últimas dos semanas
+
+::: {.fragment}
+
+La unidad de observación es una **colonia individual**.
+
+:::
+
+## Ejemplos {.background-dark}
+
+* Cuales otros ejemplos de respuestas binarias se les ocurren?
+
+## Proceso
+
+* Hay dos posibilidades: **sano ($0$)** o **blanqueado ($1$)**.
+* Valores como 'mediosano' o 'pocoblanqueado' no son posibles.
+
+Que nos indica esto sobre la distribucion matematica con cual se podria generar este tipo de datos?
+
+Se pueden generar con una distribuucion Normal? O necesitamos otra distribucion?
+
+```{r}
+#| echo: false
+
+datos_distribuciones |>
+  dplyr::filter(distribucion == "Normal") |>
+  ggplot() +
+  aes(x = valor + 50) +
+  geom_histogram(
+    binwidth = 0.25,
+    boundary = 0,
+    fill = "steelblue",
+    color = "white"
+  ) +
+  labs(x = "Valor de la respuesta", y = "Número de observaciones")
+```
+
+## ¿Por qué no un modelo lineal?
+
+Un modelo lineal supone una respuesta continua y no es limitada entre 0 y 1:
+
+$$
+Y_i \sim \mathrm{Normal}(\mu_i, \sigma^2), \qquad
+\mu_i = \beta_0 + \beta_1 x_i.
+$$
+
+::: {.fragment}
+
+Para `blanqueado`, esto falla porque:
+
+* solo existen $0$ y $1$;
+* una recta puede predecir valores menores que $0$ o mayores que $1$;
+* la variabilidad cambia con la probabilidad esperada.
+
+:::
+
+## Distribuciones comunes {.smaller}
+
+```{r}
+ggplot(datos_distribuciones, aes(x = valor)) +
+  geom_histogram(
+    binwidth = 0.25,
+    boundary = 0,
+    fill = "steelblue",
+    color = "white"
+  ) +
+  facet_wrap(~distribucion, scales = "free") +
+  labs(x = "Valor de la respuesta", y = "Número de observaciones")
+```
+
+## El proceso Bernoulli
+
+Para cada colonia:
+
+$$
+Y_i \sim \mathrm{Bernoulli}(p_i).
+$$
+
+* $p_i$: probabilidad de blanqueamiento
+* $\operatorname{Var}(Y_i) = p_i(1-p_i)$
+* La variabilidad es mayor cerca de $p_i = 0.5$
+
+## Modelo generativo {.smaller}
+
+Un modelo generativo describe un proceso posible para producir los datos:
+
+1. Medimos la temperatura promedio de las últimas dos semanas para una colonia.
+2. Esa temperatura determina una probabilidad de blanqueamiento, $p_i$.
+3. Generamos un resultado: $Y_i=1$ con probabilidad $p_i$, o $Y_i=0$ con probabilidad $1-p_i$.
+4. Repetimos el proceso para muchas colonias.
+
+::: {.fragment}
+
+> El modelo no predice que una colonia estará "0.37 blanqueada"; predice la **probabilidad** de que esté blanqueada.
+
+:::
+
+## Simulaciones del modelo generativo {.smaller}
+
+En cada simulación, muestreamos 100 colonias y calculamos la proporción observada de blanqueamiento.
+
+```{r}
+set.seed(2026)
+n_simulaciones <- 500
+n_colonias_muestra <- 100
+
+simulaciones_proporcion <- rbind(
+  data.frame(
+    proporcion = replicate(
+      n_simulaciones,
+      mean(rbinom(n_colonias_muestra, size = 1, prob = 0.40))
+    ),
+    probabilidad = "p = 0.40"
+  ),
+  data.frame(
+    proporcion = replicate(
+      n_simulaciones,
+      mean(rbinom(n_colonias_muestra, size = 1, prob = 0.04))
+    ),
+    probabilidad = "p = 0.04"
+  )
+)
+
+ggplot(simulaciones_proporcion, aes(x = proporcion)) +
+  geom_histogram(binwidth = 0.01, fill = "steelblue", color = "white") +
+  facet_wrap(~probabilidad, ncol = 1) +
+  scale_x_continuous(limits = c(0, 0.7), labels = scales::label_percent()) +
+  labs(
+    x = "Proporción observada de colonias blanqueadas",
+    y = "Número de simulaciones"
+  )
+```
+
+* La proporción observada varía entre muestras repetidas.
+* Con $$p=0.04$$, las proporciones se concentran mucho más que con $$p=0.40$$.
+
+## La variabilidad depende de $p$ {.smaller}
+
+```{r}
+probs <- seq(0, 1, length.out = 101)
+varianza_bernoulli <- data.frame(
+  probabilidad = probs,
+  varianza = probs * (1 - probs)
+)
+
+ggplot(varianza_bernoulli, aes(x = probabilidad, y = varianza)) +
+  geom_line(linewidth = 1.2, color = "firebrick") +
+  geom_vline(xintercept = 0.5, linetype = "dashed") +
+  scale_x_continuous(labels = scales::label_percent()) +
+  labs(
+    x = "Probabilidad de blanqueamiento",
+    y = "Varianza de una colonia"
+  )
+```
+
+## GLM binomial con enlace logit
+
+La respuesta sigue una distribución Bernoulli; la relación con el predictor es lineal en la escala de *log-odds*:
+
+$$
+\operatorname{logit}(p_i) = \log\left(\frac{p_i}{1-p_i}\right)
+= \beta_0 + \beta_1\,\mathrm{temperatura}_i.
+$$
+
+* El modelo estima probabilidades entre $0$ y $1$.
+* La pendiente es constante en *log-odds*, no en probabilidad.
+
+## Datos: una fila por colonia {.smaller}
+
+```{r echo=TRUE}
+head(corales[, c("temperatura", "blanqueado")])
+```
+
+* Cada fila es una colonia.
+* `temperatura`: promedio de las últimas dos semanas.
+* `blanqueado`: $0$ o $1$.
+
+## Ajustar el modelo {.smaller}
+
+```{r echo=TRUE}
+modelo_binomial <- glm(
+  blanqueado ~ temperatura,
+  family = binomial(link = "logit"),
+  data = corales
+)
+
+summary(modelo_binomial)
+```
+
+
+## Interpretación del modelo {.background-dark}
+
+* Tiene sentido biologico intepretar el intercepto? 
+
+* ¿Qué indica el signo del coeficiente de temperatura?
+
+## Predicciones en escala biológica {.smaller}
+
+`predict()` devuelve *log-odds* por defecto. `plogis()` los convierte a probabilidades.
+
+```{r echo=TRUE}
+predictor_30 <- predict(
+  modelo_binomial,
+  newdata = data.frame(temperatura = 30)
+)
+
+plogis(predictor_30)
+```
+
+::: {.fragment}
+
+Una diferencia de $1\,^{\circ}\mathrm{C}$ no produce el mismo cambio en probabilidad a todas las temperaturas.
+
+:::
+
+## Predicciones con `ggeffects` {.smaller}
+
+```{r}
+predicciones_temperatura <- ggeffects::predict_response(
+  modelo_binomial,
+  terms = "temperatura [26, 28, 30, 32]"
+)
+
+predicciones_tabla <- data.frame(
+  temperatura = predicciones_temperatura$x,
+  probabilidad = scales::percent(
+    predicciones_temperatura$predicted,
+    accuracy = 0.1
+  ),
+  `IC 95%` = paste0(
+    scales::percent(predicciones_temperatura$conf.low, accuracy = 0.1),
+    " a ",
+    scales::percent(predicciones_temperatura$conf.high, accuracy = 0.1)
+  )
+)
+
+knitr::kable(predicciones_tabla)
+```
+
+* `ggeffects` devuelve probabilidades predichas, no *log-odds*.
+* El intervalo de confianza muestra valores plausibles para cada temperatura.
+
+## Visualizar predicciones con `ggeffects` {.smaller}
+
+```{r}
+predicciones_curva <- ggeffects::predict_response(
+  modelo_binomial,
+  terms = "temperatura [all]"
+)
+
+ggplot(predicciones_curva, aes(x = x, y = predicted)) +
+  geom_ribbon(
+    aes(ymin = conf.low, ymax = conf.high),
+    fill = "skyblue",
+    alpha = 0.35
+  ) +
+  geom_line(linewidth = 1.2, color = "navy") +
+  geom_jitter(
+    data = corales,
+    aes(x = temperatura, y = blanqueado),
+    inherit.aes = FALSE,
+    width = 0,
+    height = 0.035,
+    alpha = 0.18
+  ) +
+  scale_y_continuous(limits = c(0, 1), labels = scales::label_percent()) +
+  labs(
+    x = "Temperatura promedio de las últimas dos semanas (C)",
+    y = "Probabilidad de blanqueamiento"
+  )
+```
+
+## Comunicar el resultado
+
+En vez de reportar solamente *log-odds*:
+
+* Reportar probabilidades predichas a temperaturas relevantes.
+* Mostrar incertidumbre con intervalos de confianza.
+* Conectar el patrón con riesgo de blanqueamiento.
+
+::: {.fragment}
+
+**Ejemplo:** “La probabilidad predicha de blanqueamiento aumenta marcadamente a medida que aumenta la temperatura promedio.”
+
+:::
+
+## Otras distribuciones para GLM {.smaller}
+
+Además de la binomial, existen otras distribuciones que se pueden usar en GLM según la naturaleza de la variable respuesta:
+
+- **Poisson con enlace log:** para conteos de eventos (0, 1, 2, ...).
+- **Negativa binomial con enlace log:** para conteos sobredispersos.
+- **Gamma con enlace inverso:** para variables continuas positivas.
+- **Multinomial con enlace logit:** para variables categóricas con más de dos niveles.
+
+::: {.fragment}
+El modelo lineal es un caso especial de GLM con `distribución normal` y `enlace identidad`.
+:::
+
+## Resumen
+
+> La distribución se elige según la variable respuesta.
+
+* Continua: modelo lineal con distribución normal.
+* $0/1$: GLM binomial/Bernoulli con enlace logit.
+* El resultado se interpreta mejor como una probabilidad predicha.

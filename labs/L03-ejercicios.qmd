@@ -1,0 +1,227 @@
+---
+title: "Lab 03 Ejercicios: Análisis exploratorio de datos"
+subtitle: ""
+format:
+  html:
+    toc: true
+    number-sections: false
+lang: es
+---
+
+## Preparacion
+
+```{r}
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(ggplot2)
+})
+```
+
+## Seccion 1. Manipulación de datos
+
+El dataset `iris` viene incluido con `R`. Es un conjunto de datos que contiene medidas de sépalos y pétalos 
+de tres especies de flores de iris. Su estructura es la siguiente:
+
+```{r}
+dplyr::glimpse(iris)
+iris2 <- dplyr::as_tibble(iris)
+```
+
+Entonces, para cada expecie tenemos 4 variables medidas: longitud del sépalo, ancho del sépalo, 
+longitud del pétalo y ancho del pétalo. La columna `Species` indica la especie a la que pertenece 
+cada observación.
+
+
+### Q1 Resumir datos (promedios generales)
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_resumen <- iris |>
+  dplyr::summarise(
+    avg_sepal_length = mean(Sepal.Length),
+    avg_petal_length = mean(Petal.Length)
+  )
+```
+
+```{r}
+print(iris_resumen)
+```
+
+### Q2 Resumir datos por grupo
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_resumen <- iris2 |>
+  dplyr::group_by(Species) |>
+  dplyr::summarise(avg_sepal_length = mean(Sepal.Length))
+```
+
+```{r}
+print(iris_resumen)
+```
+
+### Q3 Crear nuevas columnas
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_razon <- iris2 |>
+  dplyr::mutate(razon_sepal_length_width = Sepal.Length / Sepal.Width)
+```
+
+```{r}
+print(head(iris_razon, 10))
+```
+
+### Q4 Filtrar datos
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_filtrado <- iris2 |>
+  dplyr::filter(Species == "setosa")
+```
+
+```{r}
+print(head(iris_filtrado, 10))
+```
+
+
+### Q5 Contar por grupo
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_contado <- iris2 |>
+  dplyr::group_by(Species) |>
+  dplyr::summarise(count = n())
+```
+
+```{r}
+print(iris_contado)
+```
+
+## Seccion 2: Visualización de datos
+
+Seguimos usando `iris2`. Además, para el ejercicio de series de tiempo usamos el dataset `economics`, 
+incluido con `ggplot2`, que contiene indicadores económicos mensuales de EE.UU. desde 1967.
+
+```{r}
+dplyr::glimpse(ggplot2::economics)
+```
+
+### Q6 Histograma
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_hist <- ggplot2::ggplot(iris2, ggplot2::aes(x = Sepal.Length)) +
+  ggplot2::geom_histogram()
+```
+
+```{r}
+print(iris_hist)
+```
+
+### Q7 Diagrama de dispersión
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_scatter <- ggplot2::ggplot(
+  iris2,
+  ggplot2::aes(x = Sepal.Length, y = Petal.Length, color = Species)
+) +
+  ggplot2::geom_point()
+```
+
+```{r}
+print(iris_scatter)
+```
+
+### Q8 Boxplot
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_boxplot <- ggplot2::ggplot(
+  iris2,
+  ggplot2::aes(x = Species, y = Petal.Length)
+) +
+  ggplot2::geom_boxplot()
+```
+
+```{r}
+print(iris_boxplot)
+```
+
+### Q9 Gráfico de barras
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+iris_barplot <- ggplot2::ggplot(iris2, ggplot2::aes(x = Species)) +
+  ggplot2::geom_bar()
+```
+
+```{r}
+print(iris_barplot)
+```
+
+### Q10 Gráfico de líneas
+
+```{r}
+# Su código aquí
+```
+
+```{r}
+#| echo: false
+
+economics_lineplot <- ggplot2::ggplot(
+  ggplot2::economics,
+  ggplot2::aes(x = date, y = unemploy)
+) +
+  ggplot2::geom_line()
+```
+
+```{r}
+print(economics_lineplot)
+```

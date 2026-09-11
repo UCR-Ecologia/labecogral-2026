@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 03: Verbos principales para manipulacion de datos – Laboratorio de Ecologia General B-0305</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-38566f2d191bdb59836365460af85d63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Laboratorio de Ecologia General B-0305</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../programa/index.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lectures/index.html"> 
+<span class="menu-text">Clases</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/index.html"> 
+<span class="menu-text">Laboratorios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../refs/index.html"> 
+<span class="menu-text">Referencias</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#actividad" id="toc-actividad" class="nav-link active" data-scroll-target="#actividad">Actividad</a></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
+  <li><a href="#tidy-data-datos-ordenados-experto-1" id="toc-tidy-data-datos-ordenados-experto-1" class="nav-link" data-scroll-target="#tidy-data-datos-ordenados-experto-1">Tidy data (Datos ordenados) (experto 1)</a></li>
+  <li><a href="#operaciones-a-nivel-de-tabela-experto-2" id="toc-operaciones-a-nivel-de-tabela-experto-2" class="nav-link" data-scroll-target="#operaciones-a-nivel-de-tabela-experto-2">Operaciones a nivel de tabela (experto 2)</a>
+  <ul class="collapse">
+  <li><a href="#resumenes" id="toc-resumenes" class="nav-link" data-scroll-target="#resumenes">Resumenes</a></li>
+  <li><a href="#agrupamiento" id="toc-agrupamiento" class="nav-link" data-scroll-target="#agrupamiento">Agrupamiento</a></li>
+  </ul></li>
+  <li><a href="#operaciones-a-nivel-de-fila-experto-3" id="toc-operaciones-a-nivel-de-fila-experto-3" class="nav-link" data-scroll-target="#operaciones-a-nivel-de-fila-experto-3">Operaciones a nivel de fila (experto 3)</a>
+  <ul class="collapse">
+  <li><a href="#filtrado-selección-de-filas" id="toc-filtrado-selección-de-filas" class="nav-link" data-scroll-target="#filtrado-selección-de-filas">Filtrado (selección de filas)</a></li>
+  <li><a href="#ordenamiento-de-filas" id="toc-ordenamiento-de-filas" class="nav-link" data-scroll-target="#ordenamiento-de-filas">Ordenamiento de filas</a></li>
+  </ul></li>
+  <li><a href="#operaciones-a-nivel-de-columna-experto-4" id="toc-operaciones-a-nivel-de-columna-experto-4" class="nav-link" data-scroll-target="#operaciones-a-nivel-de-columna-experto-4">Operaciones a nivel de columna (experto 4)</a>
+  <ul class="collapse">
+  <li><a href="#selección-de-columnas" id="toc-selección-de-columnas" class="nav-link" data-scroll-target="#selección-de-columnas">Selección de columnas</a></li>
+  <li><a href="#creando-nuevas-columnas" id="toc-creando-nuevas-columnas" class="nav-link" data-scroll-target="#creando-nuevas-columnas">Creando nuevas columnas</a></li>
+  </ul></li>
+  <li><a href="#uniendo-datos-experto-5" id="toc-uniendo-datos-experto-5" class="nav-link" data-scroll-target="#uniendo-datos-experto-5">Uniendo datos (experto 5)</a>
+  <ul class="collapse">
+  <li><a href="#uniendo-datos-sin-claves" id="toc-uniendo-datos-sin-claves" class="nav-link" data-scroll-target="#uniendo-datos-sin-claves">Uniendo datos sin claves</a></li>
+  <li><a href="#uniendo-datos-con-claves" id="toc-uniendo-datos-con-claves" class="nav-link" data-scroll-target="#uniendo-datos-con-claves">Uniendo datos con claves</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="L03-actividad-dplyr.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 03: Verbos principales para manipulacion de datos</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="actividad" class="level2">
+<h2 class="anchored" data-anchor-id="actividad">Actividad</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 1: Aprendizaje independiente en su grupo original (3 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 1: Aprendizaje independiente en su grupo original (3 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Nos dividimos en grupos de 5 personas.</li>
+<li>Cada grupo tiene un experto para los distinctos aspectos:
+<ol type="1">
+<li>caracteristicas de los datos tidy y la manipulación con pipelines</li>
+<li>operaciones a nivel de <strong>tabela</strong></li>
+<li>operaciones a nivel de <strong>fila</strong></li>
+<li>operaciones a nivel de <strong>columna</strong></li>
+<li>uniendo datos</li>
+</ol></li>
+<li>El experto, estudia el material sobre su enfoque específico.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Los expertos de cada enfoque se reúnen en grupos para compartir sus conocimientos.</li>
+<li>Aclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.</li>
+<li>El experto prepara un reporte breve de:
+<ol type="1">
+<li>¿Qué hace esta operación?</li>
+<li>¿Qué cambia: las filas, las columnas, los valores, o el número de observaciones?</li>
+<li>Dé un ejemplo ecológico de cuándo la usaría. De la experiencia reciente con el analisis de datos en su grupo, mencione un caso concreto.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 3: Enseñanza en el grupo original (5 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 3: Enseñanza en el grupo original (5 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Cada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su área específica.</li>
+<li>Se discuten y resuelven dudas sobre las temas presentados por los expertos.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 4: Reflexión y cierre (5 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 4: Reflexión y cierre (5 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Se comparten conclusiones y se resuelven dudas finales con toda la clase.</li>
+<li>Cada grupo original (no grupo de expertos) tiene que resolver la situación de la siguiente página (caja roja).</li>
+</ul>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="callout callout-style-default callout-important callout-titled" title="Situación (Fase 4)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Situación (Fase 4)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cada grupo original (no grupo de expertos) tiene que resolver la siguiente situación:</p>
+<p>Tenemos una tabla llamada <code>muestras</code> con la abundancia (conteo) de macroinvertebrados de 4 sitios, medida en varias fechas; cada muestra cubre un área fija de 0.25 m².</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>sitio</th>
+<th>fecha</th>
+<th>conteo</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Tenemos una segunda tabla llamada <code>sitios</code>, con un solo valor de temperatura y oxígeno por cada uno de los 4 sitios (estos valores no varían por fecha).</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>sitio</th>
+<th>temperatura</th>
+<th>oxígeno</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Queremos, a partir de la tabla <code>muestras</code>:</p>
+<ul>
+<li>quedarnos solamente con las muestras de septiembre (columna <code>fecha</code>);</li>
+<li>agregar una columna de densidad (individuos/m²), dividiendo el conteo entre el área de la muestra;</li>
+<li>calcular la densidad promedio de septiembre por sitio;</li>
+<li>ordenar los sitios de mayor a menor densidad promedio;</li>
+<li>agregar, para cada sitio, la temperatura y oxígeno desde la tabla sitios.</li>
+</ul>
+<p>¿Qué operaciones necesitamos y en qué orden? ¿Con qué columna(s) se debe hacer la unión (join) entre las dos tablas?</p>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="material" class="level2">
+<h2 class="anchored" data-anchor-id="material">Material</h2>
+<p>En lo que sigue se presentan las principales funciones de manipulación de datos en R utilizando el enfoque tidy data. Todos los imagenes provienen del <code>dplyr</code> cheatsheet disponible en el siguiente enlace: <a href="https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf">dplyr cheatsheet</a>.</p>
+</section>
+<section id="tidy-data-datos-ordenados-experto-1" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-datos-ordenados-experto-1">Tidy data (Datos ordenados) (experto 1)</h2>
+<p>Datos tidy:</p>
+<ul>
+<li>Cada columna representa una variable.</li>
+<li>Cada fila representa una observación.</li>
+</ul>
+<p><img src="L03-act1-assets/tidy.png" class="img-fluid" style="width:50.0%"></p>
+<p>Pipelines, el operador <code>|&gt;</code> o <code>%&gt;%</code>:</p>
+<ul>
+<li>Facilitan la manipulación de datos tidy.</li>
+<li>Toman la salida de una operación y la pasan como entrada a la siguiente operación</li>
+<li>Esto permite encadenar múltiples transformaciones de manera clara y concisa.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">filter</span>(variable <span class="sc">&gt;</span> valor) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">promedio =</span> <span class="fu">mean</span>(variable))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="operaciones-a-nivel-de-tabela-experto-2" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-a-nivel-de-tabela-experto-2">Operaciones a nivel de tabela (experto 2)</h2>
+<section id="resumenes" class="level3">
+<h3 class="anchored" data-anchor-id="resumenes">Resumenes</h3>
+<p><code>summarise()</code>:</p>
+<ul>
+<li>Aplica una funcion para generar nueva tabela con resúmenes.</li>
+<li>Permite obtener estadísticas descriptivas.</li>
+<li>Se utiliza comúnmente junto con <code>group_by()</code> para obtener resúmenes por grupo.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">promedio =</span> <span class="fu">mean</span>(variable))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/summarize.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+<section id="agrupamiento" class="level3">
+<h3 class="anchored" data-anchor-id="agrupamiento">Agrupamiento</h3>
+<p><code>group_by()</code>:</p>
+<ul>
+<li>Agrupa los datos según una o más variables.</li>
+<li>Crea version modificada de los datos con el agrupamiento aplicado.</li>
+<li>Todos operaciones posteriores se aplican dentro de cada grupo.</li>
+<li>Se utiliza comúnmente junto con <code>summarise()</code> para obtener resúmenes por grupo.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">group_by</span>(variable_categorica)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/group_by.png" class="img-fluid" style="width:50.0%"></p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="operaciones-a-nivel-de-fila-experto-3" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-a-nivel-de-fila-experto-3">Operaciones a nivel de fila (experto 3)</h2>
+<section id="filtrado-selección-de-filas" class="level3">
+<h3 class="anchored" data-anchor-id="filtrado-selección-de-filas">Filtrado (selección de filas)</h3>
+<p><code>filter()</code>:</p>
+<ul>
+<li>Selecciona filas que cumplen con una condición específica.</li>
+<li>Permite filtrar los datos según valores de las columnas.</li>
+<li>Se utiliza comúnmente para enfocarse en subconjuntos relevantes de los datos.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">filter</span>(variable <span class="sc">&gt;</span> valor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/filter.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+<section id="ordenamiento-de-filas" class="level3">
+<h3 class="anchored" data-anchor-id="ordenamiento-de-filas">Ordenamiento de filas</h3>
+<p><code>arrange()</code>:</p>
+<ul>
+<li>Ordena las filas de un data frame según una o más columnas.</li>
+<li>Permite especificar el orden ascendente o descendente.</li>
+<li>Facilita la visualización y el análisis de los datos en un orden específico.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">arrange</span>(variable)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/arrange.png" class="img-fluid" style="width:50.0%"></p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="operaciones-a-nivel-de-columna-experto-4" class="level2">
+<h2 class="anchored" data-anchor-id="operaciones-a-nivel-de-columna-experto-4">Operaciones a nivel de columna (experto 4)</h2>
+<section id="selección-de-columnas" class="level3">
+<h3 class="anchored" data-anchor-id="selección-de-columnas">Selección de columnas</h3>
+<p><code>select()</code>:</p>
+<ul>
+<li>Permite elegir un subconjunto de columnas de un data frame.</li>
+<li>Facilita trabajar solo con las columnas relevantes.</li>
+<li>Se puede usar para reordenar columnas o renombrarlas.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">select</span>(columna1, columna2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/select.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+<section id="creando-nuevas-columnas" class="level3">
+<h3 class="anchored" data-anchor-id="creando-nuevas-columnas">Creando nuevas columnas</h3>
+<p><code>mutate()</code>:</p>
+<ul>
+<li>Crea nuevas columnas o modifica las existentes.</li>
+<li>Permite realizar cálculos basados en otras columnas.</li>
+<li>Se utiliza comúnmente para agregar información derivada a los datos.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">nueva_columna =</span> variable1 <span class="sc">+</span> variable2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/mutate.png" class="img-fluid" style="width:50.0%"></p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="uniendo-datos-experto-5" class="level2">
+<h2 class="anchored" data-anchor-id="uniendo-datos-experto-5">Uniendo datos (experto 5)</h2>
+<section id="uniendo-datos-sin-claves" class="level3">
+<h3 class="anchored" data-anchor-id="uniendo-datos-sin-claves">Uniendo datos sin claves</h3>
+<p><code>bind_rows()</code>:</p>
+<ul>
+<li>Permite combinar varias tablas con las mismas columnas.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(tabla1, tabla2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/bind.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+<section id="uniendo-datos-con-claves" class="level3">
+<h3 class="anchored" data-anchor-id="uniendo-datos-con-claves">Uniendo datos con claves</h3>
+<p><code>left_join()</code>:</p>
+<ul>
+<li>Permite combinar dos tablas según una clave común, conservando todas las filas de la tabla izquierda.</li>
+<li>Se utiliza comúnmente para agregar información adicional a un conjunto de datos existente.</li>
+<li>No conserva las filas de la tabla derecha que no tienen coincidencias en la tabla izquierda.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(tabla1, tabla2, <span class="at">by =</span> <span class="st">"clave"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act1-assets/left_join.png" class="img-fluid" style="width:50.0%"></p>
+<blockquote class="blockquote">
+<p>Hay otros tipos de uniones con claves, como <code>right_join()</code>, <code>inner_join()</code> y <code>full_join()</code>, que permiten combinar tablas de diferentes maneras según las necesidades del análisis.</p>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

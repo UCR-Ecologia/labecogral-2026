@@ -133,438 +133,144 @@
     "text": "Referencias\nAndrewartha, H. G. (1970). Introduction to the study of animal populations (2nd ed.). Chapman and Hall.\nBegon, M., Harper, J., & Townsend, C. (2006). Ecology: From individuals to ecosystems (4th ed.). Blackwell.\nBetts, M. G., Hadley, A. S., Frey, D. W., Frey, S. J., Gannon, D., Harris, S. H., & Zárrate‐Charry, D. (2021). When are hypotheses useful in ecology and evolution? Ecology and Evolution, 11(11), 5762-5776. https://doi.org/10.1002/ece3.7472\nCrawley, M. J. (2007). The R book. John Wiley.\nFarji-Brener, A. G. (2003). Uso correcto, parcial e incorrecto de los términos “hipótesis” y “predicciones” en ecología. Ecología Austral, 13(2), 223-227.\nGotelli, N. J., & Ellison, A. M. (2004). A primer of ecological statistics (Vol. 1). Sinauer Associates.\nKrebs, C. J. (1999). Ecological methodology (2nd ed.). Benjamin Cummings. http://www.zoology.ubc.ca/~krebs/books.html\nMittelbach, G. G., & McGill, B. J. (2019). Community ecology. Oxford University Press.\nMoreno, C. E. (2001). Manual de métodos para medir la biodiversidad. Universidad Veracruzana. https://www.researchgate.net/publication/304346666_Metodos_para_medir_la_biodiversidad\nQuinn, G. P., & Keough, M. J. (2002). Experimental design and data analysis for biologists. Cambridge University Press.\nSchimel, J. (2012). Writing science: How to write papers that get cited and proposals that get funded. Oxford University Press.\nSutherland, W. J. (Ed.). (2006). Ecological census techniques: A handbook. Cambridge University Press. https://www.researchgate.net/publication/273070581_Ecological_Census_Techniques_A_Handbook\nZar, J. H. (1999). Biostatistical analysis (4th ed.). Prentice Hall."
   },
   {
-    "objectID": "lectures/03-eda.html#análisis-exploratorio-de-datos",
-    "href": "lectures/03-eda.html#análisis-exploratorio-de-datos",
-    "title": "Análisis exploratorio de datos",
-    "section": "Análisis exploratorio de datos",
-    "text": "Análisis exploratorio de datos\n\n\n\n\n\n\n\nAnálisis exploratorio de datos\n\n\nExplora los datos de manera sistemática\n\n\n\n\n\n\nGenera preguntas sobre tus datos.\nBusca respuestas visualizando, transformando y modelando tus datos.\nUsa lo que aprendes para refinar tus preguntas y/o generar nuevas preguntas.\n\n\n\n Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science, 2ed."
-  },
-  {
-    "objectID": "lectures/03-eda.html#análisis-exploratorio-de-datos-1",
-    "href": "lectures/03-eda.html#análisis-exploratorio-de-datos-1",
-    "title": "Análisis exploratorio de datos",
-    "section": "Análisis exploratorio de datos",
-    "text": "Análisis exploratorio de datos\n\nEl objetivo es desarrollar una comprensión de los datos\nLo hacemos haciendo preguntas (¿Cómo cambia la tasa de crecimiento con la temperatura?)\nCuantas más preguntas hagamos, más ideas obtendremos y será más probable encontrar patrones interesantes\nNo hay reglas sobre las preguntas que podemos hacer, pero buenos puntos de partida son:\n\n¿Cuál es la variación dentro de mis variables?\n¿Cuál es la covariación entre mis variables?"
-  },
-  {
-    "objectID": "lectures/03-eda.html#resumen-de-los-datos",
-    "href": "lectures/03-eda.html#resumen-de-los-datos",
-    "title": "Análisis exploratorio de datos",
-    "section": "Resumen de los datos",
-    "text": "Resumen de los datos\n\n\n\n‘Panorama general’ del conjunto de datos:\n\n¿Cuántas variables?\nTipos de variables (números, categorías, fechas, …)?\nRangos, medias, conteos de categorías, …?\n¿Cuántos datos faltantes?\n\n\n\n\n\ndim(penguins)\n\n[1] 344   8\n\nncol(penguins)\n\n[1] 8\n\nnrow(penguins)\n\n[1] 344\n\nsummary(penguins)\n\n      species          island       bill_len        bill_dep    \n Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  \n Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  \n Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  \n                                 Mean   :43.92   Mean   :17.15  \n                                 3rd Qu.:48.50   3rd Qu.:18.70  \n                                 Max.   :59.60   Max.   :21.50  \n                                 NAs    :2       NAs    :2      \n  flipper_len      body_mass        sex           year     \n Min.   :172.0   Min.   :2700   female:165   Min.   :2007  \n 1st Qu.:190.0   1st Qu.:3550   male  :168   1st Qu.:2007  \n Median :197.0   Median :4050   NAs   : 11   Median :2008  \n Mean   :200.9   Mean   :4202                Mean   :2008  \n 3rd Qu.:213.0   3rd Qu.:4750                3rd Qu.:2009  \n Max.   :231.0   Max.   :6300                Max.   :2009  \n NAs    :2       NAs    :2"
-  },
-  {
-    "objectID": "lectures/03-eda.html#preparación",
-    "href": "lectures/03-eda.html#preparación",
-    "title": "Análisis exploratorio de datos",
-    "section": "Preparación",
-    "text": "Preparación\n\nUsaremos los paquetes {tidyverse}\n{ggplot2} para visualización\n{dplyr} para manipulación de datos\n\n\nCargar los paquetes necesarios:\n\nlibrary(ggplot2)\nlibrary(dplyr)\n# Establecer tema global para todos los gráficos\ntheme_set(theme_bw())"
-  },
-  {
-    "objectID": "lectures/03-eda.html#variables-categóricas-discretas",
-    "href": "lectures/03-eda.html#variables-categóricas-discretas",
-    "title": "Análisis exploratorio de datos",
-    "section": "Variables categóricas (discretas)",
-    "text": "Variables categóricas (discretas)\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(x = species) +\n  geom_bar(fill = \"steelblue\")\n\n\n\n\n\n\n\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(x = species, fill = species) +\n  geom_bar()"
-  },
-  {
-    "objectID": "lectures/03-eda.html#variables-categóricas-discretas-1",
-    "href": "lectures/03-eda.html#variables-categóricas-discretas-1",
-    "title": "Análisis exploratorio de datos",
-    "section": "Variables categóricas (discretas)",
-    "text": "Variables categóricas (discretas)\n\n\n\n# library(dplyr)\npenguins |&gt;\n  group_by(species) |&gt;\n  tally()\n\n# A tibble: 3 × 2\n  species       n\n  &lt;fct&gt;     &lt;int&gt;\n1 Adelie      152\n2 Chinstrap    68\n3 Gentoo      124\n\n\n\n\n# library(dplyr)\npenguins |&gt;\n  group_by(island) |&gt;\n  tally()\n\n# A tibble: 3 × 2\n  island        n\n  &lt;fct&gt;     &lt;int&gt;\n1 Biscoe      168\n2 Dream       124\n3 Torgersen    52"
-  },
-  {
-    "objectID": "lectures/03-eda.html#variables-numéricas-continuas",
-    "href": "lectures/03-eda.html#variables-numéricas-continuas",
-    "title": "Análisis exploratorio de datos",
-    "section": "Variables numéricas (continuas)",
-    "text": "Variables numéricas (continuas)\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(x = bill_len) +\n  geom_histogram(\n    fill = \"steelblue\",\n    color = \"white\"\n  )\n\n\n\n\n\n\n\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(y = bill_len) +\n  geom_boxplot(\n    fill = \"steelblue\"\n  )"
-  },
-  {
-    "objectID": "lectures/03-eda.html#sidenote-on-boxplots",
-    "href": "lectures/03-eda.html#sidenote-on-boxplots",
-    "title": "Análisis exploratorio de datos",
-    "section": "Sidenote on boxplots",
-    "text": "Sidenote on boxplots"
-  },
-  {
-    "objectID": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-histograma",
-    "href": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-histograma",
-    "title": "Análisis exploratorio de datos",
-    "section": "Variables numéricas (continuas) - Datos de histograma",
-    "text": "Variables numéricas (continuas) - Datos de histograma\n\n\nmin_bill &lt;- min(penguins$bill_len, na.rm = TRUE)\nmax_bill &lt;- max(penguins$bill_len, na.rm = TRUE)\nbin_breaks &lt;- seq(min_bill, max_bill, by = 2)\nbill_len_bin &lt;- cut(penguins$bill_len, breaks = bin_breaks)\ntable(bill_len_bin)\n\nbill_len_bin\n(32.1,34.1] (34.1,36.1] (36.1,38.1] (38.1,40.1] (40.1,42.1] (42.1,44.1] \n          4          21          40          35          39          30 \n(44.1,46.1] (46.1,48.1] (48.1,50.1] (50.1,52.1] (52.1,54.1] (54.1,56.1] \n         39          41          42          36           7           5 \n(56.1,58.1] \n          1"
-  },
-  {
-    "objectID": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-boxplot",
-    "href": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-boxplot",
-    "title": "Análisis exploratorio de datos",
-    "section": "Variables numéricas (continuas) - Datos de boxplot",
-    "text": "Variables numéricas (continuas) - Datos de boxplot\n\n\nsummary(penguins$bill_len)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs \n  32.10   39.23   44.45   43.92   48.50   59.60       2"
-  },
-  {
-    "objectID": "lectures/03-eda.html#categórica-categórica",
-    "href": "lectures/03-eda.html#categórica-categórica",
-    "title": "Análisis exploratorio de datos",
-    "section": "Categórica + Categórica",
-    "text": "Categórica + Categórica\n\n\n\npenguins |&gt;\n  ggplot(aes(x = island)) +\n  geom_bar(aes(fill = species))\n\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  ggplot(aes(x = island)) +\n  geom_bar(\n    aes(fill = species),\n    position = \"dodge\"\n  )"
-  },
-  {
-    "objectID": "lectures/03-eda.html#categórica-categórica-1",
-    "href": "lectures/03-eda.html#categórica-categórica-1",
-    "title": "Análisis exploratorio de datos",
-    "section": "Categórica + Categórica",
-    "text": "Categórica + Categórica\n\n\n\npenguins |&gt;\n  group_by(species, island) |&gt;\n  tally()\n\n# A tibble: 5 × 3\n# Groups:   species [3]\n  species   island        n\n  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n1 Adelie    Biscoe       44\n2 Adelie    Dream        56\n3 Adelie    Torgersen    52\n4 Chinstrap Dream        68\n5 Gentoo    Biscoe      124\n\n\n\n\npenguins |&gt;\n  group_by(species, island, sex) |&gt;\n  tally()\n\n# A tibble: 13 × 4\n# Groups:   species, island [5]\n   species   island    sex        n\n   &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;\n 1 Adelie    Biscoe    female    22\n 2 Adelie    Biscoe    male      22\n 3 Adelie    Dream     female    27\n 4 Adelie    Dream     male      28\n 5 Adelie    Dream     &lt;NA&gt;       1\n 6 Adelie    Torgersen female    24\n 7 Adelie    Torgersen male      23\n 8 Adelie    Torgersen &lt;NA&gt;       5\n 9 Chinstrap Dream     female    34\n10 Chinstrap Dream     male      34\n11 Gentoo    Biscoe    female    58\n12 Gentoo    Biscoe    male      61\n13 Gentoo    Biscoe    &lt;NA&gt;       5"
-  },
-  {
-    "objectID": "lectures/03-eda.html#categórica-numérica---histogramas",
-    "href": "lectures/03-eda.html#categórica-numérica---histogramas",
-    "title": "Análisis exploratorio de datos",
-    "section": "Categórica + Numérica - histogramas",
-    "text": "Categórica + Numérica - histogramas\n\n\n\npenguins |&gt;\n  ggplot(aes(x = bill_len)) +\n  geom_histogram(\n    aes(fill = sex),\n    color = \"white\"\n  )\n\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  ggplot(aes(x = bill_len)) +\n  geom_histogram(\n    aes(fill = sex),\n    color = \"white\",\n    position = \"dodge\"\n  )"
-  },
-  {
-    "objectID": "lectures/03-eda.html#categórica-numérica---boxplots",
-    "href": "lectures/03-eda.html#categórica-numérica---boxplots",
-    "title": "Análisis exploratorio de datos",
-    "section": "Categórica + Numérica - boxplots",
-    "text": "Categórica + Numérica - boxplots\n\n\n\npenguins |&gt;\n  ggplot(aes(x = species, y = bill_len)) +\n  geom_boxplot(aes(fill = species))\n\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  ggplot(aes(x = species, y = bill_len)) +\n  geom_boxplot(aes(fill = island)) +\n  scale_fill_viridis_d()"
-  },
-  {
-    "objectID": "lectures/03-eda.html#categórica-numérica---heatmaps",
-    "href": "lectures/03-eda.html#categórica-numérica---heatmaps",
-    "title": "Análisis exploratorio de datos",
-    "section": "Categórica + Numérica - heatmaps",
-    "text": "Categórica + Numérica - heatmaps\n\n\npenguins |&gt;\n  group_by(island, species) |&gt;\n  summarise(mean_bill_len = mean(bill_len, na.rm = TRUE)) |&gt;\n  ggplot() +\n  aes(x = island, y = species, fill = mean_bill_len) +\n  geom_tile(color = \"white\") +\n  geom_text(aes(label = round(mean_bill_len, 2)), color = \"white\")"
-  },
-  {
-    "objectID": "lectures/03-eda.html#categórica-numérica---datos",
-    "href": "lectures/03-eda.html#categórica-numérica---datos",
-    "title": "Análisis exploratorio de datos",
-    "section": "Categórica + Numérica - datos",
-    "text": "Categórica + Numérica - datos\n\n\n\npenguins |&gt;\n  group_by(year) |&gt;\n  summarise(\n    mean_bill_len = mean(bill_len, na.rm = TRUE),\n    mean_body_mass = mean(body_mass, na.rm = TRUE),\n  )\n\n# A tibble: 3 × 3\n   year mean_bill_len mean_body_mass\n  &lt;int&gt;         &lt;dbl&gt;          &lt;dbl&gt;\n1  2007          43.7          4125.\n2  2008          43.5          4267.\n3  2009          44.5          4210.\n\n\n\n\npenguins |&gt;\n  filter(\n    island == \"Dream\",\n    species == \"Adelie\",\n    sex == \"male\",\n    body_mass &gt;= 4500\n  ) |&gt;\n  select(island, species, sex, body_mass)\n\n  island species  sex body_mass\n1  Dream  Adelie male      4650\n2  Dream  Adelie male      4600"
-  },
-  {
-    "objectID": "lectures/03-eda.html#numérica-numérica---scatterplots",
-    "href": "lectures/03-eda.html#numérica-numérica---scatterplots",
-    "title": "Análisis exploratorio de datos",
-    "section": "Numérica + Numérica - scatterplots",
-    "text": "Numérica + Numérica - scatterplots\n\n\n\nggplot(penguins) +\n  aes(\n    x = body_mass,\n    y = flipper_len\n  ) +\n  geom_point(\n    alpha = 0.4,\n    aes(size = body_mass)\n  )\n\n\n\n\n\n\n\n\n\n\nggplot(penguins) +\n  aes(\n    x = body_mass,\n    y = flipper_len\n  ) +\n  geom_point(\n    size = 5,\n    alpha = 0.4,\n    aes(\n      color = species,\n      shape = sex\n    )\n  )"
-  },
-  {
-    "objectID": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression",
-    "href": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression",
-    "title": "Análisis exploratorio de datos",
-    "section": "Numérica + Numérica - scatterplots con regression",
-    "text": "Numérica + Numérica - scatterplots con regression\n\n\nggplot(penguins) +\n  aes(x = body_mass, y = flipper_len) +\n  geom_point(\n    size = 5,\n    alpha = 0.4,\n    aes(color = species, shape = sex)\n  ) +\n  geom_smooth(method = \"lm\")"
-  },
-  {
-    "objectID": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression-1",
-    "href": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression-1",
-    "title": "Análisis exploratorio de datos",
-    "section": "Numérica + Numérica - scatterplots con regression",
-    "text": "Numérica + Numérica - scatterplots con regression\n\n\nggplot(penguins) +\n  aes(x = body_mass, y = flipper_len) +\n  geom_point(size = 5, alpha = 0.4, aes(color = island, shape = sex)) +\n  geom_smooth(method = \"lm\") +\n  facet_wrap(vars(species), ncol = 3)"
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#plan",
-    "href": "lectures/01-sci-method.html#plan",
-    "title": "Metodo cientifico en ecologia",
+    "objectID": "lectures/04-glm-binom.html#plan",
+    "href": "lectures/04-glm-binom.html#plan",
+    "title": "GLM binomial",
     "section": "Plan",
-    "text": "Plan\n\nEntender como ecologos construyen explicaciones a partir de observaciones y comparacion de hipotesis.\nDistinguir entre patron observado y mecanismo explicativo.\nUsar predicciones para contrastar hipotesis alternativas.\nReforzar el metodo cientifico como proceso iterativo con incertidumbre."
+    "text": "Plan\n\nReconocer una respuesta binaria\nEntender por qué un modelo lineal simple no es adecuado\nAjustar un GLM binomial con enlace logit\nComunicar resultados como probabilidades predichas"
   },
   {
-    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion",
-    "href": "lectures/01-sci-method.html#observacion-vs-explicacion",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Observacion vs explicacion",
-    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\n¿Por que?\n\n\nPosibles explicaciones:\n\n\nMuestreo pasivo\n\n\nHeterogeneidad de habitat\n\n\nColonizacion-extincion\n\n\n\n\nEl patron por si solo no identifica el mecanismo."
+    "objectID": "lectures/04-glm-binom.html#datos-de-las-colonias-de-coral",
+    "href": "lectures/04-glm-binom.html#datos-de-las-colonias-de-coral",
+    "title": "GLM binomial",
+    "section": "Datos de las colonias de coral",
+    "text": "Datos de las colonias de coral\nDespués de algunas semanas cálidas por el Niño, se evalúan colonias de corales en varios sitios:\n\nblanqueado = 0: sana o recuperada\nblanqueado = 1: blanqueada o muerta\nPredictor: temperatura promedio durante las últimas dos semanas\n\n\nLa unidad de observación es una colonia individual."
   },
   {
-    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
-    "href": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Observacion vs explicacion",
-    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\nNecesitamos:\n\nhipotesis alternativas\npredicciones distintas\ncomparacion de evidencia"
+    "objectID": "lectures/04-glm-binom.html#ejemplos",
+    "href": "lectures/04-glm-binom.html#ejemplos",
+    "title": "GLM binomial",
+    "section": "Ejemplos",
+    "text": "Ejemplos\n\nCuales otros ejemplos de respuestas binarias se les ocurren?"
   },
   {
-    "objectID": "lectures/01-sci-method.html#definiciones",
-    "href": "lectures/01-sci-method.html#definiciones",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Definiciones",
-    "text": "Definiciones\n\nSi P, entonces Q. P es la hipotesis y Q es la prediccion.\n\n\nUna hipotesis es una explicacion propuesta y comprobable para un fenomeno ecologico observado.\n\n\nUna prediccion es una consecuencia observable de la hipotesis que puede ser contrastada con evidencia."
+    "objectID": "lectures/04-glm-binom.html#proceso",
+    "href": "lectures/04-glm-binom.html#proceso",
+    "title": "GLM binomial",
+    "section": "Proceso",
+    "text": "Proceso\n\nHay dos posibilidades: sano (\\(0\\)) o blanqueado (\\(1\\)).\nValores como ‘mediosano’ o ‘pocoblanqueado’ no son posibles.\n\nQue nos indica esto sobre la distribucion matematica con cual se podria generar este tipo de datos?\nSe pueden generar con una distribuucion Normal? O necesitamos otra distribucion?"
   },
   {
-    "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
-    "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis A: Muestreo pasivo",
-    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, incluso sin diferencias en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
+    "objectID": "lectures/04-glm-binom.html#por-qué-no-un-modelo-lineal",
+    "href": "lectures/04-glm-binom.html#por-qué-no-un-modelo-lineal",
+    "title": "GLM binomial",
+    "section": "¿Por qué no un modelo lineal?",
+    "text": "¿Por qué no un modelo lineal?\nUn modelo lineal supone una respuesta continua y no es limitada entre 0 y 1:\n\\[\nY_i \\sim \\mathrm{Normal}(\\mu_i, \\sigma^2), \\qquad\n\\mu_i = \\beta_0 + \\beta_1 x_i.\n\\]\n\nPara blanqueado, esto falla porque:\n\nsolo existen \\(0\\) y \\(1\\);\nuna recta puede predecir valores menores que \\(0\\) o mayores que \\(1\\);\nla variabilidad cambia con la probabilidad esperada."
   },
   {
-    "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
-    "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis B: Heterogeneidad de habitat",
-    "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\n\nPredicciones:\n\n\nEl numero de microhabitats deberia aumentar con el area.\nLa riqueza deberia aumentar con heterogeneidad del habitat.\nSitios con area similar pero mayor heterogeneidad deberian tener mayor riqueza."
+    "objectID": "lectures/04-glm-binom.html#distribuciones-comunes",
+    "href": "lectures/04-glm-binom.html#distribuciones-comunes",
+    "title": "GLM binomial",
+    "section": "Distribuciones comunes",
+    "text": "Distribuciones comunes"
   },
   {
-    "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
-    "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Hipotesis C: Colonizacion-extincion",
-    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar menor persistencia temporal de especies.\nSitios grandes deberian mantener mas especies a traves de muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
+    "objectID": "lectures/04-glm-binom.html#el-proceso-bernoulli",
+    "href": "lectures/04-glm-binom.html#el-proceso-bernoulli",
+    "title": "GLM binomial",
+    "section": "El proceso Bernoulli",
+    "text": "El proceso Bernoulli\nPara cada colonia:\n\\[\nY_i \\sim \\mathrm{Bernoulli}(p_i).\n\\]\n\n\\(p_i\\): probabilidad de blanqueamiento\n\\(\\operatorname{Var}(Y_i) = p_i(1-p_i)\\)\nLa variabilidad es mayor cerca de \\(p_i = 0.5\\)"
   },
   {
-    "objectID": "lectures/01-sci-method.html#que-datos-necesitamos",
-    "href": "lectures/01-sci-method.html#que-datos-necesitamos",
-    "title": "Metodo cientifico en ecologia",
-    "section": "¿Que datos necesitamos?",
-    "text": "¿Que datos necesitamos?\n\n\narea de cada parche\nriqueza de especies por parche\nabundancia total y esfuerzo de muestreo\nindice de heterogeneidad de habitat\npresencia/ausencia en multiples fechas (persistencia temporal)"
+    "objectID": "lectures/04-glm-binom.html#modelo-generativo",
+    "href": "lectures/04-glm-binom.html#modelo-generativo",
+    "title": "GLM binomial",
+    "section": "Modelo generativo",
+    "text": "Modelo generativo\nUn modelo generativo describe un proceso posible para producir los datos:\n\nMedimos la temperatura promedio de las últimas dos semanas para una colonia.\nEsa temperatura determina una probabilidad de blanqueamiento, \\(p_i\\).\nGeneramos un resultado: \\(Y_i=1\\) con probabilidad \\(p_i\\), o \\(Y_i=0\\) con probabilidad \\(1-p_i\\).\nRepetimos el proceso para muchas colonias.\n\n\n\nEl modelo no predice que una colonia estará “0.37 blanqueada”; predice la probabilidad de que esté blanqueada."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-1-patron-observado",
-    "href": "lectures/01-sci-method.html#evidencia-1-patron-observado",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 1: patron observado",
-    "text": "Evidencia 1: patron observado\n\n\n¿Que hipotesis favorece esta evidencia?\n\n\nFavorece varias A, B o C. No distingue mecanismo."
+    "objectID": "lectures/04-glm-binom.html#simulaciones-del-modelo-generativo",
+    "href": "lectures/04-glm-binom.html#simulaciones-del-modelo-generativo",
+    "title": "GLM binomial",
+    "section": "Simulaciones del modelo generativo",
+    "text": "Simulaciones del modelo generativo\nEn cada simulación, muestreamos 100 colonias y calculamos la proporción observada de blanqueamiento.\n\n\nLa proporción observada varía entre muestras repetidas.\nCon \\[p=0.04\\], las proporciones se concentran mucho más que con \\[p=0.40\\]."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
-    "href": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 2: estandarizacion por muestreo",
-    "text": "Evidencia 2: estandarizacion por muestreo\n\n\nSi la pendiente cae mucho al estandarizar, aumenta soporte para hipotesis A."
+    "objectID": "lectures/04-glm-binom.html#la-variabilidad-depende-de-p",
+    "href": "lectures/04-glm-binom.html#la-variabilidad-depende-de-p",
+    "title": "GLM binomial",
+    "section": "La variabilidad depende de \\(p\\)",
+    "text": "La variabilidad depende de \\(p\\)"
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
-    "href": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 3: heterogeneidad de habitat",
-    "text": "Evidencia 3: heterogeneidad de habitat\n\n\nRelacion fuerte con heterogeneidad: evidencia coherente con hipotesis B."
+    "objectID": "lectures/04-glm-binom.html#glm-binomial-con-enlace-logit",
+    "href": "lectures/04-glm-binom.html#glm-binomial-con-enlace-logit",
+    "title": "GLM binomial",
+    "section": "GLM binomial con enlace logit",
+    "text": "GLM binomial con enlace logit\nLa respuesta sigue una distribución Bernoulli; la relación con el predictor es lineal en la escala de log-odds:\n\\[\n\\operatorname{logit}(p_i) = \\log\\left(\\frac{p_i}{1-p_i}\\right)\n= \\beta_0 + \\beta_1\\,\\mathrm{temperatura}_i.\n\\]\n\nEl modelo estima probabilidades entre \\(0\\) y \\(1\\).\nLa pendiente es constante en log-odds, no en probabilidad."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
-    "href": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia 4: persistencia temporal",
-    "text": "Evidencia 4: persistencia temporal\n\n\nMayor persistencia en sitios grandes: evidencia coherente con hipotesis C."
+    "objectID": "lectures/04-glm-binom.html#datos-una-fila-por-colonia",
+    "href": "lectures/04-glm-binom.html#datos-una-fila-por-colonia",
+    "title": "GLM binomial",
+    "section": "Datos: una fila por colonia",
+    "text": "Datos: una fila por colonia\n\nhead(corales[, c(\"temperatura\", \"blanqueado\")])\n\n  temperatura blanqueado\n1    30.58939          1\n2    29.45224          1\n3    26.12112          1\n4    27.28579          0\n5    29.44295          1\n6    25.20105          0\n\n\n\nCada fila es una colonia.\ntemperatura: promedio de las últimas dos semanas.\nblanqueado: \\(0\\) o \\(1\\)."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada",
-    "href": "lectures/01-sci-method.html#evidencia-combinada",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis B.\nLa riqueza estandarizada mantiene una pendiente positiva con area y, ademas, la riqueza aumenta con heterogeneidad del habitat."
+    "objectID": "lectures/04-glm-binom.html#ajustar-el-modelo",
+    "href": "lectures/04-glm-binom.html#ajustar-el-modelo",
+    "title": "GLM binomial",
+    "section": "Ajustar el modelo",
+    "text": "Ajustar el modelo\n\nmodelo_binomial &lt;- glm(\n  blanqueado ~ temperatura,\n  family = binomial(link = \"logit\"),\n  data = corales\n)\n\nsummary(modelo_binomial)\n\n\nCall:\nglm(formula = blanqueado ~ temperatura, family = binomial(link = \"logit\"), \n    data = corales)\n\nCoefficients:\n             Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept) -24.36770    2.53014  -9.631   &lt;2e-16 ***\ntemperatura   0.88546    0.09077   9.755   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 462.34  on 359  degrees of freedom\nResidual deviance: 285.92  on 358  degrees of freedom\nAIC: 289.92\n\nNumber of Fisher Scoring iterations: 5"
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada-1",
-    "href": "lectures/01-sci-method.html#evidencia-combinada-1",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis C.\nLa riqueza estandarizada se mantiene positiva con area y la persistencia temporal aumenta en parches grandes."
+    "objectID": "lectures/04-glm-binom.html#interpretación-del-modelo",
+    "href": "lectures/04-glm-binom.html#interpretación-del-modelo",
+    "title": "GLM binomial",
+    "section": "Interpretación del modelo",
+    "text": "Interpretación del modelo\n\nTiene sentido biologico intepretar el intercepto?\n¿Qué indica el signo del coeficiente de temperatura?"
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada-2",
-    "href": "lectures/01-sci-method.html#evidencia-combinada-2",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nEvidencia compatible con B y C.\nLa heterogeneidad aumenta la riqueza, lo que apoya B. Ademas, la persistencia temporal aumenta en parches grandes, lo que apoya C.\n\n\n¿Hipotesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactuan?"
+    "objectID": "lectures/04-glm-binom.html#predicciones-en-escala-biológica",
+    "href": "lectures/04-glm-binom.html#predicciones-en-escala-biológica",
+    "title": "GLM binomial",
+    "section": "Predicciones en escala biológica",
+    "text": "Predicciones en escala biológica\npredict() devuelve log-odds por defecto. plogis() los convierte a probabilidades.\n\npredictor_30 &lt;- predict(\n  modelo_binomial,\n  newdata = data.frame(temperatura = 30)\n)\n\nplogis(predictor_30)\n\n        1 \n0.8999043 \n\n\n\nUna diferencia de \\(1\\,^{\\circ}\\mathrm{C}\\) no produce el mismo cambio en probabilidad a todas las temperaturas."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
-    "href": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia adicional: persistencia vs heterogeneidad (B-C)",
-    "text": "Evidencia adicional: persistencia vs heterogeneidad (B-C)\n\n\n\nMayor heterogeneidad se asocia con mayor persistencia.\nEsto sugiere que la heterogeneidad tambien puede mejorar la estabilidad, ademas de aumentar la riqueza.\nRecuerdense que hipotesis C vinculaba la persistencia con area, no con heterogeneidad."
+    "objectID": "lectures/04-glm-binom.html#predicciones-con-ggeffects",
+    "href": "lectures/04-glm-binom.html#predicciones-con-ggeffects",
+    "title": "GLM binomial",
+    "section": "Predicciones con ggeffects",
+    "text": "Predicciones con ggeffects\n\n\n\n\n\ntemperatura\nprobabilidad\nIC.95.\n\n\n\n\n26\n20.7%\n14.4% a 28.7%\n\n\n28\n60.5%\n53.3% a 67.2%\n\n\n30\n90.0%\n84.7% a 93.6%\n\n\n32\n98.1%\n96.0% a 99.2%\n\n\n\n\n\n\nggeffects devuelve probabilidades predichas, no log-odds.\nEl intervalo de confianza muestra valores plausibles para cada temperatura."
   },
   {
-    "objectID": "lectures/01-sci-method.html#evidencia-combinada-3",
-    "href": "lectures/01-sci-method.html#evidencia-combinada-3",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Evidencia combinada",
-    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
+    "objectID": "lectures/04-glm-binom.html#visualizar-predicciones-con-ggeffects",
+    "href": "lectures/04-glm-binom.html#visualizar-predicciones-con-ggeffects",
+    "title": "GLM binomial",
+    "section": "Visualizar predicciones con ggeffects",
+    "text": "Visualizar predicciones con ggeffects"
   },
   {
-    "objectID": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
-    "href": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
-    "title": "Metodo cientifico en ecologia",
-    "section": "¿Y si los datos no son claros?",
-    "text": "¿Y si los datos no son claros?\n\n\nMisma direccion de efecto, distinta precision.\n¿Interpretariamos estas dos figuras de la misma manera?"
+    "objectID": "lectures/04-glm-binom.html#comunicar-el-resultado",
+    "href": "lectures/04-glm-binom.html#comunicar-el-resultado",
+    "title": "GLM binomial",
+    "section": "Comunicar el resultado",
+    "text": "Comunicar el resultado\nEn vez de reportar solamente log-odds:\n\nReportar probabilidades predichas a temperaturas relevantes.\nMostrar incertidumbre con intervalos de confianza.\nConectar el patrón con riesgo de blanqueamiento.\n\n\nEjemplo: “La probabilidad predicha de blanqueamiento aumenta marcadamente a medida que aumenta la temperatura promedio.”"
   },
   {
-    "objectID": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
-    "href": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Señal positiva con distinta precision",
-    "text": "Señal positiva con distinta precision\n\n\n\n¿Qué hipótesis favorece esta evidencia?\nAmbos paneles sugieren direccion positiva, pero con diferente precision (incertidumbre): el IC95% de la pendiente es critico.\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
+    "objectID": "lectures/04-glm-binom.html#otras-distribuciones-para-glm",
+    "href": "lectures/04-glm-binom.html#otras-distribuciones-para-glm",
+    "title": "GLM binomial",
+    "section": "Otras distribuciones para GLM",
+    "text": "Otras distribuciones para GLM\nAdemás de la binomial, existen otras distribuciones que se pueden usar en GLM según la naturaleza de la variable respuesta:\n\nPoisson con enlace log: para conteos de eventos (0, 1, 2, …).\nNegativa binomial con enlace log: para conteos sobredispersos.\nGamma con enlace inverso: para variables continuas positivas.\nMultinomial con enlace logit: para variables categóricas con más de dos niveles.\n\n\nEl modelo lineal es un caso especial de GLM con distribución normal y enlace identidad."
   },
   {
-    "objectID": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
-    "href": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Inferencia con incertidumbre",
-    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente (cualquier coeficiente) indica un rango plausible para el efecto.\nPara hipotesis B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara hipotesis C, el parametro clave es la pendiente area -&gt; persistencia: esperamos signo positivo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
-    "href": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Exemplo de interpretacion con incertidumbre",
-    "text": "Exemplo de interpretacion con incertidumbre\n\nEjemplo de soporte claro: pendiente = 1.07, IC95% [0.81, 1.32].\nInterpretacion: la relacion es positiva y consistente con la hipotesis, con magnitud aproximada del efecto de 1.07 [0.81, 1.32].\n\n\nEjemplo de evidencia compatible pero incierto: pendiente = 0.90, IC95% [-0.09, 1.89].\nInterpretacion: la relacion es positiva y consistente con la hipotesis (b = 0.90), pero el IC95% incluye 0 (IC95% [-0.09, 1.89]) y no se puede rechazar la ausencia de efecto. Se necesita mas evidencia y mejor precision para obtener conclusiones firmes.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor P)."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
-    "href": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
-    "title": "Metodo cientifico en ecologia",
-    "section": "Como poderiamos mejorar la precision de la evidencia?",
-    "text": "Como poderiamos mejorar la precision de la evidencia?\n\n\nAumentar el tamaño de muestra (más sitios, más individuos, más fechas).\nReducir el error de medición (estandarizar protocolos, calibrar instrumentos).\nReducir la variabilidad no explicada (controlar covariables, usar modelos estadísticos apropiados).\nMejorar el diseño de muestreo (aleatorización, replicación, bloqueos, estratificación)."
-  },
-  {
-    "objectID": "lectures/01-sci-method.html#resumen",
-    "href": "lectures/01-sci-method.html#resumen",
-    "title": "Metodo cientifico en ecologia",
+    "objectID": "lectures/04-glm-binom.html#resumen",
+    "href": "lectures/04-glm-binom.html#resumen",
+    "title": "GLM binomial",
     "section": "Resumen",
-    "text": "Resumen\n\nEl patron especie-area es una observacion inicial, no una explicacion final.\nA, B y C pueden explicar el mismo patron general, pero generan predicciones distintas.\nComparar multiples lineas de evidencia fortalece la inferencia ecologica.\nEl metodo cientifico en ecologia es iterativo: observar, plantear hipotesis, predecir, contrastar y revisar."
-  },
-  {
-    "objectID": "labs/L02.html",
-    "href": "labs/L02.html",
-    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
-    "section": "",
-    "text": "Para las próximas prácticas utilizaremos R para organizar, visualizar y analizar datos ecológicos. Por ahora trabajaremos con manejo básico de datos, gráficos y modelos estadísticos relativamente sencillos, incluyendo modelos lineales y modelos lineales generalizados (GLM)."
-  },
-  {
-    "objectID": "labs/L02.html#instalar-r",
-    "href": "labs/L02.html#instalar-r",
-    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
-    "section": "1. Instalar R",
-    "text": "1. Instalar R\nInstale una versión reciente de R desde:\nhttps://cran.r-project.org/\nNo es necesario que todas las personas tengan exactamente la misma versión. Instale la versión que sea más sencilla y estable para su sistema operativo.\nTambién recomendamos instalar RStudio Desktop, que proporciona una interfaz más cómoda para trabajar con R:\nhttps://posit.co/download/rstudio-desktop/"
-  },
-  {
-    "objectID": "labs/L02.html#instalar-los-paquetes-necesarios",
-    "href": "labs/L02.html#instalar-los-paquetes-necesarios",
-    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
-    "section": "2. Instalar los paquetes necesarios",
-    "text": "2. Instalar los paquetes necesarios\nAbra RStudio y ejecute el siguiente código una sola vez:\ninstall.packages(c(\n  \"dplyr\",\n  \"tidyr\",\n  \"ggplot2\",\n  \"janitor\",\n  \"readxl\",\n  \"readr\",\n  \"modelsummary\"\n))\nEl paquete MASS, que utilizaremos para algunos modelos lineales generalizados, normalmente viene incluido con R y no necesita instalarse por separado."
-  },
-  {
-    "objectID": "labs/L02.html#para-qué-utilizaremos-estos-paquetes",
-    "href": "labs/L02.html#para-qué-utilizaremos-estos-paquetes",
-    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
-    "section": "3. ¿Para qué utilizaremos estos paquetes?",
-    "text": "3. ¿Para qué utilizaremos estos paquetes?\n\ndplyr: organizar, filtrar, resumir y transformar datos.\ntidyr: reorganizar datos y trabajar con formatos tidy.\nggplot2: producir gráficos.\njanitor: limpiar nombres de variables y revisar tablas.\nreadxl: importar archivos de Excel (.xls y .xlsx).\nreadr: importar archivos de texto y CSV.\nmodelsummary: resumir y comparar resultados de modelos.\nMASS: entre otras funciones, ajustar modelos GLM con distribución binomial negativa."
-  },
-  {
-    "objectID": "labs/L02.html#cargar-los-paquetes",
-    "href": "labs/L02.html#cargar-los-paquetes",
-    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
-    "section": "4. Cargar los paquetes",
-    "text": "4. Cargar los paquetes\nCada vez que abra una nueva sesión de R, deberá cargar los paquetes que va a utilizar:\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)\nlibrary(janitor)\nlibrary(readxl)\nlibrary(readr)\nlibrary(modelsummary)\nlibrary(MASS)"
-  },
-  {
-    "objectID": "labs/L02.html#modelos-que-utilizaremos",
-    "href": "labs/L02.html#modelos-que-utilizaremos",
-    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
-    "section": "5. Modelos que utilizaremos",
-    "text": "5. Modelos que utilizaremos\nPor ahora trabajaremos principalmente con:\n# Modelo lineal\nlm()\n\n# Modelo lineal generalizado\nglm()\n\n# GLM con distribución binomial negativa\nMASS::glm.nb()\nNo es necesario aprender estas funciones antes de la clase. El objetivo de esta preparación es simplemente tener R, RStudio y los paquetes necesarios instalados y funcionando."
-  },
-  {
-    "objectID": "labs-teaching-notes/L01.html",
-    "href": "labs-teaching-notes/L01.html",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
-  },
-  {
-    "objectID": "labs-teaching-notes/L01.html#observacion",
-    "href": "labs-teaching-notes/L01.html#observacion",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
-  },
-  {
-    "objectID": "giras/index.html",
-    "href": "giras/index.html",
-    "title": "Giras",
-    "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
-  },
-  {
-    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
-    "title": "Giras",
-    "section": "",
-    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
-  },
-  {
-    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
-    "title": "Giras",
-    "section": "Trabajo de campo para la investigacion guiada",
-    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
-  },
-  {
-    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
-    "title": "Giras",
-    "section": "Expectativas de trabajo en campo para el proyecto semestral",
-    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "",
-    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
-  },
-  {
-    "objectID": "index.html#bienvenido",
-    "href": "index.html#bienvenido",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "",
-    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
-  },
-  {
-    "objectID": "index.html#enfoque-del-curso",
-    "href": "index.html#enfoque-del-curso",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Enfoque del curso",
-    "text": "Enfoque del curso\nEl laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados."
-  },
-  {
-    "objectID": "index.html#programa-del-curso",
-    "href": "index.html#programa-del-curso",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Programa del curso",
-    "text": "Programa del curso\nEl programa del curso ya está disponible en la sección de Programa."
-  },
-  {
-    "objectID": "index.html#fechas-importantes",
-    "href": "index.html#fechas-importantes",
-    "title": "Laboratorio de Ecologia General B-0305",
-    "section": "Fechas importantes",
-    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
-  },
-  {
-    "objectID": "labs/L01.html",
-    "href": "labs/L01.html",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
-  },
-  {
-    "objectID": "labs/L01.html#observacion",
-    "href": "labs/L01.html#observacion",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "",
-    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
-  },
-  {
-    "objectID": "labs/L01.html#preguntas",
-    "href": "labs/L01.html#preguntas",
-    "title": "Lab 01: método científico, hipótesis, predicciones",
-    "section": "Preguntas",
-    "text": "Preguntas\nHipótesis A:\n\n \n \n \n \n\nPredicciones de la hipótesis A:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\n \n \n \n \n\n\nHipótesis B:\n\n \n \n \n \n\nPredicciones de la hipótesis B:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis B y sus predicciones:"
+    "text": "Resumen\n\nLa distribución se elige según la variable respuesta.\n\n\nContinua: modelo lineal con distribución normal.\n\\(0/1\\): GLM binomial/Bernoulli con enlace logit.\nEl resultado se interpreta mejor como una probabilidad predicha."
   },
   {
     "objectID": "lectures/02-design.html#plan",
@@ -775,6 +481,664 @@
     "title": "Diseño experimental",
     "section": "Bibliografia",
     "text": "Bibliografia\nStatistics done wrong: https://www.statisticsdonewrong.com/pseudoreplication.html\nMarshall, D.J., 2024. Principles of experimental design for ecology and evolution. Ecology Letters, 27(4), p.e14400."
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html",
+    "href": "labs/L04-actividad-1-lm.html",
+    "title": "Lab 04: Modelos lineales",
+    "section": "",
+    "text": "Fase 1: Aprendizaje independiente en su grupo original (5 minutos)\n\n\n\n\nNos dividimos en grupos de 5 personas.\nTodo el grupo repasa junto los conceptos básicos de regresión lineal (sección común del material).\nCada grupo tiene además un experto para la salida de un modelo lineal:\n\ncon predictor continuo\ncon predictor categórico\ncon interacción (continuo × categórico)\ndiagnósticos I: linealidad y normalidad\ndiagnósticos II: varianza y observaciones influyentes\n\nEl experto estudia el material sobre su tema específico.\n\n\n\n\n\n\n\n\n\nFase 2: Aprendizaje colaborativo en grupos de expertos (5 + 2 minutos)\n\n\n\n\nLos expertos de cada tema se reúnen en grupos para compartir sus conocimientos.\nAclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.\nEl experto prepara un reporte breve de 3 puntos:\n\n¿Cuál es la pregunta que este análisis permite contestar?\n¿Qué parte de la salida hay que mirar para contestarla?\n¿Cómo explicaría el resultado en lenguaje biológico, sin usar lenguaje estadístico?\n\n\n\n\n\n\n\n\n\n\nFase 3: Enseñanza en el grupo original (2 x 5 minutos)\n\n\n\n\nCada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su tema.\nSe discuten y resuelven dudas sobre los temas presentados por los expertos.\n\n\n\n\n\n\n\n\n\nFase 4: Reflexión y cierre (5 minutos)\n\n\n\n\nSe comparten conclusiones y se resuelven dudas finales con toda la clase.\nCada grupo original (no grupo de expertos) tiene que resolver la tarea de la ultima página (caja roja).\n\n\n\nEl reporte de Fase 2, escrito en su bitacora, representa su entrada de bitacora calificada"
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#actividad",
+    "href": "labs/L04-actividad-1-lm.html#actividad",
+    "title": "Lab 04: Modelos lineales",
+    "section": "",
+    "text": "Fase 1: Aprendizaje independiente en su grupo original (5 minutos)\n\n\n\n\nNos dividimos en grupos de 5 personas.\nTodo el grupo repasa junto los conceptos básicos de regresión lineal (sección común del material).\nCada grupo tiene además un experto para la salida de un modelo lineal:\n\ncon predictor continuo\ncon predictor categórico\ncon interacción (continuo × categórico)\ndiagnósticos I: linealidad y normalidad\ndiagnósticos II: varianza y observaciones influyentes\n\nEl experto estudia el material sobre su tema específico.\n\n\n\n\n\n\n\n\n\nFase 2: Aprendizaje colaborativo en grupos de expertos (5 + 2 minutos)\n\n\n\n\nLos expertos de cada tema se reúnen en grupos para compartir sus conocimientos.\nAclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.\nEl experto prepara un reporte breve de 3 puntos:\n\n¿Cuál es la pregunta que este análisis permite contestar?\n¿Qué parte de la salida hay que mirar para contestarla?\n¿Cómo explicaría el resultado en lenguaje biológico, sin usar lenguaje estadístico?\n\n\n\n\n\n\n\n\n\n\nFase 3: Enseñanza en el grupo original (2 x 5 minutos)\n\n\n\n\nCada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su tema.\nSe discuten y resuelven dudas sobre los temas presentados por los expertos.\n\n\n\n\n\n\n\n\n\nFase 4: Reflexión y cierre (5 minutos)\n\n\n\n\nSe comparten conclusiones y se resuelven dudas finales con toda la clase.\nCada grupo original (no grupo de expertos) tiene que resolver la tarea de la ultima página (caja roja).\n\n\n\nEl reporte de Fase 2, escrito en su bitacora, representa su entrada de bitacora calificada"
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#material",
+    "href": "labs/L04-actividad-1-lm.html#material",
+    "title": "Lab 04: Modelos lineales",
+    "section": "Material",
+    "text": "Material\nEn lo que sigue se presentan los conceptos básicos de los modelos lineales (lm()) y cómo interpretar su salida. Todos los ejemplos usan el dataset iris, incluido con R."
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#conceptos-básicos-de-regresión-lineal-todos",
+    "href": "labs/L04-actividad-1-lm.html#conceptos-básicos-de-regresión-lineal-todos",
+    "title": "Lab 04: Modelos lineales",
+    "section": "Conceptos básicos de regresión lineal (todos)",
+    "text": "Conceptos básicos de regresión lineal (todos)\nUn modelo lineal describe una variable respuesta continua (y) en función de uno o más predictores (x):\n\nLos predictores pueden ser continuos (una pendiente) o categóricos (diferencias entre grupos).\nlm() ajusta el modelo; summary() muestra los coeficientes estimados, su incertidumbre y pruebas asociadas.\nSupuestos del modelo:\n\nrelación lineal – la relación entre los predictores y la respuesta debe ser aproximadamente lineal.\n\nresiduos normales – los residuos del modelo deben seguir aproximadamente una distribución normal.\n\nvarianza constante (homocedasticidad) – la dispersión de los residuos debe ser similar a lo largo de todos los valores predichos.\n\nindependencia – los residuos deben ser independientes entre sí, sin correlación.\n\n\nmodelo &lt;- lm(y ~ x, data = datos)\nsummary(modelo)\n\ny: variable respuesta del modelo.\nx: predictor del modelo; puede haber cualquier número de predictores, continuos o categóricos.\nLos predictores se combinan con + para incluirlos de manera aditiva en el modelo.\nCon +, el modelo incluye los efectos de los predictores de manera aditiva, sin términos de interacción.\nPara incluir interacciones entre predictores, se usa * (por ejemplo, x1 * x2). En este caso el modelo considera tanto los efectos principales como la interacción entre x1 y x2.\nLa interacción permite que el efecto de un predictor dependa del valor de otro predictor."
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#resumen-de-un-modelo-lineal-con-un-predictor-continuo-experto-1",
+    "href": "labs/L04-actividad-1-lm.html#resumen-de-un-modelo-lineal-con-un-predictor-continuo-experto-1",
+    "title": "Lab 04: Modelos lineales",
+    "section": "Resumen de un modelo lineal con un predictor continuo (experto 1)",
+    "text": "Resumen de un modelo lineal con un predictor continuo (experto 1)\nmodelo_continuo &lt;- lm(Petal.Length ~ Sepal.Length, data = iris)\n\nEstimate ((Intercept) y pendiente): valor esperado de y cuando x = 0, y cambio en y por cada unidad de x.\nStd. Error / t value / Pr(&gt;|t|): incertidumbre del coeficiente y prueba de si es diferente de cero.\nR² / R² ajustado: proporción de la varianza de y explicada por el modelo.\nF-statistic y su p-value: prueba si el modelo en conjunto explica más que el modelo nulo (solo el intercepto).\n\n\n\n\nCall:\nlm(formula = Petal.Length ~ Sepal.Length, data = iris)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.47747 -0.59072 -0.00668  0.60484  2.49512 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  -7.10144    0.50666  -14.02   &lt;2e-16 ***\nSepal.Length  1.85843    0.08586   21.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8678 on 148 degrees of freedom\nMultiple R-squared:   0.76, Adjusted R-squared:  0.7583 \nF-statistic: 468.6 on 1 and 148 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\n\n\n\nComo calcular la ecuación del modelo y intervalos de confianza\n\n\n\n\\[\n\\quad y = \\text{intercept} + \\text{coef(Sepal.Length)} \\cdot x = -7.1014 + 1.8584x\n\\]\nLos intervalos de confianza proporcionan un rango de valores plausibles para cada coeficiente del modelo. Si un intervalo incluye el valor cero, sugiere que el coeficiente podría no ser significativamente diferente de cero. Se pueden calcular con:\nconfint(modelo_continuo)"
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#resumen-de-un-modelo-lineal-con-un-predictor-categórico-experto-2",
+    "href": "labs/L04-actividad-1-lm.html#resumen-de-un-modelo-lineal-con-un-predictor-categórico-experto-2",
+    "title": "Lab 04: Modelos lineales",
+    "section": "Resumen de un modelo lineal con un predictor categórico (experto 2)",
+    "text": "Resumen de un modelo lineal con un predictor categórico (experto 2)\nmodelo_categorico &lt;- lm(Petal.Length ~ Species, data = iris)\n\nR utiliza el primer nivel del factor como nivel de referencia (en iris, setosa), que queda absorbido en el (Intercept).\n(Intercept): valor promedio de y para el nivel de referencia.\nCoeficientes de los otros niveles: diferencia promedio respecto al nivel de referencia, no el valor absoluto del grupo.\nR² / F-statistic: mismos conceptos que con predictor continuo, aplicados a la comparación entre grupos.\n\n\n\n\nCall:\nlm(formula = Petal.Length ~ Species, data = iris)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-1.260 -0.258  0.038  0.240  1.348 \n\nCoefficients:\n                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)        1.46200    0.06086   24.02   &lt;2e-16 ***\nSpeciesversicolor  2.79800    0.08607   32.51   &lt;2e-16 ***\nSpeciesvirginica   4.09000    0.08607   47.52   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4303 on 147 degrees of freedom\nMultiple R-squared:  0.9414,    Adjusted R-squared:  0.9406 \nF-statistic:  1180 on 2 and 147 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\n\n\n\nComo calcular el promedio de cada nivel\n\n\n\nsetosa: \\[ \\quad \\bar{y} = \\text{intercept} = 1.462 \\]\nversicolor: \\[ \\quad \\bar{y} = \\text{intercept} + \\text{coef(versicolor)} = 1.462 + 2.798 = 4.260 \\]\nvirginica: \\[ \\quad \\bar{y} = \\text{intercept} + \\text{coef(virginica)} = 1.462 + 4.090 = 5.552 \\]"
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#resumen-summary-de-un-modelo-lineal-con-dos-predictores-y-su-interacción-experto-3",
+    "href": "labs/L04-actividad-1-lm.html#resumen-summary-de-un-modelo-lineal-con-dos-predictores-y-su-interacción-experto-3",
+    "title": "Lab 04: Modelos lineales",
+    "section": "Resumen (summary()) de un modelo lineal con dos predictores y su interacción (experto 3)",
+    "text": "Resumen (summary()) de un modelo lineal con dos predictores y su interacción (experto 3)\nmodelo_interaccion &lt;- lm(Petal.Length ~ Sepal.Length * Species, data = iris)\n\n(Intercept): intercepto del nivel de referencia (setosa).\nSepal.Length: pendiente para el nivel de referencia.\nSpeciesversicolor, Speciesvirginica: diferencias en el intercepto respecto al nivel de referencia.\nTérminos de interacción: diferencias en la pendiente respecto al nivel de referencia.\n\n\n\n\nCall:\nlm(formula = Petal.Length ~ Sepal.Length * Species, data = iris)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.68611 -0.13442 -0.00856  0.15966  0.79607 \n\nCoefficients:\n                               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                      0.8031     0.5310   1.512    0.133    \nSepal.Length                     0.1316     0.1058   1.244    0.216    \nSpeciesversicolor               -0.6179     0.6837  -0.904    0.368    \nSpeciesvirginica                -0.1926     0.6578  -0.293    0.770    \nSepal.Length:Speciesversicolor   0.5548     0.1281   4.330 2.78e-05 ***\nSepal.Length:Speciesvirginica    0.6184     0.1210   5.111 1.00e-06 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2611 on 144 degrees of freedom\nMultiple R-squared:  0.9789,    Adjusted R-squared:  0.9781 \nF-statistic:  1333 on 5 and 144 DF,  p-value: &lt; 2.2e-16\n\n\n\n\n\n\n\n\nComo calcular los efectos de cada nivel de la interacción\n\n\n\nsetosa: \\[ \\quad y_{\\text{setosa}}=\\text{intercept}+\\text{coef(Sepal.Length)}\\cdot x \\] \nversicolor: \\[\n\\begin{aligned}\n\\quad y &= \\text{intercept}+\\text{coef(versicolor)}+ \\\\\n&\\quad \\big(\\text{coef(Sepal.Length)}+\\text{coef(Sepal.Length:Speciesversicolor)}\\big)\\cdot x\n\\end{aligned}\n\\] \nvirginica: \\[\\begin{aligned}\n\\quad y &= \\text{intercept}+\\text{coef(virginica)}+ \\\\\n&\\quad \\big(\\text{coef(Sepal.Length)}+\\text{coef(Sepal.Length:Speciesvirginica)}\\big)\\cdot x\n\\end{aligned}\\]"
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#diagnósticos-gráficos-i-linealidad-y-normalidad-experto-4",
+    "href": "labs/L04-actividad-1-lm.html#diagnósticos-gráficos-i-linealidad-y-normalidad-experto-4",
+    "title": "Lab 04: Modelos lineales",
+    "section": "Diagnósticos gráficos I: linealidad y normalidad (experto 4)",
+    "text": "Diagnósticos gráficos I: linealidad y normalidad (experto 4)\nplot(modelo_interaccion, which = c(1, 2))\n\nResiduals vs Fitted: busca patrones o curvatura; una nube sin forma clara indica que la relación es razonablemente lineal.\nNormal Q-Q: los puntos deben seguir aproximadamente la línea diagonal; desviaciones fuertes en los extremos sugieren residuos no normales.\nJuntos, estos dos gráficos dicen si un modelo lineal es una descripción razonable de los datos.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMas info\n\n\n\nResiduals vs Fitted\nLos residuos deberían distribuirse de manera aleatoria alrededor de cero. Algun patron sistemático indica que el modelo puede no estar capturando toda la estructura de los datos. Por ejemplo, un patrón en forma de “banano” sugiere que falta una transformación (por ejemplo, logarítmica) o un término no lineal.\nNormal Q-Q\nCon muestras grandes, el modelo lineal es bastante robusto a desviaciones leves de normalidad, así que un Q-Q plot “casi” recto, aunque no perfecto, muchas veces suele bastar. i.e., muchas veces no es necesario ‘hacer algo’ para para que todos los residuos quedan perfectamente en la línea."
+  },
+  {
+    "objectID": "labs/L04-actividad-1-lm.html#diagnósticos-gráficos-ii-varianza-y-observaciones-influyentes-experto-5",
+    "href": "labs/L04-actividad-1-lm.html#diagnósticos-gráficos-ii-varianza-y-observaciones-influyentes-experto-5",
+    "title": "Lab 04: Modelos lineales",
+    "section": "Diagnósticos gráficos II: varianza y observaciones influyentes (experto 5)",
+    "text": "Diagnósticos gráficos II: varianza y observaciones influyentes (experto 5)\nplot(modelo_interaccion, which = c(3, 5))\n\nScale-Location: la línea debería ser aproximadamente horizontal, con dispersión pareja; una forma de embudo indica que la varianza no es constante (heterocedasticidad).\nResiduals vs Leverage: identifica observaciones con mucha influencia sobre el modelo; puntos con una distancia de Cook alta pueden tener una influencia importante sobre los coeficientes del modelo.\nEstos dos gráficos ayudan a decidir si algunas observaciones particulares merecen atención (errores de datos, casos atípicos reales).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMas info\n\n\n\nDistancia cook\nLa distancia de Cook depende de los valores de leverage y de los residuos de cada observación. Una distancia de Cook alta indica que la observación puede tener una influencia importante sobre los coeficientes del modelo.\nLas líneas punteadas de distancia de Cook solo se dibujan si caen dentro del rango visible del gráfico. Si las líneas de referencia de Cook quedan fuera del rango del gráfico, pueden no aparecer; esto no indica un error del gráfico.\n\n\n\n\n\n\n\n\n\nTarea (Fase 4)\n\n\n\nCada grupo original (no grupo de expertos) analiza los mismos datos iris en su computadora.\n\nPregunta biológica: ¿cómo cambia el ancho del pétalo con el ancho del sépalo y ese cambio es distinto entre especies?\n\n\nAjusten * un modelo con interceptos diferentes entre especies y una pendiente común para todas las especies, y * otro que permita intercepto y pendiente distinta por especie.\n\n\nExtraigan los coeficientes y sus intervalos de confianza. Comparen los modelos con AIC e interpreten los resultados.\n\n\nTareas:\n\nAjusten los dos modelos y comparen sus valores de AIC.\nUsen coef() y confint() para identificar el tamaño y la incertidumbre de los efectos de Sepal.Width, de las especies y de los términos de interacción.\nEn el modelo con interacción, los coeficientes de especie representan diferencias en el intercepto cuando Sepal.Width = 0.\nEscriban un párrafo que responda la pregunta biológica. Describan la dirección y magnitud de los efectos, e indiquen los intervalos de confianza.\nUsen los p-values solo como información complementaria. La interpretación principal debe basarse en los tamaños de efecto, sus intervalos de confianza y el apoyo relativo de los modelos según AIC.\n\n\n\nPara el análisis, usen lm(), summary(), coef(), confint() y AIC().\n\n\nNota: un AIC menor indica un mejor balance entre ajuste y complejidad. Modelos con valores de AIC muy similares (por ejemplo, \\(\\Delta\\mathrm{AIC} &lt; 2\\)) suelen tener apoyo comparable; diferencias mayores favorecen al modelo con el menor AIC."
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html",
+    "href": "labs/L03-actividad-ggplot.html",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "",
+    "text": "Fase 1: Aprendizaje independiente en su grupo original (3 minutos)\n\n\n\n\nNos dividimos en grupos de 5 personas.\nTodo el grupo repasa junto la gramática de gráficos y aes() (sección común del material).\nCada grupo tiene además un experto para un tipo de gráfico:\n\nhistograma\ndiagrama de dispersión (scatterplot)\nboxplot\ngráfico de barras (barplot)\ngráfico de líneas (line plot)\n\nEl experto estudia el material sobre su tipo de gráfico específico.\n\n\n\n\n\n\n\n\n\nFase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)\n\n\n\n\nLos expertos de cada tipo de gráfico se reúnen en grupos para compartir sus conocimientos.\nAclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.\nEl experto prepara un reporte breve de 3 puntos:\n\n¿Cómo se usa este tipo de gráfico? (función de ggplot2 y estructura básica)\n¿Qué necesita? (tipo de variable(s), cuántas, aes() requeridos)\nUn ejemplo de su experiencia reciente en clase: mencione un caso concreto de los datos que han analizado donde este tipo de gráfico sería apropiado.\n\n\n\n\n\n\n\n\n\n\nFase 3: Enseñanza en el grupo original (5 minutos)\n\n\n\n\nCada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su tipo de gráfico.\nSe discuten y resuelven dudas sobre los temas presentados por los expertos.\n\n\n\n\n\n\n\n\n\nFase 4: Reflexión y cierre (5 minutos)\n\n\n\n\nSe comparten conclusiones y se resuelven dudas finales con toda la clase.\nCada grupo original (no grupo de expertos) tiene que resolver la situación de la siguiente página (caja roja).\n\n\n\n\n\n\n\n\n\n\nSituación (Fase 4)\n\n\n\nCada grupo original (no grupo de expertos) tiene que resolver la siguiente situación:\nTenemos una tabla llamada muestras con la densidad de macroinvertebrados (individuos/m²) de 4 sitios; en cada muestra también se midió la temperatura y el oxígeno, en varias fechas.\n\n\n\nsitio\nfecha\ndensidad\ntemperatura\noxígeno\n\n\n\n\n\n\nQueremos:\n\nver cómo se distribuyen los valores de densidad de todas las muestras;\ncomparar la densidad entre los 4 sitios;\nver la relación entre temperatura y densidad;\nmostrar el número de muestras tomadas en cada sitio;\nver cómo cambia la temperatura a lo largo del tiempo en cada sitio.\n\n¿Qué tipo de gráfico usarían para cada pregunta, y qué variables (columnas) irían en aes()?"
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#actividad",
+    "href": "labs/L03-actividad-ggplot.html#actividad",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "",
+    "text": "Fase 1: Aprendizaje independiente en su grupo original (3 minutos)\n\n\n\n\nNos dividimos en grupos de 5 personas.\nTodo el grupo repasa junto la gramática de gráficos y aes() (sección común del material).\nCada grupo tiene además un experto para un tipo de gráfico:\n\nhistograma\ndiagrama de dispersión (scatterplot)\nboxplot\ngráfico de barras (barplot)\ngráfico de líneas (line plot)\n\nEl experto estudia el material sobre su tipo de gráfico específico.\n\n\n\n\n\n\n\n\n\nFase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)\n\n\n\n\nLos expertos de cada tipo de gráfico se reúnen en grupos para compartir sus conocimientos.\nAclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.\nEl experto prepara un reporte breve de 3 puntos:\n\n¿Cómo se usa este tipo de gráfico? (función de ggplot2 y estructura básica)\n¿Qué necesita? (tipo de variable(s), cuántas, aes() requeridos)\nUn ejemplo de su experiencia reciente en clase: mencione un caso concreto de los datos que han analizado donde este tipo de gráfico sería apropiado.\n\n\n\n\n\n\n\n\n\n\nFase 3: Enseñanza en el grupo original (5 minutos)\n\n\n\n\nCada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su tipo de gráfico.\nSe discuten y resuelven dudas sobre los temas presentados por los expertos.\n\n\n\n\n\n\n\n\n\nFase 4: Reflexión y cierre (5 minutos)\n\n\n\n\nSe comparten conclusiones y se resuelven dudas finales con toda la clase.\nCada grupo original (no grupo de expertos) tiene que resolver la situación de la siguiente página (caja roja).\n\n\n\n\n\n\n\n\n\n\nSituación (Fase 4)\n\n\n\nCada grupo original (no grupo de expertos) tiene que resolver la siguiente situación:\nTenemos una tabla llamada muestras con la densidad de macroinvertebrados (individuos/m²) de 4 sitios; en cada muestra también se midió la temperatura y el oxígeno, en varias fechas.\n\n\n\nsitio\nfecha\ndensidad\ntemperatura\noxígeno\n\n\n\n\n\n\nQueremos:\n\nver cómo se distribuyen los valores de densidad de todas las muestras;\ncomparar la densidad entre los 4 sitios;\nver la relación entre temperatura y densidad;\nmostrar el número de muestras tomadas en cada sitio;\nver cómo cambia la temperatura a lo largo del tiempo en cada sitio.\n\n¿Qué tipo de gráfico usarían para cada pregunta, y qué variables (columnas) irían en aes()?"
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#material",
+    "href": "labs/L03-actividad-ggplot.html#material",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "Material",
+    "text": "Material\nEn lo que sigue se presentan los conceptos básicos de ggplot2 y los tipos de gráficos más comunes. Todos los imagenes provienen del ggplot2 cheatsheet disponible en el siguiente enlace: ggplot2 cheatsheet."
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#gramática-de-gráficos-y-aes-todos",
+    "href": "labs/L03-actividad-ggplot.html#gramática-de-gráficos-y-aes-todos",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "Gramática de gráficos y aes() (todos)",
+    "text": "Gramática de gráficos y aes() (todos)\nTodo gráfico en ggplot2 se construye a partir de capas:\n\nDatos: un data frame en formato tidy.\naes() (mapeo estético): conecta variables de los datos con propiedades visuales (eje x, eje y, color, tamaño, etc.).\ngeom_*(): la representación geométrica que se dibuja (puntos, barras, cajas, etc.).\n\nggplot(datos, aes(x = variable_x, y = variable_y)) +\n  geom_*()\n\n\nSe puede agregar más de un geom_*() a un mismo gráfico.\nLos mapeos en aes() pueden ir dentro de ggplot() (para todas las capas) o dentro de un geom_*() (solo para esa capa).\nOtras propiedades (color, tamaño, transparencia) pueden ser fijas o mapeadas dentro de aes()."
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#histograma-experto-1",
+    "href": "labs/L03-actividad-ggplot.html#histograma-experto-1",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "Histograma (experto 1)",
+    "text": "Histograma (experto 1)\ngeom_histogram():\n\nMuestra la distribución de una variable numérica, dividiendo su rango en intervalos (bins).\nNecesita una sola variable numérica continua mapeada a x.\nSe utiliza comúnmente para ver la forma de la distribución (simetría, sesgo, valores atípicos).\n\n\nggplot(datos, aes(x = variable_numerica)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#diagrama-de-dispersión-scatterplot-experto-2",
+    "href": "labs/L03-actividad-ggplot.html#diagrama-de-dispersión-scatterplot-experto-2",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "Diagrama de dispersión / scatterplot (experto 2)",
+    "text": "Diagrama de dispersión / scatterplot (experto 2)\ngeom_point():\n\nMuestra la relación entre dos variables numéricas.\nNecesita dos variables numéricas continuas, mapeadas a x y y.\nSe utiliza comúnmente para explorar correlaciones o tendencias entre variables.\n\n\nggplot(datos, aes(x = variable_x, y = variable_y)) +\n  geom_point()"
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#boxplot-experto-3",
+    "href": "labs/L03-actividad-ggplot.html#boxplot-experto-3",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "Boxplot (experto 3)",
+    "text": "Boxplot (experto 3)\ngeom_boxplot():\n\nResume la distribución de una variable numérica según los grupos de una variable categórica.\nNecesita una variable categórica en x y una variable numérica continua en y.\nSe utiliza comúnmente para comparar la mediana, dispersión y valores atípicos entre grupos.\n\n\nggplot(datos, aes(x = variable_categorica, y = variable_numerica)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#gráfico-de-barras-barplot-experto-4",
+    "href": "labs/L03-actividad-ggplot.html#gráfico-de-barras-barplot-experto-4",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "Gráfico de barras / barplot (experto 4)",
+    "text": "Gráfico de barras / barplot (experto 4)\ngeom_bar() / geom_col():\n\nMuestra el conteo o valor de una variable categórica.\ngeom_bar() necesita una variable categórica en x (calcula el conteo automáticamente); geom_col() necesita una variable categórica en x y un valor numérico ya calculado en y.\nSe utiliza comúnmente para comparar cantidades o frecuencias entre categorías (por ejemplo, número de muestras por sitio).\n\n\nggplot(datos, aes(x = variable_categorica)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "labs/L03-actividad-ggplot.html#gráfico-de-líneas-line-plot-experto-5",
+    "href": "labs/L03-actividad-ggplot.html#gráfico-de-líneas-line-plot-experto-5",
+    "title": "Lab 03: Gramática de gráficos con ggplot2",
+    "section": "Gráfico de líneas / line plot (experto 5)",
+    "text": "Gráfico de líneas / line plot (experto 5)\ngeom_line():\n\nMuestra la evolución de una variable numérica a lo largo de otra variable ordenada, típicamente el tiempo.\nNecesita una variable numérica o de fecha/tiempo en x y una variable numérica continua en y.\nSe utiliza comúnmente para ver tendencias temporales, a menudo agrupando por sitio con color o group.\n\n\nggplot(datos, aes(x = fecha, y = variable_numerica, color = sitio)) +\n  geom_line()"
+  },
+  {
+    "objectID": "labs/L02.html",
+    "href": "labs/L02.html",
+    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
+    "section": "",
+    "text": "Para las próximas prácticas utilizaremos R para organizar, visualizar y analizar datos ecológicos. Por ahora trabajaremos con manejo básico de datos, gráficos y modelos estadísticos relativamente sencillos, incluyendo modelos lineales y modelos lineales generalizados (GLM)."
+  },
+  {
+    "objectID": "labs/L02.html#instalar-r",
+    "href": "labs/L02.html#instalar-r",
+    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
+    "section": "1. Instalar R",
+    "text": "1. Instalar R\nInstale una versión reciente de R desde:\nhttps://cran.r-project.org/\nNo es necesario que todas las personas tengan exactamente la misma versión. Instale la versión que sea más sencilla y estable para su sistema operativo.\nTambién recomendamos instalar RStudio Desktop, que proporciona una interfaz más cómoda para trabajar con R:\nhttps://posit.co/download/rstudio-desktop/"
+  },
+  {
+    "objectID": "labs/L02.html#instalar-los-paquetes-necesarios",
+    "href": "labs/L02.html#instalar-los-paquetes-necesarios",
+    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
+    "section": "2. Instalar los paquetes necesarios",
+    "text": "2. Instalar los paquetes necesarios\nAbra RStudio y ejecute el siguiente código una sola vez:\ninstall.packages(c(\n  \"dplyr\",\n  \"tidyr\",\n  \"ggplot2\",\n  \"janitor\",\n  \"readxl\",\n  \"readr\",\n  \"modelsummary\"\n))\nEl paquete MASS, que utilizaremos para algunos modelos lineales generalizados, normalmente viene incluido con R y no necesita instalarse por separado."
+  },
+  {
+    "objectID": "labs/L02.html#para-qué-utilizaremos-estos-paquetes",
+    "href": "labs/L02.html#para-qué-utilizaremos-estos-paquetes",
+    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
+    "section": "3. ¿Para qué utilizaremos estos paquetes?",
+    "text": "3. ¿Para qué utilizaremos estos paquetes?\n\ndplyr: organizar, filtrar, resumir y transformar datos.\ntidyr: reorganizar datos y trabajar con formatos tidy.\nggplot2: producir gráficos.\njanitor: limpiar nombres de variables y revisar tablas.\nreadxl: importar archivos de Excel (.xls y .xlsx).\nreadr: importar archivos de texto y CSV.\nmodelsummary: resumir y comparar resultados de modelos.\nMASS: entre otras funciones, ajustar modelos GLM con distribución binomial negativa."
+  },
+  {
+    "objectID": "labs/L02.html#cargar-los-paquetes",
+    "href": "labs/L02.html#cargar-los-paquetes",
+    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
+    "section": "4. Cargar los paquetes",
+    "text": "4. Cargar los paquetes\nCada vez que abra una nueva sesión de R, deberá cargar los paquetes que va a utilizar:\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)\nlibrary(janitor)\nlibrary(readxl)\nlibrary(readr)\nlibrary(modelsummary)\nlibrary(MASS)"
+  },
+  {
+    "objectID": "labs/L02.html#modelos-que-utilizaremos",
+    "href": "labs/L02.html#modelos-que-utilizaremos",
+    "title": "Lab 02: Preparación del entorno de R para manejo y análisis de datos ecológicos",
+    "section": "5. Modelos que utilizaremos",
+    "text": "5. Modelos que utilizaremos\nPor ahora trabajaremos principalmente con:\n# Modelo lineal\nlm()\n\n# Modelo lineal generalizado\nglm()\n\n# GLM con distribución binomial negativa\nMASS::glm.nb()\nNo es necesario aprender estas funciones antes de la clase. El objetivo de esta preparación es simplemente tener R, RStudio y los paquetes necesarios instalados y funcionando."
+  },
+  {
+    "objectID": "labs-teaching-notes/L01.html",
+    "href": "labs-teaching-notes/L01.html",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
+  },
+  {
+    "objectID": "labs-teaching-notes/L01.html#observacion",
+    "href": "labs-teaching-notes/L01.html#observacion",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado.\n\nHipótesis A:\nLa diversidad de plantas aumenta en áreas con mayor heterogeneidad ambiental (parches de sombra y sol, microzonas con distinta humedad y textura de suelo), porque se abren más nichos y pueden coexistir especies con estrategias distintas.\nPredicciones de la hipótesis A:\n\nParcelas con mayor variación de luz y humedad deberían tener mayor riqueza de especies.\nSitios con composición ambiental similar deberían tener floras más parecidas entre sí.\nEn zonas ambientalmente más homogéneas debería observarse mayor dominancia de pocas especies.\n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\nListado de especies y cobertura/abundancia por parcela.\nVariables de microambiente por parcela: luz incidente, humedad de suelo, materia organica, textura.\nUn indice de heterogeneidad ambiental por parcela para relacionarlo con riqueza y dominancia.\n\n\nHipótesis B:\nLa perturbación humana frecuente (pisoteo y corte) reduce la diversidad al favorecer especies tolerantes y desplazar especies más sensibles.\nPredicciones de la hipótesis B:\n\nÁreas con mayor intensidad de uso humano deberían presentar menor riqueza y mayor dominancia de pocas especies ruderales.\nEn un test manipulativo simple (microparcelas con y sin pisoteo simulado), las parcelas perturbadas deberían perder cobertura de especies sensibles en pocas semanas.\nEl efecto de perturbación debería ser más fuerte en zonas ya estresadas por baja humedad.\n\nDatos necesarios para probar la hipótesis B y sus predicciones:\n\nMétricas de perturbación por parcela: frecuencia de paso, distancia a senderos, frecuencia de corte.\nRiqueza, cobertura y composición de plantas en parcelas con distinto nivel de perturbación.\nEnsayo manipulativo con réplicas (pisoteo simulado vs control) y seguimiento temporal de composición/cobertura."
+  },
+  {
+    "objectID": "giras/index.html",
+    "href": "giras/index.html",
+    "title": "Giras",
+    "section": "",
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+  },
+  {
+    "objectID": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "href": "giras/index.html#gira-principal-estacion-biologica-la-selva",
+    "title": "Giras",
+    "section": "",
+    "text": "La gira principal del curso corresponde a la Investigacion independiente y se realiza en la Estacion Biologica La Selva.\n\n\n\n16, 17 y 18 de octubre de 2026\n\n\n\n\nDurante la gira, cada grupo implementa su diseno de investigacion para:\n\norganizar el muestreo segun su protocolo\nrecolectar y documentar datos biologicos y ambientales\nregistrar metadatos y observaciones relevantes\nadaptar el protocolo cuando las condiciones de campo lo requieran\n\n\n\n\n\nllevar y usar correctamente el equipo de campo\nasegurar registro claro y oportuno en bitacoras\ndocumentar ajustes metodologicos y sus justificaciones\nmantener coordinacion con docentes y asistentes"
+  },
+  {
+    "objectID": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "href": "giras/index.html#trabajo-de-campo-para-la-investigacion-guiada",
+    "title": "Giras",
+    "section": "Trabajo de campo para la investigacion guiada",
+    "text": "Trabajo de campo para la investigacion guiada\nEl trabajo de campo de la investigacion guiada se realiza principalmente dentro del campus universitario y en sitios cercanos. Esta fase esta pensada para practicar el flujo basico de una investigacion ecológica con mayor acompanamiento docente.\n\nResponsabilidades durante la gira\n\naplicar protocolos de muestreo de forma consistente\nregistrar datos, observaciones y metadatos en la bitacora\nreconocer dificultades de campo y fuentes de error"
+  },
+  {
+    "objectID": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "href": "giras/index.html#expectativas-de-trabajo-en-campo-para-el-proyecto-semestral",
+    "title": "Giras",
+    "section": "Expectativas de trabajo en campo para el proyecto semestral",
+    "text": "Expectativas de trabajo en campo para el proyecto semestral\nSegun el programa del curso, el proyecto semestral integra progresivamente las competencias desarrolladas en investigaciones guiadas e independientes y debe reflejar un proceso cientifico completo.\n\nExpectativas de trabajo de campo\n\ncada pareja debe realizar al menos tres eventos independientes de trabajo de campo o un esfuerzo equivalente de laboratorio\nestos eventos deben ser coordinados previamente con docentes y asistentes\ntoda actividad de campo debe quedar documentada en la bitacora del proyecto\n\n\n\nEvidencia y documentacion\nLa bitacora del proyecto es obligatoria desde el inicio del semestre y debe registrar:\n\nobservaciones iniciales y formulacion de preguntas\nhipotesis, predicciones y decisiones metodologicas\ncambios al diseno y cronograma\nactividades de campo y organizacion de datos"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "",
+    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
+  },
+  {
+    "objectID": "index.html#bienvenido",
+    "href": "index.html#bienvenido",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "",
+    "text": "Este sitio concentra los materiales del curso Laboratorio de Ecología General B-0305.\nAquí se irán publicando:\n\nClases - presentaciones y guías de apoyo\nLaboratorios - protocolos y actividades prácticas"
+  },
+  {
+    "objectID": "index.html#enfoque-del-curso",
+    "href": "index.html#enfoque-del-curso",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Enfoque del curso",
+    "text": "Enfoque del curso\nEl laboratorio está organizado alrededor de investigaciones ecológicas guiadas e independientes. El objetivo es que las personas estudiantes desarrollen competencias para observar patrones, formular preguntas, diseñar muestreos, analizar datos y comunicar resultados."
+  },
+  {
+    "objectID": "index.html#programa-del-curso",
+    "href": "index.html#programa-del-curso",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Programa del curso",
+    "text": "Programa del curso\nEl programa del curso ya está disponible en la sección de Programa."
+  },
+  {
+    "objectID": "index.html#fechas-importantes",
+    "href": "index.html#fechas-importantes",
+    "title": "Laboratorio de Ecologia General B-0305",
+    "section": "Fechas importantes",
+    "text": "Fechas importantes\n\n\n\n\n\n\n\nFecha\nActividad\n\n\n\n\n9 oct 2026\nEntrega de propuesta del proyecto semestral\n\n\n16-18 oct 2026\nGira a la Estación Biológica La Selva y recolección de datos\n\n\n13 nov 2026\nEntrega de informe de avance del proyecto semestral\n\n\n20 nov 2026\nSimposio de investigaciones cortas (presentaciones de Investigación II)\n\n\n27 nov 2026\nPresentaciones orales del proyecto semestral\n\n\n4 dic 2026\nEntrega del reporte final del proyecto semestral"
+  },
+  {
+    "objectID": "labs/L01.html",
+    "href": "labs/L01.html",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
+  },
+  {
+    "objectID": "labs/L01.html#observacion",
+    "href": "labs/L01.html#observacion",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "",
+    "text": "En el campus hay muchas áreas verdes, pero algunas tienen más diversidad de plantas que otras. Las áreas difieren en la cantidad de luz, humedad, fertilidad del suelo y perturbaciones humanas, y la composición de especies también varía entre ellas. Lo que no está claro es por qué algunas áreas tienen más diversidad que otras, y qué mecanismos ecológicos podrían estar involucrados.\nProponga dos hipótesis basadas en mecanismos ecológicos diferentes y derive predicciones que permitan ponerlas a prueba con datos.\nLas hipótesis y predicciones deben ser consistentes con las observaciones y con el conocimiento ecológico. Cada hipótesis debe proponer un mecanismo ecológico que explique cómo una variable podría afectar la diversidad, y debe involucrar algo que pueda ser medido o manipulado."
+  },
+  {
+    "objectID": "labs/L01.html#preguntas",
+    "href": "labs/L01.html#preguntas",
+    "title": "Lab 01: método científico, hipótesis, predicciones",
+    "section": "Preguntas",
+    "text": "Preguntas\nHipótesis A:\n\n \n \n \n \n\nPredicciones de la hipótesis A:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis A y sus predicciones:\n\n \n \n \n \n\n\nHipótesis B:\n\n \n \n \n \n\nPredicciones de la hipótesis B:\n\n \n \n \n \n \n\nDatos necesarios para probar la hipótesis B y sus predicciones:"
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html",
+    "href": "labs/L03-actividad-dplyr.html",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "",
+    "text": "Fase 1: Aprendizaje independiente en su grupo original (3 minutos)\n\n\n\n\nNos dividimos en grupos de 5 personas.\nCada grupo tiene un experto para los distinctos aspectos:\n\ncaracteristicas de los datos tidy y la manipulación con pipelines\noperaciones a nivel de tabela\noperaciones a nivel de fila\noperaciones a nivel de columna\nuniendo datos\n\nEl experto, estudia el material sobre su enfoque específico.\n\n\n\n\n\n\n\n\n\nFase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)\n\n\n\n\nLos expertos de cada enfoque se reúnen en grupos para compartir sus conocimientos.\nAclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.\nEl experto prepara un reporte breve de:\n\n¿Qué hace esta operación?\n¿Qué cambia: las filas, las columnas, los valores, o el número de observaciones?\nDé un ejemplo ecológico de cuándo la usaría. De la experiencia reciente con el analisis de datos en su grupo, mencione un caso concreto.\n\n\n\n\n\n\n\n\n\n\nFase 3: Enseñanza en el grupo original (5 minutos)\n\n\n\n\nCada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su área específica.\nSe discuten y resuelven dudas sobre las temas presentados por los expertos.\n\n\n\n\n\n\n\n\n\nFase 4: Reflexión y cierre (5 minutos)\n\n\n\n\nSe comparten conclusiones y se resuelven dudas finales con toda la clase.\nCada grupo original (no grupo de expertos) tiene que resolver la situación de la siguiente página (caja roja).\n\n\n\n\n\n\n\n\n\n\nSituación (Fase 4)\n\n\n\nCada grupo original (no grupo de expertos) tiene que resolver la siguiente situación:\nTenemos una tabla llamada muestras con la abundancia (conteo) de macroinvertebrados de 4 sitios, medida en varias fechas; cada muestra cubre un área fija de 0.25 m².\n\n\n\nsitio\nfecha\nconteo\n\n\n\n\n\nTenemos una segunda tabla llamada sitios, con un solo valor de temperatura y oxígeno por cada uno de los 4 sitios (estos valores no varían por fecha).\n\n\n\nsitio\ntemperatura\noxígeno\n\n\n\n\n\nQueremos, a partir de la tabla muestras:\n\nquedarnos solamente con las muestras de septiembre (columna fecha);\nagregar una columna de densidad (individuos/m²), dividiendo el conteo entre el área de la muestra;\ncalcular la densidad promedio de septiembre por sitio;\nordenar los sitios de mayor a menor densidad promedio;\nagregar, para cada sitio, la temperatura y oxígeno desde la tabla sitios.\n\n¿Qué operaciones necesitamos y en qué orden? ¿Con qué columna(s) se debe hacer la unión (join) entre las dos tablas?"
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html#actividad",
+    "href": "labs/L03-actividad-dplyr.html#actividad",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "",
+    "text": "Fase 1: Aprendizaje independiente en su grupo original (3 minutos)\n\n\n\n\nNos dividimos en grupos de 5 personas.\nCada grupo tiene un experto para los distinctos aspectos:\n\ncaracteristicas de los datos tidy y la manipulación con pipelines\noperaciones a nivel de tabela\noperaciones a nivel de fila\noperaciones a nivel de columna\nuniendo datos\n\nEl experto, estudia el material sobre su enfoque específico.\n\n\n\n\n\n\n\n\n\nFase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)\n\n\n\n\nLos expertos de cada enfoque se reúnen en grupos para compartir sus conocimientos.\nAclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.\nEl experto prepara un reporte breve de:\n\n¿Qué hace esta operación?\n¿Qué cambia: las filas, las columnas, los valores, o el número de observaciones?\nDé un ejemplo ecológico de cuándo la usaría. De la experiencia reciente con el analisis de datos en su grupo, mencione un caso concreto.\n\n\n\n\n\n\n\n\n\n\nFase 3: Enseñanza en el grupo original (5 minutos)\n\n\n\n\nCada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su área específica.\nSe discuten y resuelven dudas sobre las temas presentados por los expertos.\n\n\n\n\n\n\n\n\n\nFase 4: Reflexión y cierre (5 minutos)\n\n\n\n\nSe comparten conclusiones y se resuelven dudas finales con toda la clase.\nCada grupo original (no grupo de expertos) tiene que resolver la situación de la siguiente página (caja roja).\n\n\n\n\n\n\n\n\n\n\nSituación (Fase 4)\n\n\n\nCada grupo original (no grupo de expertos) tiene que resolver la siguiente situación:\nTenemos una tabla llamada muestras con la abundancia (conteo) de macroinvertebrados de 4 sitios, medida en varias fechas; cada muestra cubre un área fija de 0.25 m².\n\n\n\nsitio\nfecha\nconteo\n\n\n\n\n\nTenemos una segunda tabla llamada sitios, con un solo valor de temperatura y oxígeno por cada uno de los 4 sitios (estos valores no varían por fecha).\n\n\n\nsitio\ntemperatura\noxígeno\n\n\n\n\n\nQueremos, a partir de la tabla muestras:\n\nquedarnos solamente con las muestras de septiembre (columna fecha);\nagregar una columna de densidad (individuos/m²), dividiendo el conteo entre el área de la muestra;\ncalcular la densidad promedio de septiembre por sitio;\nordenar los sitios de mayor a menor densidad promedio;\nagregar, para cada sitio, la temperatura y oxígeno desde la tabla sitios.\n\n¿Qué operaciones necesitamos y en qué orden? ¿Con qué columna(s) se debe hacer la unión (join) entre las dos tablas?"
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html#material",
+    "href": "labs/L03-actividad-dplyr.html#material",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "Material",
+    "text": "Material\nEn lo que sigue se presentan las principales funciones de manipulación de datos en R utilizando el enfoque tidy data. Todos los imagenes provienen del dplyr cheatsheet disponible en el siguiente enlace: dplyr cheatsheet."
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html#tidy-data-datos-ordenados-experto-1",
+    "href": "labs/L03-actividad-dplyr.html#tidy-data-datos-ordenados-experto-1",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "Tidy data (Datos ordenados) (experto 1)",
+    "text": "Tidy data (Datos ordenados) (experto 1)\nDatos tidy:\n\nCada columna representa una variable.\nCada fila representa una observación.\n\n\nPipelines, el operador |&gt; o %&gt;%:\n\nFacilitan la manipulación de datos tidy.\nToman la salida de una operación y la pasan como entrada a la siguiente operación\nEsto permite encadenar múltiples transformaciones de manera clara y concisa.\n\ndatos |&gt; filter(variable &gt; valor) |&gt; summarise(promedio = mean(variable))"
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html#operaciones-a-nivel-de-tabela-experto-2",
+    "href": "labs/L03-actividad-dplyr.html#operaciones-a-nivel-de-tabela-experto-2",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "Operaciones a nivel de tabela (experto 2)",
+    "text": "Operaciones a nivel de tabela (experto 2)\n\nResumenes\nsummarise():\n\nAplica una funcion para generar nueva tabela con resúmenes.\nPermite obtener estadísticas descriptivas.\nSe utiliza comúnmente junto con group_by() para obtener resúmenes por grupo.\n\ndatos |&gt; summarise(promedio = mean(variable))\n\n\n\nAgrupamiento\ngroup_by():\n\nAgrupa los datos según una o más variables.\nCrea version modificada de los datos con el agrupamiento aplicado.\nTodos operaciones posteriores se aplican dentro de cada grupo.\nSe utiliza comúnmente junto con summarise() para obtener resúmenes por grupo.\n\ndatos |&gt; group_by(variable_categorica)"
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html#operaciones-a-nivel-de-fila-experto-3",
+    "href": "labs/L03-actividad-dplyr.html#operaciones-a-nivel-de-fila-experto-3",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "Operaciones a nivel de fila (experto 3)",
+    "text": "Operaciones a nivel de fila (experto 3)\n\nFiltrado (selección de filas)\nfilter():\n\nSelecciona filas que cumplen con una condición específica.\nPermite filtrar los datos según valores de las columnas.\nSe utiliza comúnmente para enfocarse en subconjuntos relevantes de los datos.\n\ndatos |&gt; filter(variable &gt; valor)\n\n\n\nOrdenamiento de filas\narrange():\n\nOrdena las filas de un data frame según una o más columnas.\nPermite especificar el orden ascendente o descendente.\nFacilita la visualización y el análisis de los datos en un orden específico.\n\ndatos |&gt; arrange(variable)"
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html#operaciones-a-nivel-de-columna-experto-4",
+    "href": "labs/L03-actividad-dplyr.html#operaciones-a-nivel-de-columna-experto-4",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "Operaciones a nivel de columna (experto 4)",
+    "text": "Operaciones a nivel de columna (experto 4)\n\nSelección de columnas\nselect():\n\nPermite elegir un subconjunto de columnas de un data frame.\nFacilita trabajar solo con las columnas relevantes.\nSe puede usar para reordenar columnas o renombrarlas.\n\ndatos |&gt; select(columna1, columna2)\n\n\n\nCreando nuevas columnas\nmutate():\n\nCrea nuevas columnas o modifica las existentes.\nPermite realizar cálculos basados en otras columnas.\nSe utiliza comúnmente para agregar información derivada a los datos.\n\ndatos |&gt; mutate(nueva_columna = variable1 + variable2)"
+  },
+  {
+    "objectID": "labs/L03-actividad-dplyr.html#uniendo-datos-experto-5",
+    "href": "labs/L03-actividad-dplyr.html#uniendo-datos-experto-5",
+    "title": "Lab 03: Verbos principales para manipulacion de datos",
+    "section": "Uniendo datos (experto 5)",
+    "text": "Uniendo datos (experto 5)\n\nUniendo datos sin claves\nbind_rows():\n\nPermite combinar varias tablas con las mismas columnas.\n\nbind_rows(tabla1, tabla2)\n\n\n\nUniendo datos con claves\nleft_join():\n\nPermite combinar dos tablas según una clave común, conservando todas las filas de la tabla izquierda.\nSe utiliza comúnmente para agregar información adicional a un conjunto de datos existente.\nNo conserva las filas de la tabla derecha que no tienen coincidencias en la tabla izquierda.\n\nleft_join(tabla1, tabla2, by = \"clave\")\n\n\nHay otros tipos de uniones con claves, como right_join(), inner_join() y full_join(), que permiten combinar tablas de diferentes maneras según las necesidades del análisis."
+  },
+  {
+    "objectID": "labs/L03-ejercicios.html",
+    "href": "labs/L03-ejercicios.html",
+    "title": "Lab 03 Ejercicios: Análisis exploratorio de datos",
+    "section": "",
+    "text": "suppressPackageStartupMessages({\n  library(dplyr)\n  library(ggplot2)\n})"
+  },
+  {
+    "objectID": "labs/L03-ejercicios.html#preparacion",
+    "href": "labs/L03-ejercicios.html#preparacion",
+    "title": "Lab 03 Ejercicios: Análisis exploratorio de datos",
+    "section": "",
+    "text": "suppressPackageStartupMessages({\n  library(dplyr)\n  library(ggplot2)\n})"
+  },
+  {
+    "objectID": "labs/L03-ejercicios.html#seccion-1.-manipulación-de-datos",
+    "href": "labs/L03-ejercicios.html#seccion-1.-manipulación-de-datos",
+    "title": "Lab 03 Ejercicios: Análisis exploratorio de datos",
+    "section": "Seccion 1. Manipulación de datos",
+    "text": "Seccion 1. Manipulación de datos\nEl dataset iris viene incluido con R. Es un conjunto de datos que contiene medidas de sépalos y pétalos de tres especies de flores de iris. Su estructura es la siguiente:\n\ndplyr::glimpse(iris)\n\nRows: 150\nColumns: 5\n$ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.…\n$ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.…\n$ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.…\n$ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.…\n$ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, s…\n\niris2 &lt;- dplyr::as_tibble(iris)\n\nEntonces, para cada expecie tenemos 4 variables medidas: longitud del sépalo, ancho del sépalo, longitud del pétalo y ancho del pétalo. La columna Species indica la especie a la que pertenece cada observación.\n\nQ1 Resumir datos (promedios generales)\n\n# Su código aquí\n\n\nprint(iris_resumen)\n\n  avg_sepal_length avg_petal_length\n1         5.843333            3.758\n\n\n\n\nQ2 Resumir datos por grupo\n\n# Su código aquí\n\n\nprint(iris_resumen)\n\n# A tibble: 3 × 2\n  Species    avg_sepal_length\n  &lt;fct&gt;                 &lt;dbl&gt;\n1 setosa                 5.01\n2 versicolor             5.94\n3 virginica              6.59\n\n\n\n\nQ3 Crear nuevas columnas\n\n# Su código aquí\n\n\nprint(head(iris_razon, 10))\n\n# A tibble: 10 × 6\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  \n 1          5.1         3.5          1.4         0.2 setosa \n 2          4.9         3            1.4         0.2 setosa \n 3          4.7         3.2          1.3         0.2 setosa \n 4          4.6         3.1          1.5         0.2 setosa \n 5          5           3.6          1.4         0.2 setosa \n 6          5.4         3.9          1.7         0.4 setosa \n 7          4.6         3.4          1.4         0.3 setosa \n 8          5           3.4          1.5         0.2 setosa \n 9          4.4         2.9          1.4         0.2 setosa \n10          4.9         3.1          1.5         0.1 setosa \n# ℹ 1 more variable: razon_sepal_length_width &lt;dbl&gt;\n\n\n\n\nQ4 Filtrar datos\n\n# Su código aquí\n\n\nprint(head(iris_filtrado, 10))\n\n# A tibble: 10 × 5\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  \n 1          5.1         3.5          1.4         0.2 setosa \n 2          4.9         3            1.4         0.2 setosa \n 3          4.7         3.2          1.3         0.2 setosa \n 4          4.6         3.1          1.5         0.2 setosa \n 5          5           3.6          1.4         0.2 setosa \n 6          5.4         3.9          1.7         0.4 setosa \n 7          4.6         3.4          1.4         0.3 setosa \n 8          5           3.4          1.5         0.2 setosa \n 9          4.4         2.9          1.4         0.2 setosa \n10          4.9         3.1          1.5         0.1 setosa \n\n\n\n\nQ5 Contar por grupo\n\n# Su código aquí\n\n\nprint(iris_contado)\n\n# A tibble: 3 × 2\n  Species    count\n  &lt;fct&gt;      &lt;int&gt;\n1 setosa        50\n2 versicolor    50\n3 virginica     50"
+  },
+  {
+    "objectID": "labs/L03-ejercicios.html#seccion-2-visualización-de-datos",
+    "href": "labs/L03-ejercicios.html#seccion-2-visualización-de-datos",
+    "title": "Lab 03 Ejercicios: Análisis exploratorio de datos",
+    "section": "Seccion 2: Visualización de datos",
+    "text": "Seccion 2: Visualización de datos\nSeguimos usando iris2. Además, para el ejercicio de series de tiempo usamos el dataset economics, incluido con ggplot2, que contiene indicadores económicos mensuales de EE.UU. desde 1967.\n\ndplyr::glimpse(ggplot2::economics)\n\nRows: 574\nColumns: 6\n$ date     &lt;date&gt; 1967-07-01, 1967-08-01, 1967-09-01, 1967-10-01, 1967-11-01, …\n$ pce      &lt;dbl&gt; 506.7, 509.8, 515.6, 512.2, 517.4, 525.1, 530.9, 533.6, 544.3…\n$ pop      &lt;dbl&gt; 198712, 198911, 199113, 199311, 199498, 199657, 199808, 19992…\n$ psavert  &lt;dbl&gt; 12.6, 12.6, 11.9, 12.9, 12.8, 11.8, 11.7, 12.3, 11.7, 12.3, 1…\n$ uempmed  &lt;dbl&gt; 4.5, 4.7, 4.6, 4.9, 4.7, 4.8, 5.1, 4.5, 4.1, 4.6, 4.4, 4.4, 4…\n$ unemploy &lt;dbl&gt; 2944, 2945, 2958, 3143, 3066, 3018, 2878, 3001, 2877, 2709, 2…\n\n\n\nQ6 Histograma\n\n# Su código aquí\n\n\nprint(iris_hist)\n\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n\n\n\n\n\n\n\n\n\n\n\nQ7 Diagrama de dispersión\n\n# Su código aquí\n\n\nprint(iris_scatter)\n\n\n\n\n\n\n\n\n\n\nQ8 Boxplot\n\n# Su código aquí\n\n\nprint(iris_boxplot)\n\n\n\n\n\n\n\n\n\n\nQ9 Gráfico de barras\n\n# Su código aquí\n\n\nprint(iris_barplot)\n\n\n\n\n\n\n\n\n\n\nQ10 Gráfico de líneas\n\n# Su código aquí\n\n\nprint(economics_lineplot)"
+  },
+  {
+    "objectID": "labs/L04-actividad-2-glm.html",
+    "href": "labs/L04-actividad-2-glm.html",
+    "title": "Lab 04: Modelos lineales generalizados",
+    "section": "",
+    "text": "library(ggplot2)"
+  },
+  {
+    "objectID": "labs/L04-actividad-2-glm.html#escenario-1-blanqueamiento-de-corales-binomial",
+    "href": "labs/L04-actividad-2-glm.html#escenario-1-blanqueamiento-de-corales-binomial",
+    "title": "Lab 04: Modelos lineales generalizados",
+    "section": "Escenario 1: Blanqueamiento de corales (binomial)",
+    "text": "Escenario 1: Blanqueamiento de corales (binomial)\n\nContexto ecológico\nLos corales dependen de una relación simbiótica con Dinoflagelados (zooxantelas) que viven en sus tejidos, les proporcionan alimento y contribuyen a sus colores. Cuando la temperatura del océano aumenta demasiado, los corales sufren estrés y expulsan las algas: se vuelven blancos, un fenómeno llamado blanqueamiento. Si el calor persiste, los corales pueden morir.\nLos ecólogos marinos miden el estrés térmico con las Degree Heating Weeks (DHW), un índice que resume el calor acumulado durante las 12 semanas previas.\n\nPredictor (\\(x\\)): intensidad del estrés térmico (índice DHW).\nRespuesta biológica (\\(y\\)): cada colonia es sana/recuperada (\\(0\\)) o blanqueada/muerta (\\(1\\)).\n\n\n\nProceso\n\nHay dos posibilidades. Cada coral puede ser sano/recuperado (\\(0\\)) o blanqueado/muerto (\\(1\\)).\nValores como ‘mediosano’ o ‘medioblanqueado’ no son posibles, ya que cada coral solo puede estar en uno de los dos estados.\n\nCada coral individual sigue un proceso Bernoulli (un caso binomial con \\(n = 1\\)). Por tanto, la unidad de observación para este análisis será una colonia, con su estado de blanqueamiento registrado como \\(0\\) o \\(1\\).\nQue nos indica esto sobre la distribucion matematica con cual se podria generar este tipo de datos? Se pueden generar con una distribuucion normal? O necesitamos otra distribucion?\n\nnorm &lt;- rnorm(100, mean = 50, sd = 20)\nbino &lt;- rbinom(100, size = 1, prob = 0.5)\npois &lt;- rpois(100, lambda = 1)\n\npar(mfrow = c(1, 3))\n\nhist(norm, main = \"Normal\", xlab = \"Valores\", col = \"lightblue\")\nhist(bino, main = \"Binomial\", xlab = \"Valores\", col = \"lightgreen\")\nhist(pois, main = \"Poisson\", xlab = \"Valores\", col = \"lightcoral\")\n\n\n\n\n\n\n\n\nCual distribucion parece más adecuada para modelar el estado de los corales (sano/recuperado vs blanqueado/muerto)?\n\n\nModelo generativo\nMuchas veces ayuda simular datos del modelo que queremos usar antes de recolectarlos or analizar los datos reales. Por ejemplo, si creemos que el blanqueamiento sigue una distribución binomial (0/1), podemos generar datos simulados así:\n\nset.seed(123)\nn_corales &lt;- 100\nprob_blanqueado &lt;- 0.3\nsim_blanqueado &lt;- rbinom(n_corales, size = 1, prob = prob_blanqueado)\nhist(sim_blanqueado)\n\n\n\n\n\n\n\n\nSi repetimos este proceso muchas veces, obtendríamos diferentes histogramas que reflejan la variabilidad esperada en el número de corales blanqueados bajo la misma probabilidad inicial. Para visualizar esta variabilidad, graficamos la proporcion de blanqueados por simulación.\n\nset.seed(123)\nn_sim &lt;- 100\nsimulations &lt;- replicate(\n  n_sim, rbinom(n_corales, size = 1, prob = prob_blanqueado)\n)\n\n# Graficar la proporción de blanqueados por simulación\nprop_simulations &lt;- colMeans(simulations)\nhist(\n  prop_simulations,\n  main = \"Proporción de blanqueados por simulación\",\n  xlab = \"Proporción\",\n  col = \"lightgreen\",\n  xlim = c(0, 1)\n)\n\n\n\n\n\n\n\n\nBajo la suposicion que la proporcion de corales blanqueados de 0.3 es la verdadera, podemos esperar que las proporciones observadas en diferentes simulaciones varíen alrededor de este valor.\nQue pasa si la verdadera proporción de corales blanqueados es mucho más baja o mucho más alta? ¿Cómo cambiaría la variabilidad observada en las simulaciones?\n\nset.seed(123)\nprob_blanqueado_baja &lt;- 0.05\nprob_blanqueado_alta &lt;- 0.9\n\nn_sim &lt;- 100\n# Simulación con una proporción más baja\nsimulations_low &lt;- replicate(\n  n_sim, rbinom(n_corales, size = 1, prob = prob_blanqueado_baja)\n)\nprop_simulations_low &lt;- colMeans(simulations_low)\n\n# Simulación con una proporción más alta\nsimulations_high &lt;- replicate(\n  n_sim, rbinom(n_corales, size = 1, prob = prob_blanqueado_alta)\n)\nprop_simulations_high &lt;- colMeans(simulations_high)\n\n# Graficar la proporción de blanqueados por simulación con diferentes probabilidades\npar(mfrow = c(1, 3))\nhist(\n  prop_simulations,\n  main = \"Proporción de blanqueados intermedia\",\n  xlab = \"Proporción\",\n  col = \"lightcoral\"\n)\n\nhist(\n  prop_simulations_low,\n  main = \"Proporción de blanqueados baja\",\n  xlab = \"Proporción\",\n  col = \"lightblue\"\n)\n\nhist(\n  prop_simulations_high,\n  main = \"Proporción de blanqueados alta\",\n  xlab = \"Proporción\",\n  col = \"lightgreen\"\n)\n\n\n\n\n\n\n\n\nEsperamos que la variabilidad observada en las simulaciones sea mayor cuando la proporción verdadera está cerca de 50% y menor cuando está cerca de 5% o 95%. Intuitivamente, cerca de 50% hay más oportunidad de variación que cerca de 0 o 1.\nEstas caracteristicas no se pueden replicar con una distribucion normal! En la distribucion normal,\n\nLa variabilidad no depende de la media de la misma manera que en el proceso binomial.\nValores fuera del rango [0, 1] son permitidos, lo cual no tiene sentido biológico para nuestra variable respuesta.\n\n\nTenemos que usar un modelo que no depende de la suposición de variabilidad constante y que respete los límites de la proporción (0 a 1).\n\n\n\nModelo lineal generalizado (GLM) binomial\nEn un modelo lineal, la respuesta se modela con una distribución normal y una varianza constante:\n\\[\nY_i \\sim \\mathrm{Normal}(\\mu_i, \\sigma^2), \\qquad \\mu_i = \\beta_0 + \\beta_1 x_i.\n\\]\nEn un GLM se especifica la distribución de la respuesta. Para el estado de blanqueamiento de cada colonia:\n\\[\nY_i \\sim \\mathrm{Bernoulli}(p_i), \\qquad\n\\operatorname{logit}(p_i) = \\log\\left(\\frac{p_i}{1-p_i}\\right) = \\beta_0 + \\beta_1\\,\\mathrm{DHW}_i.\n\\]\nLa función de enlace conecta la probabilidad esperada de blanqueamiento (\\(p_i\\)) con el predictor lineal. R aplica este enlace automáticamente al ajustar el modelo; no transforma cada proporción observada antes de la regresión.\n¿Entonces, qué cambio?\n\nLa relación entre la variable respuesta y los predictores ya no es lineal en los valores de y, sino en la escala del enlace (logit en este caso).\nLa variable respuesta se modela como una distribución binomial en lugar de una distribución normal.\nLa varianza de la variable respuesta depende de su probabilidad esperada, en lugar de ser constante.\n\nEn R, podemos ajustar un modelo lineal generalizado binomial utilizando la función glm(), por ejemplo:\nmodelo_binomial &lt;- glm(\n  blanqueado ~ predictor,\n    family = binomial(link = \"logit\"), \n    data = datos)\nAquí cada fila representa una colonia y blanqueado es una variable codificada como \\(0\\) (sana/recuperada) o \\(1\\) (blanqueada/muerta). Por eso se usa directamente como respuesta, sin cbind().\n\n\nDatos\nDespués de una ola de calor, se evaluaron colonias de seis parches de arrecife que habían experimentado distintos niveles de estrés térmico. La tabla resume el muestreo; para el análisis, cada colonia será una fila de datos.\n\n\n\n\n\n\n\n\n\n\nParche\nEstrés térmico (DHW)\nColonias encuestadas (\\(n\\))\nColonias blanqueadas (\\(y\\))\nProporción blanqueada\n\n\n\n\nA\n1.2\n150\n8\n5.3%\n\n\nB\n2.5\n142\n22\n15.5%\n\n\nC\n4.0\n160\n51\n31.9%\n\n\nD\n5.8\n155\n88\n56.8%\n\n\nE\n7.2\n148\n118\n79.7%\n\n\nF\n9.0\n162\n151\n93.2%\n\n\n\n\n\nAnalizar\n\n# Resumen del muestreo por parche\nparches &lt;- data.frame(\n  parche = c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\"),\n  dhw = c(1.2, 2.5, 4.0, 5.8, 7.2, 9.0),\n  n_colonies = c(150, 142, 160, 155, 148, 162),\n  n_blanqueadas = c(8, 22, 51, 88, 118, 151)\n)\n\n# Una fila por colonia: 0 = sana/recuperada, 1 = blanqueada/muerta\ncorales &lt;- do.call(rbind, Map(\n  function(parche, dhw, n_colonies, n_blanqueadas) {\n    data.frame(\n      parche = parche,\n      dhw = dhw,\n      blanqueado = c(rep(1, n_blanqueadas), rep(0, n_colonies - n_blanqueadas))\n    )\n  },\n  parches$parche,\n  parches$dhw,\n  parches$n_colonies,\n  parches$n_blanqueadas\n))\n\n# Modelo binomial con enlace logit\nmodelo_binomial &lt;- glm(\n  blanqueado ~ dhw,\n  family = binomial(link = \"logit\"),\n  data = corales\n)\n\n# Coeficientes del modelo\nsummary(modelo_binomial)\n\n\nCall:\nglm(formula = blanqueado ~ dhw, family = binomial(link = \"logit\"), \n    data = corales)\n\nCoefficients:\n            Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept) -3.49998    0.22925  -15.27   &lt;2e-16 ***\ndhw          0.67097    0.04136   16.22   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 1269.40  on 916  degrees of freedom\nResidual deviance:  828.16  on 915  degrees of freedom\nAIC: 832.16\n\nNumber of Fisher Scoring iterations: 4\n\n\nLos coeficientes de un modelo binomial con enlace logit están expresados en la escala de log-odds, no directamente como probabilidades. Para obtener una probabilidad, aplicamos plogis() al predictor lineal completo.\nEl intercepto (\\(\\beta_0=-3.500\\)) representa los log-odds de blanqueamiento cuando \\(\\mathrm{DHW}=0\\). Podemos convertirlo a probabilidad con plogis():\n\nplogis(coef(modelo_binomial)[\"(Intercept)\"])\n\n(Intercept) \n 0.02931279 \n\n\nPor tanto, el modelo estima una probabilidad de blanqueamiento de aproximadamente 2.9% cuando \\(\\mathrm{DHW}=0\\).\nEl coeficiente de DHW (\\(\\beta_1=0.671\\)) no representa un aumento de 67.1% en la probabilidad. Por cada unidad adicional de DHW, los odds de blanqueamiento se multiplican por \\(\\exp(0.671) \\approx 1.96\\), es decir, aumentan aproximadamente 96%. El cambio en la probabilidad depende del nivel inicial de DHW, por lo que se interpreta mejor con predicciones del modelo:\n\npredictor_5_5 &lt;- predict(modelo_binomial, newdata = data.frame(dhw = 5.5))\nplogis(predictor_5_5)\n\n        1 \n0.5474437 \n\n\nPara estos datos, la probabilidad predicha de blanqueamiento a \\(\\mathrm{DHW}=5.5\\) es aproximadamente 54.7%.\n\n\nPredicciones con ggeffects\nEl paquete ggeffects calcula predicciones del modelo directamente en una escala fácil de interpretar. Para este modelo binomial, predict_response() devuelve probabilidades predichas e intervalos de confianza, en vez de log-odds.\n\npredicciones_dhw &lt;- ggeffects::predict_response(\n  modelo_binomial,\n  terms = \"dhw [all]\"\n)\n\npredicciones_dhw\n\n# Predicted probabilities of blanqueado\n\n dhw | Predicted |     95% CI\n-----------------------------\n1.20 |      0.06 | 0.04, 0.09\n2.50 |      0.14 | 0.11, 0.18\n4.00 |      0.31 | 0.27, 0.35\n5.80 |      0.60 | 0.55, 0.64\n7.20 |      0.79 | 0.75, 0.83\n9.00 |      0.93 | 0.90, 0.95\n\n\nLa tabla muestra la probabilidad predicha de blanqueamiento para cada valor de DHW, junto con sus límites de confianza. También podemos visualizar la relación en la escala de probabilidad:\n\nplot(predicciones_dhw) +\n  labs(\n    x = \"Estrés térmico (DHW)\",\n    y = \"Probabilidad predicha de blanqueamiento\"\n  ) +\n  scale_y_continuous(limits = c(0, 1))\n\nScale for y is already present.\nAdding another scale for y, which will replace the existing scale.\n\n\n\n\n\n\n\n\n\nEstas predicciones permiten comunicar el resultado en términos biológicos: por ejemplo, la probabilidad esperada de blanqueamiento a un nivel particular de estrés térmico, sin interpretar directamente los log-odds.\n\n\n\n\n\n\nTarea\n\n\n\nPor grupo, respondan en su bitacora:\n\nSegún el signo del predictor dhw, ¿cómo cambia la probabilidad de blanqueamiento al aumentar el estrés térmico?\nUsen predict() para estimar la probabilidad de blanqueamiento a \\(\\mathrm{DHW} = 5.5\\). Recuerden usar type = \"response\" para obtener una probabilidad.\nEl umbral \\(BT_{50}\\) es el valor de DHW donde la probabilidad estimada de blanqueamiento es \\(0.5\\). ¿Por qué este umbral puede ser útil para priorizar arrecifes en riesgo?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#plan",
+    "href": "lectures/01-sci-method.html#plan",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Plan",
+    "text": "Plan\n\nEntender como ecologos construyen explicaciones a partir de observaciones y comparacion de hipotesis.\nDistinguir entre patron observado y mecanismo explicativo.\nUsar predicciones para contrastar hipotesis alternativas.\nReforzar el metodo cientifico como proceso iterativo con incertidumbre."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion",
+    "href": "lectures/01-sci-method.html#observacion-vs-explicacion",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Observacion vs explicacion",
+    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\n¿Por que?\n\n\nPosibles explicaciones:\n\n\nMuestreo pasivo\n\n\nHeterogeneidad de habitat\n\n\nColonizacion-extincion\n\n\n\n\nEl patron por si solo no identifica el mecanismo."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
+    "href": "lectures/01-sci-method.html#observacion-vs-explicacion-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Observacion vs explicacion",
+    "text": "Observacion vs explicacion\nObservacion:\n\nParches de mayor area tienen mas especies.\n\n\nNecesitamos:\n\nhipotesis alternativas\npredicciones distintas\ncomparacion de evidencia"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#definiciones",
+    "href": "lectures/01-sci-method.html#definiciones",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Definiciones",
+    "text": "Definiciones\n\nSi P, entonces Q. P es la hipotesis y Q es la prediccion.\n\n\nUna hipotesis es una explicacion propuesta y comprobable para un fenomeno ecologico observado.\n\n\nUna prediccion es una consecuencia observable de la hipotesis que puede ser contrastada con evidencia."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
+    "href": "lectures/01-sci-method.html#hipotesis-a-muestreo-pasivo",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis A: Muestreo pasivo",
+    "text": "Hipotesis A: Muestreo pasivo\nHipotesis:\n\nLos sitios grandes contienen mas individuos y por eso detectamos mas especies, incluso sin diferencias en procesos ecologicos.\n\n\nPredicciones:\n\n\nLa relacion area-riqueza deberia debilitarse al estandarizar el numero de individuos observados.\nSi el esfuerzo de muestreo es igual entre sitios, la diferencia de riqueza deberia reducirse.\nNo necesariamente deberia aparecer una relacion fuerte entre area y diversidad de habitat."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
+    "href": "lectures/01-sci-method.html#hipotesis-b-heterogeneidad-de-habitat",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis B: Heterogeneidad de habitat",
+    "text": "Hipotesis B: Heterogeneidad de habitat\nHipotesis:\n\nLos sitios grandes contienen mas tipos de microhabitat y nichos, permitiendo coexistencia de mas especies.\n\n\nPredicciones:\n\n\nEl numero de microhabitats deberia aumentar con el area.\nLa riqueza deberia aumentar con heterogeneidad del habitat.\nSitios con area similar pero mayor heterogeneidad deberian tener mayor riqueza."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
+    "href": "lectures/01-sci-method.html#hipotesis-c-colonizacion-extincion",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Hipotesis C: Colonizacion-extincion",
+    "text": "Hipotesis C: Colonizacion-extincion\nHipotesis:\n\nLos sitios grandes sostienen poblaciones mas grandes y estables, con menor extincion local y mayor persistencia temporal.\n\n\nPredicciones:\n\n\nSitios pequenos deberian mostrar menor persistencia temporal de especies.\nSitios grandes deberian mantener mas especies a traves de muestreos sucesivos.\nLa persistencia de especies en el tiempo deberia ser mayor en parches grandes."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#que-datos-necesitamos",
+    "href": "lectures/01-sci-method.html#que-datos-necesitamos",
+    "title": "Metodo cientifico en ecologia",
+    "section": "¿Que datos necesitamos?",
+    "text": "¿Que datos necesitamos?\n\n\narea de cada parche\nriqueza de especies por parche\nabundancia total y esfuerzo de muestreo\nindice de heterogeneidad de habitat\npresencia/ausencia en multiples fechas (persistencia temporal)"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-1-patron-observado",
+    "href": "lectures/01-sci-method.html#evidencia-1-patron-observado",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 1: patron observado",
+    "text": "Evidencia 1: patron observado\n\n\n¿Que hipotesis favorece esta evidencia?\n\n\nFavorece varias A, B o C. No distingue mecanismo."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
+    "href": "lectures/01-sci-method.html#evidencia-2-estandarizacion-por-muestreo",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 2: estandarizacion por muestreo",
+    "text": "Evidencia 2: estandarizacion por muestreo\n\n\nSi la pendiente cae mucho al estandarizar, aumenta soporte para hipotesis A."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
+    "href": "lectures/01-sci-method.html#evidencia-3-heterogeneidad-de-habitat",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 3: heterogeneidad de habitat",
+    "text": "Evidencia 3: heterogeneidad de habitat\n\n\nRelacion fuerte con heterogeneidad: evidencia coherente con hipotesis B."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
+    "href": "lectures/01-sci-method.html#evidencia-4-persistencia-temporal",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia 4: persistencia temporal",
+    "text": "Evidencia 4: persistencia temporal\n\n\nMayor persistencia en sitios grandes: evidencia coherente con hipotesis C."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada",
+    "href": "lectures/01-sci-method.html#evidencia-combinada",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis B.\nLa riqueza estandarizada mantiene una pendiente positiva con area y, ademas, la riqueza aumenta con heterogeneidad del habitat."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-1",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-1",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nHipotesis C.\nLa riqueza estandarizada se mantiene positiva con area y la persistencia temporal aumenta en parches grandes."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-2",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-2",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\n¿Que hipotesis esta mejor apoyada por esta evidencia combinada?\n\n\nEvidencia compatible con B y C.\nLa heterogeneidad aumenta la riqueza, lo que apoya B. Ademas, la persistencia temporal aumenta en parches grandes, lo que apoya C.\n\n\n¿Hipotesis parcialmente compatibles, o predictores cuyos efectos se solapan o interactuan?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
+    "href": "lectures/01-sci-method.html#evidencia-adicional-persistencia-vs-heterogeneidad-b-c",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia adicional: persistencia vs heterogeneidad (B-C)",
+    "text": "Evidencia adicional: persistencia vs heterogeneidad (B-C)\n\n\n\nMayor heterogeneidad se asocia con mayor persistencia.\nEsto sugiere que la heterogeneidad tambien puede mejorar la estabilidad, ademas de aumentar la riqueza.\nRecuerdense que hipotesis C vinculaba la persistencia con area, no con heterogeneidad."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#evidencia-combinada-3",
+    "href": "lectures/01-sci-method.html#evidencia-combinada-3",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Evidencia combinada",
+    "text": "Evidencia combinada\n\n\nUna sola fuente de evidencia rara vez basta para distinguir mecanismos.\nEl mismo patron especie-area puede surgir por procesos distintos.\nLa inferencia mejora cuando comparamos predicciones especificas de hipotesis alternativas.\nEl objetivo es identificar la explicacion mas consistente con la evidencia disponible, no una verdad absoluta."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
+    "href": "lectures/01-sci-method.html#y-si-los-datos-no-son-claros",
+    "title": "Metodo cientifico en ecologia",
+    "section": "¿Y si los datos no son claros?",
+    "text": "¿Y si los datos no son claros?\n\n\nMisma direccion de efecto, distinta precision.\n¿Interpretariamos estas dos figuras de la misma manera?"
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
+    "href": "lectures/01-sci-method.html#señal-positiva-con-distinta-precision",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Señal positiva con distinta precision",
+    "text": "Señal positiva con distinta precision\n\n\n\n¿Qué hipótesis favorece esta evidencia?\nAmbos paneles sugieren direccion positiva, pero con diferente precision (incertidumbre): el IC95% de la pendiente es critico.\nLa dirección del efecto y precisión de la evidencia son cosas distintas.\nCon menor precisión, la evidencia sigue siendo compatible con una relacion positiva, pero con mayor incertidumbre sobre la magnitud del efecto."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
+    "href": "lectures/01-sci-method.html#inferencia-con-incertidumbre",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Inferencia con incertidumbre",
+    "text": "Inferencia con incertidumbre\n\n\nEl IC95% de una pendiente (cualquier coeficiente) indica un rango plausible para el efecto.\nPara hipotesis B, el parametro clave es la pendiente heterogeneidad -&gt; riqueza: esperamos signo positivo.\nPara hipotesis C, el parametro clave es la pendiente area -&gt; persistencia: esperamos signo positivo.\nSi el IC95% incluye 0, la evidencia no permite descartar ausencia de efecto.\nSi el IC95% no incluye 0 y el signo coincide con la prediccion, aumenta el soporte para la hipotesis.\nEl ancho del IC95% habla de precision: IC angosto = estimacion mas estable; IC amplio = mayor incertidumbre."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
+    "href": "lectures/01-sci-method.html#exemplo-de-interpretacion-con-incertidumbre",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Exemplo de interpretacion con incertidumbre",
+    "text": "Exemplo de interpretacion con incertidumbre\n\nEjemplo de soporte claro: pendiente = 1.07, IC95% [0.81, 1.32].\nInterpretacion: la relacion es positiva y consistente con la hipotesis, con magnitud aproximada del efecto de 1.07 [0.81, 1.32].\n\n\nEjemplo de evidencia compatible pero incierto: pendiente = 0.90, IC95% [-0.09, 1.89].\nInterpretacion: la relacion es positiva y consistente con la hipotesis (b = 0.90), pero el IC95% incluye 0 (IC95% [-0.09, 1.89]) y no se puede rechazar la ausencia de efecto. Se necesita mas evidencia y mejor precision para obtener conclusiones firmes.\n\n\nBuenas practicas al reportar:\n\nReportar siempre pendiente (coeficiente) + IC95% + tamano de muestra.\nEvitar dicotomias de “significativo/no significativo” sin discutir magnitud y precision.\nVincular / interpretar de la perspectiva de la hipotesis (no solo al signo o valor P)."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
+    "href": "lectures/01-sci-method.html#como-poderiamos-mejorar-la-precision-de-la-evidencia",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Como poderiamos mejorar la precision de la evidencia?",
+    "text": "Como poderiamos mejorar la precision de la evidencia?\n\n\nAumentar el tamaño de muestra (más sitios, más individuos, más fechas).\nReducir el error de medición (estandarizar protocolos, calibrar instrumentos).\nReducir la variabilidad no explicada (controlar covariables, usar modelos estadísticos apropiados).\nMejorar el diseño de muestreo (aleatorización, replicación, bloqueos, estratificación)."
+  },
+  {
+    "objectID": "lectures/01-sci-method.html#resumen",
+    "href": "lectures/01-sci-method.html#resumen",
+    "title": "Metodo cientifico en ecologia",
+    "section": "Resumen",
+    "text": "Resumen\n\nEl patron especie-area es una observacion inicial, no una explicacion final.\nA, B y C pueden explicar el mismo patron general, pero generan predicciones distintas.\nComparar multiples lineas de evidencia fortalece la inferencia ecologica.\nEl metodo cientifico en ecologia es iterativo: observar, plantear hipotesis, predecir, contrastar y revisar."
+  },
+  {
+    "objectID": "lectures/03-eda.html#análisis-exploratorio-de-datos",
+    "href": "lectures/03-eda.html#análisis-exploratorio-de-datos",
+    "title": "Análisis exploratorio de datos",
+    "section": "Análisis exploratorio de datos",
+    "text": "Análisis exploratorio de datos\n\n\n\n\n\n\n\nAnálisis exploratorio de datos\n\n\nExplora los datos de manera sistemática\n\n\n\n\n\n\nGenera preguntas sobre tus datos.\nBusca respuestas visualizando, transformando y modelando tus datos.\nUsa lo que aprendes para refinar tus preguntas y/o generar nuevas preguntas.\n\n\n\n Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund. R for Data Science, 2ed."
+  },
+  {
+    "objectID": "lectures/03-eda.html#análisis-exploratorio-de-datos-1",
+    "href": "lectures/03-eda.html#análisis-exploratorio-de-datos-1",
+    "title": "Análisis exploratorio de datos",
+    "section": "Análisis exploratorio de datos",
+    "text": "Análisis exploratorio de datos\n\nEl objetivo es desarrollar una comprensión de los datos\nLo hacemos haciendo preguntas (¿Cómo cambia la tasa de crecimiento con la temperatura?)\nCuantas más preguntas hagamos, más ideas obtendremos y será más probable encontrar patrones interesantes\nNo hay reglas sobre las preguntas que podemos hacer, pero buenos puntos de partida son:\n\n¿Cuál es la variación dentro de mis variables?\n¿Cuál es la covariación entre mis variables?"
+  },
+  {
+    "objectID": "lectures/03-eda.html#resumen-de-los-datos",
+    "href": "lectures/03-eda.html#resumen-de-los-datos",
+    "title": "Análisis exploratorio de datos",
+    "section": "Resumen de los datos",
+    "text": "Resumen de los datos\n\n\n\n‘Panorama general’ del conjunto de datos:\n\n¿Cuántas variables?\nTipos de variables (números, categorías, fechas, …)?\nRangos, medias, conteos de categorías, …?\n¿Cuántos datos faltantes?\n\n\n\n\n\ndim(penguins)\n\n[1] 344   8\n\nncol(penguins)\n\n[1] 8\n\nnrow(penguins)\n\n[1] 344\n\nsummary(penguins)\n\n      species          island       bill_len        bill_dep    \n Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  \n Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60  \n Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30  \n                                 Mean   :43.92   Mean   :17.15  \n                                 3rd Qu.:48.50   3rd Qu.:18.70  \n                                 Max.   :59.60   Max.   :21.50  \n                                 NAs    :2       NAs    :2      \n  flipper_len      body_mass        sex           year     \n Min.   :172.0   Min.   :2700   female:165   Min.   :2007  \n 1st Qu.:190.0   1st Qu.:3550   male  :168   1st Qu.:2007  \n Median :197.0   Median :4050   NAs   : 11   Median :2008  \n Mean   :200.9   Mean   :4202                Mean   :2008  \n 3rd Qu.:213.0   3rd Qu.:4750                3rd Qu.:2009  \n Max.   :231.0   Max.   :6300                Max.   :2009  \n NAs    :2       NAs    :2"
+  },
+  {
+    "objectID": "lectures/03-eda.html#preparación",
+    "href": "lectures/03-eda.html#preparación",
+    "title": "Análisis exploratorio de datos",
+    "section": "Preparación",
+    "text": "Preparación\n\nUsaremos los paquetes {tidyverse}\n{ggplot2} para visualización\n{dplyr} para manipulación de datos\n\n\nCargar los paquetes necesarios:\n\nlibrary(ggplot2)\nlibrary(dplyr)\n# Establecer tema global para todos los gráficos\ntheme_set(theme_bw())"
+  },
+  {
+    "objectID": "lectures/03-eda.html#variables-categóricas-discretas",
+    "href": "lectures/03-eda.html#variables-categóricas-discretas",
+    "title": "Análisis exploratorio de datos",
+    "section": "Variables categóricas (discretas)",
+    "text": "Variables categóricas (discretas)\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(x = species) +\n  geom_bar(fill = \"steelblue\")\n\n\n\n\n\n\n\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(x = species, fill = species) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/03-eda.html#variables-categóricas-discretas-1",
+    "href": "lectures/03-eda.html#variables-categóricas-discretas-1",
+    "title": "Análisis exploratorio de datos",
+    "section": "Variables categóricas (discretas)",
+    "text": "Variables categóricas (discretas)\n\n\n\n# library(dplyr)\npenguins |&gt;\n  group_by(species) |&gt;\n  tally()\n\n# A tibble: 3 × 2\n  species       n\n  &lt;fct&gt;     &lt;int&gt;\n1 Adelie      152\n2 Chinstrap    68\n3 Gentoo      124\n\n\n\n\n# library(dplyr)\npenguins |&gt;\n  group_by(island) |&gt;\n  tally()\n\n# A tibble: 3 × 2\n  island        n\n  &lt;fct&gt;     &lt;int&gt;\n1 Biscoe      168\n2 Dream       124\n3 Torgersen    52"
+  },
+  {
+    "objectID": "lectures/03-eda.html#variables-numéricas-continuas",
+    "href": "lectures/03-eda.html#variables-numéricas-continuas",
+    "title": "Análisis exploratorio de datos",
+    "section": "Variables numéricas (continuas)",
+    "text": "Variables numéricas (continuas)\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(x = bill_len) +\n  geom_histogram(\n    fill = \"steelblue\",\n    color = \"white\"\n  )\n\n\n\n\n\n\n\n\n\n\n# library(ggplot2)\nggplot(penguins) +\n  aes(y = bill_len) +\n  geom_boxplot(\n    fill = \"steelblue\"\n  )"
+  },
+  {
+    "objectID": "lectures/03-eda.html#sidenote-on-boxplots",
+    "href": "lectures/03-eda.html#sidenote-on-boxplots",
+    "title": "Análisis exploratorio de datos",
+    "section": "Sidenote on boxplots",
+    "text": "Sidenote on boxplots"
+  },
+  {
+    "objectID": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-histograma",
+    "href": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-histograma",
+    "title": "Análisis exploratorio de datos",
+    "section": "Variables numéricas (continuas) - Datos de histograma",
+    "text": "Variables numéricas (continuas) - Datos de histograma\n\n\nmin_bill &lt;- min(penguins$bill_len, na.rm = TRUE)\nmax_bill &lt;- max(penguins$bill_len, na.rm = TRUE)\nbin_breaks &lt;- seq(min_bill, max_bill, by = 2)\nbill_len_bin &lt;- cut(penguins$bill_len, breaks = bin_breaks)\ntable(bill_len_bin)\n\nbill_len_bin\n(32.1,34.1] (34.1,36.1] (36.1,38.1] (38.1,40.1] (40.1,42.1] (42.1,44.1] \n          4          21          40          35          39          30 \n(44.1,46.1] (46.1,48.1] (48.1,50.1] (50.1,52.1] (52.1,54.1] (54.1,56.1] \n         39          41          42          36           7           5 \n(56.1,58.1] \n          1"
+  },
+  {
+    "objectID": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-boxplot",
+    "href": "lectures/03-eda.html#variables-numéricas-continuas---datos-de-boxplot",
+    "title": "Análisis exploratorio de datos",
+    "section": "Variables numéricas (continuas) - Datos de boxplot",
+    "text": "Variables numéricas (continuas) - Datos de boxplot\n\n\nsummary(penguins$bill_len)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs \n  32.10   39.23   44.45   43.92   48.50   59.60       2"
+  },
+  {
+    "objectID": "lectures/03-eda.html#categórica-categórica",
+    "href": "lectures/03-eda.html#categórica-categórica",
+    "title": "Análisis exploratorio de datos",
+    "section": "Categórica + Categórica",
+    "text": "Categórica + Categórica\n\n\n\npenguins |&gt;\n  ggplot(aes(x = island)) +\n  geom_bar(aes(fill = species))\n\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  ggplot(aes(x = island)) +\n  geom_bar(\n    aes(fill = species),\n    position = \"dodge\"\n  )"
+  },
+  {
+    "objectID": "lectures/03-eda.html#categórica-categórica-1",
+    "href": "lectures/03-eda.html#categórica-categórica-1",
+    "title": "Análisis exploratorio de datos",
+    "section": "Categórica + Categórica",
+    "text": "Categórica + Categórica\n\n\n\npenguins |&gt;\n  group_by(species, island) |&gt;\n  tally()\n\n# A tibble: 5 × 3\n# Groups:   species [3]\n  species   island        n\n  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n1 Adelie    Biscoe       44\n2 Adelie    Dream        56\n3 Adelie    Torgersen    52\n4 Chinstrap Dream        68\n5 Gentoo    Biscoe      124\n\n\n\n\npenguins |&gt;\n  group_by(species, island, sex) |&gt;\n  tally()\n\n# A tibble: 13 × 4\n# Groups:   species, island [5]\n   species   island    sex        n\n   &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;\n 1 Adelie    Biscoe    female    22\n 2 Adelie    Biscoe    male      22\n 3 Adelie    Dream     female    27\n 4 Adelie    Dream     male      28\n 5 Adelie    Dream     &lt;NA&gt;       1\n 6 Adelie    Torgersen female    24\n 7 Adelie    Torgersen male      23\n 8 Adelie    Torgersen &lt;NA&gt;       5\n 9 Chinstrap Dream     female    34\n10 Chinstrap Dream     male      34\n11 Gentoo    Biscoe    female    58\n12 Gentoo    Biscoe    male      61\n13 Gentoo    Biscoe    &lt;NA&gt;       5"
+  },
+  {
+    "objectID": "lectures/03-eda.html#categórica-numérica---histogramas",
+    "href": "lectures/03-eda.html#categórica-numérica---histogramas",
+    "title": "Análisis exploratorio de datos",
+    "section": "Categórica + Numérica - histogramas",
+    "text": "Categórica + Numérica - histogramas\n\n\n\npenguins |&gt;\n  ggplot(aes(x = bill_len)) +\n  geom_histogram(\n    aes(fill = sex),\n    color = \"white\"\n  )\n\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  ggplot(aes(x = bill_len)) +\n  geom_histogram(\n    aes(fill = sex),\n    color = \"white\",\n    position = \"dodge\"\n  )"
+  },
+  {
+    "objectID": "lectures/03-eda.html#categórica-numérica---boxplots",
+    "href": "lectures/03-eda.html#categórica-numérica---boxplots",
+    "title": "Análisis exploratorio de datos",
+    "section": "Categórica + Numérica - boxplots",
+    "text": "Categórica + Numérica - boxplots\n\n\n\npenguins |&gt;\n  ggplot(aes(x = species, y = bill_len)) +\n  geom_boxplot(aes(fill = species))\n\n\n\n\n\n\n\n\n\n\npenguins |&gt;\n  ggplot(aes(x = species, y = bill_len)) +\n  geom_boxplot(aes(fill = island)) +\n  scale_fill_viridis_d()"
+  },
+  {
+    "objectID": "lectures/03-eda.html#categórica-numérica---heatmaps",
+    "href": "lectures/03-eda.html#categórica-numérica---heatmaps",
+    "title": "Análisis exploratorio de datos",
+    "section": "Categórica + Numérica - heatmaps",
+    "text": "Categórica + Numérica - heatmaps\n\n\npenguins |&gt;\n  group_by(island, species) |&gt;\n  summarise(mean_bill_len = mean(bill_len, na.rm = TRUE)) |&gt;\n  ggplot() +\n  aes(x = island, y = species, fill = mean_bill_len) +\n  geom_tile(color = \"white\") +\n  geom_text(aes(label = round(mean_bill_len, 2)), color = \"white\")"
+  },
+  {
+    "objectID": "lectures/03-eda.html#categórica-numérica---datos",
+    "href": "lectures/03-eda.html#categórica-numérica---datos",
+    "title": "Análisis exploratorio de datos",
+    "section": "Categórica + Numérica - datos",
+    "text": "Categórica + Numérica - datos\n\n\n\npenguins |&gt;\n  group_by(year) |&gt;\n  summarise(\n    mean_bill_len = mean(bill_len, na.rm = TRUE),\n    mean_body_mass = mean(body_mass, na.rm = TRUE),\n  )\n\n# A tibble: 3 × 3\n   year mean_bill_len mean_body_mass\n  &lt;int&gt;         &lt;dbl&gt;          &lt;dbl&gt;\n1  2007          43.7          4125.\n2  2008          43.5          4267.\n3  2009          44.5          4210.\n\n\n\n\npenguins |&gt;\n  filter(\n    island == \"Dream\",\n    species == \"Adelie\",\n    sex == \"male\",\n    body_mass &gt;= 4500\n  ) |&gt;\n  select(island, species, sex, body_mass)\n\n  island species  sex body_mass\n1  Dream  Adelie male      4650\n2  Dream  Adelie male      4600"
+  },
+  {
+    "objectID": "lectures/03-eda.html#numérica-numérica---scatterplots",
+    "href": "lectures/03-eda.html#numérica-numérica---scatterplots",
+    "title": "Análisis exploratorio de datos",
+    "section": "Numérica + Numérica - scatterplots",
+    "text": "Numérica + Numérica - scatterplots\n\n\n\nggplot(penguins) +\n  aes(\n    x = body_mass,\n    y = flipper_len\n  ) +\n  geom_point(\n    alpha = 0.4,\n    aes(size = body_mass)\n  )\n\n\n\n\n\n\n\n\n\n\nggplot(penguins) +\n  aes(\n    x = body_mass,\n    y = flipper_len\n  ) +\n  geom_point(\n    size = 5,\n    alpha = 0.4,\n    aes(\n      color = species,\n      shape = sex\n    )\n  )"
+  },
+  {
+    "objectID": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression",
+    "href": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression",
+    "title": "Análisis exploratorio de datos",
+    "section": "Numérica + Numérica - scatterplots con regression",
+    "text": "Numérica + Numérica - scatterplots con regression\n\n\nggplot(penguins) +\n  aes(x = body_mass, y = flipper_len) +\n  geom_point(\n    size = 5,\n    alpha = 0.4,\n    aes(color = species, shape = sex)\n  ) +\n  geom_smooth(method = \"lm\")"
+  },
+  {
+    "objectID": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression-1",
+    "href": "lectures/03-eda.html#numérica-numérica---scatterplots-con-regression-1",
+    "title": "Análisis exploratorio de datos",
+    "section": "Numérica + Numérica - scatterplots con regression",
+    "text": "Numérica + Numérica - scatterplots con regression\n\n\nggplot(penguins) +\n  aes(x = body_mass, y = flipper_len) +\n  geom_point(size = 5, alpha = 0.4, aes(color = island, shape = sex)) +\n  geom_smooth(method = \"lm\") +\n  facet_wrap(vars(species), ncol = 3)"
   },
   {
     "objectID": "lectures/index.html",

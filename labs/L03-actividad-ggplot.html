@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.40">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Clases – Laboratorio de Ecologia General B-0305</title>
+<title>Lab 03: Gramática de gráficos con ggplot2 – Laboratorio de Ecologia General B-0305</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,82 +87,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -141,8 +115,8 @@ window.Quarto = {
     <span class="navbar-title">Laboratorio de Ecologia General B-0305</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -156,7 +130,7 @@ window.Quarto = {
 <span class="menu-text">Programa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../lectures/index.html" aria-current="page"> 
+    <a class="nav-link" href="../lectures/index.html"> 
 <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
@@ -178,13 +152,28 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#actividad" id="toc-actividad" class="nav-link active" data-scroll-target="#actividad">Actividad</a></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material">Material</a></li>
+  <li><a href="#gramática-de-gráficos-y-aes-todos" id="toc-gramática-de-gráficos-y-aes-todos" class="nav-link" data-scroll-target="#gramática-de-gráficos-y-aes-todos">Gramática de gráficos y <code>aes()</code> (todos)</a></li>
+  <li><a href="#histograma-experto-1" id="toc-histograma-experto-1" class="nav-link" data-scroll-target="#histograma-experto-1">Histograma (experto 1)</a></li>
+  <li><a href="#diagrama-de-dispersión-scatterplot-experto-2" id="toc-diagrama-de-dispersión-scatterplot-experto-2" class="nav-link" data-scroll-target="#diagrama-de-dispersión-scatterplot-experto-2">Diagrama de dispersión / scatterplot (experto 2)</a></li>
+  <li><a href="#boxplot-experto-3" id="toc-boxplot-experto-3" class="nav-link" data-scroll-target="#boxplot-experto-3">Boxplot (experto 3)</a></li>
+  <li><a href="#gráfico-de-barras-barplot-experto-4" id="toc-gráfico-de-barras-barplot-experto-4" class="nav-link" data-scroll-target="#gráfico-de-barras-barplot-experto-4">Gráfico de barras / barplot (experto 4)</a></li>
+  <li><a href="#gráfico-de-líneas-line-plot-experto-5" id="toc-gráfico-de-líneas-line-plot-experto-5" class="nav-link" data-scroll-target="#gráfico-de-líneas-line-plot-experto-5">Gráfico de líneas / line plot (experto 5)</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="L03-actividad-ggplot.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Clases</h1>
+<h1 class="title">Lab 03: Gramática de gráficos con ggplot2</h1>
 </div>
 
 
@@ -201,106 +190,218 @@ window.Quarto = {
 </header>
 
 
-<section id="presentaciones-del-curso" class="level2">
-<h2 class="anchored" data-anchor-id="presentaciones-del-curso">Presentaciones del curso</h2>
-<p>Esta seccion queda lista para agregar clases y presentaciones en Quarto.</p>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".quarto-listing a").forEach(function (a) {
-    a.setAttribute("target", "_blank");
-    a.setAttribute("rel", "noopener noreferrer");
-  });
-});
-</script>
-
+<section id="actividad" class="level2">
+<h2 class="anchored" data-anchor-id="actividad">Actividad</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 1: Aprendizaje independiente en su grupo original (3 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 1: Aprendizaje independiente en su grupo original (3 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Nos dividimos en grupos de 5 personas.</li>
+<li>Todo el grupo repasa junto la gramática de gráficos y <code>aes()</code> (sección común del material).</li>
+<li>Cada grupo tiene además un experto para un tipo de gráfico:
+<ol type="1">
+<li>histograma</li>
+<li>diagrama de dispersión (scatterplot)</li>
+<li>boxplot</li>
+<li>gráfico de barras (barplot)</li>
+<li>gráfico de líneas (line plot)</li>
+</ol></li>
+<li>El experto estudia el material sobre su tipo de gráfico específico.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 2: Aprendizaje colaborativo en grupos de expertos (3 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Los expertos de cada tipo de gráfico se reúnen en grupos para compartir sus conocimientos.</li>
+<li>Aclaran dudas entre expertos, toman notas y se preparan para enseñar a su grupo original.</li>
+<li>El experto prepara un reporte breve de 3 puntos:
+<ol type="1">
+<li>¿Cómo se usa este tipo de gráfico? (función de <code>ggplot2</code> y estructura básica)</li>
+<li>¿Qué necesita? (tipo de variable(s), cuántas, <code>aes()</code> requeridos)</li>
+<li>Un ejemplo de su experiencia reciente en clase: mencione un caso concreto de los datos que han analizado donde este tipo de gráfico sería apropiado.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 3: Enseñanza en el grupo original (5 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 3: Enseñanza en el grupo original (5 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Cada experto regresa a su grupo original y enseña a los demás miembros del grupo sobre su tipo de gráfico.</li>
+<li>Se discuten y resuelven dudas sobre los temas presentados por los expertos.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Fase 4: Reflexión y cierre (5 minutos)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fase 4: Reflexión y cierre (5 minutos)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Se comparten conclusiones y se resuelven dudas finales con toda la clase.</li>
+<li>Cada grupo original (no grupo de expertos) tiene que resolver la situación de la siguiente página (caja roja).</li>
+</ul>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="callout callout-style-default callout-important callout-titled" title="Situación (Fase 4)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Situación (Fase 4)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cada grupo original (no grupo de expertos) tiene que resolver la siguiente situación:</p>
+<p>Tenemos una tabla llamada <code>muestras</code> con la densidad de macroinvertebrados (individuos/m²) de 4 sitios; en cada muestra también se midió la temperatura y el oxígeno, en varias fechas.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>sitio</th>
+<th>fecha</th>
+<th>densidad</th>
+<th>temperatura</th>
+<th>oxígeno</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Queremos:</p>
+<ul>
+<li>ver cómo se distribuyen los valores de densidad de todas las muestras;</li>
+<li>comparar la densidad entre los 4 sitios;</li>
+<li>ver la relación entre temperatura y densidad;</li>
+<li>mostrar el número de muestras tomadas en cada sitio;</li>
+<li>ver cómo cambia la temperatura a lo largo del tiempo en cada sitio.</li>
+</ul>
+<p>¿Qué tipo de gráfico usarían para cada pregunta, y qué variables (columnas) irían en <code>aes()</code>?</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="material" class="level2">
+<h2 class="anchored" data-anchor-id="material">Material</h2>
+<p>En lo que sigue se presentan los conceptos básicos de <code>ggplot2</code> y los tipos de gráficos más comunes. Todos los imagenes provienen del <code>ggplot2</code> cheatsheet disponible en el siguiente enlace: <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf">ggplot2 cheatsheet</a>.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="gramática-de-gráficos-y-aes-todos" class="level2">
+<h2 class="anchored" data-anchor-id="gramática-de-gráficos-y-aes-todos">Gramática de gráficos y <code>aes()</code> (todos)</h2>
+<p>Todo gráfico en <code>ggplot2</code> se construye a partir de capas:</p>
+<ul>
+<li><strong>Datos</strong>: un data frame en formato tidy.</li>
+<li><strong><code>aes()</code></strong> (mapeo estético): conecta variables de los datos con propiedades visuales (eje x, eje y, color, tamaño, etc.).</li>
+<li><strong><code>geom_*()</code></strong>: la representación geométrica que se dibuja (puntos, barras, cajas, etc.).</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> variable_x, <span class="at">y =</span> variable_y)) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  geom_<span class="sc">*</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="L03-act2-assets/gg_aes.png" class="img-fluid" style="width:45.0%"></p>
+<ul>
+<li>Se puede agregar más de un <code>geom_*()</code> a un mismo gráfico.</li>
+<li>Los mapeos en <code>aes()</code> pueden ir dentro de <code>ggplot()</code> (para todas las capas) o dentro de un <code>geom_*()</code> (solo para esa capa).</li>
+<li>Otras propiedades (color, tamaño, transparencia) pueden ser fijas o mapeadas dentro de <code>aes()</code>.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="histograma-experto-1" class="level2">
+<h2 class="anchored" data-anchor-id="histograma-experto-1">Histograma (experto 1)</h2>
+<p><code>geom_histogram()</code>:</p>
+<ul>
+<li>Muestra la distribución de una variable numérica, dividiendo su rango en intervalos (bins).</li>
+<li>Necesita una sola variable numérica continua mapeada a <code>x</code>.</li>
+<li>Se utiliza comúnmente para ver la forma de la distribución (simetría, sesgo, valores atípicos).</li>
+</ul>
+<p><img src="L03-act2-assets/hist.png" class="img-fluid" style="width:45.0%"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> variable_numerica)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="diagrama-de-dispersión-scatterplot-experto-2" class="level2">
+<h2 class="anchored" data-anchor-id="diagrama-de-dispersión-scatterplot-experto-2">Diagrama de dispersión / scatterplot (experto 2)</h2>
+<p><code>geom_point()</code>:</p>
+<ul>
+<li>Muestra la relación entre dos variables numéricas.</li>
+<li>Necesita dos variables numéricas continuas, mapeadas a <code>x</code> y <code>y</code>.</li>
+<li>Se utiliza comúnmente para explorar correlaciones o tendencias entre variables.</li>
+</ul>
+<p><img src="L03-act2-assets/scatter.png" class="img-fluid" style="width:45.0%"></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> variable_x, <span class="at">y =</span> variable_y)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="boxplot-experto-3" class="level2">
+<h2 class="anchored" data-anchor-id="boxplot-experto-3">Boxplot (experto 3)</h2>
+<p><code>geom_boxplot()</code>:</p>
+<ul>
+<li>Resume la distribución de una variable numérica según los grupos de una variable categórica.</li>
+<li>Necesita una variable categórica en <code>x</code> y una variable numérica continua en <code>y</code>.</li>
+<li>Se utiliza comúnmente para comparar la mediana, dispersión y valores atípicos entre grupos.</li>
+</ul>
+<p><img src="L03-act2-assets/box.png" class="img-fluid" style="width:45.0%"></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> variable_categorica, <span class="at">y =</span> variable_numerica)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="gráfico-de-barras-barplot-experto-4" class="level2">
+<h2 class="anchored" data-anchor-id="gráfico-de-barras-barplot-experto-4">Gráfico de barras / barplot (experto 4)</h2>
+<p><code>geom_bar()</code> / <code>geom_col()</code>:</p>
+<ul>
+<li>Muestra el conteo o valor de una variable categórica.</li>
+<li><code>geom_bar()</code> necesita una variable categórica en <code>x</code> (calcula el conteo automáticamente); <code>geom_col()</code> necesita una variable categórica en <code>x</code> y un valor numérico ya calculado en <code>y</code>.</li>
+<li>Se utiliza comúnmente para comparar cantidades o frecuencias entre categorías (por ejemplo, número de muestras por sitio).</li>
+</ul>
+<p><img src="L03-act2-assets/bar.png" class="img-fluid" style="width:45.0%"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> variable_categorica)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="gráfico-de-líneas-line-plot-experto-5" class="level2">
+<h2 class="anchored" data-anchor-id="gráfico-de-líneas-line-plot-experto-5">Gráfico de líneas / line plot (experto 5)</h2>
+<p><code>geom_line()</code>:</p>
+<ul>
+<li>Muestra la evolución de una variable numérica a lo largo de otra variable ordenada, típicamente el tiempo.</li>
+<li>Necesita una variable numérica o de fecha/tiempo en <code>x</code> y una variable numérica continua en <code>y</code>.</li>
+<li>Se utiliza comúnmente para ver tendencias temporales, a menudo agrupando por sitio con <code>color</code> o <code>group</code>.</li>
+</ul>
+<p><img src="L03-act2-assets/line.png" class="img-fluid" style="width:45.0%"></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> fecha, <span class="at">y =</span> variable_numerica, <span class="at">color =</span> sitio)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-</div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-Subtitle
-</th>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1786462983187" data-listing-reading-time-sort="12" data-listing-word-count-sort="2264" data-listing-title-sort="Metodo cientifico en ecologia" data-listing-filename-sort="01-sci-method.qmd">
-<td>
-<a href="../lectures/01-sci-method.html" class="title listing-title">Metodo cientifico en ecologia</a>
-</td>
-<td>
-<span class="listing-subtitle">Evidencia, inferencia, y comparacion de hipotesis</span>
-</td>
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1787250528342" data-listing-reading-time-sort="15" data-listing-word-count-sort="2964" data-listing-title-sort="Diseño experimental" data-listing-filename-sort="02-design.qmd">
-<td>
-<a href="../lectures/02-design.html" class="title listing-title">Diseño experimental</a>
-</td>
-<td>
-<span class="listing-subtitle">Replicación, bloques y aleatorización. Pseudoreplicación.</span>
-</td>
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-file-modified-sort="1788224334891" data-listing-reading-time-sort="5" data-listing-word-count-sort="961" data-listing-title-sort="Análisis exploratorio de datos" data-listing-filename-sort="03-eda.qmd">
-<td>
-<a href="../lectures/03-eda.html" class="title listing-title">Análisis exploratorio de datos</a>
-</td>
-<td>
-<span class="listing-subtitle">Calidad de datos, Variación, Covariación y Distribución</span>
-</td>
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1789137446831" data-listing-reading-time-sort="7" data-listing-word-count-sort="1252" data-listing-title-sort="GLM binomial" data-listing-filename-sort="04-glm-binom.qmd">
-<td>
-<a href="../lectures/04-glm-binom.html" class="title listing-title">GLM binomial</a>
-</td>
-<td>
-<span class="listing-subtitle">Respuestas binarias</span>
-</td>
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -344,12 +445,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
