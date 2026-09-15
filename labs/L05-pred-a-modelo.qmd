@@ -28,9 +28,8 @@ suppressPackageStartupMessages({
   library(ggpubr)
 })
 
-iris_sub <- iris |> 
+iris_sub <- iris |>
   filter(Species != "setosa")
-
 ```
 
 ## Regression
@@ -191,8 +190,6 @@ Ajustar el modelo aqui:
 # tu codigo aqui para el modelo
 
 # y para los coeficientes del modelo
-
-
 ```
 
 ### Interpretacion
@@ -243,7 +240,12 @@ Entonces este modelo se puede considerar como analisis de covarianza del ancho d
 
 iris_sub |>
   dplyr::slice_sample(n = 50) |>
-  ggplot(aes(x = Petal.Length, y = Petal.Width, color = Species, group = Species)) +
+  ggplot(aes(
+    x = Petal.Length,
+    y = Petal.Width,
+    color = Species,
+    group = Species
+  )) +
   geom_sketch_point() +
   geom_sketch_smooth(method = "lm", se = FALSE) +
   coord_sketch(xlim = c(0, 8), ylim = c(0, 4), expand = FALSE) +
@@ -254,7 +256,6 @@ iris_sub |>
     y = "Ancho"
   ) +
   theme(legend.position = "none")
-
 ```
 
 
@@ -296,8 +297,6 @@ Ajustar el modelo aqui:
 # tu codigo aqui para el modelo
 
 # y para los coeficientes del modelo
-
-
 ```
 
 ### Interpretacion

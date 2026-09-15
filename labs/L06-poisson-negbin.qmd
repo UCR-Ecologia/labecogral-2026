@@ -1,0 +1,20 @@
+---
+title: "Lab 04: Datos de conteos"
+subtitle: "Modelo lineal generalizado poisson / binomial negativa / inflacion de ceros"
+subtitle: ""
+format:
+  html:
+    toc: true
+    number-sections: false
+  pdf:
+    documentclass: scrartcl      # KOMA-Script class
+    classoption: [DIV=12]
+    geometry: margin=1in
+    fontfamily: libertinus        # LaTeX font package
+    colorlinks: true
+    linkcolor: blue
+    toc: false
+    highlight-style: github        # code block theme
+    title-block-banner: true       # colored title banner
+lang: es
+---

@@ -1,6 +1,6 @@
 ---
-title: "Lab 04: Modelos lineales generalizados"
-subtitle: ""
+title: "Lab 04: Datos binarios"
+subtitle: "Modelo lineal generalizado Binomial / Bernoulli"
 format:
   html:
     toc: true

@@ -32,3 +32,23 @@ Con `Python`:
 
   - [Capitulo 1](https://allendowney.github.io/ThinkStats/chap01.html)
   - [Capitulo 2](https://allendowney.github.io/ThinkStats/chap02.html)
+
+## Modelos Lineales Generalizados (GLM)
+
+Libro sobre GLMs de Quebec Centre for Biodiversity Science con ejemplos en `R` para datos binarios, proporciones y conteos:
+
+  - [QCBS R Workshop Series, 2024](https://r.qcbs.ca/workshop06/book-en/binomial-glm.html)
+
+Articulos:
+
+Datos de conteo (Poisson, Quasi-poisson, Binomial Negativa):
+
+  - [O'Hara & Kotze, 2010](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/j.2041-210X.2010.00021.x)  
+  - [Warton et al. 2016](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12552)  
+
+Web app:
+
+  Web app para simular conteos con diferentes parametros (varianza, probabilidad de zeros) y
+  ver como datos simulados comparan con lo que espera la distribucion Poisson.
+
+  - [https://diatom.shinyapps.io/B0305/](https://diatom.shinyapps.io/B0305/)
