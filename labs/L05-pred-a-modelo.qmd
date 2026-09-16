@@ -110,7 +110,7 @@ Contestamos estas preguntas:
   3. Que tan seguro es el modelo sobre el signo y tamano de la pendiente? 
   4. Hay observaciones que parecen outliers o que influyen (hallan) la linea de regression fuera del nube de puntos?
 
-Para contestar preguntas 1-3, usamos la funcion `confint` y funciones del paquete `{emmeans}`:
+Para contestar preguntas 1-3, usamos la funcion `confint`:
 
 ```{r}
 confint(modelo_pred_1)
