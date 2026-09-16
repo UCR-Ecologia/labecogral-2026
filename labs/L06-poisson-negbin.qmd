@@ -63,10 +63,17 @@ spread_stat <- function(simulationOutput) {
 
 ::: {.callout-note title="Fase 1: Estudiar independientemente [7 minutos]"}
 
+  * Estudia el material proporcionado para los modelos de conteo
   * Revise los datos para su planta, la histograma y el gráfico de dispersión con respecto a la distancia.
   * Tome nota de cualquier patrón que observe, como tendencias en la abundancia con la distancia, presencia de ceros, la variacion en la abundancia, etc.
-  * Estudia el material proporcionado para el modelo que te toco
   * Interpreta los resultados para la planta que te toco de acuerdo con el modelo asignado.
+  * Prepara un resumen en la bitácora para compartir mas tarde. Para cada pregunta, contesta con "Si" / "No", 
+  y agrega una breve explicación. Toma en cuenta, y reporta cuando es relevante: coeficientes, intervalos de 
+  confianza, graficos QQ, y pruebas de simulacion.
+  * Preguntas para el resumen en su bitacora (si / no + porque):
+      1. La abundancia cambia con la distancia?
+      2. La estructura de varianza (dispersión) asumida por el modelo parece apropiada? 
+      3. Hay más ceros de los que la dada distribución de conteo puede producir razonablemente? 
 
 :::
 
@@ -75,11 +82,7 @@ spread_stat <- function(simulationOutput) {
   * Nos unimos en equipos según la planta, para aprender los resultados de los otros modelos para la planta.
   * Comparamos nuestras observaciones con las de nuestros compañeros.
   * Discutimos cualquier patrón común o discrepancias.
-  * Preparamos un resumen de nuestras conclusiones en la bitácora para compartir con el grupo.
-  * Contenido:
-      1. La abundancia cambia con la distancia?
-      2. La estructura de varianza asumida parece apropiada?
-      3. Hay más ceros de los que la dada distribución de conteo puede producir razonablemente?
+
 :::
 
 
@@ -91,7 +94,7 @@ spread_stat <- function(simulationOutput) {
 
 :::
 
-**El reporte de Fase 2, escrito en su bitacora, representa su entrada de bitacora calificada**
+**El resumen de Fase 1, escrito en su bitacora, representa su entrada de bitacora calificada**
 
 
 ```{=latex}
@@ -102,7 +105,7 @@ spread_stat <- function(simulationOutput) {
 
 ## Contexto ecológico
 
-Los ecólogos a menudo estudian la abundancia de diferentes especies de plantas en parcelas a lo largo de un gradiente ambiental. La abundancia de cada especie puede sugerir diferentes patrones de respuesta a las condiciones ambientales:
+Unos ecologos de campo estudian la abundancia de diferentes especies a lo largo de un gradiente ambiental. La abundancia de cada especie puede sugerir diferentes patrones de respuesta a las condiciones ambientales:
 
    * Unas especies parecen no afectadas por el gradiente ambiental.
    * Otras especies muestran un aumento en la abundancia con el gradiente ambiental.
@@ -130,7 +133,7 @@ Nuestra tarea es analizar datos de conteo de cuatro especies de plantas en 50 pa
 \normalsize
 ```
 
-## Modelos generalizados lineales para conteos (todos)
+## Modelos generalizados lineales para conteos
 
 
 
