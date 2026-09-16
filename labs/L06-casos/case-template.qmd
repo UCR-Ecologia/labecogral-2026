@@ -1,0 +1,149 @@
+---
+params:
+  plant: "plant_1"
+  model: "poisson"
+format:
+  pdf:
+    documentclass: scrartcl
+    classoption: [DIV=14]
+    geometry: margin=0.5in
+    fontsize: 9pt
+    fontfamily: libertinus
+    colorlinks: true
+    toc: false
+    title-block-banner: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{=latex}
+\pagestyle{empty}
+\setlength{\parskip}{2pt}
+```
+
+```{r}
+#| label: setup
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(ggplot2)
+  library(glmmTMB)
+  library(DHARMa)
+  library(ggeffects)
+  library(patchwork)
+})
+
+stored <- readRDS("data.rds")
+fits <- readRDS("fits.rds")
+
+plant <- params$plant
+model <- params$model
+
+# fitted models reference `data_by_plant` by name (from 00-prepare.R); DHARMa
+# re-derives the model frame from that stored call, so it must exist here too
+data_by_plant <- stored$data_by_plant
+
+fit <- fits[[paste(plant, model, sep = ".")]]
+plant_data <- stored$data_by_plant[[plant]]
+plant_color <- stored$plant_colors[[plant]]
+
+plant_label <- gsub("plant_", "Planta ", plant)
+model_labels <- c(
+  poisson = "Poisson (P)",
+  nbinom2 = "Binomial negativa (NB)",
+  zip     = "Inflación de ceros (ZIP)",
+  zinb    = "Binomial negativa con inflación de ceros (ZINB)"
+)
+model_label <- model_labels[[model]]
+```
+
+```{r}
+#| results: asis
+cat("###", plant_label, "+ Modelo", model_label, "\n")
+```
+
+```{r}
+#| fig-width: 7
+#| fig-height: 1.9
+p1 <- plant_data |>
+  ggplot(aes(x = abundance)) +
+  geom_histogram(binwidth = 1, color = "white", fill = plant_color) +
+  theme_minimal(base_size = 8)
+
+p2 <- plant_data |>
+  ggplot(aes(x = distance, y = abundance)) +
+  geom_point(color = plant_color) +
+  theme_minimal(base_size = 8)
+
+patchwork::wrap_plots(p1, p2)
+```
+
+```{r}
+# condensed coefficient tables instead of the full summary() printout, to fit one page
+s <- summary(fit)
+fit_stats <- sprintf(
+  "AIC = %.1f, BIC = %.1f, logLik = %.1f",
+  s$AICtab[["AIC"]], s$AICtab[["BIC"]], s$AICtab[["logLik"]]
+)
+```
+
+`r fit_stats`
+
+**Modelo condicional (componente de conteo, coeficientes en escala log)**
+
+```{r}
+as.data.frame(s$coefficients$cond) |>
+  knitr::kable(digits = 3)
+```
+
+```{r}
+#| results: asis
+if (!is.null(s$coefficients$zi)) {
+  cat("**Modelo de inflaci\u00f3n de ceros (probabilidad de ceros estructurales, coeficientes en escala logit)**\n\n")
+}
+```
+
+```{r}
+if (!is.null(s$coefficients$zi)) {
+  as.data.frame(s$coefficients$zi) |>
+    knitr::kable(digits = 3)
+}
+```
+
+```{r}
+#| results: asis
+# nbinom2/zinb use theta (size) as the MLE dispersion parameter: var = mu + mu^2/theta
+# very large theta means the NB fit collapsed toward the Poisson limit (no extra overdispersion)
+if (family(fit)$family == "nbinom2") {
+  theta_label <- if (s$sigma > 1000) {
+    sprintf("%.3g (\u2248 sin sobredispersi\u00f3n adicional; l\u00edmite Poisson)", s$sigma)
+  } else {
+    sprintf("%.3f", s$sigma)
+  }
+  cat(sprintf("**Par\u00e1metro de dispersi\u00f3n (NB, $\\theta$):** %s\n\n", theta_label))
+}
+```
+
+**Predicciones (abundancia esperada, escala de respuesta)**
+
+```{r}
+# ggeffect() (effects-package backend) fails on zero-inflated glmmTMB models
+ggeffects::ggpredict(
+  fit,
+  terms = "distance [0, 15, 30, 45, 60, 75, 90, 100]"
+) |>
+  as.data.frame() |>
+  select(x, predicted, conf.low, conf.high) |>
+  knitr::kable(digits = 2, col.names = c("Distancia", "Predicho", "IC 2.5%", "IC 97.5%"))
+```
+
+```{r}
+#| fig-width: 7.5
+#| fig-height: 2.2
+simulation_residuals <- DHARMa::simulateResiduals(fittedModel = fit, n = 1000)
+par(mfrow = c(1, 3), cex = 0.55, mar = c(3, 3, 3, 1))
+invisible(DHARMa::testUniformity(simulation_residuals))
+invisible(DHARMa::testDispersion(simulation_residuals))
+invisible(DHARMa::testZeroInflation(simulation_residuals))
+```

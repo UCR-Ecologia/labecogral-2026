@@ -1,5 +1,5 @@
 ---
-title: "Lab 04: Datos de conteos"
+title: "Lab 06: Datos de conteos"
 subtitle: "Modelo lineal generalizado poisson / binomial negativa / inflacion de ceros"
 format:
   html:
@@ -18,3 +18,304 @@ format:
     title-block-banner: true       # colored title banner
 lang: es
 ---
+
+```{r}
+#| echo: false
+
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(ggplot2)
+  library(glmmTMB)
+  library(DHARMa)
+  library(ggeffects)
+  library(patchwork)
+})
+
+# DHARMa marca el valor observado con una linea roja; para que se distinga en
+# fotocopias/impresion en blanco y negro, la volvemos a dibujar con una linea
+# negra punteada encima del histograma que ya produce DHARMa (mismo test, misma
+# estadistica, solo se cambia como se resalta el valor observado).
+mark_observed_bw <- function(simulationOutput, statFun) {
+  observed <- statFun(simulationOutput$observedResponse)
+  abline(v = observed, lwd = 3, lty = 2, col = "black")
+}
+count_zeros <- function(x) sum(x == 0)
+spread_stat <- function(simulationOutput) {
+  expected_var <- sd(simulationOutput$simulatedResponse)^2
+  function(x) var(x - simulationOutput$fittedPredictedResponse) / expected_var
+}
+```
+
+## Actividad
+
+```{=latex}
+\footnotesize
+```
+
+::: {.callout-note title="Preparacion"}
+
+  * Cada estudiante elige una ficha de planta (planta 1, 2, 3 o 4) y modelo:
+    1. Poisson (P)
+    2. Binomial negativa (NB)
+    3. Inflación de ceros (ZIP)
+    4. Binomial negativa con inflación de ceros (ZINB)
+:::
+
+::: {.callout-note title="Fase 1: Estudiar independientemente [7 minutos]"}
+
+  * Revise los datos para su planta, la histograma y el gráfico de dispersión con respecto a la distancia.
+  * Tome nota de cualquier patrón que observe, como tendencias en la abundancia con la distancia, presencia de ceros, la variacion en la abundancia, etc.
+  * Estudia el material proporcionado para el modelo que te toco
+  * Interpreta los resultados para la planta que te toco de acuerdo con el modelo asignado.
+
+:::
+
+::: {.callout-note title="Fase 2: Discusión en grupo [4 minutos]"}
+  
+  * Nos unimos en equipos según la planta, para aprender los resultados de los otros modelos para la planta.
+  * Comparamos nuestras observaciones con las de nuestros compañeros.
+  * Discutimos cualquier patrón común o discrepancias.
+  * Preparamos un resumen de nuestras conclusiones en la bitácora para compartir con el grupo.
+  * Contenido:
+      1. La abundancia cambia con la distancia?
+      2. La estructura de varianza asumida parece apropiada?
+      3. Hay más ceros de los que la dada distribución de conteo puede producir razonablemente?
+:::
+
+
+::: {.callout-note title="Fase 3: Presentación y discusión con de mas [3 minutos por grupo]"}
+
+  * El grupo para cada planta presenta su resumen al resto de la clase.
+  * Contestan dudas planteadas por otros grupos.
+  * Se discuten las similitudes y diferencias entre los grupos / plantas.
+
+:::
+
+**El reporte de Fase 2, escrito en su bitacora, representa su entrada de bitacora calificada**
+
+
+```{=latex}
+\normalsize
+```
+
+{{< pagebreak >}}
+
+## Contexto ecológico
+
+Los ecólogos a menudo estudian la abundancia de diferentes especies de plantas en parcelas a lo largo de un gradiente ambiental. La abundancia de cada especie puede sugerir diferentes patrones de respuesta a las condiciones ambientales:
+
+   * Unas especies parecen no afectadas por el gradiente ambiental.
+   * Otras especies muestran un aumento en la abundancia con el gradiente ambiental.
+   * Otras más presentan una disminución en la abundancia con el aumento de la presión ambiental.
+   * Finalmente, algunas especies pueden ser tan afectadas por el ambiente local o la presencia de otros competidores que su abundancia sea muy baja o incluso nula en algunas áreas.
+
+Nuestra tarea es analizar datos de conteo de cuatro especies de plantas en 50 parcelas a lo largo de un gradiente de disturbio ambiental, para entender cómo cada especie responde a los cambios en su entorno. Pero para poder contestar adecuadamente, necesitamos utilizar modelos estadísticos que tengan en cuenta la naturaleza de los datos de conteo y las posibles complicaciones, como la cantidad de variación en la abundancia entre parcelas y la presencia/asusencia de alguna especie en diferentes parcelas. Esto nos permitirá hacer inferencias más precisas sobre los efectos del gradiente ambiental en la abundancia de cada especie.
+
+
+```{=latex}
+\footnotesize
+```
+
+::: {.callout-note title="Datos y paquetes necesarios para reproducir el analisis de las 4 plantas"}
+
+  * **Datos**: [Descargar datos (CSV)](L06-plant-data.csv) — una fila por parcela, con la distancia y la abundancia observada de las 4 plantas (columnas `plant_1` a `plant_4`). Son los mismos datos usados en las hojas de caso individuales.
+  
+  * **Paquetes**: para correr el código de este documento se necesitan `dplyr`, `ggplot2`, `glmmTMB`, `DHARMa`, `ggeffects` y `patchwork`. Las hojas de caso individuales (una por planta y modelo) usan el mismo conjunto de paquetes.  
+  
+  * **Codigo**: pueden empezar con el codigo de ejemplo proporcionado más abajo.  
+
+:::
+
+```{=latex}
+\normalsize
+```
+
+## Modelos generalizados lineales para conteos (todos)
+
+
+
+
+Antes de trabajar con los datos de la actividad, veamos paso a paso cómo se ajusta y se interpreta este tipo de modelo.
+
+### Datos de ejemplo
+
+Simulamos la abundancia de una especie hipotética en 60 parcelas a lo largo de un gradiente disturbacion ambiendal, representado como la distancia en metros de la area de descanso mas cercana. La abundancia de esta planta tiene con una tendencia positiva con la distancia (prefiere parcelas lejanas a las areas de descanso). Igual los datos muestran sobredispersión -- cuando la varianza es mayor que la media, lo que falla las suposiciones de un modelo Poisson:
+
+```{r}
+set.seed(2024)
+n_demo <- 60
+
+# Distancia: número uniforme entre 0 y 100
+demo_distance <- runif(n_demo, min = 0, max = 100)
+
+# Aumento exponencial de la media abundancia esperada con la distancia
+demo_mu <- exp(1.0 + 0.015 * demo_distance)
+
+# Abundancia observada simulada a partir de una distribución binomial negativa. La media depende de la distancia (via `demo_mu`). El parámetro `size` controla la dispersión.
+demo_abundance <- rnbinom(n_demo, mu = demo_mu, size = 1.2)
+
+demo_data <- tibble(distance = demo_distance, abundance = demo_abundance)
+```
+
+```{r}
+#| fig-width: 7
+#| fig-height: 3
+p_demo_hist <- demo_data |>
+  ggplot(aes(x = abundance)) +
+  geom_histogram(binwidth = 1, color = "white", fill = "steelblue") +
+  theme_minimal() +
+  labs(x = "Abundancia", y = "Numero de parcelas")
+
+p_demo_scatter <- demo_data |>
+  ggplot(aes(x = distance, y = abundance)) +
+  geom_point(color = "steelblue") +
+  theme_minimal() +
+  labs(x = "Distancia", y = "Abundancia")
+
+patchwork::wrap_plots(p_demo_hist, p_demo_scatter)
+```
+
+El histograma muestra una distribución de conteos asimétrica hacia la derecha, con varios valores altos infrecuentes. Esto ya sugiere que la varianza podría ser mayor que la media (sobredispersión), algo que un modelo Poisson no puede representar. El gráfico de dispersión sugiere una tendencia positiva con la distancia -- las abundancias mas altas se encuentran en las distancias mas grandes.
+
+### Paso 1: Ajustar un modelo Poisson
+
+Como primer intento, ajustamos el modelo más simple para datos de conteo: la Poisson, que asume que la varianza es igual a la media.
+
+```{r}
+fit_demo_poisson <- glmmTMB(
+  formula = abundance ~ distance, 
+  data = demo_data, 
+  family = poisson
+)
+summary(fit_demo_poisson)
+```
+
+**Cómo leer esta salida:**
+
+  * Los coeficientes ( columna `Estimate`) están en la **escala log**, porque el modelo Poisson usa un enlace logarítmico ($\log(\mu) = \beta_0 + \beta_1 \cdot \text{distancia}$). Para interpretarlos en la escala original de conteos, se exponencian: `exp(coef)` da el cambio multiplicativo en la abundancia esperada por cada unidad de distancia.
+  * El `Std. Error`, `z value` y `Pr(>|z|)` permiten evaluar si el efecto de la distancia es distinguible de cero.
+  * `AIC`, `BIC` y `logLik` son medidas de ajuste relativo, útiles para comparar con otros modelos (como el binomial negativo más abajo).
+
+```{r}
+ggeffects::ggpredict(
+  fit_demo_poisson,
+  terms = "distance [0, 20, 40, 60, 80, 100]"
+) |>
+  as.data.frame() |>
+  select(x, predicted, conf.low, conf.high) |>
+  knitr::kable(
+    digits = 2, 
+    col.names = c("Distancia", "Predicho", "IC 2.5%", "IC 97.5%")
+  )
+```
+
+Esta tabla traduce los coeficientes (escala log) a la **escala de respuesta** (abundancia esperada, escala de conteos), junto con un intervalo de confianza del 95%. Es la forma más intuitiva de comunicar las predicciones del modelo.
+
+```{r}
+#| fig-width: 9
+#| fig-height: 3
+sim_res_demo_poisson <- DHARMa::simulateResiduals(
+  fittedModel = fit_demo_poisson, 
+  n = 1000
+)
+
+# dividir la area de grafico en tres columnas
+par(mfrow = c(1, 3))
+# agregar los tres tests de diagnóstico de DHARMa
+invisible(DHARMa::testUniformity(sim_res_demo_poisson))
+invisible(DHARMa::testDispersion(sim_res_demo_poisson))
+invisible(mark_observed_bw(sim_res_demo_poisson, spread_stat(sim_res_demo_poisson)))
+invisible(DHARMa::testZeroInflation(sim_res_demo_poisson))
+invisible(mark_observed_bw(sim_res_demo_poisson, count_zeros))
+```
+
+::: {.callout-tip title="¿Qué es un bootstrap paramétrico?"}
+Las pruebas de dispersión e inflación de ceros de DHARMa son **bootstraps paramétricos**: DHARMa simula muchos conjuntos de datos nuevos *asumiendo que el modelo ajustado es correcto*, calcula la estadística de interés (dispersión o número de ceros) en cada uno, y así construye la distribución de referencia (histograma gris) contra la que se compara el valor observado (línea punteada). Si el valor observado cae en una zona poco probable de esa distribución simulada, es decir, si se encuentra en los extremos del histograma gris, el modelo no describe bien esa característica de los datos.
+:::
+
+**Cómo leer los diagnósticos DHARMa:**
+
+  * El **QQ plot** (izquierda) compara los residuales simulados con los esperados bajo el modelo ajustado; si el modelo es adecuado, los puntos deberían caer sobre la línea diagonal. El valor p de la prueba KS evalúa desviaciones significativas.
+  * La prueba de **dispersión** (centro) compara la varianza observada con la esperada bajo el modelo; un valor p pequeño indica sobredispersión (o subdispersión), es decir, que el modelo Poisson subestima la variabilidad real.
+  * La prueba de **inflación de ceros** (derecha) compara la cantidad de ceros observados con los que el modelo esperaría generar; un valor p pequeño sugiere que hay más ceros de los que el modelo puede explicar.
+
+Con estos datos, la prueba de dispersión suele resultar significativa: el modelo Poisson **no captura toda la variación** en la abundancia. Esto motiva el siguiente paso.
+
+### Paso 2: Corregir la sobredispersión con un modelo binomial negativo
+
+El modelo binomial negativo agrega un parámetro de dispersión ($\theta$) que permite que la varianza crezca más rápido que la media ($\text{var} = \mu + \mu^2/\theta$), sin cambiar la interpretación de los coeficientes de la parte condicional (siguen en escala log).
+
+```{r}
+fit_demo_nb <- glmmTMB(
+  formula = abundance ~ distance,
+  data = demo_data,
+  family = nbinom2
+)
+summary(fit_demo_nb)
+```
+
+**Cómo leer esta salida:**
+
+  * Los coeficientes de `Conditional model` se interpretan igual que en el modelo Poisson (escala log).
+  * La línea `Dispersion parameter for nbinom2` (o el valor `Estimate` bajo `Sigma` en algunas versiones) es la estimación de $\theta$: valores pequeños indican mucha sobredispersión; valores muy grandes (cercanos a infinito) indican que el modelo binomial negativo se aproxima al Poisson, es decir, que no hace falta el parámetro extra.
+  * Comparar el `AIC` de este modelo con el del Poisson anterior: un AIC menor apoya el uso del modelo binomial negativo.
+
+::: {.callout-tip title="¿Por qué se llama 'Conditional model'?"}
+
+`glmmTMB` etiqueta la parte de conteo (la fórmula principal) como **"Conditional model"** en todos modelos. El nombre viene de la tradición de modelos mixtos: se refiere a la media de la respuesta *condicional a los efectos aleatorios*. 
+
+Cuando el modelo sí tiene una componente `ziformula`, esta parte además queda condicional a "no ser un cero estructural" — pero esa es una segunda capa de condicionamiento, propia solo de los modelos ZIP/ZINB.
+:::
+
+```{r}
+ggeffects::ggpredict(
+  fit_demo_nb,
+  terms = "distance [0, 20, 40, 60, 80, 100]"
+) |>
+  as.data.frame() |>
+  select(x, predicted, conf.low, conf.high) |>
+  knitr::kable(
+    digits = 2, 
+    col.names = c("Distancia", "Predicho", "IC 2.5%", "IC 97.5%")
+  )
+```
+
+Los intervalos de confianza tienden a ser **más amplios** que en el modelo Poisson, que refleja la mayor incertidumbre asociada a datos sobredispersos.
+
+```{r}
+#| fig-width: 9
+#| fig-height: 3
+sim_res_demo_nb <- DHARMa::simulateResiduals(
+  fittedModel = fit_demo_nb, 
+  n = 1000
+)
+
+par(mfrow = c(1, 3))
+invisible(DHARMa::testUniformity(sim_res_demo_nb))
+invisible(DHARMa::testDispersion(sim_res_demo_nb))
+invisible(mark_observed_bw(sim_res_demo_nb, spread_stat(sim_res_demo_nb)))
+invisible(DHARMa::testZeroInflation(sim_res_demo_nb))
+invisible(mark_observed_bw(sim_res_demo_nb, count_zeros))
+```
+
+Con el modelo binomial negativo, la prueba de dispersión ya no debería ser significativa: el modelo ahora representa adecuadamente la variabilidad de los datos.
+
+### ¿Y si hay exceso de ceros?
+
+Si la prueba de inflación de ceros de DHARMa resulta significativa (más ceros de los que el modelo puede producir razonablemente), se agrega una componente de inflación de ceros con `ziformula = ~1` (modelos ZIP o ZINB).
+
+Un modelo con inflación de ceros en realidad **combina dos procesos distintos** para generar los datos:
+
+  1. **Un proceso binario (binomial/logístico)** que decide, para cada parcela, si la especie está *estructuralmente ausente* — es decir, un cero garantizado, no atribuible al azar de muestreo (por ejemplo, el hábitat es inadecuado o la especie nunca llega a esa parcela).
+  2. **Un proceso de conteo (Poisson o binomial negativa)** que se aplica a las parcelas que *no* fueron clasificadas como ausencia estructural. Este proceso genera el número de individuos observados, y — importante — **puede producir ceros por puro azar de muestreo**, aun cuando la especie sí puede estar presente ahí.
+
+Por lo tanto, los ceros observados en los datos son una **mezcla de dos tipos de ceros** que el modelo no distingue directamente en los datos crudos, pero sí separa estadísticamente:
+
+  * *Ceros estructurales*: vienen del proceso binomial (parte 1).
+  * *Ceros de muestreo*: vienen del proceso de conteo (parte 2), igual que en un modelo Poisson/NB sin inflación de ceros.
+
+Esto se refleja en que el modelo reporta **dos conjuntos de coeficientes por separado**:
+
+  * Los coeficientes del **modelo condicional** (de conteo, Poisson o NB) están en **escala log**, igual que antes, y describen cómo cambia la abundancia esperada *dado que la parcela no es un cero estructural*.
+  * Los coeficientes de la **componente de inflación de ceros** (`ziformula`) están en **escala logit**, no log: se interpretan como el logaritmo de la razón de momios de que una observación sea un cero estructural.
+
