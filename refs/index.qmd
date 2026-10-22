@@ -56,3 +56,8 @@ Web app:
   ver como datos simulados comparan con lo que espera la distribucion Poisson.
 
   - [https://diatom.shinyapps.io/B0305/](https://diatom.shinyapps.io/B0305/)
+
+## Modelos Mixtos y Efectos Aleatorios (GLMM)
+
+  - [Bolker et al. 2008](Bolker-etal-2008.pdf)
+  - [Harrison et al. 2018](Harrison-etal-2018.pdf)
