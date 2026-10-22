@@ -42,15 +42,15 @@ error residual y aumenta la precisión de la comparación.
 
 - **Grupos de hasta 4 personas.** Cada grupo recibe esta introducción, la tabla
   de referencia y la hoja de trabajo.
-- **Estaciones:** cada uno de los cuatro casos está impreso en dos estaciones
-  alrededor del aula (ocho estaciones en total). Dos grupos pueden trabajar el
+- **Estaciones:** cada uno de los cuatro casos está impreso en tres estaciones
+  alrededor del aula (doce estaciones en total). Varios grupos pueden trabajar el
   mismo caso al mismo tiempo en estaciones distintas.
 - **Rotación [5–6 minutos por estación]:** en cada estación, lean el caso,
   discutan las preguntas de "Conversen" y completen la fila correspondiente de la
   tabla. Al terminar, roten a una estación con un caso que no hayan visto.
-- **Cierre en grupo [10 minutos]:** con los cuatro casos completos, respondan las
-  tres preguntas de discusión de la hoja de trabajo.
-- **Puesta en común [10–15 minutos]:** cada grupo presenta un caso; los demás
+- **Cierre en grupo [5 minutos]:** con los cuatro casos completos, respondan la
+  pregunta de discusión al pie de la tabla.
+- **Cierre en común [10–15 minutos]:** cada grupo presenta un caso; los demás
   comparan con sus respuestas.
 - **Bitácora (individual):** la última página presenta un caso nuevo. Resuélvanlo
   individualmente en la bitácora aplicando lo discutido; esa es la entrada
@@ -131,6 +131,18 @@ por la muestra.
 **Conversen:** ¿Qué plántulas comparten condiciones? ¿En qué niveles se asignó el
 tratamiento y se midió la respuesta?
 
+::: {.callout-tip title="Pistas"}
+
+- *Unidad experimental:* ¿a qué se le asignó el tratamiento? ¿Es lo mismo que se
+  midió?
+- *Dependencia:* ¿qué observaciones comparten algo (lugar, momento, individuo)
+  que las haga parecerse entre sí?
+- *Modelo:* cada fuente de dependencia es una variable de agrupamiento candidata
+  para `(1 | …)`. ¿Está una dentro de otra?
+
+Completen: `crecimiento ~ tratamiento + ( ________________ )`
+
+:::
 
 ![](L08-assets/caso1.png)
 
@@ -159,7 +171,23 @@ promedio de crecimiento, expresada en centímetros por semana.
 plántulas diferir en su altura inicial o en su tasa de crecimiento? ¿Qué término
 del modelo evaluaría la diferencia en tasa entre tratamientos?
 
-![](L08-assets/caso2.png)
+::: {.callout-tip title="Pistas"}
+
+- *Unidad experimental:* ¿a qué se le asignó el tratamiento? ¿Es lo mismo que se
+  midió?
+- *Dependencia:* ¿qué observaciones comparten algo (lugar, momento, individuo)
+  que las haga parecerse entre sí?
+- *Modelo:* cada fuente de dependencia es una variable de agrupamiento candidata
+  para `(1 | …)`. ¿Está una dentro de otra?
+- Si graficaran la altura de cada plántula contra la semana, ¿tendrían las 30
+  líneas el mismo punto de partida? ¿La misma inclinación? ¿Qué parte de la
+  sintaxis permite que cada una difiera?
+
+Completen: `altura ~ ________________ + ( ________________ )`
+
+:::
+
+![](L08-assets/caso2.png){width=80%}
 
 ```{=latex}
 \clearpage
@@ -185,6 +213,19 @@ tratadas y controles dentro de bloques comparables.
 
 **Conversen:** ¿Por qué comparar parcelas dentro del mismo bloque? ¿Qué
 observaciones comparten condiciones de humedad?
+
+::: {.callout-tip title="Pistas"}
+
+- *Unidad experimental:* ¿a qué se le asignó el tratamiento? ¿Es lo mismo que se
+  midió?
+- *Dependencia:* ¿qué observaciones comparten algo (lugar, momento, individuo)
+  que las haga parecerse entre sí?
+- *Modelo:* cada fuente de dependencia es una variable de agrupamiento candidata
+  para `(1 | …)`. ¿Está una dentro de otra?
+
+Completen: `crecimiento ~ tratamiento + ( ________________ )`
+
+:::
 
 ![](L08-assets/caso3.png)
 
@@ -216,6 +257,22 @@ independiente para estimar su relación con el crecimiento proviene principalmen
 de las 120 plantas o de los 12 sitios? ¿Qué agrupamiento debería representar el
 modelo?
 
+::: {.callout-tip title="Pistas"}
+
+- *Unidad de muestreo:* aquí no hay tratamiento. ¿Qué se muestreó? ¿A qué nivel
+  se midió el predictor y a qué nivel la respuesta?
+- *Dependencia:* ¿qué observaciones comparten algo (lugar, momento, individuo)
+  que las haga parecerse entre sí?
+- *Modelo:* cada fuente de dependencia es una variable de agrupamiento candidata
+  para `(1 | …)`. ¿Está una dentro de otra?
+- Imaginen que `sitio` fuera un factor fijo en el modelo. Dentro de cada sitio,
+  ¿cuánto varía la cobertura? ¿Podría el modelo distinguir el efecto de la
+  cobertura del efecto del sitio?
+
+Completen: `crecimiento ~ cobertura + ( ________________ )`
+
+:::
+
 ![](L08-assets/caso4.png)
 
 ```{=latex}
@@ -243,13 +300,13 @@ en relación con la predicción.
 \hline
 \textbf{Caso} & \textbf{Unidad experimental o de muestreo} & \textbf{¿Qué observaciones comparten condiciones o individuo?} & \textbf{Efecto(s) aleatorio(s) propuesto(s) y justificación} \\
 \hline
-1. Muestreo anidado & & & \\[7em]
+1. Muestreo anidado & & & \\[6em]
 \hline
-2. Medidas repetidas & & & \\[7em]
+2. Medidas repetidas & & & \\[6em]
 \hline
-3. Diseño en bloques & & & \\[7em]
+3. Diseño en bloques & & & \\[6em]
 \hline
-4. Predictor a nivel de sitio & & & \\[7em]
+4. Predictor a nivel de sitio & & & \\[6em]
 \hline
 \end{tabular}
 \renewcommand{\arraystretch}{1}
@@ -268,29 +325,13 @@ en relación con la predicción.
 
 :::
 
-```{=latex}
-\clearpage
-```
+## Pregunta de discusión
 
-```{=html}
-<div style="break-before: page; page-break-before: always;"></div>
-```
+**En cada caso, ¿la cantidad a estimar compara observaciones *dentro* de los grupos o *entre* grupos? Si se omitiera el agrupamiento, ¿la incertidumbre del efecto estimado sería demasiado grande o demasiado pequeña? ¿Por qué?**
 
-## Preguntas de discusión
-
-**1. En diseños anidados, ¿cuáles observaciones comparten condiciones ambientales o corresponden al mismo individuo? ¿Cuál(es) variable(s) de agrupamiento representan esas fuentes de dependencia?**
-
-::: {.answer-space lines=3}
+::: {.content-visible unless-format="pdf"}
+::: {.answer-space lines=5}
 :::
-
-**2. En el caso de medidas repetidas, ¿cuál término del modelo permite evaluar si el tratamiento cambia la tasa de crecimiento?**
-
-::: {.answer-space lines=3}
-:::
-
-**3. En cada caso, ¿la cantidad a estimar compara observaciones *dentro* de los grupos o *entre* grupos? Si se omitiera el agrupamiento, ¿la incertidumbre del efecto estimado sería demasiado grande o demasiado pequeña? ¿Por qué?**
-
-::: {.answer-space lines=4}
 :::
 
 ```{=latex}

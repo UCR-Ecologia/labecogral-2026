@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.40">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>l08-random-effects-instructor</title>
+<title>Lab 08: Modelos mixtos y efectos aleatorios - Guia para la persona instructora – Laboratorio de Ecologia General B-0305</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,59 +23,208 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="L08-random-effects-instructor_files/libs/clipboard/clipboard.min.js"></script>
-<script src="L08-random-effects-instructor_files/libs/quarto-html/quarto.js"></script>
-<script src="L08-random-effects-instructor_files/libs/quarto-html/popper.min.js"></script>
-<script src="L08-random-effects-instructor_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="L08-random-effects-instructor_files/libs/quarto-html/anchor.min.js"></script>
-<link href="L08-random-effects-instructor_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="L08-random-effects-instructor_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="L08-random-effects-instructor_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="L08-random-effects-instructor_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="L08-random-effects-instructor_files/libs/bootstrap/bootstrap-2e34a2cd7071d98454d472e28713fa2b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-38566f2d191bdb59836365460af85d63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
 
 
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Laboratorio de Ecologia General B-0305</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../programa/index.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lectures/index.html"> 
+<span class="menu-text">Clases</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/index.html"> 
+<span class="menu-text">Laboratorios</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../refs/index.html"> 
+<span class="menu-text">Referencias</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="L08-random-effects-instructor.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 08: Modelos mixtos y efectos aleatorios - Guia para la persona instructora</h1>
+</div>
 
 
 
-<section id="laboratorio-08-efectos-aleatorios-guía-para-la-persona-instructora" class="level1">
-<h1>Laboratorio 08: efectos aleatorios — guía para la persona instructora</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="logística-de-las-estaciones" class="level2">
+<h2 class="anchored" data-anchor-id="logística-de-las-estaciones">Logística de las estaciones</h2>
+<p>Los PDF para imprimir están en <code>labs/L08-print/</code> (ver el README ahí).</p>
+<p>Para imprimir (10 grupos de 4):</p>
+<ul>
+<li><strong>Por grupo (10 copias):</strong> <code>01-intro-y-referencia.pdf</code> (2 págs.) y <code>06-hoja-de-trabajo.pdf</code>.</li>
+<li><strong>Por estación (3 copias de cada caso):</strong> <code>02-</code> a <code>05-caso-*.pdf</code>. Doce estaciones en total.</li>
+<li><strong>Por estudiante (40 copias):</strong> <code>07-bitacora-lote.pdf</code>.</li>
+</ul>
+<p>Tiempos sugeridos: 4 rotaciones × 5–6 min ≈ 22–24 min; cierre en grupo 5 min; puesta en común 10–15 min. Total ≈ 40–45 min, más el caso de bitácora si se resuelve en clase.</p>
+<p>En la rotación conviene que cada grupo empiece en un caso distinto para que las estaciones estén ocupadas desde el inicio.</p>
+</section>
 <section id="respuestas-sugeridas" class="level2">
 <h2 class="anchored" data-anchor-id="respuestas-sugeridas">Respuestas sugeridas</h2>
+<p>Cada caso tiene un recuadro “Pistas” con tres preguntas fijas (unidad experimental, dependencia, modelo) y un esqueleto de modelo para completar. Los casos 2 y 4 llevan además una pista socrática. Las respuestas esperadas a los esqueletos:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caso</th>
+<th>Esqueleto</th>
+<th>Respuesta esperada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><code>crecimiento ~ tratamiento + ( ____ )</code></td>
+<td><code>1 | sitio/parcela</code></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><code>altura ~ ____ + ( ____ )</code></td>
+<td><code>tratamiento * semana</code> y <code>1 + semana | plantula</code> (aceptar <code>1 | plantula</code>)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><code>crecimiento ~ tratamiento + ( ____ )</code></td>
+<td><code>1 | bloque</code></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><code>crecimiento ~ cobertura + ( ____ )</code></td>
+<td><code>1 | sitio</code></td>
+</tr>
+</tbody>
+</table>
+<p>En el caso 2 el esqueleto deja en blanco también la parte fija para no revelar la interacción, que es una de las preguntas “Conversen”. La pista socrática (“¿mismo punto de partida? ¿misma inclinación?”) apunta a intercepto y pendiente aleatorios respectivamente. En el caso 4, la pista sobre <code>sitio</code> como factor fijo lleva a la colinealidad sin nombrarla; si un grupo llega a “no se puede distinguir cobertura de sitio”, lo entendió.</p>
 <section id="caso-1.-muestreo-anidado" class="level3">
 <h3 class="anchored" data-anchor-id="caso-1.-muestreo-anidado">Caso 1. Muestreo anidado</h3>
 <p><strong>Estructura sugerida:</strong> interceptos aleatorios para sitio y parcela dentro de sitio, por ejemplo:</p>
 <pre class="text"><code>crecimiento ~ tratamiento + (1 | sitio/parcela)</code></pre>
 <p>Las plántulas de una misma parcela comparten condiciones locales y las parcelas están anidadas en sitios. El tratamiento se asigna dentro de las parcelas.</p>
+<p><strong>Dentro o entre grupos:</strong> el tratamiento se compara <em>dentro</em> de cada parcela. Si se omite el agrupamiento, la varianza de sitio y de parcela queda en el residuo y el intervalo del efecto del tratamiento sale <strong>demasiado amplio</strong> (conservador). No es pseudorreplicación; se pierde precisión.</p>
 </section>
 <section id="caso-2.-medidas-repetidas" class="level3">
 <h3 class="anchored" data-anchor-id="caso-2.-medidas-repetidas">Caso 2. Medidas repetidas</h3>
 <p><strong>Estructura sugerida:</strong> intercepto aleatorio para plántula; una pendiente aleatoria de tiempo puede ser apropiada si el diseño y los datos la respaldan:</p>
 <pre class="text"><code>altura ~ tratamiento * semana + (1 + semana | plantula)</code></pre>
 <p>Las mediciones semanales de una plántula no son independientes. La interacción tratamiento por semana estima la diferencia en tasa de crecimiento entre tratamientos.</p>
+<p>Cómo conectar con la pregunta “Conversen” del caso: <em>altura inicial distinta</em> → intercepto aleatorio <code>(1 | plantula)</code>; <em>tasa distinta entre plántulas</em> → pendiente aleatoria <code>(semana | plantula)</code>. El mínimo razonable es <code>(1 | plantula)</code>; la pendiente aleatoria reconoce que la variación entre plántulas en su tasa es la variación relevante para comparar tratamientos. Conviene que <code>semana</code> empiece en 0 para que el intercepto sea la altura inicial.</p>
+<p>Alternativa válida que algunos grupos propondrán: calcular la pendiente de cada plántula (8 puntos → 1 tasa) y comparar las 30 tasas con un modelo lineal simple o una prueba t. Es un análisis en dos etapas que estima lo mismo y deja claro que el n efectivo para el tratamiento es 30, no 240.</p>
+<p><strong>Dentro o entre grupos:</strong> el tratamiento se compara <em>entre</em> plántulas (cada plántula recibe un solo tratamiento). Si se omite el agrupamiento, las ocho mediciones de cada plántula se tratan como réplicas independientes del efecto del tratamiento: pseudorreplicación, intervalo <strong>demasiado estrecho</strong>.</p>
 </section>
 <section id="caso-3.-diseño-en-bloques" class="level3">
 <h3 class="anchored" data-anchor-id="caso-3.-diseño-en-bloques">Caso 3. Diseño en bloques</h3>
 <p><strong>Estructura sugerida:</strong> intercepto aleatorio para bloque:</p>
 <pre class="text"><code>crecimiento ~ tratamiento + (1 | bloque)</code></pre>
-<p>Las parcelas de un mismo bloque comparten humedad y condiciones de base, y la comparación de tratamientos se hace dentro de cada bloque. Con solo 10 bloques, también puede ser defendible tratar bloque como efecto fijo si la inferencia se limita a esos bloques específicos.</p>
+<p>Las parcelas de un mismo bloque comparten humedad y condiciones de base, y la comparación de tratamientos se hace dentro de cada bloque. Con solo 10 bloques, también puede ser defendible tratar bloque como efecto fijo si la inferencia se limita a esos bloques específicos. Con dos parcelas por bloque, este modelo es equivalente a una prueba t pareada sobre las 10 diferencias (nutrientes − control).</p>
+<p>Preguntas que suelen surgir:</p>
+<ul>
+<li><em>¿Por qué promediar las plántulas por parcela y no usarlas individualmente?</em> Se puede usar las plántulas individuales, pero entonces hay que incluir la parcela: <code>(1 | bloque/parcela)</code>. La parcela es la <strong>unidad experimental</strong> (el tratamiento se asignó a parcelas completas), así que el efecto del tratamiento debe evaluarse contra la variación entre parcelas, no entre plántulas. Omitir la parcela en ese modelo sí sería pseudorreplicación. Promediar es la forma simple de respetar la unidad experimental.</li>
+<li><em>¿Por qué no usar la humedad como covariable en lugar del bloque?</em> Se podría si se midió, pero el bloque captura la humedad <em>y</em> todo lo demás que varía espacialmente (suelo, luz, herbivoría). El bloque no requiere saber cuáles son esas variables.</li>
+<li>Un “lote” o corrida experimental en invernadero es un bloque en el tiempo; se analiza igual.</li>
+</ul>
+<p><strong>Dentro o entre grupos:</strong> el tratamiento se compara <em>dentro</em> de cada bloque. Si se omite el bloque, la varianza entre bloques (el gradiente de humedad) queda en el residuo y el intervalo sale <strong>demasiado amplio</strong>. Es la razón por la que bloquear aumenta la potencia.</p>
 </section>
-<section id="caso-4.-efectos-de-lote" class="level3">
-<h3 class="anchored" data-anchor-id="caso-4.-efectos-de-lote">Caso 4. Efectos de lote</h3>
-<p><strong>Estructura sugerida:</strong> intercepto aleatorio para lote:</p>
-<pre class="text"><code>crecimiento ~ tratamiento + (1 | lote)</code></pre>
-<p>Las plántulas de cada corrida comparten condiciones de invernadero. Ambos tratamientos deben aparecer en cada lote para evitar confundir tratamiento con corrida. Con seis lotes, la varianza entre lotes puede estimarse con poca precisión; un efecto fijo puede ser preferible si interesan esos seis lotes particulares.</p>
-</section>
-<section id="caso-5.-predictor-medido-a-nivel-de-sitio" class="level3">
-<h3 class="anchored" data-anchor-id="caso-5.-predictor-medido-a-nivel-de-sitio">Caso 5. Predictor medido a nivel de sitio</h3>
+<section id="caso-4.-predictor-medido-a-nivel-de-sitio" class="level3">
+<h3 class="anchored" data-anchor-id="caso-4.-predictor-medido-a-nivel-de-sitio">Caso 4. Predictor medido a nivel de sitio</h3>
 <p>En el caso, se mide la altura de cada planta al inicio y al final de la estación, y se calcula un único incremento de altura por planta. Para ese análisis de incrementos, una estructura inicial es:</p>
 <pre class="text"><code>crecimiento ~ cobertura + (1 | sitio)</code></pre>
 <p>La cobertura del dosel varía entre los 12 sitios, no entre las 120 plantas. Las plantas de un mismo sitio comparten condiciones y no son réplicas independientes para el predictor cobertura. El intercepto aleatorio de sitio representa la correlación entre plantas del mismo sitio. El efecto de cobertura se informa principalmente por las diferencias entre los 12 sitios.</p>
@@ -83,29 +232,80 @@ ul.task-list li input[type="checkbox"] {
 <pre class="text"><code>crecimiento ~ cobertura + (1 | sitio/planta)</code></pre>
 <p>En la notación de modelos mixtos, <code>sitio/planta</code> representa un efecto de sitio y otro de planta dentro de sitio. El orden inverso, <code>planta/sitio</code>, no representa esa jerarquía.</p>
 <p>La comparación conceptual relevante es entre un modelo que ignora los sitios, <code>crecimiento ~ cobertura</code>, y el modelo que representa su agrupamiento, <code>crecimiento ~ cobertura + (1 | sitio)</code>. No se trata de comparar un modelo con efecto aleatorio de planta contra otro con efectos aleatorios de planta y sitio.</p>
+<p><strong>¿Por qué no <code>sitio</code> como efecto fijo?</strong> Algunos grupos lo propondrán a partir de la tabla de la página 1 (12 niveles, “pocos grupos”). No es posible: la cobertura es constante dentro de cada sitio, así que <code>sitio</code> como factor fijo es perfectamente colineal con <code>cobertura</code> y la pendiente de cobertura no se puede estimar. Este es el caso en que el efecto aleatorio no es una opción sino la única forma de tener la estructura de sitio <em>y</em> un predictor a nivel de sitio. Es el argumento más fuerte del caso.</p>
+<p><strong>Chequeo útil:</strong> el modelo mixto da casi el mismo resultado que una regresión simple de los 12 promedios de crecimiento por sitio contra la cobertura. Si los grupos ven eso, entienden de dónde viene la información: de 12 sitios, con unos 10 grados de libertad para la pendiente. El efecto aleatorio da intervalos honestos; no crea información que no existe.</p>
+<p><strong>Dentro o entre grupos:</strong> la cobertura varía <em>entre</em> sitios. Si se omite el sitio, las 120 plantas se tratan como réplicas independientes de un predictor que solo tiene 12 valores: pseudorreplicación, intervalo <strong>demasiado estrecho</strong>.</p>
 </section>
 </section>
-<section id="respuestas-a-las-preguntas-de-discusión" class="level2">
-<h2 class="anchored" data-anchor-id="respuestas-a-las-preguntas-de-discusión">Respuestas a las preguntas de discusión</h2>
+<section id="respuesta-a-la-pregunta-de-discusión" class="level2">
+<h2 class="anchored" data-anchor-id="respuesta-a-la-pregunta-de-discusión">Respuesta a la pregunta de discusión</h2>
+<p>La pregunta está al pie de la tabla de la hoja de trabajo. Las dos preguntas que se quitaron (qué comparten las observaciones en diseños anidados; qué término evalúa la tasa en medidas repetidas) ya están cubiertas por las columnas de la tabla y por las notas de los casos 1 y 2 arriba; conviene sacarlas en la puesta en común.</p>
+<p><strong>¿Dentro o entre grupos? ¿Qué pasa con la incertidumbre si se omite el agrupamiento?</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 29%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caso</th>
+<th>Comparación</th>
+<th>Si se omite el agrupamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Muestreo anidado</td>
+<td>Tratamiento <em>dentro</em> de parcelas</td>
+<td>Intervalo demasiado amplio (pierde precisión)</td>
+</tr>
+<tr class="even">
+<td>2. Medidas repetidas</td>
+<td>Tratamiento <em>entre</em> plántulas</td>
+<td>Intervalo demasiado estrecho (pseudorreplicación)</td>
+</tr>
+<tr class="odd">
+<td>3. Diseño en bloques</td>
+<td>Tratamiento <em>dentro</em> de bloques</td>
+<td>Intervalo demasiado amplio</td>
+</tr>
+<tr class="even">
+<td>4. Predictor a nivel de sitio</td>
+<td>Cobertura <em>entre</em> sitios</td>
+<td>Intervalo demasiado estrecho (pseudorreplicación)</td>
+</tr>
+</tbody>
+</table>
+<p>Lo que se busca es que los grupos no respondan “pseudorreplicación” para los cuatro casos. En los casos 1 y 3 el efecto aleatorio absorbe variación de ruido; en los casos 2 y 4 impide contar como independientes observaciones que no lo son.</p>
+</section>
+<section id="entrada-de-bitácora-efectos-de-lote" class="level2">
+<h2 class="anchored" data-anchor-id="entrada-de-bitácora-efectos-de-lote">Entrada de bitácora: efectos de lote</h2>
+<p>Es un caso de transferencia: la misma estructura del caso 3 (bloque), pero el bloque es temporal y la unidad experimental es distinta.</p>
+<p><strong>Estructura esperada:</strong></p>
+<pre class="text"><code>crecimiento ~ tratamiento + (1 | lote)</code></pre>
 <ol type="1">
-<li><strong>Unidad experimental:</strong> la unidad asignada independientemente al tratamiento. En los casos 1, 2 y 4 es la plántula; en el caso 3 es la parcela. La unidad de observación indica dónde se mide la respuesta, pero mediciones repetidas de la misma unidad experimental no crean nuevas unidades independientes.</li>
-<li><strong>Dependencia:</strong> puede surgir entre plántulas de una misma parcela o sitio, entre parcelas de un mismo bloque, entre plantas de un mismo lote y entre mediciones de un mismo individuo. Los efectos aleatorios deben corresponder a agrupamientos presentes en el diseño y relevantes para la inferencia.</li>
-<li><strong>Efecto del tratamiento:</strong> representa la diferencia entre tratamiento y control, condicionada al resto del modelo y en la escala del enlace para un modelo lineal generalizado. En medidas repetidas, la interacción tratamiento-tiempo evalúa si cambia la tasa de crecimiento.</li>
-<li><strong>Omitir el agrupamiento:</strong> el modelo puede tratar observaciones correlacionadas como si fueran independientes, exagerando el tamaño efectivo de muestra y produciendo incertidumbre demasiado pequeña.</li>
+<li><strong>Unidad experimental:</strong> la maceta (el tratamiento se asignó a macetas individuales). Las 20 macetas de un mismo lote comparten temperatura y luz.</li>
+<li><strong>Efecto aleatorio:</strong> <code>lote</code>. Las plántulas de una misma corrida no son independientes porque comparten las condiciones de esa corrida. Con solo seis lotes, la varianza entre lotes se estima con poca precisión; tratar lote como efecto fijo es defendible si solo interesan esos seis lotes. Aceptar ambas respuestas si están justificadas.</li>
+<li><strong>Parecido al caso 3:</strong> un lote es un bloque en el tiempo y el análisis es el mismo. <strong>Diferencia:</strong> en el caso 3 la unidad experimental es la parcela (dos por bloque, una por tratamiento), por eso se promedian las plántulas. Aquí la unidad experimental es la maceta y hay 10 por tratamiento dentro de cada lote, así que no hace falta promediar ni agregar otro nivel. Algunos estudiantes dirán que se parece al caso 1 (plántulas dentro de grupos); está bien siempre que noten que el lote no está anidado en nada más.</li>
+<li><strong>Dentro de lotes.</strong> Omitir el lote deja su varianza en el residuo: intervalo <strong>demasiado amplio</strong>, se pierde precisión, no es pseudorreplicación. Si un lote tuviera solo un tratamiento, el efecto del tratamiento quedaría confundido con el efecto del lote y no habría forma de separarlos.</li>
 </ol>
+<p>Error común a vigilar: responder “demasiado pequeña / pseudorreplicación” por analogía con los casos 2 y 4. La pregunta 4 está para detectar si entendieron la distinción dentro/entre.</p>
 </section>
 <section id="puntos-para-enfatizar" class="level2">
 <h2 class="anchored" data-anchor-id="puntos-para-enfatizar">Puntos para enfatizar</h2>
 <ul>
-<li>La asignación balanceada no elimina la dependencia debida a bloques, sitios, lotes o mediciones repetidas.</li>
+<li>Un efecto aleatorio no siempre “agranda” la incertidumbre. Cuando el predictor varía dentro de los grupos, la reduce; cuando varía entre grupos, la corrige hacia arriba.</li>
+<li>La asignación balanceada no elimina la dependencia debida a bloques, sitios o mediciones repetidas.</li>
+<li>La regla de “5 a 10 grupos o más” de la tabla es una guía, no una ley. Para los casos 1 y 3 es aceptable que un grupo responda “fijo” o “depende” si lo justifica con el objetivo de inferencia. Para el caso 4 no aplica: ahí el efecto fijo es imposible (ver colinealidad).</li>
 <li>El número de niveles independientes de un predictor importa. Tener muchas plantas en pocos sitios no sustituye muestrear más sitios para estimar una relación a nivel de sitio.</li>
 <li>La estructura de muestreo y la unidad de asignación del tratamiento son conceptos distintos: las plántulas pueden recibir el tratamiento individualmente y aun así compartir condiciones de sitio o parcela.</li>
 </ul>
-</section>
+
+
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -149,12 +349,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

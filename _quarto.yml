@@ -10,6 +10,7 @@ project:
     - "refs/*.qmd"
     - "!exams/**"
     - "!labs/L06-casos/**"
+    - "!labs/L08-print/**"
 
 quarto-required: ">=1.4.0"
 

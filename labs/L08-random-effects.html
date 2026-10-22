@@ -159,10 +159,10 @@ Actividad: estaciones de aprendizaje
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Grupos de hasta 4 personas.</strong> Cada grupo recibe esta introducción, la tabla de referencia y la hoja de trabajo.</li>
-<li><strong>Estaciones:</strong> cada uno de los cuatro casos está impreso en dos estaciones alrededor del aula (ocho estaciones en total). Dos grupos pueden trabajar el mismo caso al mismo tiempo en estaciones distintas.</li>
+<li><strong>Estaciones:</strong> cada uno de los cuatro casos está impreso en tres estaciones alrededor del aula (doce estaciones en total). Varios grupos pueden trabajar el mismo caso al mismo tiempo en estaciones distintas.</li>
 <li><strong>Rotación [5–6 minutos por estación]:</strong> en cada estación, lean el caso, discutan las preguntas de “Conversen” y completen la fila correspondiente de la tabla. Al terminar, roten a una estación con un caso que no hayan visto.</li>
-<li><strong>Cierre en grupo [10 minutos]:</strong> con los cuatro casos completos, respondan las tres preguntas de discusión de la hoja de trabajo.</li>
-<li><strong>Puesta en común [10–15 minutos]:</strong> cada grupo presenta un caso; los demás comparan con sus respuestas.</li>
+<li><strong>Cierre en grupo [5 minutos]:</strong> con los cuatro casos completos, respondan la pregunta de discusión al pie de la tabla.</li>
+<li><strong>Cierre en común [10–15 minutos]:</strong> cada grupo presenta un caso; los demás comparan con sus respuestas.</li>
 <li><strong>Bitácora (individual):</strong> la última página presenta un caso nuevo. Resuélvanlo individualmente en la bitácora aplicando lo discutido; esa es la entrada calificada.</li>
 </ul>
 </div>
@@ -251,6 +251,24 @@ Paquetes necesarios
 <p><strong>Predicción:</strong> La adición de nutrientes aumenta el crecimiento de las plántulas.</p>
 <p><strong>Cantidad a estimar:</strong> La diferencia promedio en crecimiento entre plántulas tratadas y controles en la población de sitios y parcelas representada por la muestra.</p>
 <p><strong>Conversen:</strong> ¿Qué plántulas comparten condiciones? ¿En qué niveles se asignó el tratamiento y se midió la respuesta?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Pistas">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pistas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><em>Unidad experimental:</em> ¿a qué se le asignó el tratamiento? ¿Es lo mismo que se midió?</li>
+<li><em>Dependencia:</em> ¿qué observaciones comparten algo (lugar, momento, individuo) que las haga parecerse entre sí?</li>
+<li><em>Modelo:</em> cada fuente de dependencia es una variable de agrupamiento candidata para <code>(1 | …)</code>. ¿Está una dentro de otra?</li>
+</ul>
+<p>Completen: <code>crecimiento ~ tratamiento + ( ________________ )</code></p>
+</div>
+</div>
 <p><img src="L08-assets/caso1.png" class="img-fluid"></p>
 <div style="break-before: page; page-break-before: always;"></div>
 </section>
@@ -260,7 +278,26 @@ Paquetes necesarios
 <p><strong>Predicción:</strong> La adición de nutrientes aumenta la tasa de crecimiento en altura.</p>
 <p><strong>Cantidad a estimar:</strong> La diferencia entre tratamientos en la tasa promedio de crecimiento, expresada en centímetros por semana.</p>
 <p><strong>Conversen:</strong> ¿Qué observaciones provienen del mismo individuo? ¿Podrían las plántulas diferir en su altura inicial o en su tasa de crecimiento? ¿Qué término del modelo evaluaría la diferencia en tasa entre tratamientos?</p>
-<p><img src="L08-assets/caso2.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Pistas">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pistas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><em>Unidad experimental:</em> ¿a qué se le asignó el tratamiento? ¿Es lo mismo que se midió?</li>
+<li><em>Dependencia:</em> ¿qué observaciones comparten algo (lugar, momento, individuo) que las haga parecerse entre sí?</li>
+<li><em>Modelo:</em> cada fuente de dependencia es una variable de agrupamiento candidata para <code>(1 | …)</code>. ¿Está una dentro de otra?</li>
+<li>Si graficaran la altura de cada plántula contra la semana, ¿tendrían las 30 líneas el mismo punto de partida? ¿La misma inclinación? ¿Qué parte de la sintaxis permite que cada una difiera?</li>
+</ul>
+<p>Completen: <code>altura ~ ________________ + ( ________________ )</code></p>
+</div>
+</div>
+<p><img src="L08-assets/caso2.png" class="img-fluid" style="width:80.0%"></p>
 <div style="break-before: page; page-break-before: always;"></div>
 </section>
 <section id="caso-3.-diseño-en-bloques" class="level2">
@@ -269,6 +306,24 @@ Paquetes necesarios
 <p><strong>Predicción:</strong> La adición de nutrientes aumenta el crecimiento, luego de tomar en cuenta las diferencias de base entre bloques (humedad del suelo y otras condiciones locales).</p>
 <p><strong>Cantidad a estimar:</strong> La diferencia promedio entre las parcelas tratadas y controles dentro de bloques comparables.</p>
 <p><strong>Conversen:</strong> ¿Por qué comparar parcelas dentro del mismo bloque? ¿Qué observaciones comparten condiciones de humedad?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Pistas">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pistas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><em>Unidad experimental:</em> ¿a qué se le asignó el tratamiento? ¿Es lo mismo que se midió?</li>
+<li><em>Dependencia:</em> ¿qué observaciones comparten algo (lugar, momento, individuo) que las haga parecerse entre sí?</li>
+<li><em>Modelo:</em> cada fuente de dependencia es una variable de agrupamiento candidata para <code>(1 | …)</code>. ¿Está una dentro de otra?</li>
+</ul>
+<p>Completen: <code>crecimiento ~ tratamiento + ( ________________ )</code></p>
+</div>
+</div>
 <p><img src="L08-assets/caso3.png" class="img-fluid"></p>
 <div style="break-before: page; page-break-before: always;"></div>
 </section>
@@ -278,6 +333,25 @@ Paquetes necesarios
 <p><strong>Predicción:</strong> El crecimiento de las plantas cambia con la cobertura del dosel.</p>
 <p><strong>Cantidad a estimar:</strong> La pendiente que relaciona la cobertura del dosel con el crecimiento promedio de las plantas entre los sitios de bosque de la región.</p>
 <p><strong>Conversen:</strong> ¿A qué nivel varía la cobertura del dosel? ¿La información independiente para estimar su relación con el crecimiento proviene principalmente de las 120 plantas o de los 12 sitios? ¿Qué agrupamiento debería representar el modelo?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Pistas">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pistas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><em>Unidad de muestreo:</em> aquí no hay tratamiento. ¿Qué se muestreó? ¿A qué nivel se midió el predictor y a qué nivel la respuesta?</li>
+<li><em>Dependencia:</em> ¿qué observaciones comparten algo (lugar, momento, individuo) que las haga parecerse entre sí?</li>
+<li><em>Modelo:</em> cada fuente de dependencia es una variable de agrupamiento candidata para <code>(1 | …)</code>. ¿Está una dentro de otra?</li>
+<li>Imaginen que <code>sitio</code> fuera un factor fijo en el modelo. Dentro de cada sitio, ¿cuánto varía la cobertura? ¿Podría el modelo distinguir el efecto de la cobertura del efecto del sitio?</li>
+</ul>
+<p>Completen: <code>crecimiento ~ cobertura + ( ________________ )</code></p>
+</div>
+</div>
 <p><img src="L08-assets/caso4.png" class="img-fluid"></p>
 <div style="break-before: page; page-break-before: always;"></div>
 </section>
@@ -328,24 +402,12 @@ Paquetes necesarios
 </tr>
 </tbody>
 </table>
-<div style="break-before: page; page-break-before: always;"></div>
 </section>
-<section id="preguntas-de-discusión" class="level2">
-<h2 class="anchored" data-anchor-id="preguntas-de-discusión">Preguntas de discusión</h2>
-<p><strong>1. En diseños anidados, ¿cuáles observaciones comparten condiciones ambientales o corresponden al mismo individuo? ¿Cuál(es) variable(s) de agrupamiento representan esas fuentes de dependencia?</strong></p>
+<section id="pregunta-de-discusión" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-de-discusión">Pregunta de discusión</h2>
+<p><strong>En cada caso, ¿la cantidad a estimar compara observaciones <em>dentro</em> de los grupos o <em>entre</em> grupos? Si se omitiera el agrupamiento, ¿la incertidumbre del efecto estimado sería demasiado grande o demasiado pequeña? ¿Por qué?</strong></p>
 <div class="answer-space">
 <div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
-<div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
-<div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
-</div>
-<p><strong>2. En el caso de medidas repetidas, ¿cuál término del modelo permite evaluar si el tratamiento cambia la tasa de crecimiento?</strong></p>
-<div class="answer-space">
-<div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
-<div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
-<div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
-</div>
-<p><strong>3. En cada caso, ¿la cantidad a estimar compara observaciones <em>dentro</em> de los grupos o <em>entre</em> grupos? Si se omitiera el agrupamiento, ¿la incertidumbre del efecto estimado sería demasiado grande o demasiado pequeña? ¿Por qué?</strong></p>
-<div class="answer-space">
 <div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
 <div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>
 <div class="answer-space-line" style="height: 1.8em;">&nbsp;</div>

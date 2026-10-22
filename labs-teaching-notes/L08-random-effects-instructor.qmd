@@ -1,24 +1,58 @@
-# Laboratorio 08: efectos aleatorios — guía para la persona instructora
+---
+title: "Lab 08: Modelos mixtos y efectos aleatorios - Guia para la persona instructora"
+format:
+  html:
+    toc: false
+    number-sections: false
+  pdf:
+    documentclass: scrartcl
+    classoption: [DIV=12]
+    geometry: margin=1in
+    fontfamily: libertinus
+    colorlinks: true
+    toc: false
+lang: es
+---
 
 ## Logística de las estaciones
 
-Para imprimir:
+Los PDF para imprimir están en `labs/L08-print/` (ver el README ahí).
 
-- **Por grupo (1 copia):** páginas 1–2 (introducción, actividad, sintaxis,
-  tabla de referencia) y páginas 7–8 (hoja de trabajo). La última página (caso de
-  bitácora) también va por grupo, o se proyecta al final.
-- **Por estación (2 copias de cada caso):** páginas 3–6, una página por caso.
-  Ocho estaciones en total.
+Para imprimir (10 grupos de 4):
 
-Tiempos sugeridos: 4 rotaciones × 5–6 min ≈ 22–24 min; cierre en grupo 10 min;
-puesta en común 10–15 min. Total ≈ 45–50 min, más el caso de bitácora si se
+- **Por grupo (10 copias):** `01-intro-y-referencia.pdf` (2 págs.) y
+  `06-hoja-de-trabajo.pdf`.
+- **Por estación (3 copias de cada caso):** `02-` a `05-caso-*.pdf`. Doce
+  estaciones en total.
+- **Por estudiante (40 copias):** `07-bitacora-lote.pdf`.
+
+Tiempos sugeridos: 4 rotaciones × 5–6 min ≈ 22–24 min; cierre en grupo 5 min;
+puesta en común 10–15 min. Total ≈ 40–45 min, más el caso de bitácora si se
 resuelve en clase.
 
 En la rotación conviene que cada grupo empiece en un caso distinto para que las
-ocho estaciones estén ocupadas desde el inicio. Con más de ocho grupos, un tercer
-juego de copias.
+estaciones estén ocupadas desde el inicio.
 
 ## Respuestas sugeridas
+
+Cada caso tiene un recuadro "Pistas" con tres preguntas fijas (unidad
+experimental, dependencia, modelo) y un esqueleto de modelo para completar. Los
+casos 2 y 4 llevan además una pista socrática. Las respuestas esperadas a los
+esqueletos:
+
+| Caso | Esqueleto | Respuesta esperada |
+|---|---|---|
+| 1 | `crecimiento ~ tratamiento + ( ____ )` | `1 | sitio/parcela` |
+| 2 | `altura ~ ____ + ( ____ )` | `tratamiento * semana` y `1 + semana | plantula` (aceptar `1 | plantula`) |
+| 3 | `crecimiento ~ tratamiento + ( ____ )` | `1 | bloque` |
+| 4 | `crecimiento ~ cobertura + ( ____ )` | `1 | sitio` |
+
+En el caso 2 el esqueleto deja en blanco también la parte fija para no revelar
+la interacción, que es una de las preguntas "Conversen". La pista socrática
+("¿mismo punto de partida? ¿misma inclinación?") apunta a intercepto y pendiente
+aleatorios respectivamente. En el caso 4, la pista sobre `sitio` como factor fijo
+lleva a la colinealidad sin nombrarla; si un grupo llega a "no se puede
+distinguir cobertura de sitio", lo entendió.
 
 ### Caso 1. Muestreo anidado
 
@@ -32,7 +66,7 @@ crecimiento ~ tratamiento + (1 | sitio/parcela)
 Las plántulas de una misma parcela comparten condiciones locales y las parcelas
 están anidadas en sitios. El tratamiento se asigna dentro de las parcelas.
 
-**Dentro o entre grupos:** el tratamiento se compara *dentro* de cada parcela.
+**Dentro o entre grupos:** el tratamiento se compara _dentro_ de cada parcela.
 Si se omite el agrupamiento, la varianza de sitio y de parcela queda en el
 residuo y el intervalo del efecto del tratamiento sale **demasiado amplio**
 (conservador). No es pseudorreplicación; se pierde precisión.
@@ -50,8 +84,8 @@ Las mediciones semanales de una plántula no son independientes. La interacción
 tratamiento por semana estima la diferencia en tasa de crecimiento entre
 tratamientos.
 
-Cómo conectar con la pregunta "Conversen" del caso: *altura inicial distinta* →
-intercepto aleatorio `(1 | plantula)`; *tasa distinta entre plántulas* →
+Cómo conectar con la pregunta "Conversen" del caso: _altura inicial distinta_ →
+intercepto aleatorio `(1 | plantula)`; _tasa distinta entre plántulas_ →
 pendiente aleatoria `(semana | plantula)`. El mínimo razonable es
 `(1 | plantula)`; la pendiente aleatoria reconoce que la variación entre
 plántulas en su tasa es la variación relevante para comparar tratamientos.
@@ -62,7 +96,7 @@ plántula (8 puntos → 1 tasa) y comparar las 30 tasas con un modelo lineal sim
 o una prueba t. Es un análisis en dos etapas que estima lo mismo y deja claro que
 el n efectivo para el tratamiento es 30, no 240.
 
-**Dentro o entre grupos:** el tratamiento se compara *entre* plántulas (cada
+**Dentro o entre grupos:** el tratamiento se compara _entre_ plántulas (cada
 plántula recibe un solo tratamiento). Si se omite el agrupamiento, las ocho
 mediciones de cada plántula se tratan como réplicas independientes del efecto del
 tratamiento: pseudorreplicación, intervalo **demasiado estrecho**.
@@ -84,21 +118,21 @@ control).
 
 Preguntas que suelen surgir:
 
-- *¿Por qué promediar las plántulas por parcela y no usarlas individualmente?*
+- _¿Por qué promediar las plántulas por parcela y no usarlas individualmente?_
   Se puede usar las plántulas individuales, pero entonces hay que incluir la
   parcela: `(1 | bloque/parcela)`. La parcela es la **unidad experimental** (el
   tratamiento se asignó a parcelas completas), así que el efecto del tratamiento
   debe evaluarse contra la variación entre parcelas, no entre plántulas. Omitir
   la parcela en ese modelo sí sería pseudorreplicación. Promediar es la forma
   simple de respetar la unidad experimental.
-- *¿Por qué no usar la humedad como covariable en lugar del bloque?* Se podría
-  si se midió, pero el bloque captura la humedad *y* todo lo demás que varía
+- _¿Por qué no usar la humedad como covariable en lugar del bloque?_ Se podría
+  si se midió, pero el bloque captura la humedad _y_ todo lo demás que varía
   espacialmente (suelo, luz, herbivoría). El bloque no requiere saber cuáles son
   esas variables.
 - Un "lote" o corrida experimental en invernadero es un bloque en el tiempo; se
   analiza igual.
 
-**Dentro o entre grupos:** el tratamiento se compara *dentro* de cada bloque. Si
+**Dentro o entre grupos:** el tratamiento se compara _dentro_ de cada bloque. Si
 se omite el bloque, la varianza entre bloques (el gradiente de humedad) queda en
 el residuo y el intervalo sale **demasiado amplio**. Es la razón por la que
 bloquear aumenta la potencia.
@@ -144,7 +178,7 @@ de la tabla de la página 1 (12 niveles, "pocos grupos"). No es posible: la
 cobertura es constante dentro de cada sitio, así que `sitio` como factor fijo
 es perfectamente colineal con `cobertura` y la pendiente de cobertura no se
 puede estimar. Este es el caso en que el efecto aleatorio no es una opción sino
-la única forma de tener la estructura de sitio *y* un predictor a nivel de
+la única forma de tener la estructura de sitio _y_ un predictor a nivel de
 sitio. Es el argumento más fuerte del caso.
 
 **Chequeo útil:** el modelo mixto da casi el mismo resultado que una regresión
@@ -153,45 +187,27 @@ grupos ven eso, entienden de dónde viene la información: de 12 sitios, con uno
 10 grados de libertad para la pendiente. El efecto aleatorio da intervalos
 honestos; no crea información que no existe.
 
-**Dentro o entre grupos:** la cobertura varía *entre* sitios. Si se omite el
+**Dentro o entre grupos:** la cobertura varía _entre_ sitios. Si se omite el
 sitio, las 120 plantas se tratan como réplicas independientes de un predictor que
 solo tiene 12 valores: pseudorreplicación, intervalo **demasiado estrecho**.
 
-## Respuestas a las preguntas de discusión
+## Respuesta a la pregunta de discusión
 
-Las preguntas corresponden a la sección "Preguntas de discusión y para la
-bitácora" de la hoja de trabajo.
+La pregunta está al pie de la tabla de la hoja de trabajo. Las dos preguntas que
+se quitaron (qué comparten las observaciones en diseños anidados; qué término
+evalúa la tasa en medidas repetidas) ya están cubiertas por las columnas de la
+tabla y por las notas de los casos 1 y 2 arriba; conviene sacarlas en la puesta
+en común.
 
-**1. En diseños anidados, ¿cuáles observaciones comparten condiciones o individuo?
-¿Qué variable(s) de agrupamiento las representan?**
-
-- Caso 1: las plántulas de una misma parcela comparten condiciones de parcela; las
-  parcelas de un mismo sitio comparten condiciones de sitio. Variables: `sitio` y
-  `parcela` dentro de `sitio`.
-- Caso 4: las plantas de un mismo sitio comparten suelo, clima y el mismo valor
-  de cobertura. Variable: `sitio`.
-- Caso 2 (individuo): las ocho mediciones de una plántula corresponden al mismo
-  individuo. Variable: `plantula`.
-
-**2. En medidas repetidas, ¿qué término evalúa si el tratamiento cambia la tasa
-de crecimiento?**
-
-La interacción `tratamiento:semana` en `altura ~ tratamiento * semana + ...`. La
-pendiente de `semana` es la tasa de crecimiento del grupo de referencia; la
-interacción es la diferencia de pendiente del otro tratamiento. El efecto
-principal de `tratamiento` solo compara la altura inicial (en `semana = 0`), no
-la tasa. Conecta con L04: los términos de interacción son diferencias en la
-pendiente respecto al nivel de referencia.
-
-**3. ¿Dentro o entre grupos? ¿Qué pasa con la incertidumbre si se omite el
+**¿Dentro o entre grupos? ¿Qué pasa con la incertidumbre si se omite el
 agrupamiento?**
 
-| Caso | Comparación | Si se omite el agrupamiento |
-|---|---|---|
-| 1. Muestreo anidado | Tratamiento *dentro* de parcelas | Intervalo demasiado amplio (pierde precisión) |
-| 2. Medidas repetidas | Tratamiento *entre* plántulas | Intervalo demasiado estrecho (pseudorreplicación) |
-| 3. Diseño en bloques | Tratamiento *dentro* de bloques | Intervalo demasiado amplio |
-| 4. Predictor a nivel de sitio | Cobertura *entre* sitios | Intervalo demasiado estrecho (pseudorreplicación) |
+| Caso                          | Comparación                      | Si se omite el agrupamiento                       |
+| ----------------------------- | -------------------------------- | ------------------------------------------------- |
+| 1. Muestreo anidado           | Tratamiento _dentro_ de parcelas | Intervalo demasiado amplio (pierde precisión)     |
+| 2. Medidas repetidas          | Tratamiento _entre_ plántulas    | Intervalo demasiado estrecho (pseudorreplicación) |
+| 3. Diseño en bloques          | Tratamiento _dentro_ de bloques  | Intervalo demasiado amplio                        |
+| 4. Predictor a nivel de sitio | Cobertura _entre_ sitios         | Intervalo demasiado estrecho (pseudorreplicación) |
 
 Lo que se busca es que los grupos no respondan "pseudorreplicación" para los
 cuatro casos. En los casos 1 y 3 el efecto aleatorio absorbe variación de ruido;
