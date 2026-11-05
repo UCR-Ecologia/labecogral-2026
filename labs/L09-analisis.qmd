@@ -1,6 +1,7 @@
 ---
 title: "Lab 09: Análisis de diversidad en R"
 subtitle: "Curvas de acumulación, números de Hill y rarefacción"
+search: false
 format:
   html:
     toc: true

@@ -1,7 +1,9 @@
 ---
 title: "Laboratorios"
 listing:
-  contents: "*.qmd"
+  contents:
+    - "*.qmd"
+    - "!L09-analisis.qmd"
   type: table
   fields: [title, subtitle, date]
   sort: "filename"

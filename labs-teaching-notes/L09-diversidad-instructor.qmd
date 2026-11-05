@@ -1,5 +1,6 @@
 ---
 title: "Lab 09: ¿Cuál comunidad es más diversa? - Guía para la persona instructora"
+search: false
 format:
   html:
     toc: true
@@ -32,7 +33,8 @@ execute:
   (5 repeticiones). Digitan **una fila** en la hoja compartida.
 - **No hay código durante la sesión.** La síntesis la ejecuta la persona
   instructora desde la hoja compartida (Parte 2 de `labs/L09-analisis.qmd`); el
-  qmd queda como referencia para los estudiantes.
+  qmd se conserva como referencia docente, sin aparecer en el listado ni en
+  la búsqueda del sitio web.
 - La entrada de bitácora individual es un **caso autocontenido** (dos
   fragmentos, dos equipos) impreso con sus datos y figura: no depende de la
   síntesis y puede resolverse aunque el cierre se acorte.

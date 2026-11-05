@@ -73,10 +73,6 @@ Al finalizar, podrán:
 - **Productos calificados:** la hoja de registro grupal (tablas y dos
   preguntas) y una **entrada de bitácora individual**
   ([L09-bitacora](L09-bitacora.qmd)) que se responde al final.
-- **Código en R (opcional):** [L09-analisis.qmd](L09-analisis.qmd) contiene el
-  código para reproducir todos los cálculos y las figuras de la síntesis. No se
-  usa durante la sesión; queda como referencia y para quien quiera verificar
-  sus cálculos.
 
 :::
 

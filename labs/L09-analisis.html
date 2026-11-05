@@ -1092,348 +1092,349 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <div class="sourceCode" id="cb31" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Lab 09: Análisis de diversidad en R"</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Curvas de acumulación, números de Hill y rarefacción"</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">    documentclass: scrartcl</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">    classoption: [DIV=12]</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">    geometry: margin=1in</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">    fontfamily: libertinus</span></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">    colorlinks: true</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: false</span></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>Este archivo es **material de referencia**: no se usa durante la sesión de</span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>laboratorio. Contiene el código para reproducir todo lo que hicieron a mano y</span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>las figuras de la síntesis. La **Parte 1** analiza la muestra de **un grupo** a</span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>partir de su secuencia de letras (Tabla 1 de la hoja de registro). La</span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>**Parte 2** combina los conteos de **todos los grupos** de la clase.</span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>Descarguen el archivo <span class="in">`.qmd`</span> (botón <span class="in">`&lt;/&gt; Code`</span> arriba a la derecha en la versión</span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>web) y ábranlo en RStudio.</span>
-<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: paquetes</span></span>
-<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)    <span class="co"># manipular tablas</span></span>
-<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)  <span class="co"># gráficos</span></span>
-<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT)    <span class="co"># rarefacción / extrapolación (Chao et al.)</span></span>
-<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a><span class="co"># La Parte 2 usa además tidyr. Si falta alguno:</span></span>
-<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c("dplyr", "ggplot2", "tidyr", "iNEXT"))</span></span>
-<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Parte 1. Su muestra</span></span>
-<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.1 Su secuencia de extracción</span></span>
-<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a>Escriban las letras de su Tabla 1 **en el orden en que salieron**, una por</span>
-<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>ficha. El ejemplo tiene 30 fichas; reemplácenlo por su secuencia.</span>
-<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: secuencia</span></span>
-<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a>secuencia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"D"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"E"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>,</span>
-<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a>               <span class="st">"B"</span>, <span class="st">"F"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"G"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"D"</span>,</span>
-<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a>               <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"H"</span>, <span class="st">"A"</span>, <span class="st">"D"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>)</span>
-<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(secuencia)  <span class="co"># debe ser igual a su esfuerzo asignado (N)</span></span>
-<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-61"><a href="#cb31-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.2 De la secuencia a una tabla de abundancias</span></span>
-<span id="cb31-62"><a href="#cb31-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-63"><a href="#cb31-63" aria-hidden="true" tabindex="-1"></a>La función recibe el vector de letras y devuelve una tabla con una fila por</span>
-<span id="cb31-64"><a href="#cb31-64" aria-hidden="true" tabindex="-1"></a>especie: el conteo $n_i$ y la abundancia relativa $p_i = n_i / N$.</span>
-<span id="cb31-65"><a href="#cb31-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-68"><a href="#cb31-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-69"><a href="#cb31-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-tabla</span></span>
-<span id="cb31-70"><a href="#cb31-70" aria-hidden="true" tabindex="-1"></a>tabla_abundancias <span class="ot">&lt;-</span> <span class="cf">function</span>(secuencia) {</span>
-<span id="cb31-71"><a href="#cb31-71" aria-hidden="true" tabindex="-1"></a>  conteo <span class="ot">&lt;-</span> <span class="fu">table</span>(secuencia)                 <span class="co"># cuántas fichas de cada letra</span></span>
-<span id="cb31-72"><a href="#cb31-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb31-73"><a href="#cb31-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">especie =</span> <span class="fu">names</span>(conteo),</span>
-<span id="cb31-74"><a href="#cb31-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">n       =</span> <span class="fu">as.integer</span>(conteo),            <span class="co"># n_i</span></span>
-<span id="cb31-75"><a href="#cb31-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">p       =</span> <span class="fu">as.integer</span>(conteo) <span class="sc">/</span> <span class="fu">length</span>(secuencia)  <span class="co"># p_i = n_i / N</span></span>
-<span id="cb31-76"><a href="#cb31-76" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb31-77"><a href="#cb31-77" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-78"><a href="#cb31-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-79"><a href="#cb31-79" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">tabla_abundancias</span>(secuencia)</span>
-<span id="cb31-80"><a href="#cb31-80" aria-hidden="true" tabindex="-1"></a>tabla</span>
-<span id="cb31-81"><a href="#cb31-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-82"><a href="#cb31-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-83"><a href="#cb31-83" aria-hidden="true" tabindex="-1"></a>Comparen con su Tabla 2: la columna <span class="in">`n`</span> debe coincidir con $n_i$ y <span class="in">`p`</span> con</span>
-<span id="cb31-84"><a href="#cb31-84" aria-hidden="true" tabindex="-1"></a>$p_i$.</span>
-<span id="cb31-85"><a href="#cb31-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-86"><a href="#cb31-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.3 Índices y números de Hill</span></span>
-<span id="cb31-87"><a href="#cb31-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-88"><a href="#cb31-88" aria-hidden="true" tabindex="-1"></a>La función recibe la tabla de abundancias y calcula riqueza, Shannon, Simpson y</span>
-<span id="cb31-89"><a href="#cb31-89" aria-hidden="true" tabindex="-1"></a>los números efectivos de especies de orden 0, 1 y 2.</span>
-<span id="cb31-90"><a href="#cb31-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-93"><a href="#cb31-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-94"><a href="#cb31-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-hill</span></span>
-<span id="cb31-95"><a href="#cb31-95" aria-hidden="true" tabindex="-1"></a>numeros_hill <span class="ot">&lt;-</span> <span class="cf">function</span>(tabla) {</span>
-<span id="cb31-96"><a href="#cb31-96" aria-hidden="true" tabindex="-1"></a>  p      <span class="ot">&lt;-</span> tabla<span class="sc">$</span>p</span>
-<span id="cb31-97"><a href="#cb31-97" aria-hidden="true" tabindex="-1"></a>  S      <span class="ot">&lt;-</span> <span class="fu">nrow</span>(tabla)         <span class="co"># riqueza observada: número de especies</span></span>
-<span id="cb31-98"><a href="#cb31-98" aria-hidden="true" tabindex="-1"></a>  H      <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">sum</span>(p <span class="sc">*</span> <span class="fu">log</span>(p))    <span class="co"># entropía de Shannon</span></span>
-<span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a>  lambda <span class="ot">&lt;-</span> <span class="fu">sum</span>(p<span class="sc">^</span><span class="dv">2</span>)            <span class="co"># concentración de Simpson</span></span>
-<span id="cb31-100"><a href="#cb31-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb31-101"><a href="#cb31-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">N      =</span> <span class="fu">sum</span>(tabla<span class="sc">$</span>n),</span>
-<span id="cb31-102"><a href="#cb31-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">S_obs  =</span> S,</span>
-<span id="cb31-103"><a href="#cb31-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">H      =</span> H,</span>
-<span id="cb31-104"><a href="#cb31-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">lambda =</span> lambda,</span>
-<span id="cb31-105"><a href="#cb31-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">D0     =</span> S,                 <span class="co"># Hill q = 0: riqueza</span></span>
-<span id="cb31-106"><a href="#cb31-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">D1     =</span> <span class="fu">exp</span>(H),            <span class="co"># Hill q = 1: exp(Shannon)</span></span>
-<span id="cb31-107"><a href="#cb31-107" aria-hidden="true" tabindex="-1"></a>    <span class="at">D2     =</span> <span class="dv">1</span> <span class="sc">/</span> lambda,        <span class="co"># Hill q = 2: inverso de Simpson</span></span>
-<span id="cb31-108"><a href="#cb31-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">singletons =</span> <span class="fu">sum</span>(tabla<span class="sc">$</span>n <span class="sc">==</span> <span class="dv">1</span>)  <span class="co"># especies con un solo individuo</span></span>
-<span id="cb31-109"><a href="#cb31-109" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb31-110"><a href="#cb31-110" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-111"><a href="#cb31-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-112"><a href="#cb31-112" aria-hidden="true" tabindex="-1"></a><span class="fu">numeros_hill</span>(tabla)</span>
-<span id="cb31-113"><a href="#cb31-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-114"><a href="#cb31-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-115"><a href="#cb31-115" aria-hidden="true" tabindex="-1"></a>Comparen estos valores con el resumen de la hoja de registro.</span>
-<span id="cb31-116"><a href="#cb31-116" aria-hidden="true" tabindex="-1"></a>Recuerden que siempre <span class="in">`D0 &gt;= D1 &gt;= D2`</span>: cuanto mayor la brecha, más desigual la</span>
-<span id="cb31-117"><a href="#cb31-117" aria-hidden="true" tabindex="-1"></a>distribución de abundancias.</span>
-<span id="cb31-118"><a href="#cb31-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-119"><a href="#cb31-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.4 Curva de acumulación</span></span>
-<span id="cb31-120"><a href="#cb31-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-121"><a href="#cb31-121" aria-hidden="true" tabindex="-1"></a>Riqueza acumulada después de cada individuo, en el orden de extracción.</span>
-<span id="cb31-122"><a href="#cb31-122" aria-hidden="true" tabindex="-1"></a><span class="in">`!duplicated(secuencia)`</span> es <span class="in">`TRUE`</span> la primera vez que aparece cada letra;</span>
-<span id="cb31-123"><a href="#cb31-123" aria-hidden="true" tabindex="-1"></a><span class="in">`cumsum()`</span> va sumando esas primeras apariciones.</span>
-<span id="cb31-124"><a href="#cb31-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-127"><a href="#cb31-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-128"><a href="#cb31-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-acumulacion</span></span>
-<span id="cb31-129"><a href="#cb31-129" aria-hidden="true" tabindex="-1"></a>curva_acumulacion <span class="ot">&lt;-</span> <span class="cf">function</span>(secuencia) {</span>
-<span id="cb31-130"><a href="#cb31-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb31-131"><a href="#cb31-131" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">seq_along</span>(secuencia),              <span class="co"># 1, 2, ..., N</span></span>
-<span id="cb31-132"><a href="#cb31-132" aria-hidden="true" tabindex="-1"></a>    <span class="at">S =</span> <span class="fu">cumsum</span>(<span class="sc">!</span><span class="fu">duplicated</span>(secuencia))     <span class="co"># riqueza acumulada S(n)</span></span>
-<span id="cb31-133"><a href="#cb31-133" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb31-134"><a href="#cb31-134" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-135"><a href="#cb31-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-136"><a href="#cb31-136" aria-hidden="true" tabindex="-1"></a>acum <span class="ot">&lt;-</span> <span class="fu">curva_acumulacion</span>(secuencia)</span>
-<span id="cb31-137"><a href="#cb31-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-138"><a href="#cb31-138" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(acum, <span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> S)) <span class="sc">+</span></span>
-<span id="cb31-139"><a href="#cb31-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_step</span>() <span class="sc">+</span></span>
-<span id="cb31-140"><a href="#cb31-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb31-141"><a href="#cb31-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Individuos extraídos (n)"</span>, <span class="at">y =</span> <span class="st">"Riqueza acumulada S(n)"</span>) <span class="sc">+</span></span>
-<span id="cb31-142"><a href="#cb31-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb31-143"><a href="#cb31-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-144"><a href="#cb31-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-145"><a href="#cb31-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.5 Rarefacción a m = 20: tres maneras</span></span>
-<span id="cb31-146"><a href="#cb31-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-147"><a href="#cb31-147" aria-hidden="true" tabindex="-1"></a>**(a) Lo mismo que hicieron con las fichas, 1000 veces.** <span class="in">`sample(secuencia, 20)`</span></span>
-<span id="cb31-148"><a href="#cb31-148" aria-hidden="true" tabindex="-1"></a>toma 20 fichas de su muestra sin reemplazo; <span class="in">`unique()`</span> deja las especies</span>
-<span id="cb31-149"><a href="#cb31-149" aria-hidden="true" tabindex="-1"></a>distintas; <span class="in">`length()`</span> las cuenta.</span>
-<span id="cb31-150"><a href="#cb31-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-153"><a href="#cb31-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-154"><a href="#cb31-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rarefaccion-simulada</span></span>
-<span id="cb31-155"><a href="#cb31-155" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb31-156"><a href="#cb31-156" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)  <span class="co"># para que el resultado sea reproducible</span></span>
-<span id="cb31-157"><a href="#cb31-157" aria-hidden="true" tabindex="-1"></a>riqueza_20 <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">sample</span>(secuencia, m))))</span>
-<span id="cb31-158"><a href="#cb31-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-159"><a href="#cb31-159" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(riqueza_20)   <span class="co"># comparar con la media de la Tabla 3</span></span>
-<span id="cb31-160"><a href="#cb31-160" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(riqueza_20)  <span class="co"># cuántas veces salió cada valor de riqueza</span></span>
-<span id="cb31-161"><a href="#cb31-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-162"><a href="#cb31-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-163"><a href="#cb31-163" aria-hidden="true" tabindex="-1"></a>**(b) La fórmula exacta.** La riqueza esperada en $m$ individuos tomados de una</span>
-<span id="cb31-164"><a href="#cb31-164" aria-hidden="true" tabindex="-1"></a>muestra con $N$ individuos es la suma, sobre las especies, de la probabilidad de</span>
-<span id="cb31-165"><a href="#cb31-165" aria-hidden="true" tabindex="-1"></a>que cada una aparezca al menos una vez (Hurlbert 1971; Gotelli &amp; Colwell 2001):</span>
-<span id="cb31-166"><a href="#cb31-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-167"><a href="#cb31-167" aria-hidden="true" tabindex="-1"></a>$$E<span class="co">[</span><span class="ot">S_m</span><span class="co">]</span> = \sum_i \left<span class="co">[</span><span class="ot"> 1 - \frac{\binom{N - n_i}{m}}{\binom{N}{m}} \right</span><span class="co">]</span>$$</span>
-<span id="cb31-168"><a href="#cb31-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-171"><a href="#cb31-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-172"><a href="#cb31-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-rarefaccion</span></span>
-<span id="cb31-173"><a href="#cb31-173" aria-hidden="true" tabindex="-1"></a>riqueza_rarefactada <span class="ot">&lt;-</span> <span class="cf">function</span>(tabla, m) {</span>
-<span id="cb31-174"><a href="#cb31-174" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">sum</span>(tabla<span class="sc">$</span>n)</span>
-<span id="cb31-175"><a href="#cb31-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">choose</span>(N <span class="sc">-</span> tabla<span class="sc">$</span>n, m) <span class="sc">/</span> <span class="fu">choose</span>(N, m))</span>
-<span id="cb31-176"><a href="#cb31-176" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-177"><a href="#cb31-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-178"><a href="#cb31-178" aria-hidden="true" tabindex="-1"></a><span class="fu">riqueza_rarefactada</span>(tabla, <span class="at">m =</span> <span class="dv">20</span>)</span>
-<span id="cb31-179"><a href="#cb31-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-180"><a href="#cb31-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-181"><a href="#cb31-181" aria-hidden="true" tabindex="-1"></a>**(c) Con `iNEXT`.** Da el mismo valor para $q = 0$ y además calcula intervalos</span>
-<span id="cb31-182"><a href="#cb31-182" aria-hidden="true" tabindex="-1"></a>de confianza y los órdenes $q = 1$ y $q = 2$.</span>
-<span id="cb31-183"><a href="#cb31-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-186"><a href="#cb31-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-187"><a href="#cb31-187" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: estimateD</span></span>
-<span id="cb31-188"><a href="#cb31-188" aria-hidden="true" tabindex="-1"></a><span class="fu">estimateD</span>(tabla<span class="sc">$</span>n, <span class="at">q =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype =</span> <span class="st">"abundance"</span>,</span>
-<span id="cb31-189"><a href="#cb31-189" aria-hidden="true" tabindex="-1"></a>          <span class="at">base =</span> <span class="st">"size"</span>, <span class="at">level =</span> <span class="dv">20</span>, <span class="at">nboot =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-190"><a href="#cb31-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Order.q, m, qD, qD.LCL, qD.UCL)</span>
-<span id="cb31-191"><a href="#cb31-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-192"><a href="#cb31-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-193"><a href="#cb31-193" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.6 Curvas de rarefacción y extrapolación</span></span>
-<span id="cb31-194"><a href="#cb31-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-195"><a href="#cb31-195" aria-hidden="true" tabindex="-1"></a><span class="in">`iNEXT`</span> construye la curva completa: la parte **interpolada** (rarefacción,</span>
-<span id="cb31-196"><a href="#cb31-196" aria-hidden="true" tabindex="-1"></a>hasta su $N$) y la **extrapolada** (línea punteada, más allá de su $N$). La</span>
-<span id="cb31-197"><a href="#cb31-197" aria-hidden="true" tabindex="-1"></a>extrapolación supone que la muestra captura bien la estructura de la</span>
-<span id="cb31-198"><a href="#cb31-198" aria-hidden="true" tabindex="-1"></a>comunidad; con pocas fichas y varios singletons, el intervalo es muy ancho.</span>
-<span id="cb31-199"><a href="#cb31-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-202"><a href="#cb31-202" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-203"><a href="#cb31-203" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: inext-propia</span></span>
-<span id="cb31-204"><a href="#cb31-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb31-205"><a href="#cb31-205" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3.5</span></span>
-<span id="cb31-206"><a href="#cb31-206" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(tabla<span class="sc">$</span>n, <span class="at">q =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype =</span> <span class="st">"abundance"</span>,</span>
-<span id="cb31-207"><a href="#cb31-207" aria-hidden="true" tabindex="-1"></a>                   <span class="at">endpoint =</span> <span class="dv">80</span>, <span class="at">nboot =</span> <span class="dv">100</span>)</span>
-<span id="cb31-208"><a href="#cb31-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-209"><a href="#cb31-209" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(resultado, <span class="at">type =</span> <span class="dv">1</span>, <span class="at">facet.var =</span> <span class="st">"Order.q"</span>) <span class="sc">+</span></span>
-<span id="cb31-210"><a href="#cb31-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb31-211"><a href="#cb31-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb31-212"><a href="#cb31-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-213"><a href="#cb31-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-214"><a href="#cb31-214" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Para comparar con la hoja de registro"}</span>
-<span id="cb31-215"><a href="#cb31-215" aria-hidden="true" tabindex="-1"></a>Comparen: media de sus 5 repeticiones manuales (Tabla 3), media de 1000</span>
-<span id="cb31-216"><a href="#cb31-216" aria-hidden="true" tabindex="-1"></a>repeticiones en R (a), valor exacto (b). ¿Qué tan lejos quedó su media manual?</span>
-<span id="cb31-217"><a href="#cb31-217" aria-hidden="true" tabindex="-1"></a>¿Por qué?</span>
-<span id="cb31-218"><a href="#cb31-218" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb31-219"><a href="#cb31-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-220"><a href="#cb31-220" aria-hidden="true" tabindex="-1"></a><span class="fu"># Parte 2. La clase</span></span>
-<span id="cb31-221"><a href="#cb31-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-222"><a href="#cb31-222" aria-hidden="true" tabindex="-1"></a>La hoja compartida tiene **una fila por grupo**: <span class="in">`grupo`</span>, <span class="in">`bolsa`</span>, <span class="in">`N`</span>, el</span>
-<span id="cb31-223"><a href="#cb31-223" aria-hidden="true" tabindex="-1"></a>conteo de cada letra (<span class="in">`A`</span> … <span class="in">`L`</span>) y los valores calculados a mano (<span class="in">`Shannon`</span>,</span>
-<span id="cb31-224"><a href="#cb31-224" aria-hidden="true" tabindex="-1"></a><span class="in">`lambda`</span>, <span class="in">`D1`</span>, <span class="in">`D2`</span>, <span class="in">`S_rar20_manual`</span>). Aquí se usa un archivo de ejemplo</span>
-<span id="cb31-225"><a href="#cb31-225" aria-hidden="true" tabindex="-1"></a>simulado; cambien el nombre por el del archivo exportado de la hoja.</span>
-<span id="cb31-226"><a href="#cb31-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-229"><a href="#cb31-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-230"><a href="#cb31-230" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: leer-clase</span></span>
-<span id="cb31-231"><a href="#cb31-231" aria-hidden="true" tabindex="-1"></a>clase <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"L09-clase-ejemplo.csv"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-232"><a href="#cb31-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grupo =</span> <span class="fu">factor</span>(grupo), <span class="at">bolsa =</span> <span class="fu">factor</span>(bolsa))</span>
-<span id="cb31-233"><a href="#cb31-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-234"><a href="#cb31-234" aria-hidden="true" tabindex="-1"></a>clase <span class="sc">|&gt;</span> <span class="fu">select</span>(grupo, bolsa, N, A<span class="sc">:</span>L)</span>
-<span id="cb31-235"><a href="#cb31-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-236"><a href="#cb31-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-237"><a href="#cb31-237" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.1 De la fila de conteos a la tabla de abundancias</span></span>
-<span id="cb31-238"><a href="#cb31-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-239"><a href="#cb31-239" aria-hidden="true" tabindex="-1"></a>Pasamos los conteos a formato largo (una fila por grupo × especie) y quitamos</span>
-<span id="cb31-240"><a href="#cb31-240" aria-hidden="true" tabindex="-1"></a>las especies con conteo cero. Esto da, para cada grupo, la misma tabla que</span>
-<span id="cb31-241"><a href="#cb31-241" aria-hidden="true" tabindex="-1"></a>produce <span class="in">`tabla_abundancias()`</span>.</span>
-<span id="cb31-242"><a href="#cb31-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-245"><a href="#cb31-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-246"><a href="#cb31-246" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: largo</span></span>
-<span id="cb31-247"><a href="#cb31-247" aria-hidden="true" tabindex="-1"></a>abund <span class="ot">&lt;-</span> clase <span class="sc">|&gt;</span></span>
-<span id="cb31-248"><a href="#cb31-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(grupo, bolsa, N, A<span class="sc">:</span>L) <span class="sc">|&gt;</span></span>
-<span id="cb31-249"><a href="#cb31-249" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(A<span class="sc">:</span>L, <span class="at">names_to =</span> <span class="st">"especie"</span>, <span class="at">values_to =</span> <span class="st">"n"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-250"><a href="#cb31-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-251"><a href="#cb31-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> n <span class="sc">/</span> N)</span>
-<span id="cb31-252"><a href="#cb31-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-253"><a href="#cb31-253" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(abund)</span>
-<span id="cb31-254"><a href="#cb31-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-255"><a href="#cb31-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-256"><a href="#cb31-256" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.2 Números de Hill de cada grupo frente al esfuerzo</span></span>
-<span id="cb31-257"><a href="#cb31-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-258"><a href="#cb31-258" aria-hidden="true" tabindex="-1"></a>Aplicamos <span class="in">`numeros_hill()`</span> a la tabla de cada grupo y comparamos con lo que</span>
-<span id="cb31-259"><a href="#cb31-259" aria-hidden="true" tabindex="-1"></a>cada grupo calculó a mano.</span>
-<span id="cb31-260"><a href="#cb31-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-263"><a href="#cb31-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-264"><a href="#cb31-264" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: hill-clase</span></span>
-<span id="cb31-265"><a href="#cb31-265" aria-hidden="true" tabindex="-1"></a>hill_clase <span class="ot">&lt;-</span> abund <span class="sc">|&gt;</span></span>
-<span id="cb31-266"><a href="#cb31-266" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo, bolsa) <span class="sc">|&gt;</span></span>
-<span id="cb31-267"><a href="#cb31-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="fu">numeros_hill</span>(<span class="fu">pick</span>(especie, n, p)))</span>
-<span id="cb31-268"><a href="#cb31-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-269"><a href="#cb31-269" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparación con el cálculo manual</span></span>
-<span id="cb31-270"><a href="#cb31-270" aria-hidden="true" tabindex="-1"></a>hill_clase <span class="sc">|&gt;</span></span>
-<span id="cb31-271"><a href="#cb31-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">select</span>(clase, grupo, <span class="at">D1_mano =</span> D1, <span class="at">D2_mano =</span> D2), <span class="at">by =</span> <span class="st">"grupo"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-272"><a href="#cb31-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(D1, D2), \(x) <span class="fu">round</span>(x, <span class="dv">2</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb31-273"><a href="#cb31-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(grupo, bolsa, N, S_obs, singletons, D1, D1_mano, D2, D2_mano) <span class="sc">|&gt;</span></span>
-<span id="cb31-274"><a href="#cb31-274" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(bolsa, N)</span>
-<span id="cb31-275"><a href="#cb31-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-276"><a href="#cb31-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-279"><a href="#cb31-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-280"><a href="#cb31-280" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: hill-plot</span></span>
-<span id="cb31-281"><a href="#cb31-281" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb31-282"><a href="#cb31-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3.5</span></span>
-<span id="cb31-283"><a href="#cb31-283" aria-hidden="true" tabindex="-1"></a>hill_clase <span class="sc">|&gt;</span></span>
-<span id="cb31-284"><a href="#cb31-284" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="fu">c</span>(D0, D1, D2), <span class="at">names_to =</span> <span class="st">"orden"</span>, <span class="at">values_to =</span> <span class="st">"D"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-285"><a href="#cb31-285" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> N, <span class="at">y =</span> D, <span class="at">colour =</span> bolsa)) <span class="sc">+</span></span>
-<span id="cb31-286"><a href="#cb31-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">height =</span> <span class="dv">0</span>, <span class="at">seed =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb31-287"><a href="#cb31-287" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> orden) <span class="sc">+</span></span>
-<span id="cb31-288"><a href="#cb31-288" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Esfuerzo (N individuos)"</span>, <span class="at">y =</span> <span class="st">"Número efectivo de especies"</span>,</span>
-<span id="cb31-289"><a href="#cb31-289" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Bolsa"</span>) <span class="sc">+</span></span>
-<span id="cb31-290"><a href="#cb31-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb31-291"><a href="#cb31-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-292"><a href="#cb31-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-293"><a href="#cb31-293" aria-hidden="true" tabindex="-1"></a>¿Cuál orden de diversidad cambia más con el esfuerzo? ¿Cuál bolsa es "más</span>
-<span id="cb31-294"><a href="#cb31-294" aria-hidden="true" tabindex="-1"></a>diversa" según cada orden? ¿Qué tan distintos son los dos grupos que</span>
-<span id="cb31-295"><a href="#cb31-295" aria-hidden="true" tabindex="-1"></a>muestrearon la misma bolsa con el mismo esfuerzo?</span>
-<span id="cb31-296"><a href="#cb31-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-297"><a href="#cb31-297" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.3 Rarefacción a m = 20: manual frente a exacta</span></span>
-<span id="cb31-298"><a href="#cb31-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-301"><a href="#cb31-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-302"><a href="#cb31-302" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rar20-clase</span></span>
-<span id="cb31-303"><a href="#cb31-303" aria-hidden="true" tabindex="-1"></a>rar_clase <span class="ot">&lt;-</span> abund <span class="sc">|&gt;</span></span>
-<span id="cb31-304"><a href="#cb31-304" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo, bolsa, N) <span class="sc">|&gt;</span></span>
-<span id="cb31-305"><a href="#cb31-305" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">S_obs =</span> <span class="fu">n</span>(),</span>
-<span id="cb31-306"><a href="#cb31-306" aria-hidden="true" tabindex="-1"></a>            <span class="at">S_rar20_exacta =</span> <span class="fu">riqueza_rarefactada</span>(<span class="fu">pick</span>(n), <span class="dv">20</span>),</span>
-<span id="cb31-307"><a href="#cb31-307" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-308"><a href="#cb31-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">select</span>(clase, grupo, S_rar20_manual), <span class="at">by =</span> <span class="st">"grupo"</span>)</span>
-<span id="cb31-309"><a href="#cb31-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-310"><a href="#cb31-310" aria-hidden="true" tabindex="-1"></a>rar_clase <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">S_rar20_exacta =</span> <span class="fu">round</span>(S_rar20_exacta, <span class="dv">2</span>))</span>
-<span id="cb31-311"><a href="#cb31-311" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-312"><a href="#cb31-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-315"><a href="#cb31-315" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-316"><a href="#cb31-316" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rar20-plot</span></span>
-<span id="cb31-317"><a href="#cb31-317" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7</span></span>
-<span id="cb31-318"><a href="#cb31-318" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3.5</span></span>
-<span id="cb31-319"><a href="#cb31-319" aria-hidden="true" tabindex="-1"></a>rar_clase <span class="sc">|&gt;</span></span>
-<span id="cb31-320"><a href="#cb31-320" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="fu">c</span>(S_obs, S_rar20_exacta, S_rar20_manual),</span>
-<span id="cb31-321"><a href="#cb31-321" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"medida"</span>, <span class="at">values_to =</span> <span class="st">"S"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-322"><a href="#cb31-322" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> N, <span class="at">y =</span> S, <span class="at">colour =</span> bolsa, <span class="at">shape =</span> medida)) <span class="sc">+</span></span>
-<span id="cb31-323"><a href="#cb31-323" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="dv">4</span>)) <span class="sc">+</span></span>
-<span id="cb31-324"><a href="#cb31-324" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Esfuerzo (N individuos)"</span>, <span class="at">y =</span> <span class="st">"Riqueza"</span>,</span>
-<span id="cb31-325"><a href="#cb31-325" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Bolsa"</span>, <span class="at">shape =</span> <span class="st">"Medida"</span>) <span class="sc">+</span></span>
-<span id="cb31-326"><a href="#cb31-326" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb31-327"><a href="#cb31-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-328"><a href="#cb31-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-329"><a href="#cb31-329" aria-hidden="true" tabindex="-1"></a>¿Qué pasa con la diferencia entre bolsas al estandarizar a $m = 20$? ¿Coincide</span>
-<span id="cb31-330"><a href="#cb31-330" aria-hidden="true" tabindex="-1"></a>con lo que dice la riqueza observada a esfuerzos grandes?</span>
-<span id="cb31-331"><a href="#cb31-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-332"><a href="#cb31-332" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.4 Curvas de rarefacción y extrapolación de toda la clase</span></span>
-<span id="cb31-333"><a href="#cb31-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-334"><a href="#cb31-334" aria-hidden="true" tabindex="-1"></a><span class="in">`iNEXT`</span> acepta una lista de vectores de abundancia, uno por grupo. Extraemos la</span>
-<span id="cb31-335"><a href="#cb31-335" aria-hidden="true" tabindex="-1"></a>tabla de resultados para colorear por bolsa.</span>
-<span id="cb31-336"><a href="#cb31-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-339"><a href="#cb31-339" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-340"><a href="#cb31-340" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: inext-clase</span></span>
-<span id="cb31-341"><a href="#cb31-341" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb31-342"><a href="#cb31-342" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
-<span id="cb31-343"><a href="#cb31-343" aria-hidden="true" tabindex="-1"></a>abund_lista <span class="ot">&lt;-</span> <span class="fu">split</span>(abund<span class="sc">$</span>n, abund<span class="sc">$</span>grupo)      <span class="co"># lista: grupo -&gt; vector n_i</span></span>
-<span id="cb31-344"><a href="#cb31-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-345"><a href="#cb31-345" aria-hidden="true" tabindex="-1"></a>inext_clase <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(abund_lista, <span class="at">q =</span> <span class="dv">0</span>, <span class="at">datatype =</span> <span class="st">"abundance"</span>,</span>
-<span id="cb31-346"><a href="#cb31-346" aria-hidden="true" tabindex="-1"></a>                     <span class="at">endpoint =</span> <span class="dv">80</span>, <span class="at">nboot =</span> <span class="dv">50</span>)</span>
-<span id="cb31-347"><a href="#cb31-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-348"><a href="#cb31-348" aria-hidden="true" tabindex="-1"></a>curvas <span class="ot">&lt;-</span> inext_clase<span class="sc">$</span>iNextEst<span class="sc">$</span>size_based <span class="sc">|&gt;</span></span>
-<span id="cb31-349"><a href="#cb31-349" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">grupo =</span> Assemblage) <span class="sc">|&gt;</span></span>
-<span id="cb31-350"><a href="#cb31-350" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grupo =</span> <span class="fu">factor</span>(grupo, <span class="at">levels =</span> <span class="fu">levels</span>(clase<span class="sc">$</span>grupo))) <span class="sc">|&gt;</span></span>
-<span id="cb31-351"><a href="#cb31-351" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">distinct</span>(clase, grupo, bolsa), <span class="at">by =</span> <span class="st">"grupo"</span>)</span>
-<span id="cb31-352"><a href="#cb31-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-353"><a href="#cb31-353" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(curvas, <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> qD, <span class="at">group =</span> grupo, <span class="at">colour =</span> bolsa)) <span class="sc">+</span></span>
-<span id="cb31-354"><a href="#cb31-354" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">20</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
-<span id="cb31-355"><a href="#cb31-355" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(d) <span class="fu">filter</span>(d, Method <span class="sc">!=</span> <span class="st">"Extrapolation"</span>), <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb31-356"><a href="#cb31-356" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(d) <span class="fu">filter</span>(d, Method <span class="sc">!=</span> <span class="st">"Rarefaction"</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb31-357"><a href="#cb31-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> \(d) <span class="fu">filter</span>(d, Method <span class="sc">==</span> <span class="st">"Observed"</span>), <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb31-358"><a href="#cb31-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Individuos (m)"</span>, <span class="at">y =</span> <span class="st">"Riqueza esperada"</span>,</span>
-<span id="cb31-359"><a href="#cb31-359" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Bolsa"</span>,</span>
-<span id="cb31-360"><a href="#cb31-360" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Línea continua: rarefacción. Punteada: extrapolación. Punto: muestra observada. Vertical: m = 20."</span>) <span class="sc">+</span></span>
-<span id="cb31-361"><a href="#cb31-361" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb31-362"><a href="#cb31-362" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-363"><a href="#cb31-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-364"><a href="#cb31-364" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.5 Composición real de las bolsas</span></span>
-<span id="cb31-365"><a href="#cb31-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-366"><a href="#cb31-366" aria-hidden="true" tabindex="-1"></a>Para cerrar, los números de Hill de las comunidades completas (80 fichas).</span>
-<span id="cb31-367"><a href="#cb31-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-370"><a href="#cb31-370" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-371"><a href="#cb31-371" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: verdad</span></span>
-<span id="cb31-372"><a href="#cb31-372" aria-hidden="true" tabindex="-1"></a>bolsa_A <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">especie =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>],  <span class="at">n =</span> <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb31-373"><a href="#cb31-373" aria-hidden="true" tabindex="-1"></a>bolsa_B <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">especie =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>], <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">14</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb31-374"><a href="#cb31-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-375"><a href="#cb31-375" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(<span class="at">A =</span> <span class="fu">numeros_hill</span>(<span class="fu">mutate</span>(bolsa_A, <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))),</span>
-<span id="cb31-376"><a href="#cb31-376" aria-hidden="true" tabindex="-1"></a>          <span class="at">B =</span> <span class="fu">numeros_hill</span>(<span class="fu">mutate</span>(bolsa_B, <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))),</span>
-<span id="cb31-377"><a href="#cb31-377" aria-hidden="true" tabindex="-1"></a>          <span class="at">.id =</span> <span class="st">"bolsa"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-378"><a href="#cb31-378" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(H, lambda, D1, D2), \(x) <span class="fu">round</span>(x, <span class="dv">2</span>)))</span>
-<span id="cb31-379"><a href="#cb31-379" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="an">search:</span><span class="co"> false</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">    documentclass: scrartcl</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">    classoption: [DIV=12]</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">    geometry: margin=1in</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fontfamily: libertinus</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co">    colorlinks: true</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: false</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> es</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>Este archivo es **material de referencia**: no se usa durante la sesión de</span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>laboratorio. Contiene el código para reproducir todo lo que hicieron a mano y</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>las figuras de la síntesis. La **Parte 1** analiza la muestra de **un grupo** a</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>partir de su secuencia de letras (Tabla 1 de la hoja de registro). La</span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>**Parte 2** combina los conteos de **todos los grupos** de la clase.</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>Descarguen el archivo <span class="in">`.qmd`</span> (botón <span class="in">`&lt;/&gt; Code`</span> arriba a la derecha en la versión</span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>web) y ábranlo en RStudio.</span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: paquetes</span></span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)    <span class="co"># manipular tablas</span></span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)  <span class="co"># gráficos</span></span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT)    <span class="co"># rarefacción / extrapolación (Chao et al.)</span></span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a><span class="co"># La Parte 2 usa además tidyr. Si falta alguno:</span></span>
+<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c("dplyr", "ggplot2", "tidyr", "iNEXT"))</span></span>
+<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a><span class="fu"># Parte 1. Su muestra</span></span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.1 Su secuencia de extracción</span></span>
+<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>Escriban las letras de su Tabla 1 **en el orden en que salieron**, una por</span>
+<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>ficha. El ejemplo tiene 30 fichas; reemplácenlo por su secuencia.</span>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: secuencia</span></span>
+<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a>secuencia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"D"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"E"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>,</span>
+<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a>               <span class="st">"B"</span>, <span class="st">"F"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"G"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"D"</span>,</span>
+<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a>               <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"H"</span>, <span class="st">"A"</span>, <span class="st">"D"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>)</span>
+<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(secuencia)  <span class="co"># debe ser igual a su esfuerzo asignado (N)</span></span>
+<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-61"><a href="#cb31-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-62"><a href="#cb31-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.2 De la secuencia a una tabla de abundancias</span></span>
+<span id="cb31-63"><a href="#cb31-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-64"><a href="#cb31-64" aria-hidden="true" tabindex="-1"></a>La función recibe el vector de letras y devuelve una tabla con una fila por</span>
+<span id="cb31-65"><a href="#cb31-65" aria-hidden="true" tabindex="-1"></a>especie: el conteo $n_i$ y la abundancia relativa $p_i = n_i / N$.</span>
+<span id="cb31-66"><a href="#cb31-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-69"><a href="#cb31-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-70"><a href="#cb31-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-tabla</span></span>
+<span id="cb31-71"><a href="#cb31-71" aria-hidden="true" tabindex="-1"></a>tabla_abundancias <span class="ot">&lt;-</span> <span class="cf">function</span>(secuencia) {</span>
+<span id="cb31-72"><a href="#cb31-72" aria-hidden="true" tabindex="-1"></a>  conteo <span class="ot">&lt;-</span> <span class="fu">table</span>(secuencia)                 <span class="co"># cuántas fichas de cada letra</span></span>
+<span id="cb31-73"><a href="#cb31-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb31-74"><a href="#cb31-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">especie =</span> <span class="fu">names</span>(conteo),</span>
+<span id="cb31-75"><a href="#cb31-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">n       =</span> <span class="fu">as.integer</span>(conteo),            <span class="co"># n_i</span></span>
+<span id="cb31-76"><a href="#cb31-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">p       =</span> <span class="fu">as.integer</span>(conteo) <span class="sc">/</span> <span class="fu">length</span>(secuencia)  <span class="co"># p_i = n_i / N</span></span>
+<span id="cb31-77"><a href="#cb31-77" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-78"><a href="#cb31-78" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-79"><a href="#cb31-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-80"><a href="#cb31-80" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">tabla_abundancias</span>(secuencia)</span>
+<span id="cb31-81"><a href="#cb31-81" aria-hidden="true" tabindex="-1"></a>tabla</span>
+<span id="cb31-82"><a href="#cb31-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-83"><a href="#cb31-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-84"><a href="#cb31-84" aria-hidden="true" tabindex="-1"></a>Comparen con su Tabla 2: la columna <span class="in">`n`</span> debe coincidir con $n_i$ y <span class="in">`p`</span> con</span>
+<span id="cb31-85"><a href="#cb31-85" aria-hidden="true" tabindex="-1"></a>$p_i$.</span>
+<span id="cb31-86"><a href="#cb31-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-87"><a href="#cb31-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.3 Índices y números de Hill</span></span>
+<span id="cb31-88"><a href="#cb31-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-89"><a href="#cb31-89" aria-hidden="true" tabindex="-1"></a>La función recibe la tabla de abundancias y calcula riqueza, Shannon, Simpson y</span>
+<span id="cb31-90"><a href="#cb31-90" aria-hidden="true" tabindex="-1"></a>los números efectivos de especies de orden 0, 1 y 2.</span>
+<span id="cb31-91"><a href="#cb31-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-94"><a href="#cb31-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-95"><a href="#cb31-95" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-hill</span></span>
+<span id="cb31-96"><a href="#cb31-96" aria-hidden="true" tabindex="-1"></a>numeros_hill <span class="ot">&lt;-</span> <span class="cf">function</span>(tabla) {</span>
+<span id="cb31-97"><a href="#cb31-97" aria-hidden="true" tabindex="-1"></a>  p      <span class="ot">&lt;-</span> tabla<span class="sc">$</span>p</span>
+<span id="cb31-98"><a href="#cb31-98" aria-hidden="true" tabindex="-1"></a>  S      <span class="ot">&lt;-</span> <span class="fu">nrow</span>(tabla)         <span class="co"># riqueza observada: número de especies</span></span>
+<span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a>  H      <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">sum</span>(p <span class="sc">*</span> <span class="fu">log</span>(p))    <span class="co"># entropía de Shannon</span></span>
+<span id="cb31-100"><a href="#cb31-100" aria-hidden="true" tabindex="-1"></a>  lambda <span class="ot">&lt;-</span> <span class="fu">sum</span>(p<span class="sc">^</span><span class="dv">2</span>)            <span class="co"># concentración de Simpson</span></span>
+<span id="cb31-101"><a href="#cb31-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb31-102"><a href="#cb31-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">N      =</span> <span class="fu">sum</span>(tabla<span class="sc">$</span>n),</span>
+<span id="cb31-103"><a href="#cb31-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">S_obs  =</span> S,</span>
+<span id="cb31-104"><a href="#cb31-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">H      =</span> H,</span>
+<span id="cb31-105"><a href="#cb31-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">lambda =</span> lambda,</span>
+<span id="cb31-106"><a href="#cb31-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">D0     =</span> S,                 <span class="co"># Hill q = 0: riqueza</span></span>
+<span id="cb31-107"><a href="#cb31-107" aria-hidden="true" tabindex="-1"></a>    <span class="at">D1     =</span> <span class="fu">exp</span>(H),            <span class="co"># Hill q = 1: exp(Shannon)</span></span>
+<span id="cb31-108"><a href="#cb31-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">D2     =</span> <span class="dv">1</span> <span class="sc">/</span> lambda,        <span class="co"># Hill q = 2: inverso de Simpson</span></span>
+<span id="cb31-109"><a href="#cb31-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">singletons =</span> <span class="fu">sum</span>(tabla<span class="sc">$</span>n <span class="sc">==</span> <span class="dv">1</span>)  <span class="co"># especies con un solo individuo</span></span>
+<span id="cb31-110"><a href="#cb31-110" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-111"><a href="#cb31-111" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-112"><a href="#cb31-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-113"><a href="#cb31-113" aria-hidden="true" tabindex="-1"></a><span class="fu">numeros_hill</span>(tabla)</span>
+<span id="cb31-114"><a href="#cb31-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-115"><a href="#cb31-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-116"><a href="#cb31-116" aria-hidden="true" tabindex="-1"></a>Comparen estos valores con el resumen de la hoja de registro.</span>
+<span id="cb31-117"><a href="#cb31-117" aria-hidden="true" tabindex="-1"></a>Recuerden que siempre <span class="in">`D0 &gt;= D1 &gt;= D2`</span>: cuanto mayor la brecha, más desigual la</span>
+<span id="cb31-118"><a href="#cb31-118" aria-hidden="true" tabindex="-1"></a>distribución de abundancias.</span>
+<span id="cb31-119"><a href="#cb31-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-120"><a href="#cb31-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.4 Curva de acumulación</span></span>
+<span id="cb31-121"><a href="#cb31-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-122"><a href="#cb31-122" aria-hidden="true" tabindex="-1"></a>Riqueza acumulada después de cada individuo, en el orden de extracción.</span>
+<span id="cb31-123"><a href="#cb31-123" aria-hidden="true" tabindex="-1"></a><span class="in">`!duplicated(secuencia)`</span> es <span class="in">`TRUE`</span> la primera vez que aparece cada letra;</span>
+<span id="cb31-124"><a href="#cb31-124" aria-hidden="true" tabindex="-1"></a><span class="in">`cumsum()`</span> va sumando esas primeras apariciones.</span>
+<span id="cb31-125"><a href="#cb31-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-128"><a href="#cb31-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-129"><a href="#cb31-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-acumulacion</span></span>
+<span id="cb31-130"><a href="#cb31-130" aria-hidden="true" tabindex="-1"></a>curva_acumulacion <span class="ot">&lt;-</span> <span class="cf">function</span>(secuencia) {</span>
+<span id="cb31-131"><a href="#cb31-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb31-132"><a href="#cb31-132" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">seq_along</span>(secuencia),              <span class="co"># 1, 2, ..., N</span></span>
+<span id="cb31-133"><a href="#cb31-133" aria-hidden="true" tabindex="-1"></a>    <span class="at">S =</span> <span class="fu">cumsum</span>(<span class="sc">!</span><span class="fu">duplicated</span>(secuencia))     <span class="co"># riqueza acumulada S(n)</span></span>
+<span id="cb31-134"><a href="#cb31-134" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-135"><a href="#cb31-135" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-136"><a href="#cb31-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-137"><a href="#cb31-137" aria-hidden="true" tabindex="-1"></a>acum <span class="ot">&lt;-</span> <span class="fu">curva_acumulacion</span>(secuencia)</span>
+<span id="cb31-138"><a href="#cb31-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-139"><a href="#cb31-139" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(acum, <span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> S)) <span class="sc">+</span></span>
+<span id="cb31-140"><a href="#cb31-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_step</span>() <span class="sc">+</span></span>
+<span id="cb31-141"><a href="#cb31-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb31-142"><a href="#cb31-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Individuos extraídos (n)"</span>, <span class="at">y =</span> <span class="st">"Riqueza acumulada S(n)"</span>) <span class="sc">+</span></span>
+<span id="cb31-143"><a href="#cb31-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb31-144"><a href="#cb31-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-145"><a href="#cb31-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-146"><a href="#cb31-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.5 Rarefacción a m = 20: tres maneras</span></span>
+<span id="cb31-147"><a href="#cb31-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-148"><a href="#cb31-148" aria-hidden="true" tabindex="-1"></a>**(a) Lo mismo que hicieron con las fichas, 1000 veces.** <span class="in">`sample(secuencia, 20)`</span></span>
+<span id="cb31-149"><a href="#cb31-149" aria-hidden="true" tabindex="-1"></a>toma 20 fichas de su muestra sin reemplazo; <span class="in">`unique()`</span> deja las especies</span>
+<span id="cb31-150"><a href="#cb31-150" aria-hidden="true" tabindex="-1"></a>distintas; <span class="in">`length()`</span> las cuenta.</span>
+<span id="cb31-151"><a href="#cb31-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-154"><a href="#cb31-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-155"><a href="#cb31-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rarefaccion-simulada</span></span>
+<span id="cb31-156"><a href="#cb31-156" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb31-157"><a href="#cb31-157" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)  <span class="co"># para que el resultado sea reproducible</span></span>
+<span id="cb31-158"><a href="#cb31-158" aria-hidden="true" tabindex="-1"></a>riqueza_20 <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">sample</span>(secuencia, m))))</span>
+<span id="cb31-159"><a href="#cb31-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-160"><a href="#cb31-160" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(riqueza_20)   <span class="co"># comparar con la media de la Tabla 3</span></span>
+<span id="cb31-161"><a href="#cb31-161" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(riqueza_20)  <span class="co"># cuántas veces salió cada valor de riqueza</span></span>
+<span id="cb31-162"><a href="#cb31-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-163"><a href="#cb31-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-164"><a href="#cb31-164" aria-hidden="true" tabindex="-1"></a>**(b) La fórmula exacta.** La riqueza esperada en $m$ individuos tomados de una</span>
+<span id="cb31-165"><a href="#cb31-165" aria-hidden="true" tabindex="-1"></a>muestra con $N$ individuos es la suma, sobre las especies, de la probabilidad de</span>
+<span id="cb31-166"><a href="#cb31-166" aria-hidden="true" tabindex="-1"></a>que cada una aparezca al menos una vez (Hurlbert 1971; Gotelli &amp; Colwell 2001):</span>
+<span id="cb31-167"><a href="#cb31-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-168"><a href="#cb31-168" aria-hidden="true" tabindex="-1"></a>$$E<span class="co">[</span><span class="ot">S_m</span><span class="co">]</span> = \sum_i \left<span class="co">[</span><span class="ot"> 1 - \frac{\binom{N - n_i}{m}}{\binom{N}{m}} \right</span><span class="co">]</span>$$</span>
+<span id="cb31-169"><a href="#cb31-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-172"><a href="#cb31-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-173"><a href="#cb31-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fun-rarefaccion</span></span>
+<span id="cb31-174"><a href="#cb31-174" aria-hidden="true" tabindex="-1"></a>riqueza_rarefactada <span class="ot">&lt;-</span> <span class="cf">function</span>(tabla, m) {</span>
+<span id="cb31-175"><a href="#cb31-175" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">sum</span>(tabla<span class="sc">$</span>n)</span>
+<span id="cb31-176"><a href="#cb31-176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">choose</span>(N <span class="sc">-</span> tabla<span class="sc">$</span>n, m) <span class="sc">/</span> <span class="fu">choose</span>(N, m))</span>
+<span id="cb31-177"><a href="#cb31-177" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-178"><a href="#cb31-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-179"><a href="#cb31-179" aria-hidden="true" tabindex="-1"></a><span class="fu">riqueza_rarefactada</span>(tabla, <span class="at">m =</span> <span class="dv">20</span>)</span>
+<span id="cb31-180"><a href="#cb31-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-181"><a href="#cb31-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-182"><a href="#cb31-182" aria-hidden="true" tabindex="-1"></a>**(c) Con `iNEXT`.** Da el mismo valor para $q = 0$ y además calcula intervalos</span>
+<span id="cb31-183"><a href="#cb31-183" aria-hidden="true" tabindex="-1"></a>de confianza y los órdenes $q = 1$ y $q = 2$.</span>
+<span id="cb31-184"><a href="#cb31-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-187"><a href="#cb31-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-188"><a href="#cb31-188" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: estimateD</span></span>
+<span id="cb31-189"><a href="#cb31-189" aria-hidden="true" tabindex="-1"></a><span class="fu">estimateD</span>(tabla<span class="sc">$</span>n, <span class="at">q =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype =</span> <span class="st">"abundance"</span>,</span>
+<span id="cb31-190"><a href="#cb31-190" aria-hidden="true" tabindex="-1"></a>          <span class="at">base =</span> <span class="st">"size"</span>, <span class="at">level =</span> <span class="dv">20</span>, <span class="at">nboot =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-191"><a href="#cb31-191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Order.q, m, qD, qD.LCL, qD.UCL)</span>
+<span id="cb31-192"><a href="#cb31-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-193"><a href="#cb31-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-194"><a href="#cb31-194" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1.6 Curvas de rarefacción y extrapolación</span></span>
+<span id="cb31-195"><a href="#cb31-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-196"><a href="#cb31-196" aria-hidden="true" tabindex="-1"></a><span class="in">`iNEXT`</span> construye la curva completa: la parte **interpolada** (rarefacción,</span>
+<span id="cb31-197"><a href="#cb31-197" aria-hidden="true" tabindex="-1"></a>hasta su $N$) y la **extrapolada** (línea punteada, más allá de su $N$). La</span>
+<span id="cb31-198"><a href="#cb31-198" aria-hidden="true" tabindex="-1"></a>extrapolación supone que la muestra captura bien la estructura de la</span>
+<span id="cb31-199"><a href="#cb31-199" aria-hidden="true" tabindex="-1"></a>comunidad; con pocas fichas y varios singletons, el intervalo es muy ancho.</span>
+<span id="cb31-200"><a href="#cb31-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-203"><a href="#cb31-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-204"><a href="#cb31-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: inext-propia</span></span>
+<span id="cb31-205"><a href="#cb31-205" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb31-206"><a href="#cb31-206" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3.5</span></span>
+<span id="cb31-207"><a href="#cb31-207" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(tabla<span class="sc">$</span>n, <span class="at">q =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype =</span> <span class="st">"abundance"</span>,</span>
+<span id="cb31-208"><a href="#cb31-208" aria-hidden="true" tabindex="-1"></a>                   <span class="at">endpoint =</span> <span class="dv">80</span>, <span class="at">nboot =</span> <span class="dv">100</span>)</span>
+<span id="cb31-209"><a href="#cb31-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-210"><a href="#cb31-210" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(resultado, <span class="at">type =</span> <span class="dv">1</span>, <span class="at">facet.var =</span> <span class="st">"Order.q"</span>) <span class="sc">+</span></span>
+<span id="cb31-211"><a href="#cb31-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb31-212"><a href="#cb31-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb31-213"><a href="#cb31-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-214"><a href="#cb31-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-215"><a href="#cb31-215" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Para comparar con la hoja de registro"}</span>
+<span id="cb31-216"><a href="#cb31-216" aria-hidden="true" tabindex="-1"></a>Comparen: media de sus 5 repeticiones manuales (Tabla 3), media de 1000</span>
+<span id="cb31-217"><a href="#cb31-217" aria-hidden="true" tabindex="-1"></a>repeticiones en R (a), valor exacto (b). ¿Qué tan lejos quedó su media manual?</span>
+<span id="cb31-218"><a href="#cb31-218" aria-hidden="true" tabindex="-1"></a>¿Por qué?</span>
+<span id="cb31-219"><a href="#cb31-219" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-220"><a href="#cb31-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-221"><a href="#cb31-221" aria-hidden="true" tabindex="-1"></a><span class="fu"># Parte 2. La clase</span></span>
+<span id="cb31-222"><a href="#cb31-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-223"><a href="#cb31-223" aria-hidden="true" tabindex="-1"></a>La hoja compartida tiene **una fila por grupo**: <span class="in">`grupo`</span>, <span class="in">`bolsa`</span>, <span class="in">`N`</span>, el</span>
+<span id="cb31-224"><a href="#cb31-224" aria-hidden="true" tabindex="-1"></a>conteo de cada letra (<span class="in">`A`</span> … <span class="in">`L`</span>) y los valores calculados a mano (<span class="in">`Shannon`</span>,</span>
+<span id="cb31-225"><a href="#cb31-225" aria-hidden="true" tabindex="-1"></a><span class="in">`lambda`</span>, <span class="in">`D1`</span>, <span class="in">`D2`</span>, <span class="in">`S_rar20_manual`</span>). Aquí se usa un archivo de ejemplo</span>
+<span id="cb31-226"><a href="#cb31-226" aria-hidden="true" tabindex="-1"></a>simulado; cambien el nombre por el del archivo exportado de la hoja.</span>
+<span id="cb31-227"><a href="#cb31-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-230"><a href="#cb31-230" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-231"><a href="#cb31-231" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: leer-clase</span></span>
+<span id="cb31-232"><a href="#cb31-232" aria-hidden="true" tabindex="-1"></a>clase <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"L09-clase-ejemplo.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-233"><a href="#cb31-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grupo =</span> <span class="fu">factor</span>(grupo), <span class="at">bolsa =</span> <span class="fu">factor</span>(bolsa))</span>
+<span id="cb31-234"><a href="#cb31-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-235"><a href="#cb31-235" aria-hidden="true" tabindex="-1"></a>clase <span class="sc">|&gt;</span> <span class="fu">select</span>(grupo, bolsa, N, A<span class="sc">:</span>L)</span>
+<span id="cb31-236"><a href="#cb31-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-237"><a href="#cb31-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-238"><a href="#cb31-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.1 De la fila de conteos a la tabla de abundancias</span></span>
+<span id="cb31-239"><a href="#cb31-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-240"><a href="#cb31-240" aria-hidden="true" tabindex="-1"></a>Pasamos los conteos a formato largo (una fila por grupo × especie) y quitamos</span>
+<span id="cb31-241"><a href="#cb31-241" aria-hidden="true" tabindex="-1"></a>las especies con conteo cero. Esto da, para cada grupo, la misma tabla que</span>
+<span id="cb31-242"><a href="#cb31-242" aria-hidden="true" tabindex="-1"></a>produce <span class="in">`tabla_abundancias()`</span>.</span>
+<span id="cb31-243"><a href="#cb31-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-246"><a href="#cb31-246" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-247"><a href="#cb31-247" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: largo</span></span>
+<span id="cb31-248"><a href="#cb31-248" aria-hidden="true" tabindex="-1"></a>abund <span class="ot">&lt;-</span> clase <span class="sc">|&gt;</span></span>
+<span id="cb31-249"><a href="#cb31-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(grupo, bolsa, N, A<span class="sc">:</span>L) <span class="sc">|&gt;</span></span>
+<span id="cb31-250"><a href="#cb31-250" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(A<span class="sc">:</span>L, <span class="at">names_to =</span> <span class="st">"especie"</span>, <span class="at">values_to =</span> <span class="st">"n"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-251"><a href="#cb31-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-252"><a href="#cb31-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> n <span class="sc">/</span> N)</span>
+<span id="cb31-253"><a href="#cb31-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-254"><a href="#cb31-254" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(abund)</span>
+<span id="cb31-255"><a href="#cb31-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-256"><a href="#cb31-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-257"><a href="#cb31-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.2 Números de Hill de cada grupo frente al esfuerzo</span></span>
+<span id="cb31-258"><a href="#cb31-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-259"><a href="#cb31-259" aria-hidden="true" tabindex="-1"></a>Aplicamos <span class="in">`numeros_hill()`</span> a la tabla de cada grupo y comparamos con lo que</span>
+<span id="cb31-260"><a href="#cb31-260" aria-hidden="true" tabindex="-1"></a>cada grupo calculó a mano.</span>
+<span id="cb31-261"><a href="#cb31-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-264"><a href="#cb31-264" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-265"><a href="#cb31-265" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: hill-clase</span></span>
+<span id="cb31-266"><a href="#cb31-266" aria-hidden="true" tabindex="-1"></a>hill_clase <span class="ot">&lt;-</span> abund <span class="sc">|&gt;</span></span>
+<span id="cb31-267"><a href="#cb31-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo, bolsa) <span class="sc">|&gt;</span></span>
+<span id="cb31-268"><a href="#cb31-268" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="fu">numeros_hill</span>(<span class="fu">pick</span>(especie, n, p)))</span>
+<span id="cb31-269"><a href="#cb31-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-270"><a href="#cb31-270" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparación con el cálculo manual</span></span>
+<span id="cb31-271"><a href="#cb31-271" aria-hidden="true" tabindex="-1"></a>hill_clase <span class="sc">|&gt;</span></span>
+<span id="cb31-272"><a href="#cb31-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">select</span>(clase, grupo, <span class="at">D1_mano =</span> D1, <span class="at">D2_mano =</span> D2), <span class="at">by =</span> <span class="st">"grupo"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-273"><a href="#cb31-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(D1, D2), \(x) <span class="fu">round</span>(x, <span class="dv">2</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb31-274"><a href="#cb31-274" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(grupo, bolsa, N, S_obs, singletons, D1, D1_mano, D2, D2_mano) <span class="sc">|&gt;</span></span>
+<span id="cb31-275"><a href="#cb31-275" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(bolsa, N)</span>
+<span id="cb31-276"><a href="#cb31-276" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-277"><a href="#cb31-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-280"><a href="#cb31-280" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-281"><a href="#cb31-281" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: hill-plot</span></span>
+<span id="cb31-282"><a href="#cb31-282" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb31-283"><a href="#cb31-283" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3.5</span></span>
+<span id="cb31-284"><a href="#cb31-284" aria-hidden="true" tabindex="-1"></a>hill_clase <span class="sc">|&gt;</span></span>
+<span id="cb31-285"><a href="#cb31-285" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="fu">c</span>(D0, D1, D2), <span class="at">names_to =</span> <span class="st">"orden"</span>, <span class="at">values_to =</span> <span class="st">"D"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-286"><a href="#cb31-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> N, <span class="at">y =</span> D, <span class="at">colour =</span> bolsa)) <span class="sc">+</span></span>
+<span id="cb31-287"><a href="#cb31-287" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">height =</span> <span class="dv">0</span>, <span class="at">seed =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb31-288"><a href="#cb31-288" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> orden) <span class="sc">+</span></span>
+<span id="cb31-289"><a href="#cb31-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Esfuerzo (N individuos)"</span>, <span class="at">y =</span> <span class="st">"Número efectivo de especies"</span>,</span>
+<span id="cb31-290"><a href="#cb31-290" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Bolsa"</span>) <span class="sc">+</span></span>
+<span id="cb31-291"><a href="#cb31-291" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb31-292"><a href="#cb31-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-293"><a href="#cb31-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-294"><a href="#cb31-294" aria-hidden="true" tabindex="-1"></a>¿Cuál orden de diversidad cambia más con el esfuerzo? ¿Cuál bolsa es "más</span>
+<span id="cb31-295"><a href="#cb31-295" aria-hidden="true" tabindex="-1"></a>diversa" según cada orden? ¿Qué tan distintos son los dos grupos que</span>
+<span id="cb31-296"><a href="#cb31-296" aria-hidden="true" tabindex="-1"></a>muestrearon la misma bolsa con el mismo esfuerzo?</span>
+<span id="cb31-297"><a href="#cb31-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-298"><a href="#cb31-298" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.3 Rarefacción a m = 20: manual frente a exacta</span></span>
+<span id="cb31-299"><a href="#cb31-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-302"><a href="#cb31-302" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-303"><a href="#cb31-303" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rar20-clase</span></span>
+<span id="cb31-304"><a href="#cb31-304" aria-hidden="true" tabindex="-1"></a>rar_clase <span class="ot">&lt;-</span> abund <span class="sc">|&gt;</span></span>
+<span id="cb31-305"><a href="#cb31-305" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo, bolsa, N) <span class="sc">|&gt;</span></span>
+<span id="cb31-306"><a href="#cb31-306" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">S_obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb31-307"><a href="#cb31-307" aria-hidden="true" tabindex="-1"></a>            <span class="at">S_rar20_exacta =</span> <span class="fu">riqueza_rarefactada</span>(<span class="fu">pick</span>(n), <span class="dv">20</span>),</span>
+<span id="cb31-308"><a href="#cb31-308" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-309"><a href="#cb31-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">select</span>(clase, grupo, S_rar20_manual), <span class="at">by =</span> <span class="st">"grupo"</span>)</span>
+<span id="cb31-310"><a href="#cb31-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-311"><a href="#cb31-311" aria-hidden="true" tabindex="-1"></a>rar_clase <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">S_rar20_exacta =</span> <span class="fu">round</span>(S_rar20_exacta, <span class="dv">2</span>))</span>
+<span id="cb31-312"><a href="#cb31-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-313"><a href="#cb31-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-316"><a href="#cb31-316" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-317"><a href="#cb31-317" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: rar20-plot</span></span>
+<span id="cb31-318"><a href="#cb31-318" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 7</span></span>
+<span id="cb31-319"><a href="#cb31-319" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3.5</span></span>
+<span id="cb31-320"><a href="#cb31-320" aria-hidden="true" tabindex="-1"></a>rar_clase <span class="sc">|&gt;</span></span>
+<span id="cb31-321"><a href="#cb31-321" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="fu">c</span>(S_obs, S_rar20_exacta, S_rar20_manual),</span>
+<span id="cb31-322"><a href="#cb31-322" aria-hidden="true" tabindex="-1"></a>                      <span class="at">names_to =</span> <span class="st">"medida"</span>, <span class="at">values_to =</span> <span class="st">"S"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-323"><a href="#cb31-323" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> N, <span class="at">y =</span> S, <span class="at">colour =</span> bolsa, <span class="at">shape =</span> medida)) <span class="sc">+</span></span>
+<span id="cb31-324"><a href="#cb31-324" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb31-325"><a href="#cb31-325" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Esfuerzo (N individuos)"</span>, <span class="at">y =</span> <span class="st">"Riqueza"</span>,</span>
+<span id="cb31-326"><a href="#cb31-326" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Bolsa"</span>, <span class="at">shape =</span> <span class="st">"Medida"</span>) <span class="sc">+</span></span>
+<span id="cb31-327"><a href="#cb31-327" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb31-328"><a href="#cb31-328" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-329"><a href="#cb31-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-330"><a href="#cb31-330" aria-hidden="true" tabindex="-1"></a>¿Qué pasa con la diferencia entre bolsas al estandarizar a $m = 20$? ¿Coincide</span>
+<span id="cb31-331"><a href="#cb31-331" aria-hidden="true" tabindex="-1"></a>con lo que dice la riqueza observada a esfuerzos grandes?</span>
+<span id="cb31-332"><a href="#cb31-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-333"><a href="#cb31-333" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.4 Curvas de rarefacción y extrapolación de toda la clase</span></span>
+<span id="cb31-334"><a href="#cb31-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-335"><a href="#cb31-335" aria-hidden="true" tabindex="-1"></a><span class="in">`iNEXT`</span> acepta una lista de vectores de abundancia, uno por grupo. Extraemos la</span>
+<span id="cb31-336"><a href="#cb31-336" aria-hidden="true" tabindex="-1"></a>tabla de resultados para colorear por bolsa.</span>
+<span id="cb31-337"><a href="#cb31-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-340"><a href="#cb31-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-341"><a href="#cb31-341" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: inext-clase</span></span>
+<span id="cb31-342"><a href="#cb31-342" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb31-343"><a href="#cb31-343" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
+<span id="cb31-344"><a href="#cb31-344" aria-hidden="true" tabindex="-1"></a>abund_lista <span class="ot">&lt;-</span> <span class="fu">split</span>(abund<span class="sc">$</span>n, abund<span class="sc">$</span>grupo)      <span class="co"># lista: grupo -&gt; vector n_i</span></span>
+<span id="cb31-345"><a href="#cb31-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-346"><a href="#cb31-346" aria-hidden="true" tabindex="-1"></a>inext_clase <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(abund_lista, <span class="at">q =</span> <span class="dv">0</span>, <span class="at">datatype =</span> <span class="st">"abundance"</span>,</span>
+<span id="cb31-347"><a href="#cb31-347" aria-hidden="true" tabindex="-1"></a>                     <span class="at">endpoint =</span> <span class="dv">80</span>, <span class="at">nboot =</span> <span class="dv">50</span>)</span>
+<span id="cb31-348"><a href="#cb31-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-349"><a href="#cb31-349" aria-hidden="true" tabindex="-1"></a>curvas <span class="ot">&lt;-</span> inext_clase<span class="sc">$</span>iNextEst<span class="sc">$</span>size_based <span class="sc">|&gt;</span></span>
+<span id="cb31-350"><a href="#cb31-350" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">grupo =</span> Assemblage) <span class="sc">|&gt;</span></span>
+<span id="cb31-351"><a href="#cb31-351" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grupo =</span> <span class="fu">factor</span>(grupo, <span class="at">levels =</span> <span class="fu">levels</span>(clase<span class="sc">$</span>grupo))) <span class="sc">|&gt;</span></span>
+<span id="cb31-352"><a href="#cb31-352" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">distinct</span>(clase, grupo, bolsa), <span class="at">by =</span> <span class="st">"grupo"</span>)</span>
+<span id="cb31-353"><a href="#cb31-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-354"><a href="#cb31-354" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(curvas, <span class="fu">aes</span>(<span class="at">x =</span> m, <span class="at">y =</span> qD, <span class="at">group =</span> grupo, <span class="at">colour =</span> bolsa)) <span class="sc">+</span></span>
+<span id="cb31-355"><a href="#cb31-355" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">20</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb31-356"><a href="#cb31-356" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(d) <span class="fu">filter</span>(d, Method <span class="sc">!=</span> <span class="st">"Extrapolation"</span>), <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb31-357"><a href="#cb31-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> \(d) <span class="fu">filter</span>(d, Method <span class="sc">!=</span> <span class="st">"Rarefaction"</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb31-358"><a href="#cb31-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> \(d) <span class="fu">filter</span>(d, Method <span class="sc">==</span> <span class="st">"Observed"</span>), <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb31-359"><a href="#cb31-359" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Individuos (m)"</span>, <span class="at">y =</span> <span class="st">"Riqueza esperada"</span>,</span>
+<span id="cb31-360"><a href="#cb31-360" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="st">"Bolsa"</span>,</span>
+<span id="cb31-361"><a href="#cb31-361" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Línea continua: rarefacción. Punteada: extrapolación. Punto: muestra observada. Vertical: m = 20."</span>) <span class="sc">+</span></span>
+<span id="cb31-362"><a href="#cb31-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb31-363"><a href="#cb31-363" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-364"><a href="#cb31-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-365"><a href="#cb31-365" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2.5 Composición real de las bolsas</span></span>
+<span id="cb31-366"><a href="#cb31-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-367"><a href="#cb31-367" aria-hidden="true" tabindex="-1"></a>Para cerrar, los números de Hill de las comunidades completas (80 fichas).</span>
+<span id="cb31-368"><a href="#cb31-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-371"><a href="#cb31-371" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-372"><a href="#cb31-372" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: verdad</span></span>
+<span id="cb31-373"><a href="#cb31-373" aria-hidden="true" tabindex="-1"></a>bolsa_A <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">especie =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>],  <span class="at">n =</span> <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb31-374"><a href="#cb31-374" aria-hidden="true" tabindex="-1"></a>bolsa_B <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">especie =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>], <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">44</span>, <span class="dv">14</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb31-375"><a href="#cb31-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-376"><a href="#cb31-376" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(<span class="at">A =</span> <span class="fu">numeros_hill</span>(<span class="fu">mutate</span>(bolsa_A, <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))),</span>
+<span id="cb31-377"><a href="#cb31-377" aria-hidden="true" tabindex="-1"></a>          <span class="at">B =</span> <span class="fu">numeros_hill</span>(<span class="fu">mutate</span>(bolsa_B, <span class="at">p =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))),</span>
+<span id="cb31-378"><a href="#cb31-378" aria-hidden="true" tabindex="-1"></a>          <span class="at">.id =</span> <span class="st">"bolsa"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-379"><a href="#cb31-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(H, lambda, D1, D2), \(x) <span class="fu">round</span>(x, <span class="dv">2</span>)))</span>
+<span id="cb31-380"><a href="#cb31-380" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
