@@ -1,0 +1,250 @@
+---
+title: "Lab 09: ¿Cuál comunidad es más diversa? - Guía para la persona instructora"
+format:
+  html:
+    toc: true
+    number-sections: false
+  pdf:
+    documentclass: scrartcl
+    classoption: [DIV=12]
+    geometry: margin=1in
+    fontfamily: libertinus
+    colorlinks: true
+    toc: false
+lang: es
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Resumen del diseño
+
+- 12 grupos de 3 (alguno de 4). Cada grupo recibe **una** bolsa opaca con 80
+  fichas de cartulina rotuladas con letras. Grupos 1–6 → bolsa A; grupos 7–12 →
+  bolsa B.
+- Dentro de cada bolsa, esfuerzos **30, 45, 60**, **dos grupos por esfuerzo**.
+  Los pares de grupos con la misma bolsa y el mismo esfuerzo son las réplicas
+  que permiten mostrar la variación de muestreo. Una bolsa física por grupo:
+  todos muestrean en paralelo, no hay que reponer fichas.
+- Cada grupo: curva de acumulación (fichas extraídas en puñados de 5), tabla de
+  abundancias y ${}^0D$, ${}^1D$, ${}^2D$ a mano, rarefacción manual a $m = 20$
+  (5 repeticiones). Digitan **una fila** en la hoja compartida.
+- **No hay código durante la sesión.** La síntesis la ejecuta la persona
+  instructora desde la hoja compartida (Parte 2 de `labs/L09-analisis.qmd`); el
+  qmd queda como referencia para los estudiantes.
+- La entrada de bitácora individual es un **caso autocontenido** (dos
+  fragmentos, dos equipos) impreso con sus datos y figura: no depende de la
+  síntesis y puede resolverse aunque el cierre se acorte.
+- Calificación: hoja grupal (tablas + P1, P2); bitácora individual (3 × 1 %).
+
+Archivos: `labs/L09-diversidad.qmd` (instrucciones),
+`labs/L09-hoja-registro.qmd` (hoja grupal, imprimir 12),
+`labs/L09-bitacora.qmd` (caso individual, imprimir 40),
+`labs/L09-analisis.qmd` (código de referencia y síntesis),
+`labs/L09-clase-ejemplo.csv` (clase simulada para ensayar la síntesis).
+
+## Composición de las bolsas (no revelar)
+
+| Especie | Bolsa A (uniforme) | Bolsa B (dominancia + rareza) |
+|:---:|---:|---:|
+| A | 10 | 44 |
+| B | 10 | 14 |
+| C | 10 | 8 |
+| D | 10 | 4 |
+| E | 10 | 3 |
+| F | 10 | 2 |
+| G | 10 | 1 |
+| H | 10 | 1 |
+| I | — | 1 |
+| J | — | 1 |
+| K | — | 1 |
+| **Total** | **80 (8 spp)** | **80 (11 spp)** |
+
+Para 12 bolsas: 6 × A = 480 fichas (60 de cada letra A–H) y 6 × B = 480 fichas
+(264 A, 84 B, 48 C, 24 D, 18 E, 12 F, y 6 de cada una de G, H, I, J, K). El 
+análisis es por grupo y nunca mezcla bolsas.
+
+## Valores esperados
+
+```{r}
+#| label: esperados
+A <- rep(10, 8)
+B <- c(44, 14, 8, 4, 3, 2, 1, 1, 1, 1, 1)
+
+hill <- function(n) {
+  p <- n / sum(n)
+  c(D0 = length(n), D1 = exp(-sum(p * log(p))), D2 = 1 / sum(p^2))
+}
+ES <- function(n, m) sum(1 - choose(sum(n) - n, m) / choose(sum(n), m))
+
+knitr::kable(round(rbind(A = hill(A), B = hill(B)), 2),
+             caption = "Números de Hill verdaderos (80 fichas)")
+```
+
+```{r}
+#| label: esperados-S
+ms <- c(10, 20, 30, 40, 45, 60)
+tab <- data.frame(m = ms, A = sapply(ms, ES, n = A), B = sapply(ms, ES, n = B))
+knitr::kable(tab, digits = 2,
+  caption = "Riqueza esperada E[S(m)] al extraer m fichas de cada bolsa")
+```
+
+Puntos clave:
+
+- **Las curvas se cruzan en $n \approx 40$**, entre los esfuerzos de la clase.
+  Los grupos de 30 típicamente ven A ≥ B en riqueza observada (8 vs 6–8); los
+  de 45 ven algo parecido o B ligeramente arriba (8 vs 8–9); los de 60 ven
+  B > A (8 vs 9–11). El ranking de riqueza observada **cambia con el
+  esfuerzo**.
+- **Rarefacción a $m = 20$:** esperado ≈ 7.6 (A) frente a ≈ 5.9 (B). La
+  rarefacción "elige" la bolsa con **menos** especies. No es un error: a
+  $m = 20$ A realmente tiene más especies esperadas. Es la limitación de
+  estandarizar por tamaño cuando las curvas se cruzan (Gotelli & Colwell 2001;
+  Chao & Jost 2012 motivan estandarizar por cobertura).
+- La media de 5 repeticiones manuales es ruidosa (DE ≈ 0.3 en A, ≈ 0.9 en B
+  entre grupos, que incluye la variación de la muestra original). Aun así la
+  diferencia A − B (≈ 1.7) debería verse en la mayoría de los pares.
+- **Números de Hill:** A verdadero 8 / 8 / 8; B verdadero 11 / 4.5 / 2.9. En las
+  muestras, ${}^1D$ y ${}^2D$ de A rondan 7–8; en B, ${}^2D$ ronda 2–3.5 casi
+  sin importar el esfuerzo, porque lo domina la especie con 55 % de los
+  individuos. El ranking **${}^0D$: B > A; ${}^1D$ y ${}^2D$: A > B** es el
+  mensaje central.
+- **Réplicas:** dos grupos con la misma bolsa y el mismo esfuerzo pueden
+  diferir en 1–2 especies observadas (sobre todo en B). Úselo explícitamente
+  en la discusión: si eso pasa con la *misma* comunidad, ¿qué significa una
+  diferencia de 2 especies entre dos sitios reales con una muestra cada uno?
+
+## Hoja compartida
+
+Una hoja de Google con **una pestaña, una fila por grupo**, columnas:
+
+`grupo, bolsa, N, A, B, C, D, E, F, G, H, I, J, K, L, S_obs, Shannon, lambda, D1, D2, S_rar20_manual`
+
+Prellenar `grupo`, `bolsa` y `N` para los 12 grupos; cada grupo completa sus
+conteos al terminar la Fase I y el resto al terminar las Fases II y III.
+Dejar `L` aunque ninguna bolsa la tenga (el código la espera; un cero basta).
+
+Antes de la síntesis: `Archivo → Descargar → CSV` al directorio `labs/` y
+cambiar `L09-clase-ejemplo.csv` por el nombre real en la Parte 2 de
+`L09-analisis.qmd`. Revisar que las celdas vacías sean 0 y que la suma de
+conteos por fila sea `N`.
+
+## Cronograma (≈ 90 min + margen)
+
+| Fase | Tiempo | Notas |
+|---|---:|---|
+| Planteamiento | 10 min | Presentar los dos "informes" (8 spp / 2 días vs. 11 spp / 1 semana). Pedir conclusión preliminar escrita. Repartir bolsas y asignar esfuerzos. |
+| I. Muestreo + curva + conteos | 20 min | Puñados de 5, en fila, registrar en orden. El grupo de 60 es el cuello de botella (12 puñados ≈ 10–12 min). Fichas extraídas aparte. Digitar los conteos. |
+| II. Hill a mano | 15 min | Repartir columnas entre integrantes. Revisar $\sum n_i = N$. |
+| III. Rarefacción manual | 10 min | Solo con las fichas extraídas. 20 = cuatro puñados. 5 repeticiones. |
+| IV. Síntesis + revelación | 20 min | Parte 2 en pantalla. Vaciar bolsas al final, no antes. |
+| Bitácora individual | 15 min | Caso impreso, autocontenido. Si falta tiempo, se lleva a casa. |
+
+Si la sesión se acorta: la síntesis puede reducirse a dos figuras (Hill vs.
+esfuerzo y curvas iNEXT) y la revelación; la bitácora no depende de ella.
+
+## Guion para la síntesis (Parte 2)
+
+1. **Hill frente a esfuerzo (2.2).** Empezar por ${}^0D$: ¿cambia con el
+   esfuerzo? ¿Igual en las dos bolsas? Señalar que B sube y A no. Luego ${}^1D$
+   y ${}^2D$: separan las bolsas desde $N = 30$ y casi no cambian con el
+   esfuerzo. Preguntar por qué ${}^2D$ apenas cambia en B. Señalar los pares
+   de réplicas.
+2. **Rarefacción a $m = 20$ (2.3).** A > B en todos los pares. Preguntar:
+   ¿entonces A tiene más especies? Dejar la tensión abierta.
+3. **Curvas iNEXT (2.4).** Las curvas de B cruzan a las de A alrededor de 40 y
+   siguen subiendo; las de A se aplanan en 8. Volver a los dos "informes"
+   iniciales: con 30 de A y 60 de B la conclusión "B es más rica" sale
+   correcta **por casualidad**; con 60 de A y 30 de B saldría al revés con el
+   mismo razonamiento.
+4. **Revelación (2.5).** Vaciar una bolsa de cada tipo y contar en la pizarra.
+   Cerrar con: riqueza observada depende del esfuerzo; rarefactar a tamaño
+   común es necesario pero no suficiente cuando las curvas se cruzan; "más
+   diversa" depende de $q$.
+
+## Respuestas esperadas
+
+### Hoja grupal
+
+**P1 (estabilización y singletons).** Grupos de A: curva plana en 8 desde
+$n \approx 25$–30, cero o un singleton → probablemente no faltan especies.
+Grupos de B: curva aún en ascenso con 1–4 singletons → faltan especies por
+detectar; el número de singletons es un indicador de incompletitud (base del
+estimador Chao1, que no es necesario nombrar). Respuesta completa: conecta
+pendiente final de la curva y singletons con especies no detectadas, sin
+afirmar un número exacto.
+
+**P2 (brecha ${}^0D$–${}^2D$ y sensibilidad al esfuerzo).** En A la brecha es
+pequeña (abundancias parecidas); en B es grande (una dominante). Con el
+esfuerzo cambia más $S_{\mathrm{obs}}$ (siempre crece), algo ${}^1D$, y poco
+${}^2D$; $\bar{S}(20)$ no debería cambiar sistemáticamente con el esfuerzo (ese
+es su propósito), solo por azar. Respuesta completa: menciona que ${}^2D$ pesa
+las abundantes y por eso es insensible a las raras que se van agregando.
+
+### Bitácora individual: caso Ceiba / Guarumo (10 puntos cada una)
+
+Datos del caso: Ceiba $N = 30$, 8 spp (6, 5, 5, 4, 4, 3, 2, 1), 1 singleton,
+$\bar{S}(20) = 7.5$, ${}^1D = 7.3$, ${}^2D = 6.8$. Guarumo $N = 60$, 10 spp
+(30, 10, 7, 4, 3, 2, 1, 1, 1, 1), 4 singletons, $\bar{S}(20) = 6.4$,
+$\bar{S}(30) = 7.6$, ${}^1D = 5.0$, ${}^2D = 3.3$. La figura muestra que a
+$m = 30$ (el máximo esfuerzo común) Ceiba (8) sigue por encima de Guarumo
+(7.6), y que la curva de Guarumo cruza la de Ceiba más allá de 30 y sigue
+subiendo.
+
+**Q1.** No es válida con los datos disponibles: a esfuerzo común ($m = 20$ y
+$m = 30$) Ceiba tiene **más** especies esperadas. La curva de Ceiba está casi
+plana en 30 (poco por descubrir); la de Guarumo sigue subiendo y tiene 4
+singletons (muchas especies raras sin detectar). Guarumo *puede* ser más rico,
+pero la afirmación se apoya en un esfuerzo doble, no en los datos comparables.
+Puntos: identifica la dependencia del esfuerzo y compara a esfuerzo común (4),
+lee correctamente pendiente y singletons (4), matiza la validez (2).
+
+**Q2.** No. $\bar{S}(20)$ es la riqueza esperada en 20 individuos **de la
+muestra**, no la riqueza total del fragmento. La figura muestra que la curva de
+Guarumo sigue subiendo y cruza la de Ceiba más allá de $m = 30$; Ceiba ya está
+plana. La pregunta ya no pide el mecanismo explícitamente, pero una buena
+respuesta lo menciona: con una especie que es la mitad de la muestra, 20
+individuos de Guarumo contienen ~10 de la dominante y casi nunca las especies
+con 1–2 individuos; igual tamaño de muestra no es igual cobertura, y cuando las
+curvas se cruzan el orden a $m$ pequeño puede invertirse a $m$ grande. Qué
+pedir: más muestreo en Ceiba (≥ 60, o hasta cobertura comparable) para comparar
+al mismo esfuerzo grande; en su defecto, comparar al máximo esfuerzo común
+(30) reconociendo que Guarumo no está saturado. Puntos: responde "no" y
+distingue riqueza esperada a $m$ de riqueza total (4), justifica con la figura
+(curva de Guarumo en ascenso / cruce / especies raras o dominante) (3), propone
+qué pedir y es concreto (3). Aceptar como respuesta parcial "pedir más
+muestreo" sin especificar dónde ni cuánto (1–2 de los 3).
+
+**Q3.** Depende del orden: ${}^0D$ Guarumo (10 vs 8); ${}^1D$ Ceiba (7.3 vs
+5.0); ${}^2D$ Ceiba (6.8 vs 3.3). $q$ controla cuánto pesan las especies raras:
+$q = 0$ cuenta todas igual (riqueza); $q = 1$ pesa cada especie por su
+abundancia; $q = 2$ está dominado por las abundantes. En Guarumo 30 de 60
+individuos son de la especie 1: ${}^0D$ no lo nota (una especie es una
+especie), ${}^1D$ baja a 5 y ${}^2D$ se colapsa a 3.3, equivalente a ~3
+especies igual de abundantes. Guarumo es más rico; Ceiba es más equitativa.
+Para conservación: ninguna medida sola basta; reportar el perfil (los tres
+órdenes) e igualar esfuerzo o cobertura. La información adicional debe ir más
+allá de los números: identidad de las especies y su estado de amenaza,
+endemismo, papel funcional (por ejemplo, si la dominante de Guarumo es una
+especie generalista o exótica, o si las raras son endémicas), y si los
+fragmentos difieren en tamaño o conectividad. Puntos: identifica correctamente
+que el fragmento "más diverso" cambia con $q$ y da los valores (3), explica qué
+captura cada orden y el efecto de la dominante sobre cada uno (4),
+recomendación justificada con al menos dos tipos de información adicional
+pertinente (3). Una respuesta que elige un fragmento sin reconocer que depende
+de $q$ no supera 5.
+
+## Lista de preparación
+
+- [ ] 12 bolsas opacas rotuladas 1–12 (no "A"/"B" visible; la hoja indica la
+      bolsa). Verificar 80 fichas y la composición de cada una.
+- [ ] 12 recipientes para las fichas extraídas.
+- [ ] Imprimir 12 hojas de registro y 40 hojas de bitácora.
+- [ ] Calculadoras con `ln` y `e^x` (o el celular).
+- [ ] Hoja de Google con la fila de cada grupo prellenada (`grupo`, `bolsa`,
+      `N`); enlace en pantalla.
+- [ ] R con `dplyr`, `ggplot2`, `tidyr`, `iNEXT` en la computadora del aula;
+      ensayar la Parte 2 con `L09-clase-ejemplo.csv`.
+- [ ] Tabla de asignación: grupos 1–6 → A con 30, 30, 45, 45, 60, 60; grupos
+      7–12 → B con 30, 30, 45, 45, 60, 60.

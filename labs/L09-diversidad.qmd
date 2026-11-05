@@ -1,0 +1,257 @@
+---
+title: "Lab 09: ¿Cuál comunidad es más diversa?"
+subtitle: "Muestreo, curvas de acumulación, rarefacción y números de Hill"
+format:
+  html:
+    toc: true
+    number-sections: false
+  pdf:
+    documentclass: scrartcl
+    classoption: [DIV=12]
+    geometry: margin=1in
+    fontfamily: libertinus
+    colorlinks: true
+    toc: false
+lang: es
+---
+
+```{=latex}
+\vspace{-6em}
+```
+
+## Pregunta guía
+
+Dos equipos de consultoría evalúan la fauna de dos fragmentos de bosque. El
+primer equipo trabajó dos días en el fragmento A y reporta **8 especies**. El
+segundo trabajó una semana en el fragmento B y reporta **11 especies**. Un
+informe concluye que "el fragmento B es más diverso y debe priorizarse para
+conservación".
+
+> ¿Es válida esa conclusión? ¿Qué información haría falta para sostenerla o
+> rechazarla?
+
+En este laboratorio van a simular exactamente ese problema. Cada grupo muestrea
+**una** comunidad con un **esfuerzo distinto** al de los demás grupos, y al
+final la clase combina todos los resultados para decidir qué puede inferirse de
+muestras incompletas y desiguales.
+
+## Objetivos
+
+Al finalizar, podrán:
+
+1. Distinguir la **riqueza observada** de la riqueza real y explicar por qué
+   depende del esfuerzo de muestreo y del azar.
+2. Construir e interpretar una **curva de acumulación** de especies.
+3. Aplicar **rarefacción** (submuestreo aleatorio sin reemplazo) para comparar
+   riqueza a un esfuerzo común.
+4. Calcular riqueza, entropía de Shannon y concentración de Simpson, y
+   convertirlas en **números efectivos de especies** (números de Hill de
+   órdenes 0, 1 y 2).
+5. Explicar cómo la dominancia y las especies raras modifican cada medida de
+   diversidad.
+
+```{=latex}
+\footnotesize
+```
+
+::: {.callout-note title="Organización de la actividad"}
+
+- **Grupos de 3 personas**, 12 grupos. Cada grupo recibe **una bolsa opaca**
+  con 80 fichas. Cada ficha es **un individuo**; la letra escrita en la ficha es
+  su **especie**.
+- Hay dos comunidades simuladas: **bolsa A** (grupos 1–6) y **bolsa B** (grupos
+  7–12). Dentro de cada bolsa, los grupos muestrean con **esfuerzos distintos**:
+  30, 45 o 60 individuos, dos grupos por esfuerzo. La persona instructora
+  asigna el esfuerzo de cada grupo.
+- **No miren dentro de la bolsa** ni cuenten las fichas que quedan. La
+  composición real se revela al final.
+- **Roles sugeridos:** una persona extrae las fichas, una registra en la hoja y
+  una grafica la curva de acumulación y calcula. Roten si lo desean.
+- **Materiales por grupo:** bolsa, un recipiente para las fichas extraídas,
+  hoja de registro grupal ([L09-hoja-registro](L09-hoja-registro.qmd)) y
+  calculadora con `ln` y `e^x` (o el celular).
+- **Productos calificados:** la hoja de registro grupal (tablas y dos
+  preguntas) y una **entrada de bitácora individual**
+  ([L09-bitacora](L09-bitacora.qmd)) que se responde al final.
+- **Código en R (opcional):** [L09-analisis.qmd](L09-analisis.qmd) contiene el
+  código para reproducir todos los cálculos y las figuras de la síntesis. No se
+  usa durante la sesión; queda como referencia y para quien quiera verificar
+  sus cálculos.
+
+:::
+
+::: {.callout-tip title="Tiempos sugeridos (≈ 90 minutos)"}
+
+| Fase | Tiempo | Producto |
+|---|---:|---|
+| Planteamiento y predicción inicial | 10 min | Hipótesis del grupo |
+| I. Muestreo y curva de acumulación | 20 min | Tabla 1 y gráfico; conteos en la hoja compartida |
+| II. Índices y números de Hill a mano | 15 min | Tabla 2 |
+| III. Rarefacción manual (m = 20) | 10 min | Tabla 3 |
+| IV. Síntesis de la clase y revelación de las bolsas | 20 min | Discusión |
+| Entrada de bitácora individual | 15 min | Hoja individual |
+
+:::
+
+```{=latex}
+\normalsize
+```
+
+## Conceptos clave
+
+**Curva de acumulación.** Riqueza acumulada $S(n)$ a medida que se incorporan
+individuos **en el orden en que fueron extraídos**. Una curva corresponde a un
+orden concreto; dos grupos que muestrean la misma bolsa obtienen curvas
+distintas.
+
+**Rarefacción.** Riqueza **esperada** en submuestras aleatorias de tamaño $m$
+tomadas de una **muestra ya observada**. Promedia muchos órdenes posibles, no
+uno solo. Permite comparar muestras de distinto tamaño a un esfuerzo común,
+pero **solo hacia abajo**: una muestra de 30 individuos no se puede rarefactar
+a 45. Recortar los primeros $m$ puntos de la curva de acumulación **no** es
+rarefacción.
+
+**Esfuerzo igual no es cobertura igual.** Dos muestras de 20 individuos pueden
+representar fracciones muy distintas de sus comunidades si una comunidad tiene
+muchas especies raras y la otra no.
+
+**Número efectivo de especies.** Número de especies **igualmente abundantes**
+que produciría el mismo valor del índice. Convierte Shannon y Simpson a una
+misma escala (especies), lo que permite compararlos entre sí y con la riqueza.
+
+$S$ = especies observadas; $n_i$ = abundancia de la especie $i$, $N$ = individios total; y $p_i$ = abundancia relativa ($n_i / N$):
+
+| Medida | Cálculo | Qué captura |
+|---|---|---|
+| Riqueza, ${}^0D$ | $S_{\mathrm{obs}}$ | Número de especies; todas pesan igual |
+| Entropía de Shannon, $H'$ | $-\sum_i p_i \ln p_i$ | Incertidumbre sobre la especie del próximo individuo |
+| Hill $q = 1$, ${}^1D$ | $\exp(H')$ | Especies efectivas; peso proporcional a abundancia |
+| Concentración de Simpson, $\lambda$ | $\sum_i p_i^2$ | Probabilidad de que dos individuos al azar sean de la misma especie |
+| Hill $q = 2$, ${}^2D$ | $1 / \lambda$ | Especies efectivas; especies abundantes pesan mas |
+
+Para una misma muestra, siempre ${}^0D \geq {}^1D \geq {}^2D$. Cuanto mayor la
+brecha entre ${}^0D$ y ${}^2D$, más desigual es la distribución de abundancias.
+Si todas las especies son igual de abundantes, las tres coinciden.
+
+## Protocolo
+
+### Planteamiento
+
+Antes de abrir la bolsa, discutan en grupo la pregunta guía y escriban en la
+hoja de registro una conclusión preliminar sobre el informe de los fragmentos A
+y B: ¿aceptarían la conclusión, si o no? ¿Por que?
+
+### Fase I. Muestreo y curva de acumulación (20 min)
+
+1. Anoten en la hoja el número de grupo, la bolsa (A o B) y el esfuerzo
+   asignado ($N$ = 30, 45 o 60).
+2. Mezclen la bolsa sin mirar dentro.
+3. Extraigan **un puñado de 5 fichas**, sin devolverlas, y colóquenlas en fila
+   sobre la mesa. Regístrenlas **una por una, en ese orden**, en la Tabla 1:
+   número de individuo $n$, letra (especie) y riqueza acumulada $S(n)$: cuántas
+   letras **distintas** han salido hasta esa fila. La lista de "especies
+   vistas" de la hoja sirve para ver de un vistazo si una letra ya salió. Como
+   las fichas salen al azar, el orden del puñado es tan aleatorio como extraer
+   de una en una.
+4. Pasen las 5 fichas a un recipiente aparte, **sin mezclarlas con las que
+   quedan en la bolsa**. Las van a necesitar en la Fase III.
+5. Repitan con el siguiente puñado hasta completar el esfuerzo asignado. **No
+   extraigan más fichas de las asignadas**, aunque la curva no se haya
+   estabilizado.
+6. Grafiquen $S(n)$ (eje Y) y $n$ (eje X) en la cuadrícula de la hoja.
+   Empiecen en (0, 0).
+7. Cuenten los individuos de cada especie y **digiten una fila** en la hoja
+   compartida de la clase: `grupo`, `bolsa`, `N` y el conteo de cada letra.
+   Completen el resto de la fila ($H'$, $\lambda$, ${}^1D$, ${}^2D$,
+   $\bar{S}(20)$) al terminar las Fases II y III.
+
+**Antes de seguir:** ¿se estabilizó la curva? ¿Pueden saber cuántas especies
+faltan por detectar? ¿Cuántas especies de su muestra aparecen una sola vez?
+
+### Fase II. Índices y números de Hill (15 min)
+
+Con la muestra completa:
+
+1. Anoten los conteos por especie ($n_i$) en la Tabla 2. Verifiquen que la suma
+   sea $N$.
+2. Calculen $p_i = n_i / N$, $p_i \ln p_i$ y $p_i^2$ para cada especie.
+   Repartan el trabajo: una persona la columna de $p_i \ln p_i$, otra la de
+   $p_i^2$, otra verifica.
+3. Sumen las columnas para obtener $H' = -\sum p_i \ln p_i$ y
+   $\lambda = \sum p_i^2$.
+4. Calculen ${}^1D = e^{H'}$ y ${}^2D = 1/\lambda$. Anoten ${}^0D$, ${}^1D$ y
+   ${}^2D$ en el resumen de la hoja y en la hoja compartida.
+
+Si una especie no apareció en su muestra, simplemente no está en la tabla: su
+contribución a las sumas es cero.
+
+### Fase III. Rarefacción manual a m = 20 (10 min)
+
+El problema: un grupo tiene 30 individuos y otro 60. Comparar directamente sus
+riquezas observadas confunde diferencia ecológica con esfuerzo. Vamos a
+estandarizar a un esfuerzo común de **$m = 20$ individuos**, que toda muestra de
+la clase puede alcanzar.
+
+1. Tomen **únicamente las fichas que ya extrajeron** (su muestra observada).
+   **No usen la bolsa original.**
+2. Mezclen esas fichas en el recipiente y extraigan **20 sin reemplazo** (cuatro
+   puñados de 5).
+3. Cuenten cuántas especies distintas hay entre las 20. Anótenlo en la Tabla 3.
+4. Devuelvan las 20 fichas al recipiente de la muestra, mezclen y repitan hasta
+   completar **5 repeticiones**.
+5. Calculen la **media** de las 5 repeticiones: es su estimación de la riqueza
+   esperada a $m = 20$, $\bar{S}(20)$. Anótenla también en la hoja compartida.
+
+Cinco repeticiones son pocas y la media será ruidosa; en la síntesis la van a
+comparar con el valor exacto, que se puede calcular a partir de los conteos.
+Noten también que las repeticiones **no son réplicas independientes** de la
+comunidad: todas provienen de la misma muestra.
+
+### Fase IV. Síntesis de la clase y revelación (20 min)
+
+Cuando todos los grupos hayan completado su fila, la persona instructora
+muestra, a partir de la hoja compartida:
+
+- ${}^0D$, ${}^1D$ y ${}^2D$ de cada grupo frente a su esfuerzo, por bolsa.
+- Riqueza rarefactada a $m = 20$: la estimación manual de cada grupo frente al
+  valor exacto.
+- Curvas de rarefacción (y extrapolación) de cada muestra, por bolsa.
+
+Luego se vacían las bolsas y se compara la composición real con lo que cada
+grupo infirió. Discutan:
+
+1. ¿Qué cambia al comparar riqueza observada frente a riqueza rarefactada?
+2. Dos grupos muestrearon la **misma** bolsa con el **mismo** esfuerzo.
+   ¿Obtuvieron lo mismo? ¿Qué implica para comparar dos sitios reales con una
+   muestra cada uno?
+3. ¿Cómo afecta la dominancia a ${}^1D$ y ${}^2D$? ¿Por qué ${}^0D$ responde de
+   otra manera?
+4. ¿Igual número de individuos implica igual probabilidad de detectar especies
+   raras?
+5. ¿Qué información se pierde al resumir una comunidad con un solo número?
+
+### Entrada de bitácora individual (15 min)
+
+Cada persona resuelve de forma **individual** el caso de
+[L09-bitacora](L09-bitacora.qmd): un problema distinto pero del mismo tipo, con
+sus propios datos y figura, que se responde sin depender de los resultados de
+la clase. Tres preguntas, 1 % de la nota final cada una.
+
+## Entregables
+
+- **Por grupo:** la hoja de registro completa (Tablas 1–3, gráfico de
+  acumulación, resumen de índices y las dos preguntas al final).
+- **Por persona:** la entrada de bitácora con las tres preguntas del caso.
+
+## Lecturas
+
+- Morris, E. K. et al. (2014). Choosing and using diversity indices: insights
+  for ecological applications from the German Biodiversity Exploratories.
+  *Ecology and Evolution*, 4, 3514–3524.
+  [PDF](../refs/Morris-etal-2014.pdf)
+- Gotelli, N. J. & Colwell, R. K. (2001). Quantifying biodiversity: procedures
+  and pitfalls in the measurement and comparison of species richness. *Ecology
+  Letters*, 4, 379–391. [PDF](../refs/Gotelli-Colwell-2001.pdf)
+- Para profundizar: Jost, L. (2006). Entropy and diversity. *Oikos*, 113,
+  363–375. Chao, A. & Jost, L. (2012). Coverage-based rarefaction and
+  extrapolation. *Ecology*, 93, 2533–2547.

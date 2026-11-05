@@ -61,3 +61,8 @@ Web app:
 
   - [Bolker et al. 2008](Bolker-etal-2008.pdf)
   - [Harrison et al. 2018](Harrison-etal-2018.pdf)
+
+## Muestreo, Indices de diversidad, Acummulacion, Rarefaccion
+
+  - [Gotelli & Colwell, 2001](Gotelli-Colwell-2001.pdf)
+  - [Moddis et al. 2014](Morris-etal-2014.pdf)

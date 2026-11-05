@@ -1,0 +1,148 @@
+---
+title: "Lab 09: Entrada de bitácora individual"
+subtitle: "Caso: dos fragmentos, dos equipos"
+format:
+  pdf:
+    documentclass: scrartcl
+    classoption: [DIV=12]
+    geometry: margin=0.9in
+    fontfamily: libertinus
+    colorlinks: true
+    toc: false
+  html:
+    toc: false
+    number-sections: false
+lang: es
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{=latex}
+\vspace{-6em}
+```
+
+**Nombre:** \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+**Grupo:** \_\_\_\_\_
+
+Responda de forma **individual**. Este caso es independiente de los resultados
+de la clase: toda la información necesaria está en esta hoja. Cada pregunta
+vale 10 puntos (1 % de la nota final); total 3 %.
+
+## El caso
+
+Dos equipos muestrearon escarabajos en dos fragmentos de bosque con trampas de
+caída. El **Equipo 1** trabajó dos noches en el fragmento **Ceiba** y capturó
+30 individuos. El **Equipo 2** trabajó cuatro noches en el fragmento
+**Guarumo** y capturó 60 individuos. El Equipo 2 concluye en su informe:
+*"Guarumo tiene más especies (10 contra 8) y, por tanto, es el fragmento más
+diverso y debe priorizarse para conservación."*
+
+```{r}
+#| label: datos
+ceiba   <- c(6, 5, 5, 4, 4, 3, 2, 1)
+guarumo <- c(30, 10, 7, 4, 3, 2, 1, 1, 1, 1)
+
+ES <- function(n, m) sum(1 - choose(sum(n) - n, m) / choose(sum(n), m))
+hill <- function(n) {
+  p <- n / sum(n)
+  c(D0 = length(n), D1 = exp(-sum(p * log(p))), D2 = 1 / sum(p^2))
+}
+```
+
+**Tabla 1. Individuos por especie en cada muestra.**
+
+```{r}
+#| label: tabla-abund
+sp <- paste0("sp", 1:10)
+ab <- data.frame(
+  Especie = sp,
+  Ceiba   = c(ceiba, rep("—", 2)),
+  Guarumo = guarumo
+)
+ab_t <- as.data.frame(t(ab[, -1]))
+names(ab_t) <- sp
+ab_t$Total <- c(sum(ceiba), sum(guarumo))
+knitr::kable(ab_t, align = "r")
+```
+
+**Tabla 2. Resumen de cada muestra.** $\bar{S}(20)$ es la riqueza esperada en
+una submuestra de 20 individuos (rarefacción).
+
+```{r}
+#| label: tabla-resumen
+res <- rbind(
+  Ceiba   = c(N = sum(ceiba),   hill(ceiba),   S20 = ES(ceiba, 20),   Singletons = sum(ceiba == 1)),
+  Guarumo = c(N = sum(guarumo), hill(guarumo), S20 = ES(guarumo, 20), Singletons = sum(guarumo == 1))
+)
+res <- as.data.frame(res)
+res <- res[, c("N", "D0", "Singletons", "S20", "D1", "D2")]
+names(res) <- c("$N$", "$S_{\\mathrm{obs}}$ (${}^0D$)", "Singletons",
+                "$\\bar{S}(20)$", "${}^1D$", "${}^2D$")
+knitr::kable(res, digits = 2, align = "r")
+```
+
+```{r}
+#| label: figura
+#| fig-width: 6.5
+#| fig-height: 2.6
+#| fig-pos: "H"
+#| fig-cap: "Curvas de rarefacción de cada muestra (riqueza esperada en m individuos tomados de la muestra observada). Línea continua: rarefacción hasta el tamaño observado (punto). Línea punteada: extrapolación (iNEXT). Línea vertical gris: esfuerzo común m = 20."
+library(ggplot2)
+library(dplyr)
+library(iNEXT)
+
+out <- iNEXT(list(Ceiba = ceiba, Guarumo = guarumo), q = 0,
+             datatype = "abundance", endpoint = 90, nboot = 0)
+cur <- out$iNextEst$size_based |> rename(Fragmento = Assemblage)
+
+ggplot(cur, aes(x = m, y = qD, colour = Fragmento)) +
+  geom_vline(xintercept = 20, colour = "grey60", linetype = "dotted") +
+  geom_line(data = \(d) filter(d, Method != "Extrapolation"), linewidth = 0.9) +
+  geom_line(data = \(d) filter(d, Method != "Rarefaction"), linetype = "dashed") +
+  geom_point(data = \(d) filter(d, Method == "Observed"), size = 3) +
+  scale_x_continuous(breaks = seq(0, 90, 10)) +
+  scale_y_continuous(breaks = 0:12) +
+  labs(x = "Individuos (m)", y = "Riqueza esperada") +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "top")
+```
+
+```{=latex}
+\clearpage
+```
+
+```{=html}
+<div style="break-before: page; page-break-before: always;"></div>
+```
+
+## Preguntas
+
+**1. Esfuerzo y riqueza observada.** (10 puntos)
+
+¿Es válida la afirmación del Equipo 2 de que Guarumo tiene más especies, con
+los datos disponibles? Use la figura: compare las dos muestras a un esfuerzo
+**común** ($m = 20$ y $m = 30$) y describa qué hace cada curva al llegar a su
+tamaño observado. ¿Qué sugieren el número de singletons y la pendiente de cada
+curva sobre cuántas especies quedaron sin detectar en cada fragmento?
+
+::: {.answer-space lines=6}
+:::
+
+**2. Rarefacción.** (10 puntos)
+
+Rarefactadas a $m = 20$, Ceiba tiene mayor riqueza esperada que Guarumo (Tabla
+2). ¿Puede concluir que Ceiba tiene más especies **en total**? ¿Qué pediría a 
+los equipos para resolver la comparación? Justifique con la figura.
+
+::: {.answer-space lines=6}
+:::
+
+**3. ¿Qué significa "más diversa"?** (10 puntos)
+
+Con la Tabla 2, ¿cuál fragmento es "más diverso"? Explique por qué la
+respuesta depende del orden $q$: qué aspecto de la comunidad captura cada orden
+y qué le hace la dominancia de la especie 1 de Guarumo a cada índice. Si tuviera
+que recomendar un fragmento para conservación, ¿qué medida usaría y qué
+información adicional pediría (pistas: función, endemismo, estado de amenaza)?

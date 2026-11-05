@@ -1,0 +1,334 @@
+---
+title: "Lab 09: Hoja de registro grupal"
+subtitle: "Muestreo, acumulación, números de Hill y rarefacción"
+format:
+  pdf:
+    documentclass: scrartcl
+    classoption: [DIV=14, fontsize=10pt]
+    geometry: margin=0.8in
+    fontfamily: libertinus
+    colorlinks: true
+    toc: false
+    include-in-header:
+      text: |
+        \usepackage{tikz}
+        \renewcommand{\arraystretch}{1.45}
+  html:
+    toc: false
+    number-sections: false
+    include-in-header:
+      text: |
+        <style>
+          table td { height: 1.9em; }
+          .plot-grid { margin: 1em 0; }
+        </style>
+lang: es
+---
+
+```{=latex}
+\vspace{-7em}
+```
+
+| | |
+|---|---|
+| **Grupo:** \_\_\_\_\_ | **Bolsa (A / B):** \_\_\_\_\_ |
+| **Esfuerzo asignado ($N$):** \_\_\_\_\_ individuos | **Fecha:** \_\_\_\_\_\_\_\_\_\_\_\_ |
+| **Integrantes:** | |
+
+::: {.answer-space lines=1}
+:::
+
+## Tabla 1. Secuencia de extracción y riqueza acumulada
+
+Extraigan puñados de 5 fichas y regístrenlas en el orden en que quedaron:
+número de individuo $n$, letra (especie) y riqueza acumulada $S(n)$, es decir,
+cuántas letras **distintas** han salido hasta esa fila. Para saber rápido si
+una letra es nueva, márquenla en la lista de abajo la primera vez que aparezca.
+Usen solo las filas hasta su esfuerzo asignado (30, 45 o 60).
+
+**Especies vistas:**
+
+```{=latex}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|p{0.8cm}|}
+\hline
+A & B & C & D & E & F & G & H & I & J & K & L \\ \hline
+ & & & & & & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+```
+
+::: {.content-visible when-format="html"}
+
+| A | B | C | D | E | F | G | H | I | J | K | L |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|   |   |   |   |   |   |   |   |   |   |   |   |
+
+:::
+
+::: {.content-visible when-format="html"}
+
+| $n$ | Especie | $S(n)$ | $n$ | Especie | $S(n)$ |
+|---:|:---:|---:|---:|:---:|---:|
+| 1 |  |  | 31 |  |  |
+| 2 |  |  | 32 |  |  |
+| 3 |  |  | 33 |  |  |
+| 4 |  |  | 34 |  |  |
+| 5 |  |  | 35 |  |  |
+| 6 |  |  | 36 |  |  |
+| 7 |  |  | 37 |  |  |
+| 8 |  |  | 38 |  |  |
+| 9 |  |  | 39 |  |  |
+| 10 |  |  | 40 |  |  |
+| 11 |  |  | 41 |  |  |
+| 12 |  |  | 42 |  |  |
+| 13 |  |  | 43 |  |  |
+| 14 |  |  | 44 |  |  |
+| 15 |  |  | 45 |  |  |
+| 16 |  |  | 46 |  |  |
+| 17 |  |  | 47 |  |  |
+| 18 |  |  | 48 |  |  |
+| 19 |  |  | 49 |  |  |
+| 20 |  |  | 50 |  |  |
+| 21 |  |  | 51 |  |  |
+| 22 |  |  | 52 |  |  |
+| 23 |  |  | 53 |  |  |
+| 24 |  |  | 54 |  |  |
+| 25 |  |  | 55 |  |  |
+| 26 |  |  | 56 |  |  |
+| 27 |  |  | 57 |  |  |
+| 28 |  |  | 58 |  |  |
+| 29 |  |  | 59 |  |  |
+| 30 |  |  | 60 |  |  |
+
+:::
+
+```{=latex}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|r|p{1.5cm}|p{1.2cm}||r|p{1.5cm}|p{1.2cm}||r|p{1.5cm}|p{1.2cm}|}
+\hline
+$n$ & Especie & $S(n)$ & $n$ & Especie & $S(n)$ & $n$ & Especie & $S(n)$ \\ \hline\hline
+1 & & & 21 & & & 41 & & \\ \hline
+2 & & & 22 & & & 42 & & \\ \hline
+3 & & & 23 & & & 43 & & \\ \hline
+4 & & & 24 & & & 44 & & \\ \hline
+5 & & & 25 & & & 45 & & \\ \hline
+6 & & & 26 & & & 46 & & \\ \hline
+7 & & & 27 & & & 47 & & \\ \hline
+8 & & & 28 & & & 48 & & \\ \hline
+9 & & & 29 & & & 49 & & \\ \hline
+10 & & & 30 & & & 50 & & \\ \hline
+11 & & & 31 & & & 51 & & \\ \hline
+12 & & & 32 & & & 52 & & \\ \hline
+13 & & & 33 & & & 53 & & \\ \hline
+14 & & & 34 & & & 54 & & \\ \hline
+15 & & & 35 & & & 55 & & \\ \hline
+16 & & & 36 & & & 56 & & \\ \hline
+17 & & & 37 & & & 57 & & \\ \hline
+18 & & & 38 & & & 58 & & \\ \hline
+19 & & & 39 & & & 59 & & \\ \hline
+20 & & & 40 & & & 60 & & \\ \hline
+\end{tabular}
+\end{center}
+```
+
+```{=latex}
+\clearpage
+```
+
+```{=html}
+<div style="break-before: page; page-break-before: always;"></div>
+```
+
+## Curva de acumulación
+
+Grafiquen $S(n)$ (eje Y, 0–12) frente a $n$ (eje X, 0–60). Empiecen en (0, 0).
+Rotulen los ejes.
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[x=0.26cm, y=0.6cm]
+  \draw[step=1, gray!30, very thin] (0,0) grid (60,12);
+  \draw[step=5, gray!60, thin] (0,0) grid (60,12);
+  \draw[->, thick] (0,0) -- (62,0) node[below right] {$n$ (individuos)};
+  \draw[->, thick] (0,0) -- (0,12.8) node[above] {$S(n)$};
+  \foreach \x in {0,10,...,60} \node[below] at (\x,0) {\x};
+  \foreach \y in {0,2,...,12} \node[left] at (0,\y) {\y};
+\end{tikzpicture}
+\end{center}
+```
+
+```{=html}
+<div class="plot-grid">
+<svg viewBox="-30 -10 660 330" width="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="g1" width="10" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 25" fill="none" stroke="#ddd" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="g5" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="url(#g1)"/>
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#999" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="600" height="300" fill="url(#g5)" stroke="#000"/>
+  <text x="300" y="320" text-anchor="middle" font-size="12">n (individuos): una línea gruesa cada 5, de 0 a 60</text>
+  <text x="-20" y="150" text-anchor="middle" font-size="12" transform="rotate(-90 -20 150)">S(n): una línea gruesa cada 2, de 0 a 12</text>
+</svg>
+</div>
+```
+
+## Tabla 2. Abundancias e índices de la muestra completa
+
+Una fila por especie **observada**. Verifiquen que $\sum n_i = N$ y
+$\sum p_i = 1$.
+
+::: {.content-visible when-format="html"}
+
+| Especie | $n_i$ | $p_i = n_i/N$ | $\ln p_i$ | $p_i \ln p_i$ | $p_i^2$ |
+|:---:|---:|---:|---:|---:|---:|
+| 1. |  |  |  |  |  |
+| 2. |  |  |  |  |  |
+| 3. |  |  |  |  |  |
+| 4. |  |  |  |  |  |
+| 5. |  |  |  |  |  |
+| 6. |  |  |  |  |  |
+| 7. |  |  |  |  |  |
+| 8. |  |  |  |  |  |
+| 9. |  |  |  |  |  |
+| 10. |  |  |  |  |  |
+| 11. |  |  |  |  |  |
+| 12. |  |  |  |  |  |
+| **Suma** | $N =$ | $1$ | — | $\sum p_i \ln p_i =$ | $\lambda =$ |
+
+:::
+
+```{=latex}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{1.4cm}|p{2.2cm}|p{2.0cm}|p{2.4cm}|p{2.0cm}|}
+\hline
+Especie & $n_i$ & $p_i = n_i/N$ & $\ln p_i$ & $p_i \ln p_i$ & $p_i^2$ \\ \hline\hline
+1. & & & & & \\ \hline
+2. & & & & & \\ \hline
+3. & & & & & \\ \hline
+4. & & & & & \\ \hline
+5. & & & & & \\ \hline
+6. & & & & & \\ \hline
+7. & & & & & \\ \hline
+8. & & & & & \\ \hline
+9. & & & & & \\ \hline
+10. & & & & & \\ \hline
+11. & & & & & \\ \hline
+12. & & & & & \\ \hline
+\textbf{Suma} & $N =$ & $1$ & --- & $\sum p_i \ln p_i =$ & $\lambda =$ \\ \hline
+\end{tabular}
+\end{center}
+```
+
+```{=latex}
+\clearpage
+```
+
+```{=html}
+<div style="break-before: page; page-break-before: always;"></div>
+```
+
+**Resumen de la muestra completa:**
+
+::: {.content-visible when-format="html"}
+
+| Medida | Fórmula | Valor |
+|---|---|:---:|
+| Riqueza observada, ${}^0D$ | $S_{\mathrm{obs}}$ = número de filas |  |
+| Shannon, $H'$ | $-\sum p_i \ln p_i$ |  |
+| Hill $q=1$, ${}^1D$ | $e^{H'}$ |  |
+| Simpson, $\lambda$ | $\sum p_i^2$ |  |
+| Hill $q=2$, ${}^2D$ | $1/\lambda$ |  |
+| Singletons | especies con $n_i = 1$ |  |
+
+:::
+
+```{=latex}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|l|p{3.5cm}|}
+\hline
+Medida & Fórmula & Valor \\ \hline\hline
+Riqueza observada, ${}^0D$ & $S_{\mathrm{obs}}$ = número de filas & \\ \hline
+Shannon, $H'$ & $-\sum p_i \ln p_i$ & \\ \hline
+Hill $q=1$, ${}^1D$ & $e^{H'}$ & \\ \hline
+Simpson, $\lambda$ & $\sum p_i^2$ & \\ \hline
+Hill $q=2$, ${}^2D$ & $1/\lambda$ & \\ \hline
+Singletons & especies con $n_i = 1$ & \\ \hline
+\end{tabular}
+\end{center}
+```
+
+## Tabla 3. Rarefacción manual a $m = 20$
+
+Usen **solo las fichas de su muestra**. Mezclen, extraigan 20 sin reemplazo
+(cuatro puñados de 5), cuenten especies distintas, devuelvan las 20 a la
+muestra y repitan.
+
+::: {.content-visible when-format="html"}
+
+| Repetición | Especies en 20 individuos |
+|---:|:---:|
+| 1 |  |
+| 2 |  |
+| 3 |  |
+| 4 |  |
+| 5 |  |
+| **Media** $\bar{S}(20)$ |  |
+
+:::
+
+```{=latex}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|p{4cm}|}
+\hline
+Repetición & Especies en 20 individuos \\ \hline\hline
+1 & \\ \hline
+2 & \\ \hline
+3 & \\ \hline
+4 & \\ \hline
+5 & \\ \hline
+\textbf{Media} $\bar{S}(20)$ & \\ \hline
+\end{tabular}
+\end{center}
+```
+
+```{=latex}
+\clearpage
+```
+
+```{=html}
+<div style="break-before: page; page-break-before: always;"></div>
+```
+
+## Preguntas (calificadas)
+
+**P0 (no calificada). Conclusión preliminar, antes de abrir la bolsa:** un informe dice que el
+fragmento B (11 especies en una semana) es más diverso que el fragmento A
+(8 especies en dos días). ¿Aceptarían esa conclusión? ¿Qué pedirían?
+
+::: {.answer-space lines=2}
+:::
+
+
+**P1.** ¿Se estabilizó su curva de acumulación? ¿Cuántas especies de su muestra
+son *singletons* ($n_i = 1$)? ¿Qué sugiere la forma de la curva y el número de
+singletons sobre la cantidad de especies que **no** detectaron? Justifiquen.
+
+::: {.answer-space lines=8}
+:::
+
+**P2.** Comparen los cuatro valores de su muestra: $S_{\mathrm{obs}}$,
+$\bar{S}(20)$, ${}^1D$ y ${}^2D$. ¿Qué indica la brecha entre ${}^0D$ y ${}^2D$
+sobre la estructura de abundancias de su bolsa? 
+
+::: {.answer-space lines=9}
+:::

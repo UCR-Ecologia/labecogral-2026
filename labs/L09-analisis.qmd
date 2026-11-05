@@ -1,0 +1,345 @@
+---
+title: "Lab 09: Análisis de diversidad en R"
+subtitle: "Curvas de acumulación, números de Hill y rarefacción"
+format:
+  html:
+    toc: true
+    number-sections: false
+    code-fold: false
+    code-tools: true
+  pdf:
+    documentclass: scrartcl
+    classoption: [DIV=12]
+    geometry: margin=1in
+    fontfamily: libertinus
+    colorlinks: true
+    toc: false
+lang: es
+execute:
+  warning: false
+  message: false
+---
+
+Este archivo es **material de referencia**: no se usa durante la sesión de
+laboratorio. Contiene el código para reproducir todo lo que hicieron a mano y
+las figuras de la síntesis. La **Parte 1** analiza la muestra de **un grupo** a
+partir de su secuencia de letras (Tabla 1 de la hoja de registro). La
+**Parte 2** combina los conteos de **todos los grupos** de la clase.
+
+Descarguen el archivo `.qmd` (botón `</> Code` arriba a la derecha en la versión
+web) y ábranlo en RStudio.
+
+```{r}
+#| label: paquetes
+library(dplyr)    # manipular tablas
+library(ggplot2)  # gráficos
+library(iNEXT)    # rarefacción / extrapolación (Chao et al.)
+# La Parte 2 usa además tidyr. Si falta alguno:
+# install.packages(c("dplyr", "ggplot2", "tidyr", "iNEXT"))
+```
+
+# Parte 1. Su muestra
+
+## 1.1 Su secuencia de extracción
+
+Escriban las letras de su Tabla 1 **en el orden en que salieron**, una por
+ficha. El ejemplo tiene 30 fichas; reemplácenlo por su secuencia.
+
+```{r}
+#| label: secuencia
+secuencia <- c("A", "C", "A", "B", "D", "A", "C", "E", "A", "A",
+               "B", "F", "A", "A", "C", "G", "A", "B", "A", "D",
+               "A", "A", "C", "B", "A", "H", "A", "D", "A", "B")
+
+length(secuencia)  # debe ser igual a su esfuerzo asignado (N)
+```
+
+## 1.2 De la secuencia a una tabla de abundancias
+
+La función recibe el vector de letras y devuelve una tabla con una fila por
+especie: el conteo $n_i$ y la abundancia relativa $p_i = n_i / N$.
+
+```{r}
+#| label: fun-tabla
+tabla_abundancias <- function(secuencia) {
+  conteo <- table(secuencia)                 # cuántas fichas de cada letra
+  data.frame(
+    especie = names(conteo),
+    n       = as.integer(conteo),            # n_i
+    p       = as.integer(conteo) / length(secuencia)  # p_i = n_i / N
+  )
+}
+
+tabla <- tabla_abundancias(secuencia)
+tabla
+```
+
+Comparen con su Tabla 2: la columna `n` debe coincidir con $n_i$ y `p` con
+$p_i$.
+
+## 1.3 Índices y números de Hill
+
+La función recibe la tabla de abundancias y calcula riqueza, Shannon, Simpson y
+los números efectivos de especies de orden 0, 1 y 2.
+
+```{r}
+#| label: fun-hill
+numeros_hill <- function(tabla) {
+  p      <- tabla$p
+  S      <- nrow(tabla)         # riqueza observada: número de especies
+  H      <- -sum(p * log(p))    # entropía de Shannon
+  lambda <- sum(p^2)            # concentración de Simpson
+  data.frame(
+    N      = sum(tabla$n),
+    S_obs  = S,
+    H      = H,
+    lambda = lambda,
+    D0     = S,                 # Hill q = 0: riqueza
+    D1     = exp(H),            # Hill q = 1: exp(Shannon)
+    D2     = 1 / lambda,        # Hill q = 2: inverso de Simpson
+    singletons = sum(tabla$n == 1)  # especies con un solo individuo
+  )
+}
+
+numeros_hill(tabla)
+```
+
+Comparen estos valores con el resumen de la hoja de registro.
+Recuerden que siempre `D0 >= D1 >= D2`: cuanto mayor la brecha, más desigual la
+distribución de abundancias.
+
+## 1.4 Curva de acumulación
+
+Riqueza acumulada después de cada individuo, en el orden de extracción.
+`!duplicated(secuencia)` es `TRUE` la primera vez que aparece cada letra;
+`cumsum()` va sumando esas primeras apariciones.
+
+```{r}
+#| label: fun-acumulacion
+curva_acumulacion <- function(secuencia) {
+  data.frame(
+    n = seq_along(secuencia),              # 1, 2, ..., N
+    S = cumsum(!duplicated(secuencia))     # riqueza acumulada S(n)
+  )
+}
+
+acum <- curva_acumulacion(secuencia)
+
+ggplot(acum, aes(x = n, y = S)) +
+  geom_step() +
+  geom_point() +
+  labs(x = "Individuos extraídos (n)", y = "Riqueza acumulada S(n)") +
+  theme_minimal()
+```
+
+## 1.5 Rarefacción a m = 20: tres maneras
+
+**(a) Lo mismo que hicieron con las fichas, 1000 veces.** `sample(secuencia, 20)`
+toma 20 fichas de su muestra sin reemplazo; `unique()` deja las especies
+distintas; `length()` las cuenta.
+
+```{r}
+#| label: rarefaccion-simulada
+m <- 20
+set.seed(1)  # para que el resultado sea reproducible
+riqueza_20 <- replicate(1000, length(unique(sample(secuencia, m))))
+
+mean(riqueza_20)   # comparar con la media de la Tabla 3
+table(riqueza_20)  # cuántas veces salió cada valor de riqueza
+```
+
+**(b) La fórmula exacta.** La riqueza esperada en $m$ individuos tomados de una
+muestra con $N$ individuos es la suma, sobre las especies, de la probabilidad de
+que cada una aparezca al menos una vez (Hurlbert 1971; Gotelli & Colwell 2001):
+
+$$E[S_m] = \sum_i \left[ 1 - \frac{\binom{N - n_i}{m}}{\binom{N}{m}} \right]$$
+
+```{r}
+#| label: fun-rarefaccion
+riqueza_rarefactada <- function(tabla, m) {
+  N <- sum(tabla$n)
+  sum(1 - choose(N - tabla$n, m) / choose(N, m))
+}
+
+riqueza_rarefactada(tabla, m = 20)
+```
+
+**(c) Con `iNEXT`.** Da el mismo valor para $q = 0$ y además calcula intervalos
+de confianza y los órdenes $q = 1$ y $q = 2$.
+
+```{r}
+#| label: estimateD
+estimateD(tabla$n, q = c(0, 1, 2), datatype = "abundance",
+          base = "size", level = 20, nboot = 100) |>
+  select(Order.q, m, qD, qD.LCL, qD.UCL)
+```
+
+## 1.6 Curvas de rarefacción y extrapolación
+
+`iNEXT` construye la curva completa: la parte **interpolada** (rarefacción,
+hasta su $N$) y la **extrapolada** (línea punteada, más allá de su $N$). La
+extrapolación supone que la muestra captura bien la estructura de la
+comunidad; con pocas fichas y varios singletons, el intervalo es muy ancho.
+
+```{r}
+#| label: inext-propia
+#| fig-width: 8
+#| fig-height: 3.5
+resultado <- iNEXT(tabla$n, q = c(0, 1, 2), datatype = "abundance",
+                   endpoint = 80, nboot = 100)
+
+ggiNEXT(resultado, type = 1, facet.var = "Order.q") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+::: {.callout-note title="Para comparar con la hoja de registro"}
+Comparen: media de sus 5 repeticiones manuales (Tabla 3), media de 1000
+repeticiones en R (a), valor exacto (b). ¿Qué tan lejos quedó su media manual?
+¿Por qué?
+:::
+
+# Parte 2. La clase
+
+La hoja compartida tiene **una fila por grupo**: `grupo`, `bolsa`, `N`, el
+conteo de cada letra (`A` … `L`) y los valores calculados a mano (`Shannon`,
+`lambda`, `D1`, `D2`, `S_rar20_manual`). Aquí se usa un archivo de ejemplo
+simulado; cambien el nombre por el del archivo exportado de la hoja.
+
+```{r}
+#| label: leer-clase
+clase <- read.csv("L09-clase-ejemplo.csv") |>
+  mutate(grupo = factor(grupo), bolsa = factor(bolsa))
+
+clase |> select(grupo, bolsa, N, A:L)
+```
+
+## 2.1 De la fila de conteos a la tabla de abundancias
+
+Pasamos los conteos a formato largo (una fila por grupo × especie) y quitamos
+las especies con conteo cero. Esto da, para cada grupo, la misma tabla que
+produce `tabla_abundancias()`.
+
+```{r}
+#| label: largo
+abund <- clase |>
+  select(grupo, bolsa, N, A:L) |>
+  tidyr::pivot_longer(A:L, names_to = "especie", values_to = "n") |>
+  filter(n > 0) |>
+  mutate(p = n / N)
+
+head(abund)
+```
+
+## 2.2 Números de Hill de cada grupo frente al esfuerzo
+
+Aplicamos `numeros_hill()` a la tabla de cada grupo y comparamos con lo que
+cada grupo calculó a mano.
+
+```{r}
+#| label: hill-clase
+hill_clase <- abund |>
+  group_by(grupo, bolsa) |>
+  reframe(numeros_hill(pick(especie, n, p)))
+
+# Comparación con el cálculo manual
+hill_clase |>
+  left_join(select(clase, grupo, D1_mano = D1, D2_mano = D2), by = "grupo") |>
+  mutate(across(c(D1, D2), \(x) round(x, 2))) |>
+  select(grupo, bolsa, N, S_obs, singletons, D1, D1_mano, D2, D2_mano) |>
+  arrange(bolsa, N)
+```
+
+```{r}
+#| label: hill-plot
+#| fig-width: 8
+#| fig-height: 3.5
+hill_clase |>
+  tidyr::pivot_longer(c(D0, D1, D2), names_to = "orden", values_to = "D") |>
+  ggplot(aes(x = N, y = D, colour = bolsa)) +
+  geom_point(size = 2.5, position = position_jitter(width = 1, height = 0, seed = 1)) +
+  facet_wrap(~ orden) +
+  labs(x = "Esfuerzo (N individuos)", y = "Número efectivo de especies",
+       colour = "Bolsa") +
+  theme_minimal()
+```
+
+¿Cuál orden de diversidad cambia más con el esfuerzo? ¿Cuál bolsa es "más
+diversa" según cada orden? ¿Qué tan distintos son los dos grupos que
+muestrearon la misma bolsa con el mismo esfuerzo?
+
+## 2.3 Rarefacción a m = 20: manual frente a exacta
+
+```{r}
+#| label: rar20-clase
+rar_clase <- abund |>
+  group_by(grupo, bolsa, N) |>
+  summarise(S_obs = n(),
+            S_rar20_exacta = riqueza_rarefactada(pick(n), 20),
+            .groups = "drop") |>
+  left_join(select(clase, grupo, S_rar20_manual), by = "grupo")
+
+rar_clase |> mutate(S_rar20_exacta = round(S_rar20_exacta, 2))
+```
+
+```{r}
+#| label: rar20-plot
+#| fig-width: 7
+#| fig-height: 3.5
+rar_clase |>
+  tidyr::pivot_longer(c(S_obs, S_rar20_exacta, S_rar20_manual),
+                      names_to = "medida", values_to = "S") |>
+  ggplot(aes(x = N, y = S, colour = bolsa, shape = medida)) +
+  geom_point(size = 2.5, position = position_dodge(width = 4)) +
+  labs(x = "Esfuerzo (N individuos)", y = "Riqueza",
+       colour = "Bolsa", shape = "Medida") +
+  theme_minimal()
+```
+
+¿Qué pasa con la diferencia entre bolsas al estandarizar a $m = 20$? ¿Coincide
+con lo que dice la riqueza observada a esfuerzos grandes?
+
+## 2.4 Curvas de rarefacción y extrapolación de toda la clase
+
+`iNEXT` acepta una lista de vectores de abundancia, uno por grupo. Extraemos la
+tabla de resultados para colorear por bolsa.
+
+```{r}
+#| label: inext-clase
+#| fig-width: 8
+#| fig-height: 4
+abund_lista <- split(abund$n, abund$grupo)      # lista: grupo -> vector n_i
+
+inext_clase <- iNEXT(abund_lista, q = 0, datatype = "abundance",
+                     endpoint = 80, nboot = 50)
+
+curvas <- inext_clase$iNextEst$size_based |>
+  rename(grupo = Assemblage) |>
+  mutate(grupo = factor(grupo, levels = levels(clase$grupo))) |>
+  left_join(distinct(clase, grupo, bolsa), by = "grupo")
+
+ggplot(curvas, aes(x = m, y = qD, group = grupo, colour = bolsa)) +
+  geom_vline(xintercept = 20, colour = "grey60", linetype = "dotted") +
+  geom_line(data = \(d) filter(d, Method != "Extrapolation"), linewidth = 0.8) +
+  geom_line(data = \(d) filter(d, Method != "Rarefaction"), linetype = "dashed") +
+  geom_point(data = \(d) filter(d, Method == "Observed"), size = 2.5) +
+  labs(x = "Individuos (m)", y = "Riqueza esperada",
+       colour = "Bolsa",
+       caption = "Línea continua: rarefacción. Punteada: extrapolación. Punto: muestra observada. Vertical: m = 20.") +
+  theme_minimal()
+```
+
+## 2.5 Composición real de las bolsas
+
+Para cerrar, los números de Hill de las comunidades completas (80 fichas).
+
+```{r}
+#| label: verdad
+bolsa_A <- data.frame(especie = LETTERS[1:8],  n = rep(10, 8))
+bolsa_B <- data.frame(especie = LETTERS[1:11], n = c(44, 14, 8, 4, 3, 2, 1, 1, 1, 1, 1))
+
+bind_rows(A = numeros_hill(mutate(bolsa_A, p = n / sum(n))),
+          B = numeros_hill(mutate(bolsa_B, p = n / sum(n))),
+          .id = "bolsa") |>
+  mutate(across(c(H, lambda, D1, D2), \(x) round(x, 2)))
+```
