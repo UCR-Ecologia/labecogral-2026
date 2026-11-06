@@ -1,6 +1,6 @@
 ---
-title: "Lab 09: Hoja de registro grupal"
-subtitle: "Muestreo, acumulación, números de Hill y rarefacción"
+title: "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción"
+subtitle: "Hoja grupal"
 format:
   pdf:
     documentclass: scrartcl

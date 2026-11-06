@@ -1,6 +1,6 @@
 ---
-title: "Lab 09: ¿Cuál comunidad es más diversa?"
-subtitle: "Muestreo, curvas de acumulación, rarefacción y números de Hill"
+title: "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill"
+subtitle: "¿Cuál comunidad es más diversa?"
 format:
   html:
     toc: true

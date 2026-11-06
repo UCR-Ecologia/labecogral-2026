@@ -506,49 +506,49 @@
   {
     "objectID": "labs/L09-diversidad.html",
     "href": "labs/L09-diversidad.html",
-    "title": "Lab 09: ¿Cuál comunidad es más diversa?",
+    "title": "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill",
     "section": "",
     "text": "Dos equipos de consultoría evalúan la fauna de dos fragmentos de bosque. El primer equipo trabajó dos días en el fragmento A y reporta 8 especies. El segundo trabajó una semana en el fragmento B y reporta 11 especies. Un informe concluye que “el fragmento B es más diverso y debe priorizarse para conservación”.\n\n¿Es válida esa conclusión? ¿Qué información haría falta para sostenerla o rechazarla?\n\nEn este laboratorio van a simular exactamente ese problema. Cada grupo muestrea una comunidad con un esfuerzo distinto al de los demás grupos, y al final la clase combina todos los resultados para decidir qué puede inferirse de muestras incompletas y desiguales."
   },
   {
     "objectID": "labs/L09-diversidad.html#pregunta-guía",
     "href": "labs/L09-diversidad.html#pregunta-guía",
-    "title": "Lab 09: ¿Cuál comunidad es más diversa?",
+    "title": "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill",
     "section": "",
     "text": "Dos equipos de consultoría evalúan la fauna de dos fragmentos de bosque. El primer equipo trabajó dos días en el fragmento A y reporta 8 especies. El segundo trabajó una semana en el fragmento B y reporta 11 especies. Un informe concluye que “el fragmento B es más diverso y debe priorizarse para conservación”.\n\n¿Es válida esa conclusión? ¿Qué información haría falta para sostenerla o rechazarla?\n\nEn este laboratorio van a simular exactamente ese problema. Cada grupo muestrea una comunidad con un esfuerzo distinto al de los demás grupos, y al final la clase combina todos los resultados para decidir qué puede inferirse de muestras incompletas y desiguales."
   },
   {
     "objectID": "labs/L09-diversidad.html#objetivos",
     "href": "labs/L09-diversidad.html#objetivos",
-    "title": "Lab 09: ¿Cuál comunidad es más diversa?",
+    "title": "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill",
     "section": "Objetivos",
     "text": "Objetivos\nAl finalizar, podrán:\n\nDistinguir la riqueza observada de la riqueza real y explicar por qué depende del esfuerzo de muestreo y del azar.\nConstruir e interpretar una curva de acumulación de especies.\nAplicar rarefacción (submuestreo aleatorio sin reemplazo) para comparar riqueza a un esfuerzo común.\nCalcular riqueza, entropía de Shannon y concentración de Simpson, y convertirlas en números efectivos de especies (números de Hill de órdenes 0, 1 y 2).\nExplicar cómo la dominancia y las especies raras modifican cada medida de diversidad.\n\n\n\n\n\n\n\nOrganización de la actividad\n\n\n\n\nGrupos de 3 personas, 12 grupos. Cada grupo recibe una bolsa opaca con 80 fichas. Cada ficha es un individuo; la letra escrita en la ficha es su especie.\nHay dos comunidades simuladas: bolsa A (grupos 1–6) y bolsa B (grupos 7–12). Dentro de cada bolsa, los grupos muestrean con esfuerzos distintos: 30, 45 o 60 individuos, dos grupos por esfuerzo. La persona instructora asigna el esfuerzo de cada grupo.\nNo miren dentro de la bolsa ni cuenten las fichas que quedan. La composición real se revela al final.\nRoles sugeridos: una persona extrae las fichas, una registra en la hoja y una grafica la curva de acumulación y calcula. Roten si lo desean.\nMateriales por grupo: bolsa, un recipiente para las fichas extraídas, hoja de registro grupal (L09-hoja-registro) y calculadora con ln y e^x (o el celular).\nProductos calificados: la hoja de registro grupal (tablas y dos preguntas) y una entrada de bitácora individual (L09-bitacora) que se responde al final.\n\n\n\n\n\n\n\n\n\nTiempos sugeridos (≈ 90 minutos)\n\n\n\n\n\n\n\n\n\n\n\nFase\nTiempo\nProducto\n\n\n\n\nPlanteamiento y predicción inicial\n10 min\nHipótesis del grupo\n\n\nI. Muestreo y curva de acumulación\n20 min\nTabla 1 y gráfico; conteos en la hoja compartida\n\n\nII. Índices y números de Hill a mano\n15 min\nTabla 2\n\n\nIII. Rarefacción manual (m = 20)\n10 min\nTabla 3\n\n\nIV. Síntesis de la clase y revelación de las bolsas\n20 min\nDiscusión\n\n\nEntrada de bitácora individual\n15 min\nHoja individual"
   },
   {
     "objectID": "labs/L09-diversidad.html#conceptos-clave",
     "href": "labs/L09-diversidad.html#conceptos-clave",
-    "title": "Lab 09: ¿Cuál comunidad es más diversa?",
+    "title": "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill",
     "section": "Conceptos clave",
     "text": "Conceptos clave\nCurva de acumulación. Riqueza acumulada \\(S(n)\\) a medida que se incorporan individuos en el orden en que fueron extraídos. Una curva corresponde a un orden concreto; dos grupos que muestrean la misma bolsa obtienen curvas distintas.\nRarefacción. Riqueza esperada en submuestras aleatorias de tamaño \\(m\\) tomadas de una muestra ya observada. Promedia muchos órdenes posibles, no uno solo. Permite comparar muestras de distinto tamaño a un esfuerzo común, pero solo hacia abajo: una muestra de 30 individuos no se puede rarefactar a 45. Recortar los primeros \\(m\\) puntos de la curva de acumulación no es rarefacción.\nEsfuerzo igual no es cobertura igual. Dos muestras de 20 individuos pueden representar fracciones muy distintas de sus comunidades si una comunidad tiene muchas especies raras y la otra no.\nNúmero efectivo de especies. Número de especies igualmente abundantes que produciría el mismo valor del índice. Convierte Shannon y Simpson a una misma escala (especies), lo que permite compararlos entre sí y con la riqueza.\n\\(S\\) = especies observadas; \\(n_i\\) = abundancia de la especie \\(i\\), \\(N\\) = individios total; y \\(p_i\\) = abundancia relativa (\\(n_i / N\\)):\n\n\n\n\n\n\n\n\nMedida\nCálculo\nQué captura\n\n\n\n\nRiqueza, \\({}^0D\\)\n\\(S_{\\mathrm{obs}}\\)\nNúmero de especies; todas pesan igual\n\n\nEntropía de Shannon, \\(H'\\)\n\\(-\\sum_i p_i \\ln p_i\\)\nIncertidumbre sobre la especie del próximo individuo\n\n\nHill \\(q = 1\\), \\({}^1D\\)\n\\(\\exp(H')\\)\nEspecies efectivas; peso proporcional a abundancia\n\n\nConcentración de Simpson, \\(\\lambda\\)\n\\(\\sum_i p_i^2\\)\nProbabilidad de que dos individuos al azar sean de la misma especie\n\n\nHill \\(q = 2\\), \\({}^2D\\)\n\\(1 / \\lambda\\)\nEspecies efectivas; especies abundantes pesan mas\n\n\n\nPara una misma muestra, siempre \\({}^0D \\geq {}^1D \\geq {}^2D\\). Cuanto mayor la brecha entre \\({}^0D\\) y \\({}^2D\\), más desigual es la distribución de abundancias. Si todas las especies son igual de abundantes, las tres coinciden."
   },
   {
     "objectID": "labs/L09-diversidad.html#protocolo",
     "href": "labs/L09-diversidad.html#protocolo",
-    "title": "Lab 09: ¿Cuál comunidad es más diversa?",
+    "title": "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill",
     "section": "Protocolo",
     "text": "Protocolo\n\nPlanteamiento\nAntes de abrir la bolsa, discutan en grupo la pregunta guía y escriban en la hoja de registro una conclusión preliminar sobre el informe de los fragmentos A y B: ¿aceptarían la conclusión, si o no? ¿Por que?\n\n\nFase I. Muestreo y curva de acumulación (20 min)\n\nAnoten en la hoja el número de grupo, la bolsa (A o B) y el esfuerzo asignado (\\(N\\) = 30, 45 o 60).\nMezclen la bolsa sin mirar dentro.\nExtraigan un puñado de 5 fichas, sin devolverlas, y colóquenlas en fila sobre la mesa. Regístrenlas una por una, en ese orden, en la Tabla 1: número de individuo \\(n\\), letra (especie) y riqueza acumulada \\(S(n)\\): cuántas letras distintas han salido hasta esa fila. La lista de “especies vistas” de la hoja sirve para ver de un vistazo si una letra ya salió. Como las fichas salen al azar, el orden del puñado es tan aleatorio como extraer de una en una.\nPasen las 5 fichas a un recipiente aparte, sin mezclarlas con las que quedan en la bolsa. Las van a necesitar en la Fase III.\nRepitan con el siguiente puñado hasta completar el esfuerzo asignado. No extraigan más fichas de las asignadas, aunque la curva no se haya estabilizado.\nGrafiquen \\(S(n)\\) (eje Y) y \\(n\\) (eje X) en la cuadrícula de la hoja. Empiecen en (0, 0).\nCuenten los individuos de cada especie y digiten una fila en la hoja compartida de la clase: grupo, bolsa, N y el conteo de cada letra. Completen el resto de la fila (\\(H'\\), \\(\\lambda\\), \\({}^1D\\), \\({}^2D\\), \\(\\bar{S}(20)\\)) al terminar las Fases II y III.\n\nAntes de seguir: ¿se estabilizó la curva? ¿Pueden saber cuántas especies faltan por detectar? ¿Cuántas especies de su muestra aparecen una sola vez?\n\n\nFase II. Índices y números de Hill (15 min)\nCon la muestra completa:\n\nAnoten los conteos por especie (\\(n_i\\)) en la Tabla 2. Verifiquen que la suma sea \\(N\\).\nCalculen \\(p_i = n_i / N\\), \\(p_i \\ln p_i\\) y \\(p_i^2\\) para cada especie. Repartan el trabajo: una persona la columna de \\(p_i \\ln p_i\\), otra la de \\(p_i^2\\), otra verifica.\nSumen las columnas para obtener \\(H' = -\\sum p_i \\ln p_i\\) y \\(\\lambda = \\sum p_i^2\\).\nCalculen \\({}^1D = e^{H'}\\) y \\({}^2D = 1/\\lambda\\). Anoten \\({}^0D\\), \\({}^1D\\) y \\({}^2D\\) en el resumen de la hoja y en la hoja compartida.\n\nSi una especie no apareció en su muestra, simplemente no está en la tabla: su contribución a las sumas es cero.\n\n\nFase III. Rarefacción manual a m = 20 (10 min)\nEl problema: un grupo tiene 30 individuos y otro 60. Comparar directamente sus riquezas observadas confunde diferencia ecológica con esfuerzo. Vamos a estandarizar a un esfuerzo común de \\(m = 20\\) individuos, que toda muestra de la clase puede alcanzar.\n\nTomen únicamente las fichas que ya extrajeron (su muestra observada). No usen la bolsa original.\nMezclen esas fichas en el recipiente y extraigan 20 sin reemplazo (cuatro puñados de 5).\nCuenten cuántas especies distintas hay entre las 20. Anótenlo en la Tabla 3.\nDevuelvan las 20 fichas al recipiente de la muestra, mezclen y repitan hasta completar 5 repeticiones.\nCalculen la media de las 5 repeticiones: es su estimación de la riqueza esperada a \\(m = 20\\), \\(\\bar{S}(20)\\). Anótenla también en la hoja compartida.\n\nCinco repeticiones son pocas y la media será ruidosa; en la síntesis la van a comparar con el valor exacto, que se puede calcular a partir de los conteos. Noten también que las repeticiones no son réplicas independientes de la comunidad: todas provienen de la misma muestra.\n\n\nFase IV. Síntesis de la clase y revelación (20 min)\nCuando todos los grupos hayan completado su fila, la persona instructora muestra, a partir de la hoja compartida:\n\n\\({}^0D\\), \\({}^1D\\) y \\({}^2D\\) de cada grupo frente a su esfuerzo, por bolsa.\nRiqueza rarefactada a \\(m = 20\\): la estimación manual de cada grupo frente al valor exacto.\nCurvas de rarefacción (y extrapolación) de cada muestra, por bolsa.\n\nLuego se vacían las bolsas y se compara la composición real con lo que cada grupo infirió. Discutan:\n\n¿Qué cambia al comparar riqueza observada frente a riqueza rarefactada?\nDos grupos muestrearon la misma bolsa con el mismo esfuerzo. ¿Obtuvieron lo mismo? ¿Qué implica para comparar dos sitios reales con una muestra cada uno?\n¿Cómo afecta la dominancia a \\({}^1D\\) y \\({}^2D\\)? ¿Por qué \\({}^0D\\) responde de otra manera?\n¿Igual número de individuos implica igual probabilidad de detectar especies raras?\n¿Qué información se pierde al resumir una comunidad con un solo número?\n\n\n\nEntrada de bitácora individual (15 min)\nCada persona resuelve de forma individual el caso de L09-bitacora: un problema distinto pero del mismo tipo, con sus propios datos y figura, que se responde sin depender de los resultados de la clase. Tres preguntas, 1 % de la nota final cada una."
   },
   {
     "objectID": "labs/L09-diversidad.html#entregables",
     "href": "labs/L09-diversidad.html#entregables",
-    "title": "Lab 09: ¿Cuál comunidad es más diversa?",
+    "title": "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill",
     "section": "Entregables",
     "text": "Entregables\n\nPor grupo: la hoja de registro completa (Tablas 1–3, gráfico de acumulación, resumen de índices y las dos preguntas al final).\nPor persona: la entrada de bitácora con las tres preguntas del caso."
   },
   {
     "objectID": "labs/L09-diversidad.html#lecturas",
     "href": "labs/L09-diversidad.html#lecturas",
-    "title": "Lab 09: ¿Cuál comunidad es más diversa?",
+    "title": "Lab 09: Diversidad, muestreo, curvas de acumulación, rarefacción y números de Hill",
     "section": "Lecturas",
     "text": "Lecturas\n\nMorris, E. K. et al. (2014). Choosing and using diversity indices: insights for ecological applications from the German Biodiversity Exploratories. Ecology and Evolution, 4, 3514–3524. PDF\nGotelli, N. J. & Colwell, R. K. (2001). Quantifying biodiversity: procedures and pitfalls in the measurement and comparison of species richness. Ecology Letters, 4, 379–391. PDF\nPara profundizar: Jost, L. (2006). Entropy and diversity. Oikos, 113, 363–375. Chao, A. & Jost, L. (2012). Coverage-based rarefaction and extrapolation. Ecology, 93, 2533–2547."
   },
@@ -1122,63 +1122,63 @@
   {
     "objectID": "labs/L09-bitacora.html",
     "href": "labs/L09-bitacora.html",
-    "title": "Lab 09: Entrada de bitácora individual",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "",
     "text": "Nombre: ____________________________________ Grupo: _____\nResponda de forma individual. Este caso es independiente de los resultados de la clase: toda la información necesaria está en esta hoja. Cada pregunta vale 10 puntos (1 % de la nota final); total 3 %."
   },
   {
     "objectID": "labs/L09-bitacora.html#el-caso",
     "href": "labs/L09-bitacora.html#el-caso",
-    "title": "Lab 09: Entrada de bitácora individual",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "El caso",
     "text": "El caso\nDos equipos muestrearon escarabajos en dos fragmentos de bosque con trampas de caída. El Equipo 1 trabajó dos noches en el fragmento Ceiba y capturó 30 individuos. El Equipo 2 trabajó cuatro noches en el fragmento Guarumo y capturó 60 individuos. El Equipo 2 concluye en su informe: “Guarumo tiene más especies (10 contra 8) y, por tanto, es el fragmento más diverso y debe priorizarse para conservación.”\nTabla 1. Individuos por especie en cada muestra.\n\n\n\n\n\n\nsp1\nsp2\nsp3\nsp4\nsp5\nsp6\nsp7\nsp8\nsp9\nsp10\nTotal\n\n\n\n\nCeiba\n6\n5\n5\n4\n4\n3\n2\n1\n—\n—\n30\n\n\nGuarumo\n30\n10\n7\n4\n3\n2\n1\n1\n1\n1\n60\n\n\n\n\n\nTabla 2. Resumen de cada muestra. \\(\\bar{S}(20)\\) es la riqueza esperada en una submuestra de 20 individuos (rarefacción).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(N\\)\n\\(S_{\\mathrm{obs}}\\) (\\({}^0D\\))\nSingletons\n\\(\\bar{S}(20)\\)\n\\({}^1D\\)\n\\({}^2D\\)\n\n\n\n\nCeiba\n30\n8\n1\n7.51\n7.25\n6.82\n\n\nGuarumo\n60\n10\n4\n6.36\n5.02\n3.33\n\n\n\n\n\n\n\n\n\n\nCurvas de rarefacción de cada muestra (riqueza esperada en m individuos tomados de la muestra observada). Línea continua: rarefacción hasta el tamaño observado (punto). Línea punteada: extrapolación (iNEXT). Línea vertical gris: esfuerzo común m = 20."
   },
   {
     "objectID": "labs/L09-bitacora.html#preguntas",
     "href": "labs/L09-bitacora.html#preguntas",
-    "title": "Lab 09: Entrada de bitácora individual",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "Preguntas",
     "text": "Preguntas\n1. Esfuerzo y riqueza observada. (10 puntos)\n¿Es válida la afirmación del Equipo 2 de que Guarumo tiene más especies, con los datos disponibles? Use la figura: compare las dos muestras a un esfuerzo común (\\(m = 20\\) y \\(m = 30\\)) y describa qué hace cada curva al llegar a su tamaño observado. ¿Qué sugieren el número de singletons y la pendiente de cada curva sobre cuántas especies quedaron sin detectar en cada fragmento?\n\n \n \n \n \n \n \n\n2. Rarefacción. (10 puntos)\nRarefactadas a \\(m = 20\\), Ceiba tiene mayor riqueza esperada que Guarumo (Tabla 2). ¿Puede concluir que Ceiba tiene más especies en total? ¿Qué pediría a los equipos para resolver la comparación? Justifique con la figura.\n\n \n \n \n \n \n \n\n3. ¿Qué significa “más diversa”? (10 puntos)\nCon la Tabla 2, ¿cuál fragmento es “más diverso”? Explique por qué la respuesta depende del orden \\(q\\): qué aspecto de la comunidad captura cada orden y qué le hace la dominancia de la especie 1 de Guarumo a cada índice. Si tuviera que recomendar un fragmento para conservación, ¿qué medida usaría y qué información adicional pediría (pistas: función, endemismo, estado de amenaza)?"
   },
   {
     "objectID": "labs/L09-hoja-registro.html",
     "href": "labs/L09-hoja-registro.html",
-    "title": "Lab 09: Hoja de registro grupal",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "",
     "text": "Grupo: _____\nBolsa (A / B): _____\n\n\nEsfuerzo asignado (\\(N\\)): _____ individuos\nFecha: ____________\n\n\nIntegrantes:"
   },
   {
     "objectID": "labs/L09-hoja-registro.html#tabla-1.-secuencia-de-extracción-y-riqueza-acumulada",
     "href": "labs/L09-hoja-registro.html#tabla-1.-secuencia-de-extracción-y-riqueza-acumulada",
-    "title": "Lab 09: Hoja de registro grupal",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "Tabla 1. Secuencia de extracción y riqueza acumulada",
     "text": "Tabla 1. Secuencia de extracción y riqueza acumulada\nExtraigan puñados de 5 fichas y regístrenlas en el orden en que quedaron: número de individuo \\(n\\), letra (especie) y riqueza acumulada \\(S(n)\\), es decir, cuántas letras distintas han salido hasta esa fila. Para saber rápido si una letra es nueva, márquenla en la lista de abajo la primera vez que aparezca. Usen solo las filas hasta su esfuerzo asignado (30, 45 o 60).\nEspecies vistas:\n\n\n\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(n\\)\nEspecie\n\\(S(n)\\)\n\\(n\\)\nEspecie\n\\(S(n)\\)\n\n\n\n\n1\n\n\n31\n\n\n\n\n2\n\n\n32\n\n\n\n\n3\n\n\n33\n\n\n\n\n4\n\n\n34\n\n\n\n\n5\n\n\n35\n\n\n\n\n6\n\n\n36\n\n\n\n\n7\n\n\n37\n\n\n\n\n8\n\n\n38\n\n\n\n\n9\n\n\n39\n\n\n\n\n10\n\n\n40\n\n\n\n\n11\n\n\n41\n\n\n\n\n12\n\n\n42\n\n\n\n\n13\n\n\n43\n\n\n\n\n14\n\n\n44\n\n\n\n\n15\n\n\n45\n\n\n\n\n16\n\n\n46\n\n\n\n\n17\n\n\n47\n\n\n\n\n18\n\n\n48\n\n\n\n\n19\n\n\n49\n\n\n\n\n20\n\n\n50\n\n\n\n\n21\n\n\n51\n\n\n\n\n22\n\n\n52\n\n\n\n\n23\n\n\n53\n\n\n\n\n24\n\n\n54\n\n\n\n\n25\n\n\n55\n\n\n\n\n26\n\n\n56\n\n\n\n\n27\n\n\n57\n\n\n\n\n28\n\n\n58\n\n\n\n\n29\n\n\n59\n\n\n\n\n30\n\n\n60"
   },
   {
     "objectID": "labs/L09-hoja-registro.html#curva-de-acumulación",
     "href": "labs/L09-hoja-registro.html#curva-de-acumulación",
-    "title": "Lab 09: Hoja de registro grupal",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "Curva de acumulación",
     "text": "Curva de acumulación\nGrafiquen \\(S(n)\\) (eje Y, 0–12) frente a \\(n\\) (eje X, 0–60). Empiecen en (0, 0). Rotulen los ejes.\n\n\n  \n    \n      \n    \n    \n      \n      \n    \n  \n  \n  n (individuos): una línea gruesa cada 5, de 0 a 60\n  S(n): una línea gruesa cada 2, de 0 a 12"
   },
   {
     "objectID": "labs/L09-hoja-registro.html#tabla-2.-abundancias-e-índices-de-la-muestra-completa",
     "href": "labs/L09-hoja-registro.html#tabla-2.-abundancias-e-índices-de-la-muestra-completa",
-    "title": "Lab 09: Hoja de registro grupal",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "Tabla 2. Abundancias e índices de la muestra completa",
     "text": "Tabla 2. Abundancias e índices de la muestra completa\nUna fila por especie observada. Verifiquen que \\(\\sum n_i = N\\) y \\(\\sum p_i = 1\\).\n\n\n\n\n\n\n\n\n\n\n\nEspecie\n\\(n_i\\)\n\\(p_i = n_i/N\\)\n\\(\\ln p_i\\)\n\\(p_i \\ln p_i\\)\n\\(p_i^2\\)\n\n\n\n\n1.\n\n\n\n\n\n\n\n2.\n\n\n\n\n\n\n\n3.\n\n\n\n\n\n\n\n4.\n\n\n\n\n\n\n\n5.\n\n\n\n\n\n\n\n6.\n\n\n\n\n\n\n\n7.\n\n\n\n\n\n\n\n8.\n\n\n\n\n\n\n\n9.\n\n\n\n\n\n\n\n10.\n\n\n\n\n\n\n\n11.\n\n\n\n\n\n\n\n12.\n\n\n\n\n\n\n\nSuma\n\\(N =\\)\n\\(1\\)\n—\n\\(\\sum p_i \\ln p_i =\\)\n\\(\\lambda =\\)\n\n\n\n\nResumen de la muestra completa:\n\n\n\nMedida\nFórmula\nValor\n\n\n\n\nRiqueza observada, \\({}^0D\\)\n\\(S_{\\mathrm{obs}}\\) = número de filas\n\n\n\nShannon, \\(H'\\)\n\\(-\\sum p_i \\ln p_i\\)\n\n\n\nHill \\(q=1\\), \\({}^1D\\)\n\\(e^{H'}\\)\n\n\n\nSimpson, \\(\\lambda\\)\n\\(\\sum p_i^2\\)\n\n\n\nHill \\(q=2\\), \\({}^2D\\)\n\\(1/\\lambda\\)\n\n\n\nSingletons\nespecies con \\(n_i = 1\\)"
   },
   {
     "objectID": "labs/L09-hoja-registro.html#tabla-3.-rarefacción-manual-a-m-20",
     "href": "labs/L09-hoja-registro.html#tabla-3.-rarefacción-manual-a-m-20",
-    "title": "Lab 09: Hoja de registro grupal",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "Tabla 3. Rarefacción manual a \\(m = 20\\)",
     "text": "Tabla 3. Rarefacción manual a \\(m = 20\\)\nUsen solo las fichas de su muestra. Mezclen, extraigan 20 sin reemplazo (cuatro puñados de 5), cuenten especies distintas, devuelvan las 20 a la muestra y repitan.\n\n\n\nRepetición\nEspecies en 20 individuos\n\n\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\nMedia \\(\\bar{S}(20)\\)"
   },
   {
     "objectID": "labs/L09-hoja-registro.html#preguntas-calificadas",
     "href": "labs/L09-hoja-registro.html#preguntas-calificadas",
-    "title": "Lab 09: Hoja de registro grupal",
+    "title": "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción",
     "section": "Preguntas (calificadas)",
     "text": "Preguntas (calificadas)\nP0 (no calificada). Conclusión preliminar, antes de abrir la bolsa: un informe dice que el fragmento B (11 especies en una semana) es más diverso que el fragmento A (8 especies en dos días). ¿Aceptarían esa conclusión? ¿Qué pedirían?\n\n \n \n\nP1. ¿Se estabilizó su curva de acumulación? ¿Cuántas especies de su muestra son singletons (\\(n_i = 1\\))? ¿Qué sugiere la forma de la curva y el número de singletons sobre la cantidad de especies que no detectaron? Justifiquen.\n\n \n \n \n \n \n \n \n \n\nP2. Comparen los cuatro valores de su muestra: \\(S_{\\mathrm{obs}}\\), \\(\\bar{S}(20)\\), \\({}^1D\\) y \\({}^2D\\). ¿Qué indica la brecha entre \\({}^0D\\) y \\({}^2D\\) sobre la estructura de abundancias de su bolsa?"
   },

@@ -1,6 +1,6 @@
 ---
-title: "Lab 09: Entrada de bitácora individual"
-subtitle: "Caso: dos fragmentos, dos equipos"
+title: "Lab 09: Diversidad, muestreo, acumulación, números de Hill y rarefacción"
+subtitle: "Entrada de bitácora individual"
 format:
   pdf:
     documentclass: scrartcl
