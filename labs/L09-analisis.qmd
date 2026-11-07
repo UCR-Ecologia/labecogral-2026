@@ -113,7 +113,8 @@ distribución de abundancias.
 
 Riqueza acumulada después de cada individuo, en el orden de extracción.
 `!duplicated(secuencia)` es `TRUE` la primera vez que aparece cada letra;
-`cumsum()` va sumando esas primeras apariciones.
+`cumsum()` va sumando esas primeras apariciones calculando automaticamente
+el total de especies.
 
 ```{r}
 #| label: fun-acumulacion
@@ -143,7 +144,10 @@ distintas; `length()` las cuenta.
 #| label: rarefaccion-simulada
 m <- 20
 set.seed(1)  # para que el resultado sea reproducible
-riqueza_20 <- replicate(1000, length(unique(sample(secuencia, m))))
+riqueza_20 <- replicate(
+  1000,
+  length(unique(sample(secuencia, m, replace = FALSE)))
+  )
 
 mean(riqueza_20)   # comparar con la media de la Tabla 3
 table(riqueza_20)  # cuántas veces salió cada valor de riqueza
@@ -151,9 +155,7 @@ table(riqueza_20)  # cuántas veces salió cada valor de riqueza
 
 **(b) La fórmula exacta.** La riqueza esperada en $m$ individuos tomados de una
 muestra con $N$ individuos es la suma, sobre las especies, de la probabilidad de
-que cada una aparezca al menos una vez (Hurlbert 1971; Gotelli & Colwell 2001):
-
-$$E[S_m] = \sum_i \left[ 1 - \frac{\binom{N - n_i}{m}}{\binom{N}{m}} \right]$$
+que cada una aparezca al menos una vez (Gotelli & Colwell 2001):
 
 ```{r}
 #| label: fun-rarefaccion
