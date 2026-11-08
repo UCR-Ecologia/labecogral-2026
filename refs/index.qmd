@@ -65,4 +65,7 @@ Web app:
 ## Muestreo, Indices de diversidad, Acummulacion, Rarefaccion
 
   - [Gotelli & Colwell, 2001](Gotelli-Colwell-2001.pdf)
-  - [Moddis et al. 2014](Morris-etal-2014.pdf)
+  - [Morris et al. 2014](Morris-etal-2014.pdf)
+
+  Excelente resumen con graficos muy informativos y codigo por David Zeleny:
+  - [https://www.davidzeleny.net/anadat-r/doku.php/en:div-ind](https://www.davidzeleny.net/anadat-r/doku.php/en:div-ind)
